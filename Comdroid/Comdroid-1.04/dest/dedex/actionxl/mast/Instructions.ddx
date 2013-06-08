@@ -1,0 +1,73 @@
+.class public actionxl/mast/Instructions
+.super android/app/Activity
+.source Instructions.java
+
+.field private mWebView Landroid/webkit/WebView;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lactionxl/mast/Instructions;)
+.line 10
+	invoke-direct	{v0},android/app/Activity/<init>	; <init>()V
+; v0 : Lactionxl/mast/Instructions;
+	return-void	
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 5
+; this: v3 (Lactionxl/mast/Instructions;)
+; parameter[0] : v4 (Landroid/os/Bundle;)
+.line 18
+	invoke-super	{v3,v4},android/app/Activity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v3 : Lactionxl/mast/Instructions; , v4 : Landroid/os/Bundle;
+.line 19
+	const	v1,2130903041	; 0x7f030001
+; v1 : single-length
+	invoke-virtual	{v3,v1},actionxl/mast/Instructions/setContentView	; setContentView(I)V
+; v3 : Lactionxl/mast/Instructions; , v1 : single-length
+.line 20
+	const/high16	v1,32518
+; v1 : single-length
+	invoke-virtual	{v3,v1},actionxl/mast/Instructions/findViewById	; findViewById(I)Landroid/view/View;
+; v3 : Lactionxl/mast/Instructions; , v1 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+	check-cast	v1,android/webkit/WebView
+; v1 : Landroid/webkit/WebView;
+	iput-object	v1,v3,actionxl/mast/Instructions.mWebView Landroid/webkit/WebView;
+; v1 : Landroid/webkit/WebView; , v3 : Lactionxl/mast/Instructions;
+.line 22
+	iget-object	v1,v3,actionxl/mast/Instructions.mWebView Landroid/webkit/WebView;
+; v1 : Landroid/webkit/WebView; , v3 : Lactionxl/mast/Instructions;
+	invoke-virtual	{v1},android/webkit/WebView/getSettings	; getSettings()Landroid/webkit/WebSettings;
+; v1 : Landroid/webkit/WebView;
+	move-result-object	v0
+; v0 : Landroid/webkit/WebSettings;
+.line 25
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/webkit/WebSettings/setJavaScriptEnabled	; setJavaScriptEnabled(Z)V
+; v0 : Landroid/webkit/WebSettings; , v1 : single-length
+.line 28
+	iget-object	v1,v3,actionxl/mast/Instructions.mWebView Landroid/webkit/WebView;
+; v1 : Landroid/webkit/WebView; , v3 : Lactionxl/mast/Instructions;
+	const-string	v2,"file:///android_asset/Instructions.html"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/webkit/WebView/loadUrl	; loadUrl(Ljava/lang/String;)V
+; v1 : Landroid/webkit/WebView; , v2 : Ljava/lang/String;
+.line 29
+	return-void	
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.limit registers 3
+; this: v1 (Lactionxl/mast/Instructions;)
+; parameter[0] : v2 (Landroid/view/MotionEvent;)
+.line 36
+	const/4	v0,1
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

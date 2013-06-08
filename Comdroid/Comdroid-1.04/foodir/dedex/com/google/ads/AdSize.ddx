@@ -1,0 +1,121 @@
+.class public com/google/ads/AdSize
+.super java/lang/Object
+
+.field public static final BANNER Lcom/google/ads/AdSize;
+.field public static final IAB_BANNER Lcom/google/ads/AdSize;
+.field public static final IAB_LEADERBOARD Lcom/google/ads/AdSize;
+.field public static final IAB_MRECT Lcom/google/ads/AdSize;
+.field private a I
+.field private b I
+.field private c Ljava/lang/String;
+
+.method static <clinit>()V
+.limit registers 4
+	new-instance	v0,com/google/ads/AdSize
+; v0 : Lcom/google/ads/AdSize;
+	const/16	v1,320
+; v1 : single-length
+	const/16	v2,50
+; v2 : single-length
+	const-string	v3,"320x50_mb"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2,v3},com/google/ads/AdSize/<init>	; <init>(IILjava/lang/String;)V
+; v0 : Lcom/google/ads/AdSize; , v1 : single-length , v2 : single-length , v3 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/AdSize.BANNER Lcom/google/ads/AdSize;
+; v0 : Lcom/google/ads/AdSize;
+	new-instance	v0,com/google/ads/AdSize
+; v0 : Lcom/google/ads/AdSize;
+	const/16	v1,300
+; v1 : single-length
+	const/16	v2,250
+; v2 : single-length
+	const-string	v3,"300x250_as"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2,v3},com/google/ads/AdSize/<init>	; <init>(IILjava/lang/String;)V
+; v0 : Lcom/google/ads/AdSize; , v1 : single-length , v2 : single-length , v3 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/AdSize.IAB_MRECT Lcom/google/ads/AdSize;
+; v0 : Lcom/google/ads/AdSize;
+	new-instance	v0,com/google/ads/AdSize
+; v0 : Lcom/google/ads/AdSize;
+	const/16	v1,468
+; v1 : single-length
+	const/16	v2,60
+; v2 : single-length
+	const-string	v3,"468x60_as"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2,v3},com/google/ads/AdSize/<init>	; <init>(IILjava/lang/String;)V
+; v0 : Lcom/google/ads/AdSize; , v1 : single-length , v2 : single-length , v3 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/AdSize.IAB_BANNER Lcom/google/ads/AdSize;
+; v0 : Lcom/google/ads/AdSize;
+	new-instance	v0,com/google/ads/AdSize
+; v0 : Lcom/google/ads/AdSize;
+	const/16	v1,728
+; v1 : single-length
+	const/16	v2,90
+; v2 : single-length
+	const-string	v3,"728x90_as"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2,v3},com/google/ads/AdSize/<init>	; <init>(IILjava/lang/String;)V
+; v0 : Lcom/google/ads/AdSize; , v1 : single-length , v2 : single-length , v3 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/AdSize.IAB_LEADERBOARD Lcom/google/ads/AdSize;
+; v0 : Lcom/google/ads/AdSize;
+	return-void	
+.end method
+
+.method public <init>(II)V
+.limit registers 4
+; this: v1 (Lcom/google/ads/AdSize;)
+; parameter[0] : v2 (I)
+; parameter[1] : v3 (I)
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v3,v0},com/google/ads/AdSize/<init>	; <init>(IILjava/lang/String;)V
+; v1 : Lcom/google/ads/AdSize; , v2 : single-length , v3 : single-length , v0 : single-length
+	return-void	
+.end method
+
+.method private <init>(IILjava/lang/String;)V
+.limit registers 4
+; this: v0 (Lcom/google/ads/AdSize;)
+; parameter[0] : v1 (I)
+; parameter[1] : v2 (I)
+; parameter[2] : v3 (Ljava/lang/String;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/AdSize;
+	iput	v1,v0,com/google/ads/AdSize.a I
+; v1 : single-length , v0 : Lcom/google/ads/AdSize;
+	iput	v2,v0,com/google/ads/AdSize.b I
+; v2 : single-length , v0 : Lcom/google/ads/AdSize;
+	iput-object	v3,v0,com/google/ads/AdSize.c Ljava/lang/String;
+; v3 : Ljava/lang/String; , v0 : Lcom/google/ads/AdSize;
+	return-void	
+.end method
+
+.method public getHeight()I
+.limit registers 2
+; this: v1 (Lcom/google/ads/AdSize;)
+	iget	v0,v1,com/google/ads/AdSize.b I
+; v0 : single-length , v1 : Lcom/google/ads/AdSize;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getWidth()I
+.limit registers 2
+; this: v1 (Lcom/google/ads/AdSize;)
+	iget	v0,v1,com/google/ads/AdSize.a I
+; v0 : single-length , v1 : Lcom/google/ads/AdSize;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public toString()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lcom/google/ads/AdSize;)
+	iget-object	v0,v1,com/google/ads/AdSize.c Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lcom/google/ads/AdSize;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+

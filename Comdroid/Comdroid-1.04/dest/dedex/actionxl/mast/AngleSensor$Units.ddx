@@ -1,0 +1,144 @@
+.class public final actionxl/mast/AngleSensor$Units
+.super java/lang/Enum
+.source AngleSensor.java
+
+.inner class Units inner actionxl/mast/AngleSensor$Units outer actionxl/mast/AngleSensor
+.annotation systemVisibility Ldalvik/annotation/Signature;
+  value [Ljava/lang/String; = { "Ljava/lang/Enum" , "<" , "Lactionxl/mast/AngleSensor$Units;" , ">;" }
+.end annotation
+
+.field public static final Degrees Lactionxl/mast/AngleSensor$Units;
+.field private static final ENUM$VALUES [Lactionxl/mast/AngleSensor$Units;
+.field public static final Percentage Lactionxl/mast/AngleSensor$Units;
+.field public static final inftDecimal Lactionxl/mast/AngleSensor$Units;
+.field public static final inftFractional Lactionxl/mast/AngleSensor$Units;
+.field public static final mmM Lactionxl/mast/AngleSensor$Units;
+
+.method static <clinit>()V
+.limit registers 7
+	const/4	v6,4
+; v6 : single-length
+	const/4	v5,3
+; v5 : single-length
+	const/4	v4,2
+; v4 : single-length
+	const/4	v3,1
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+.line 11
+	new-instance	v0,actionxl/mast/AngleSensor$Units
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	const-string	v1,"Degrees"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v2},actionxl/mast/AngleSensor$Units/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lactionxl/mast/AngleSensor$Units; , v1 : Ljava/lang/String; , v2 : single-length
+	sput-object	v0,actionxl/mast/AngleSensor$Units.Degrees Lactionxl/mast/AngleSensor$Units;
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	new-instance	v0,actionxl/mast/AngleSensor$Units
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	const-string	v1,"Percentage"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v3},actionxl/mast/AngleSensor$Units/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lactionxl/mast/AngleSensor$Units; , v1 : Ljava/lang/String; , v3 : single-length
+	sput-object	v0,actionxl/mast/AngleSensor$Units.Percentage Lactionxl/mast/AngleSensor$Units;
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	new-instance	v0,actionxl/mast/AngleSensor$Units
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	const-string	v1,"mmM"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v4},actionxl/mast/AngleSensor$Units/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lactionxl/mast/AngleSensor$Units; , v1 : Ljava/lang/String; , v4 : single-length
+	sput-object	v0,actionxl/mast/AngleSensor$Units.mmM Lactionxl/mast/AngleSensor$Units;
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	new-instance	v0,actionxl/mast/AngleSensor$Units
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	const-string	v1,"inftDecimal"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v5},actionxl/mast/AngleSensor$Units/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lactionxl/mast/AngleSensor$Units; , v1 : Ljava/lang/String; , v5 : single-length
+	sput-object	v0,actionxl/mast/AngleSensor$Units.inftDecimal Lactionxl/mast/AngleSensor$Units;
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	new-instance	v0,actionxl/mast/AngleSensor$Units
+; v0 : Lactionxl/mast/AngleSensor$Units;
+	const-string	v1,"inftFractional"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1,v6},actionxl/mast/AngleSensor$Units/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lactionxl/mast/AngleSensor$Units; , v1 : Ljava/lang/String; , v6 : single-length
+	sput-object	v0,actionxl/mast/AngleSensor$Units.inftFractional Lactionxl/mast/AngleSensor$Units;
+; v0 : Lactionxl/mast/AngleSensor$Units;
+.line 10
+	const/4	v0,5
+; v0 : single-length
+	new-array	v0,v0,[Lactionxl/mast/AngleSensor$Units;
+; v0 : [Lactionxl/mast/AngleSensor$Units; , v0 : [Lactionxl/mast/AngleSensor$Units;
+	sget-object	v1,actionxl/mast/AngleSensor$Units.Degrees Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	aput-object	v1,v0,v2
+; v1 : Lactionxl/mast/AngleSensor$Units; , v0 : [Lactionxl/mast/AngleSensor$Units; , v2 : single-length
+	sget-object	v1,actionxl/mast/AngleSensor$Units.Percentage Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	aput-object	v1,v0,v3
+; v1 : Lactionxl/mast/AngleSensor$Units; , v0 : [Lactionxl/mast/AngleSensor$Units; , v3 : single-length
+	sget-object	v1,actionxl/mast/AngleSensor$Units.mmM Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	aput-object	v1,v0,v4
+; v1 : Lactionxl/mast/AngleSensor$Units; , v0 : [Lactionxl/mast/AngleSensor$Units; , v4 : single-length
+	sget-object	v1,actionxl/mast/AngleSensor$Units.inftDecimal Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	aput-object	v1,v0,v5
+; v1 : Lactionxl/mast/AngleSensor$Units; , v0 : [Lactionxl/mast/AngleSensor$Units; , v5 : single-length
+	sget-object	v1,actionxl/mast/AngleSensor$Units.inftFractional Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	aput-object	v1,v0,v6
+; v1 : Lactionxl/mast/AngleSensor$Units; , v0 : [Lactionxl/mast/AngleSensor$Units; , v6 : single-length
+	sput-object	v0,actionxl/mast/AngleSensor$Units.ENUM$VALUES [Lactionxl/mast/AngleSensor$Units;
+; v0 : [Lactionxl/mast/AngleSensor$Units;
+	return-void	
+.end method
+
+.method private <init>(Ljava/lang/String;I)V
+.limit registers 3
+; this: v0 (Lactionxl/mast/AngleSensor$Units;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (I)
+.line 10
+	invoke-direct	{v0,v1,v2},java/lang/Enum/<init>	; <init>(Ljava/lang/String;I)V
+; v0 : Lactionxl/mast/AngleSensor$Units; , v1 : Ljava/lang/String; , v2 : single-length
+	return-void	
+.end method
+
+.method public static valueOf(Ljava/lang/String;)Lactionxl/mast/AngleSensor$Units;
+.limit registers 2
+; parameter[0] : v1 (Ljava/lang/String;)
+.line 1
+	const-class	v0,actionxl/mast/AngleSensor$Units
+; v0 : Ljava/lang/Class;
+	invoke-static	{v0,v1},java/lang/Enum/valueOf	; valueOf(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/Enum;
+; v0 : Ljava/lang/Class; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/Enum;
+	check-cast	v1,actionxl/mast/AngleSensor$Units
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	return-object	v1
+; v1 : Lactionxl/mast/AngleSensor$Units;
+.end method
+
+.method public static values()[Lactionxl/mast/AngleSensor$Units;
+.limit registers 4
+	const/4	v3,0
+; v3 : single-length
+.line 1
+	sget-object	v0,actionxl/mast/AngleSensor$Units.ENUM$VALUES [Lactionxl/mast/AngleSensor$Units;
+; v0 : [Lactionxl/mast/AngleSensor$Units;
+	array-length	v1,v0
+; v1 : single-length , v0 : [Lactionxl/mast/AngleSensor$Units;
+	new-array	v2,v1,[Lactionxl/mast/AngleSensor$Units;
+; v2 : [Lactionxl/mast/AngleSensor$Units; , v1 : single-length
+	invoke-static	{v0,v3,v2,v3,v1},java/lang/System/arraycopy	; arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+; v0 : [Lactionxl/mast/AngleSensor$Units; , v3 : single-length , v2 : [Lactionxl/mast/AngleSensor$Units; , v3 : single-length , v1 : single-length
+	return-object	v2
+; v2 : [Lactionxl/mast/AngleSensor$Units;
+.end method
+
+

@@ -1,0 +1,41 @@
+.class public final l
+.super java/lang/Object
+.implements i
+
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Ll;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Ll;
+	return-void	
+.end method
+
+.method public final a(Ld;Ljava/util/HashMap;Landroid/webkit/WebView;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/HashMap" , "<" , "Ljava/lang/String;" , "Ljava/lang/String;" , ">;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 5
+; this: v1 (Ll;)
+; parameter[0] : v2 (Ld;)
+; parameter[1] : v3 (Ljava/util/HashMap;)
+; parameter[2] : v4 (Landroid/webkit/WebView;)
+	instance-of	v0,v4,g
+; v0 : single-length , v4 : Landroid/webkit/WebView;
+	if-eqz	v0,lae58
+; v0 : single-length
+	check-cast	v4,g
+; v4 : Lg;
+	invoke-virtual	{v4},g/a	; a()V
+; v4 : Lg;
+lae56:
+	return-void	
+lae58:
+	const-string	v0,"Trying to close WebView that isn't an AdWebView"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	lae56
+.end method
+
+

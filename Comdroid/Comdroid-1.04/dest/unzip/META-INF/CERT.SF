@@ -1,0 +1,52 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: nySHlDEWT0w+6jIPEDncFCJ4/Co=
+
+Name: res/layout/splash.xml
+SHA1-Digest: nL/114P0WRJVK1cWvA15TqiWV2M=
+
+Name: res/layout/instructions.xml
+SHA1-Digest: vndvMIK06kLTz2X2rxa13RWnvU0=
+
+Name: assets/Instructions.html
+SHA1-Digest: L8r0Dk4MZxlInvmsOPugLRS2DbY=
+
+Name: resources.arsc
+SHA1-Digest: StPDdORIIzQBZtVdS5I6ZP2tx48=
+
+Name: classes.dex
+SHA1-Digest: gWyCK30dDarHxa3VQIkLI7fp/c0=
+
+Name: res/layout/main.xml
+SHA1-Digest: XmI9ztsqN/ZN2vzY8HG7lpBO1M4=
+
+Name: assets/Mast-warp.jpg
+SHA1-Digest: KDuvDP3DRWINWu/OpOF3bekdO84=
+
+Name: res/layout/calibrate.xml
+SHA1-Digest: er8wAFipF0YuMPsZxQwbsSQ1l3Y=
+
+Name: AndroidManifest.xml
+SHA1-Digest: alntNHlMRN7erKJ7uqAXINtS74U=
+
+Name: res/drawable-ldpi/icon.png
+SHA1-Digest: yTd+ww5Ivf1DACGUh29gDDi8JO4=
+
+Name: res/drawable-mdpi/icon.png
+SHA1-Digest: xYchRDi0oofYJ9kScWCbfs8O22c=
+
+Name: assets/Mast-rake-2.jpg
+SHA1-Digest: nIfj+wJJnPzc/b1i3pHslPvXSGQ=
+
+Name: res/drawable-mdpi/splash.png
+SHA1-Digest: 5rz4zT09dpcc1Bc+qwGIfYnNll4=
+
+Name: res/drawable-mdpi/calibrate.png
+SHA1-Digest: SSabFyPMCWZEXd5X//sDIVfWEYs=
+
+Name: res/menu/options_menu.xml
+SHA1-Digest: kOWXIFcj+C5bIY8+keCYmF8I5SE=
+
+Name: res/drawable-hdpi/icon.png
+SHA1-Digest: jMjk+tfWE3MmiFPBDkgNOeAgPR8=
+

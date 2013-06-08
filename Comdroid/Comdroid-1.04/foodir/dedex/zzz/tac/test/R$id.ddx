@@ -1,0 +1,39 @@
+.class public final zzz/tac/test/R$id
+.super java/lang/Object
+.source R.java
+
+.inner class id inner zzz/tac/test/R$id outer zzz/tac/test/R
+.field public static final OK I = 2131099663	; 0x7f06000f
+.field public static final OpenMenuDialog I = 2131099659	; 0x7f06000b
+.field public static final adView I = 2131099670	; 0x7f060016
+.field public static final android I = 2131099661	; 0x7f06000d
+.field public static final buttonExit I = 2131099658	; 0x7f06000a
+.field public static final dialogue I = 2131099660	; 0x7f06000c
+.field public static final eight I = 2131099649	; 0x7f060001
+.field public static final eseven I = 2131099652	; 0x7f060004
+.field public static final five I = 2131099648	; 0x7f060000
+.field public static final four I = 2131099651	; 0x7f060003
+.field public static final leveleasy I = 2131099666	; 0x7f060012
+.field public static final levelexpert I = 2131099668	; 0x7f060014
+.field public static final levelmedium I = 2131099664	; 0x7f060010
+.field public static final nine I = 2131099656	; 0x7f060008
+.field public static final one I = 2131099657	; 0x7f060009
+.field public static final oselected I = 2131099669	; 0x7f060015
+.field public static final player I = 2131099662	; 0x7f06000e
+.field public static final seven I = 2131099650	; 0x7f060002
+.field public static final six I = 2131099654	; 0x7f060006
+.field public static final three I = 2131099655	; 0x7f060007
+.field public static final tictactoe I = 2131099665	; 0x7f060011
+.field public static final two I = 2131099653	; 0x7f060005
+.field public static final xselected I = 2131099667	; 0x7f060013
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lzzz/tac/test/R$id;)
+.line 54
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lzzz/tac/test/R$id;
+	return-void	
+.end method
+
+

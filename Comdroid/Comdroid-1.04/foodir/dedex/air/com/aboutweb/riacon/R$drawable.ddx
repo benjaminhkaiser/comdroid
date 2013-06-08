@@ -1,0 +1,17 @@
+.class public final air/com/aboutweb/riacon/R$drawable
+.super java/lang/Object
+.source R.java
+
+.inner class drawable inner air/com/aboutweb/riacon/R$drawable outer air/com/aboutweb/riacon/R
+.field public static final icon I = 2130837504	; 0x7f020000
+.field public static final mp_warning_32x32_n I = 2130837505	; 0x7f020001
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lair/com/aboutweb/riacon/R$drawable;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lair/com/aboutweb/riacon/R$drawable;
+	return-void	
+.end method
+
+

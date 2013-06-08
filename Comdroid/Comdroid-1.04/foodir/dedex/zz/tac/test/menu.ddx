@@ -1,0 +1,1343 @@
+.class public zz/tac/test/menu
+.super android/app/Activity
+.source menu.java
+.implements android/view/View$OnClickListener
+
+.field private OK Landroid/widget/ImageButton;
+.field private android Landroid/widget/ImageButton;
+.field private leveleasy Landroid/widget/ImageButton;
+.field private levelexpert Landroid/widget/ImageButton;
+.field private levelmedium Landroid/widget/ImageButton;
+.field private oselected Landroid/widget/ImageButton;
+.field private player Landroid/widget/ImageButton;
+.field private xselected Landroid/widget/ImageButton;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lzz/tac/test/menu;)
+.line 25
+	invoke-direct	{v0},android/app/Activity/<init>	; <init>()V
+; v0 : Lzz/tac/test/menu;
+	return-void	
+.end method
+
+.method public onClick(Landroid/view/View;)V
+.limit registers 10
+; this: v8 (Lzz/tac/test/menu;)
+; parameter[0] : v9 (Landroid/view/View;)
+.var 0 is i I from l16380 to l163f0
+.var 0 is i I from l16426 to l16496
+.var 0 is i I from l164cc to l1653e
+.var 0 is i I from l16564 to l165d6
+.var 0 is i I from l165fe to l16670
+.var 0 is i I from l1672e to l16744
+.var 0 is i I from l1687e to l168dc
+	const	v7,2130837507	; 0x7f020003
+; v7 : single-length
+	const/4	v6,2
+; v6 : single-length
+	const	v5,2130837512	; 0x7f020008
+; v5 : single-length
+	const/4	v4,3
+; v4 : single-length
+	const/4	v3,1
+; v3 : single-length
+.line 139
+	invoke-virtual	{v9},android/view/View/getId	; getId()I
+; v9 : Landroid/view/View;
+	move-result	v1
+; v1 : single-length
+	packed-switch	v1,2131099661
+		ps1633a_16670	; case 2131099661
+		ps1633a_168dc	; case 2131099662
+		ps1633a_16342	; case 2131099663
+		ps1633a_163f0	; case 2131099664
+		ps1633a_16340	; case 2131099665
+		ps1633a_1634a	; case 2131099666
+		ps1633a_1653e	; case 2131099667
+		ps1633a_16496	; case 2131099668
+		ps1633a_165d6	; case 2131099669
+		default: ps1633a_default
+; v1 : single-length
+l16340:
+.line 301
+	return-void	
+ps1633a_16342:
+.line 141
+	invoke-virtual	{v8},zz/tac/test/menu/finish	; finish()V
+; v8 : Lzz/tac/test/menu;
+	goto	l16340
+ps1633a_1634a:
+.line 145
+	sput	v3,zz/tac/test/game.level I
+; v3 : I
+.line 146
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837509	; 0x7f020005
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 147
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837513	; 0x7f020009
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 148
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837510	; 0x7f020006
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 149
+	const/4	v0,1
+; v0 : single-length
+l16380:
+	if-le	v0,v4,l16394
+; v0 : single-length , v4 : single-length
+.line 157
+	sget-object	v1,zz/tac/test/game.textView Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView;
+	const-string	v2,"Touch a square to start"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v2 : Ljava/lang/String;
+	goto	l16340
+l16394:
+.line 150
+	sput	v3,zz/tac/test/game.j I
+; v3 : I
+l16398:
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	if-le	v1,v4,l163a6
+; v1 : single-length , v4 : single-length
+.line 149
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l16380
+l163a6:
+.line 151
+	sget-object	v1,zz/tac/test/game.board [[I
+; v1 : [[I
+	aget-object	v1,v1,v0
+; v1 : [I , v1 : [I , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aput	v6,v1,v2
+; v6 : single-length , v1 : [I , v2 : single-length
+.line 152
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v3},android/widget/ImageButton/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/widget/ImageButton; , v3 : I
+.line 153
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v7 : single-length
+.line 150
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	sput	v1,zz/tac/test/game.j I
+; v1 : I
+	goto	l16398
+ps1633a_163f0:
+.line 161
+	sput	v6,zz/tac/test/game.level I
+; v6 : I
+.line 162
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837508	; 0x7f020004
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 163
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837514	; 0x7f02000a
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 164
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837510	; 0x7f020006
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 165
+	const/4	v0,1
+; v0 : single-length
+l16426:
+	if-le	v0,v4,l1643a
+; v0 : single-length , v4 : single-length
+.line 173
+	sget-object	v1,zz/tac/test/game.textView Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView;
+	const-string	v2,"Touch a square to start"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v2 : Ljava/lang/String;
+	goto	l16340
+l1643a:
+.line 166
+	sput	v3,zz/tac/test/game.j I
+; v3 : I
+l1643e:
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	if-le	v1,v4,l1644c
+; v1 : single-length , v4 : single-length
+.line 165
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l16426
+l1644c:
+.line 167
+	sget-object	v1,zz/tac/test/game.board [[I
+; v1 : [[I
+	aget-object	v1,v1,v0
+; v1 : [I , v1 : [I , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aput	v6,v1,v2
+; v6 : I , v1 : [I , v2 : single-length
+.line 168
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v3},android/widget/ImageButton/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/widget/ImageButton; , v3 : I
+.line 169
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v7 : single-length
+.line 166
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	sput	v1,zz/tac/test/game.j I
+; v1 : I
+	goto	l1643e
+ps1633a_16496:
+.line 177
+	sput	v4,zz/tac/test/game.level I
+; v4 : I
+.line 178
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837508	; 0x7f020004
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 179
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837513	; 0x7f020009
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 180
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837511	; 0x7f020007
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 181
+	const/4	v0,1
+; v0 : single-length
+l164cc:
+	if-le	v0,v4,l164e2
+; v0 : single-length , v4 : I
+.line 189
+	sget-object	v1,zz/tac/test/game.textView Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView;
+	const-string	v2,"Touch a square to start"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v2 : Ljava/lang/String;
+	goto/16	l16340
+l164e2:
+.line 182
+	sput	v3,zz/tac/test/game.j I
+; v3 : I
+l164e6:
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	if-le	v1,v4,l164f4
+; v1 : single-length , v4 : I
+.line 181
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l164cc
+l164f4:
+.line 183
+	sget-object	v1,zz/tac/test/game.board [[I
+; v1 : [[I
+	aget-object	v1,v1,v0
+; v1 : [I , v1 : [I , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aput	v6,v1,v2
+; v6 : single-length , v1 : [I , v2 : single-length
+.line 184
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v3},android/widget/ImageButton/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/widget/ImageButton; , v3 : I
+.line 185
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v7 : single-length
+.line 182
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	sput	v1,zz/tac/test/game.j I
+; v1 : I
+	goto	l164e6
+ps1633a_1653e:
+.line 193
+	sput	v3,zz/tac/test/game.xoro I
+; v3 : I
+.line 194
+	iget-object	v1,v8,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837524	; 0x7f020014
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 195
+	iget-object	v1,v8,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837542	; 0x7f020026
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 196
+	const/4	v0,1
+; v0 : single-length
+l16564:
+	if-le	v0,v4,l1657a
+; v0 : single-length , v4 : single-length
+.line 204
+	sget-object	v1,zz/tac/test/game.textView Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView;
+	const-string	v2,"Touch a square to start"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v2 : Ljava/lang/String;
+	goto/16	l16340
+l1657a:
+.line 197
+	sput	v3,zz/tac/test/game.j I
+; v3 : I
+l1657e:
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	if-le	v1,v4,l1658c
+; v1 : single-length , v4 : single-length
+.line 196
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l16564
+l1658c:
+.line 198
+	sget-object	v1,zz/tac/test/game.board [[I
+; v1 : [[I
+	aget-object	v1,v1,v0
+; v1 : [I , v1 : [I , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aput	v6,v1,v2
+; v6 : single-length , v1 : [I , v2 : single-length
+.line 199
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v3},android/widget/ImageButton/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/widget/ImageButton; , v3 : I
+.line 200
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v7 : single-length
+.line 197
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	sput	v1,zz/tac/test/game.j I
+; v1 : I
+	goto	l1657e
+ps1633a_165d6:
+.line 208
+	const/4	v1,0
+; v1 : single-length
+	sput	v1,zz/tac/test/game.xoro I
+; v1 : I
+.line 209
+	iget-object	v1,v8,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837541	; 0x7f020025
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 210
+	iget-object	v1,v8,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837526	; 0x7f020016
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 211
+	const/4	v0,1
+; v0 : single-length
+l165fe:
+	if-le	v0,v4,l16614
+; v0 : single-length , v4 : single-length
+.line 219
+	sget-object	v1,zz/tac/test/game.textView Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView;
+	const-string	v2,"Touch a square to start"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v2 : Ljava/lang/String;
+	goto/16	l16340
+l16614:
+.line 212
+	sput	v3,zz/tac/test/game.j I
+; v3 : I
+l16618:
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	if-le	v1,v4,l16626
+; v1 : single-length , v4 : single-length
+.line 211
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l165fe
+l16626:
+.line 213
+	sget-object	v1,zz/tac/test/game.board [[I
+; v1 : [[I
+	aget-object	v1,v1,v0
+; v1 : [I , v1 : [I , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aput	v6,v1,v2
+; v6 : single-length , v1 : [I , v2 : single-length
+.line 214
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v3},android/widget/ImageButton/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/widget/ImageButton; , v3 : I
+.line 215
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v7 : single-length
+.line 212
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	sput	v1,zz/tac/test/game.j I
+; v1 : I
+	goto	l16618
+ps1633a_16670:
+.line 224
+	sput	v3,zz/tac/test/game.androidon I
+; v3 : I
+.line 225
+	iget-object	v1,v8,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837527	; 0x7f020017
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 226
+	iget-object	v1,v8,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837530	; 0x7f02001a
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 227
+	sget	v1,zz/tac/test/game.androidon I
+; v1 : single-length
+	if-ne	v1,v3,l16744
+; v1 : single-length , v3 : I
+.line 228
+	iget-object	v1,v8,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837527	; 0x7f020017
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 229
+	iget-object	v1,v8,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837530	; 0x7f02001a
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+l166bc:
+.line 245
+	sget	v1,zz/tac/test/game.xoro I
+; v1 : single-length
+	if-ne	v1,v3,l167c2
+; v1 : single-length , v3 : I
+	sget	v1,zz/tac/test/game.androidon I
+; v1 : single-length
+	if-ne	v1,v3,l167c2
+; v1 : single-length , v3 : I
+.line 246
+	iget-object	v1,v8,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837524	; 0x7f020014
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 247
+	iget-object	v1,v8,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837542	; 0x7f020026
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+l166ec:
+.line 254
+	sget	v1,zz/tac/test/game.level I
+; v1 : single-length
+	if-ne	v1,v3,l167f6
+; v1 : single-length , v3 : I
+	sget	v1,zz/tac/test/game.androidon I
+; v1 : single-length
+	if-ne	v1,v3,l167f6
+; v1 : single-length , v3 : I
+.line 255
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837509	; 0x7f020005
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 256
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837513	; 0x7f020009
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 257
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837510	; 0x7f020006
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+l1672c:
+.line 269
+	const/4	v0,1
+; v0 : single-length
+l1672e:
+	if-le	v0,v4,l1687e
+; v0 : single-length , v4 : single-length
+.line 277
+	sget-object	v1,zz/tac/test/game.textView Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView;
+	const-string	v2,"Touch a square to start"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v2 : Ljava/lang/String;
+	goto/16	l16340
+l16744:
+.line 232
+	sget	v1,zz/tac/test/game.androidon I
+; v1 : single-length
+	if-nez	v1,l166bc
+; v1 : single-length
+.line 233
+	iget-object	v1,v8,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837528	; 0x7f020018
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 234
+	iget-object	v1,v8,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837529	; 0x7f020019
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 235
+	iget-object	v1,v8,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837528	; 0x7f020018
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 236
+	iget-object	v1,v8,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837529	; 0x7f020019
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 237
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 238
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 239
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 240
+	iget-object	v1,v8,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 241
+	iget-object	v1,v8,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+	goto/16	l166bc
+l167c2:
+.line 249
+	sget	v1,zz/tac/test/game.xoro I
+; v1 : single-length
+	if-nez	v1,l166ec
+; v1 : single-length
+	sget	v1,zz/tac/test/game.androidon I
+; v1 : single-length
+	if-ne	v1,v3,l166ec
+; v1 : single-length , v3 : I
+.line 250
+	iget-object	v1,v8,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837541	; 0x7f020025
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 251
+	iget-object	v1,v8,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837526	; 0x7f020016
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+	goto/16	l166ec
+l167f6:
+.line 259
+	sget	v1,zz/tac/test/game.level I
+; v1 : single-length
+	if-ne	v1,v6,l1683a
+; v1 : single-length , v6 : single-length
+	sget	v1,zz/tac/test/game.androidon I
+; v1 : single-length
+	if-ne	v1,v3,l1683a
+; v1 : single-length , v3 : I
+.line 260
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837508	; 0x7f020004
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 261
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837514	; 0x7f02000a
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 262
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837510	; 0x7f020006
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+	goto/16	l1672c
+l1683a:
+.line 264
+	sget	v1,zz/tac/test/game.level I
+; v1 : single-length
+	if-ne	v1,v4,l1672c
+; v1 : single-length , v4 : single-length
+	sget	v1,zz/tac/test/game.androidon I
+; v1 : single-length
+	if-ne	v1,v3,l1672c
+; v1 : single-length , v3 : I
+.line 265
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837508	; 0x7f020004
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 266
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837513	; 0x7f020009
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 267
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837511	; 0x7f020007
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+	goto/16	l1672c
+l1687e:
+.line 270
+	sput	v3,zz/tac/test/game.j I
+; v3 : I
+l16882:
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	if-le	v1,v4,l16892
+; v1 : single-length , v4 : single-length
+.line 269
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto/16	l1672e
+l16892:
+.line 271
+	sget-object	v1,zz/tac/test/game.board [[I
+; v1 : [[I
+	aget-object	v1,v1,v0
+; v1 : [I , v1 : [I , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aput	v6,v1,v2
+; v6 : single-length , v1 : [I , v2 : single-length
+.line 272
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v3},android/widget/ImageButton/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/widget/ImageButton; , v3 : I
+.line 273
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v7 : single-length
+.line 270
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	sput	v1,zz/tac/test/game.j I
+; v1 : I
+	goto	l16882
+ps1633a_168dc:
+.line 281
+	const/4	v1,0
+; v1 : single-length
+	sput	v1,zz/tac/test/game.androidon I
+; v1 : I
+.line 282
+	iget-object	v1,v8,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837528	; 0x7f020018
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 283
+	iget-object	v1,v8,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	const	v2,2130837529	; 0x7f020019
+; v2 : single-length
+	invoke-virtual	{v1,v2},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v2 : single-length
+.line 284
+	iget-object	v1,v8,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 285
+	iget-object	v1,v8,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 286
+	iget-object	v1,v8,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 287
+	iget-object	v1,v8,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 288
+	iget-object	v1,v8,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v1 : Landroid/widget/ImageButton; , v8 : Lzz/tac/test/menu;
+	invoke-virtual	{v1,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v5 : single-length
+.line 289
+	const/4	v0,1
+; v0 : single-length
+l16936:
+	if-le	v0,v4,l1694c
+; v0 : single-length , v4 : single-length
+.line 297
+	sget-object	v1,zz/tac/test/game.textView Landroid/widget/TextView;
+; v1 : Landroid/widget/TextView;
+	const-string	v2,"Click a button to start"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/TextView; , v2 : Ljava/lang/String;
+	goto/16	l16340
+l1694c:
+.line 290
+	sput	v3,zz/tac/test/game.j I
+; v3 : I
+l16950:
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	if-le	v1,v4,l1695e
+; v1 : single-length , v4 : single-length
+.line 289
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l16936
+l1695e:
+.line 291
+	sget-object	v1,zz/tac/test/game.board [[I
+; v1 : [[I
+	aget-object	v1,v1,v0
+; v1 : [I , v1 : [I , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aput	v6,v1,v2
+; v6 : single-length , v1 : [I , v2 : single-length
+.line 292
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v3},android/widget/ImageButton/setEnabled	; setEnabled(Z)V
+; v1 : Landroid/widget/ImageButton; , v3 : I
+.line 293
+	sget-object	v1,zz/tac/test/game.buttons [[Landroid/widget/ImageButton;
+; v1 : [[Landroid/widget/ImageButton;
+	aget-object	v1,v1,v0
+; v1 : [Landroid/widget/ImageButton; , v1 : [Landroid/widget/ImageButton; , v0 : single-length
+	sget	v2,zz/tac/test/game.j I
+; v2 : single-length
+	aget-object	v1,v1,v2
+; v1 : Landroid/widget/ImageButton; , v1 : Landroid/widget/ImageButton; , v2 : single-length
+	invoke-virtual	{v1,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v1 : Landroid/widget/ImageButton; , v7 : single-length
+.line 290
+	sget	v1,zz/tac/test/game.j I
+; v1 : single-length
+	add-int/lit8	v1,v1,1
+; v1 : single-length , v1 : single-length
+	sput	v1,zz/tac/test/game.j I
+; v1 : I
+	goto	l16950
+.line 139
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 11
+; this: v9 (Lzz/tac/test/menu;)
+; parameter[0] : v10 (Landroid/os/Bundle;)
+	const	v8,2130837513	; 0x7f020009
+; v8 : single-length
+	const	v7,2130837510	; 0x7f020006
+; v7 : single-length
+	const	v6,2130837508	; 0x7f020004
+; v6 : single-length
+	const	v5,2130837512	; 0x7f020008
+; v5 : single-length
+	const/4	v4,1
+; v4 : single-length
+.line 39
+	invoke-super	{v9,v10},android/app/Activity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v9 : Lzz/tac/test/menu; , v10 : Landroid/os/Bundle;
+.line 40
+	invoke-virtual	{v9,v4},zz/tac/test/menu/requestWindowFeature	; requestWindowFeature(I)Z
+; v9 : Lzz/tac/test/menu; , v4 : single-length
+.line 41
+	const	v2,2130903041	; 0x7f030001
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/setContentView	; setContentView(I)V
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+.line 45
+	new-instance	v0,com/google/ads/AdView
+; v0 : Lcom/google/ads/AdView;
+	sget-object	v2,com/google/ads/AdSize.BANNER Lcom/google/ads/AdSize;
+; v2 : Lcom/google/ads/AdSize;
+	const-string	v3,"a14e264bd89ce8c"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v0,v9,v2,v3},com/google/ads/AdView/<init>	; <init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)V
+; v0 : Lcom/google/ads/AdView; , v9 : Lzz/tac/test/menu; , v2 : Lcom/google/ads/AdSize; , v3 : Ljava/lang/String;
+.line 48
+	const	v2,2131099670	; 0x7f060016
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/View;
+	check-cast	v1,android/widget/RelativeLayout
+; v1 : Landroid/widget/RelativeLayout;
+.line 50
+	invoke-virtual	{v1,v0},android/widget/RelativeLayout/addView	; addView(Landroid/view/View;)V
+; v1 : Landroid/widget/RelativeLayout; , v0 : Lcom/google/ads/AdView;
+.line 52
+	new-instance	v2,com/google/ads/AdRequest
+; v2 : Lcom/google/ads/AdRequest;
+	invoke-direct	{v2},com/google/ads/AdRequest/<init>	; <init>()V
+; v2 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v0,v2},com/google/ads/AdView/loadAd	; loadAd(Lcom/google/ads/AdRequest;)V
+; v0 : Lcom/google/ads/AdView; , v2 : Lcom/google/ads/AdRequest;
+.line 62
+	const	v2,2131099663	; 0x7f06000f
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.OK Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 64
+	const	v2,2131099661	; 0x7f06000d
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 65
+	const	v2,2131099662	; 0x7f06000e
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 66
+	const	v2,2131099666	; 0x7f060012
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 67
+	const	v2,2131099664	; 0x7f060010
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 68
+	const	v2,2131099668	; 0x7f060014
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 69
+	const	v2,2131099667	; 0x7f060013
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 70
+	const	v2,2131099669	; 0x7f060015
+; v2 : single-length
+	invoke-virtual	{v9,v2},zz/tac/test/menu/findViewById	; findViewById(I)Landroid/view/View;
+; v9 : Lzz/tac/test/menu; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/ImageButton
+; v2 : Landroid/widget/ImageButton;
+	iput-object	v2,v9,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 73
+	iget-object	v2,v9,zz/tac/test/menu.OK Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 74
+	iget-object	v2,v9,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 75
+	iget-object	v2,v9,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 76
+	iget-object	v2,v9,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 77
+	iget-object	v2,v9,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 78
+	iget-object	v2,v9,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 79
+	iget-object	v2,v9,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 80
+	iget-object	v2,v9,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v9},android/widget/ImageButton/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+.line 90
+	sget	v2,zz/tac/test/game.androidon I
+; v2 : single-length
+	if-ne	v2,v4,l16bde
+; v2 : single-length , v4 : single-length
+.line 91
+	iget-object	v2,v9,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837527	; 0x7f020017
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 92
+	iget-object	v2,v9,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837530	; 0x7f02001a
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+l16b78:
+.line 108
+	sget	v2,zz/tac/test/game.xoro I
+; v2 : single-length
+	if-ne	v2,v4,l16c5a
+; v2 : single-length , v4 : single-length
+	sget	v2,zz/tac/test/game.androidon I
+; v2 : single-length
+	if-ne	v2,v4,l16c5a
+; v2 : single-length , v4 : single-length
+.line 109
+	iget-object	v2,v9,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837524	; 0x7f020014
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 110
+	iget-object	v2,v9,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837542	; 0x7f020026
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+l16ba8:
+.line 117
+	sget	v2,zz/tac/test/game.level I
+; v2 : single-length
+	if-ne	v2,v4,l16c8c
+; v2 : single-length , v4 : single-length
+	sget	v2,zz/tac/test/game.androidon I
+; v2 : single-length
+	if-ne	v2,v4,l16c8c
+; v2 : single-length , v4 : single-length
+.line 118
+	iget-object	v2,v9,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837509	; 0x7f020005
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 119
+	iget-object	v2,v9,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v8},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v8 : single-length
+.line 120
+	iget-object	v2,v9,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v7 : single-length
+l16bdc:
+.line 136
+	return-void	
+l16bde:
+.line 95
+	sget	v2,zz/tac/test/game.androidon I
+; v2 : single-length
+	if-nez	v2,l16b78
+; v2 : single-length
+.line 96
+	iget-object	v2,v9,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837528	; 0x7f020018
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 97
+	iget-object	v2,v9,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837529	; 0x7f020019
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 98
+	iget-object	v2,v9,zz/tac/test/menu.android Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837528	; 0x7f020018
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 99
+	iget-object	v2,v9,zz/tac/test/menu.player Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837529	; 0x7f020019
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 100
+	iget-object	v2,v9,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v5 : single-length
+.line 101
+	iget-object	v2,v9,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v5 : single-length
+.line 102
+	iget-object	v2,v9,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v5 : single-length
+.line 103
+	iget-object	v2,v9,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v5 : single-length
+.line 104
+	iget-object	v2,v9,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v5},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v5 : single-length
+	goto	l16b78
+l16c5a:
+.line 112
+	sget	v2,zz/tac/test/game.xoro I
+; v2 : single-length
+	if-nez	v2,l16ba8
+; v2 : single-length
+	sget	v2,zz/tac/test/game.androidon I
+; v2 : single-length
+	if-ne	v2,v4,l16ba8
+; v2 : single-length , v4 : single-length
+.line 113
+	iget-object	v2,v9,zz/tac/test/menu.xselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837541	; 0x7f020025
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 114
+	iget-object	v2,v9,zz/tac/test/menu.oselected Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837526	; 0x7f020016
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+	goto	l16ba8
+l16c8c:
+.line 122
+	sget	v2,zz/tac/test/game.level I
+; v2 : single-length
+	const/4	v3,2
+; v3 : single-length
+	if-ne	v2,v3,l16cc4
+; v2 : single-length , v3 : single-length
+	sget	v2,zz/tac/test/game.androidon I
+; v2 : single-length
+	if-ne	v2,v4,l16cc4
+; v2 : single-length , v4 : single-length
+.line 123
+	iget-object	v2,v9,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v6},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v6 : single-length
+.line 124
+	iget-object	v2,v9,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837514	; 0x7f02000a
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+.line 125
+	iget-object	v2,v9,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v7},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v7 : single-length
+	goto	l16bdc
+l16cc4:
+.line 127
+	sget	v2,zz/tac/test/game.level I
+; v2 : single-length
+	const/4	v3,3
+; v3 : single-length
+	if-ne	v2,v3,l16bdc
+; v2 : single-length , v3 : single-length
+	sget	v2,zz/tac/test/game.androidon I
+; v2 : single-length
+	if-ne	v2,v4,l16bdc
+; v2 : single-length , v4 : single-length
+.line 128
+	iget-object	v2,v9,zz/tac/test/menu.leveleasy Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v6},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v6 : single-length
+.line 129
+	iget-object	v2,v9,zz/tac/test/menu.levelmedium Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	invoke-virtual	{v2,v8},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v8 : single-length
+.line 130
+	iget-object	v2,v9,zz/tac/test/menu.levelexpert Landroid/widget/ImageButton;
+; v2 : Landroid/widget/ImageButton; , v9 : Lzz/tac/test/menu;
+	const	v3,2130837511	; 0x7f020007
+; v3 : single-length
+	invoke-virtual	{v2,v3},android/widget/ImageButton/setImageResource	; setImageResource(I)V
+; v2 : Landroid/widget/ImageButton; , v3 : single-length
+	goto/16	l16bdc
+.end method
+
+

@@ -1,0 +1,16 @@
+.class public final zzz/tac/test/R$attr
+.super java/lang/Object
+.source R.java
+
+.inner class attr inner zzz/tac/test/R$attr outer zzz/tac/test/R
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lzzz/tac/test/R$attr;)
+.line 11
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lzzz/tac/test/R$attr;
+	return-void	
+.end method
+
+

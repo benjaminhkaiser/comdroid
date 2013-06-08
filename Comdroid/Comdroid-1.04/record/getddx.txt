@@ -1,0 +1,27 @@
+>>running with 16 threads and smallapps of 160 apps
+>>
+>>
+--running ddx for decoding
+real    5m19.896s
+user    6m49.688s
+sys     3m1.944s
+
+--running comdroid for analysis
+real    2m22.118s
+user    4m18.968s
+sys     0m3.332s
+
+>>running with 6 threads and smallapps of 160 apps
+>>but only 150 apps were decoded
+>>
+real    5m22.599s
+user    6m45.012s
+sys     2m56.980s
+
+>>running 1 threads and small apps of 160apps
+>>
+>>
+real    7m9.683s
+user    6m41.476s
+sys     2m59.684s
+

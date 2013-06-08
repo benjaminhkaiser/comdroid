@@ -1,0 +1,429 @@
+.class public com/google/ads/AdRequest
+.super java/lang/Object
+
+.inner class Gender inner com/google/ads/AdRequest$Gender outer com/google/ads/AdRequest
+.inner class ErrorCode inner com/google/ads/AdRequest$ErrorCode outer com/google/ads/AdRequest
+.field public static final LOGTAG Ljava/lang/String; = "Ads"
+.field public static final TEST_EMULATOR Ljava/lang/String; = null
+.field public static final VERSION Ljava/lang/String; = "4.1.1"
+.field private a Lcom/google/ads/AdRequest$Gender;
+.field private b Ljava/lang/String;
+.field private c Ljava/util/Set;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Set" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private d Ljava/util/Map;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;" }
+  .end annotation
+.end field
+.field private e Landroid/location/Location;
+.field private f Z
+.field private g Z
+.field private h Ljava/util/Set;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Set" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+
+.method static <clinit>()V
+.limit registers 1
+	const-string	v0,"emulator"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/AdUtil/a	; a(Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/AdRequest.TEST_EMULATOR Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public <init>()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/AdRequest;)
+	const/4	v1,0
+; v1 : single-length
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v2},java/lang/Object/<init>	; <init>()V
+; v2 : Lcom/google/ads/AdRequest;
+	iput-object	v0,v2,com/google/ads/AdRequest.a Lcom/google/ads/AdRequest$Gender;
+; v0 : single-length , v2 : Lcom/google/ads/AdRequest;
+	iput-object	v0,v2,com/google/ads/AdRequest.b Ljava/lang/String;
+; v0 : single-length , v2 : Lcom/google/ads/AdRequest;
+	iput-object	v0,v2,com/google/ads/AdRequest.c Ljava/util/Set;
+; v0 : single-length , v2 : Lcom/google/ads/AdRequest;
+	iput-object	v0,v2,com/google/ads/AdRequest.d Ljava/util/Map;
+; v0 : single-length , v2 : Lcom/google/ads/AdRequest;
+	iput-object	v0,v2,com/google/ads/AdRequest.e Landroid/location/Location;
+; v0 : single-length , v2 : Lcom/google/ads/AdRequest;
+	iput-boolean	v1,v2,com/google/ads/AdRequest.f Z
+; v1 : single-length , v2 : Lcom/google/ads/AdRequest;
+	iput-boolean	v1,v2,com/google/ads/AdRequest.g Z
+; v1 : single-length , v2 : Lcom/google/ads/AdRequest;
+	iput-object	v0,v2,com/google/ads/AdRequest.h Ljava/util/Set;
+; v0 : single-length , v2 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+.method public addExtra(Ljava/lang/String;Ljava/lang/Object;)V
+.limit registers 4
+; this: v1 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/Object;)
+	iget-object	v0,v1,com/google/ads/AdRequest.d Ljava/util/Map;
+; v0 : Ljava/util/Map; , v1 : Lcom/google/ads/AdRequest;
+	if-nez	v0,l6caa
+; v0 : Ljava/util/Map;
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	iput-object	v0,v1,com/google/ads/AdRequest.d Ljava/util/Map;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/google/ads/AdRequest;
+l6caa:
+	iget-object	v0,v1,com/google/ads/AdRequest.d Ljava/util/Map;
+; v0 : Ljava/util/Map; , v1 : Lcom/google/ads/AdRequest;
+	invoke-interface	{v0,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Object;
+	return-void	
+.end method
+
+.method public addKeyword(Ljava/lang/String;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v2 (Ljava/lang/String;)
+	iget-object	v0,v1,com/google/ads/AdRequest.c Ljava/util/Set;
+; v0 : Ljava/util/Set; , v1 : Lcom/google/ads/AdRequest;
+	if-nez	v0,l6cde
+; v0 : Ljava/util/Set;
+	new-instance	v0,java/util/HashSet
+; v0 : Ljava/util/HashSet;
+	invoke-direct	{v0},java/util/HashSet/<init>	; <init>()V
+; v0 : Ljava/util/HashSet;
+	iput-object	v0,v1,com/google/ads/AdRequest.c Ljava/util/Set;
+; v0 : Ljava/util/HashSet; , v1 : Lcom/google/ads/AdRequest;
+l6cde:
+	iget-object	v0,v1,com/google/ads/AdRequest.c Ljava/util/Set;
+; v0 : Ljava/util/Set; , v1 : Lcom/google/ads/AdRequest;
+	invoke-interface	{v0,v2},java/util/Set/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/Set; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public addTestDevice(Ljava/lang/String;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v2 (Ljava/lang/String;)
+	iget-object	v0,v1,com/google/ads/AdRequest.h Ljava/util/Set;
+; v0 : Ljava/util/Set; , v1 : Lcom/google/ads/AdRequest;
+	if-nez	v0,l6d12
+; v0 : Ljava/util/Set;
+	new-instance	v0,java/util/HashSet
+; v0 : Ljava/util/HashSet;
+	invoke-direct	{v0},java/util/HashSet/<init>	; <init>()V
+; v0 : Ljava/util/HashSet;
+	iput-object	v0,v1,com/google/ads/AdRequest.h Ljava/util/Set;
+; v0 : Ljava/util/HashSet; , v1 : Lcom/google/ads/AdRequest;
+l6d12:
+	iget-object	v0,v1,com/google/ads/AdRequest.h Ljava/util/Set;
+; v0 : Ljava/util/Set; , v1 : Lcom/google/ads/AdRequest;
+	invoke-interface	{v0,v2},java/util/Set/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/Set; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public getRequestMap(Landroid/content/Context;)Ljava/util/Map;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Landroid/content/Context;" , ")" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;" }
+.end annotation
+.limit registers 7
+; this: v5 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v6 (Landroid/content/Context;)
+	const/4	v4,1
+; v4 : single-length
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	iget-object	v1,v5,com/google/ads/AdRequest.c Ljava/util/Set;
+; v1 : Ljava/util/Set; , v5 : Lcom/google/ads/AdRequest;
+	if-eqz	v1,l6d52
+; v1 : Ljava/util/Set;
+	const-string	v1,"kw"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v5,com/google/ads/AdRequest.c Ljava/util/Set;
+; v2 : Ljava/util/Set; , v5 : Lcom/google/ads/AdRequest;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ljava/util/Set;
+l6d52:
+	iget-object	v1,v5,com/google/ads/AdRequest.a Lcom/google/ads/AdRequest$Gender;
+; v1 : Lcom/google/ads/AdRequest$Gender; , v5 : Lcom/google/ads/AdRequest;
+	if-eqz	v1,l6d70
+; v1 : Lcom/google/ads/AdRequest$Gender;
+	const-string	v1,"cust_gender"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v5,com/google/ads/AdRequest.a Lcom/google/ads/AdRequest$Gender;
+; v2 : Lcom/google/ads/AdRequest$Gender; , v5 : Lcom/google/ads/AdRequest;
+	invoke-virtual	{v2},com/google/ads/AdRequest$Gender/toString	; toString()Ljava/lang/String;
+; v2 : Lcom/google/ads/AdRequest$Gender;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+l6d70:
+	iget-object	v1,v5,com/google/ads/AdRequest.b Ljava/lang/String;
+; v1 : Ljava/lang/String; , v5 : Lcom/google/ads/AdRequest;
+	if-eqz	v1,l6d86
+; v1 : Ljava/lang/String;
+	const-string	v1,"cust_age"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v5,com/google/ads/AdRequest.b Ljava/lang/String;
+; v2 : Ljava/lang/String; , v5 : Lcom/google/ads/AdRequest;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+l6d86:
+	iget-object	v1,v5,com/google/ads/AdRequest.e Landroid/location/Location;
+; v1 : Landroid/location/Location; , v5 : Lcom/google/ads/AdRequest;
+	if-eqz	v1,l6da4
+; v1 : Landroid/location/Location;
+	const-string	v1,"uule"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v5,com/google/ads/AdRequest.e Landroid/location/Location;
+; v2 : Landroid/location/Location; , v5 : Lcom/google/ads/AdRequest;
+	invoke-static	{v2},com/google/ads/util/AdUtil/a	; a(Landroid/location/Location;)Ljava/lang/String;
+; v2 : Landroid/location/Location;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+l6da4:
+	iget-boolean	v1,v5,com/google/ads/AdRequest.f Z
+; v1 : single-length , v5 : Lcom/google/ads/AdRequest;
+	if-eqz	v1,l6dbe
+; v1 : single-length
+	const-string	v1,"testing"
+; v1 : Ljava/lang/String;
+	invoke-static	{v4},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v4 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Integer;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ljava/lang/Integer;
+l6dbe:
+	invoke-virtual	{v5,v6},com/google/ads/AdRequest/isTestDevice	; isTestDevice(Landroid/content/Context;)Z
+; v5 : Lcom/google/ads/AdRequest; , v6 : Landroid/content/Context;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l6df0
+; v1 : single-length
+	const-string	v1,"adtest"
+; v1 : Ljava/lang/String;
+	const-string	v2,"on"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+l6dd8:
+	iget-object	v1,v5,com/google/ads/AdRequest.d Ljava/util/Map;
+; v1 : Ljava/util/Map; , v5 : Lcom/google/ads/AdRequest;
+	if-eqz	v1,l6dee
+; v1 : Ljava/util/Map;
+	const-string	v1,"extras"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v5,com/google/ads/AdRequest.d Ljava/util/Map;
+; v2 : Ljava/util/Map; , v5 : Lcom/google/ads/AdRequest;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ljava/util/Map;
+l6dee:
+	return-object	v0
+; v0 : Ljava/util/HashMap;
+l6df0:
+	iget-boolean	v1,v5,com/google/ads/AdRequest.g Z
+; v1 : single-length , v5 : Lcom/google/ads/AdRequest;
+	if-nez	v1,l6dd8
+; v1 : single-length
+	invoke-static	{},com/google/ads/util/AdUtil/c	; c()Z
+; 
+	nop	
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l6e46
+; v1 : single-length
+	const-string	v1,"AdRequest.TEST_EMULATOR"
+; v1 : Ljava/lang/String;
+l6e08:
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"To get test ads on this device, call adRequest.addTestDevice("
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,");"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/google/ads/util/a/c	; c(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+	iput-boolean	v4,v5,com/google/ads/AdRequest.g Z
+; v4 : single-length , v5 : Lcom/google/ads/AdRequest;
+	goto	l6dd8
+l6e46:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"""
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-static	{v6},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;)Ljava/lang/String;
+; v6 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"""
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	goto	l6e08
+.end method
+
+.method public isTestDevice(Landroid/content/Context;)Z
+.limit registers 5
+; this: v3 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v4 (Landroid/content/Context;)
+	const/4	v2,0
+; v2 : single-length
+	iget-object	v0,v3,com/google/ads/AdRequest.h Ljava/util/Set;
+; v0 : Ljava/util/Set; , v3 : Lcom/google/ads/AdRequest;
+	if-eqz	v0,l6ec2
+; v0 : Ljava/util/Set;
+	invoke-static	{v4},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;)Ljava/lang/String;
+; v4 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-nez	v0,l6eae
+; v0 : Ljava/lang/String;
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+l6eac:
+	return	v0
+; v0 : single-length
+l6eae:
+	iget-object	v1,v3,com/google/ads/AdRequest.h Ljava/util/Set;
+; v1 : Ljava/util/Set; , v3 : Lcom/google/ads/AdRequest;
+	invoke-interface	{v1,v0},java/util/Set/contains	; contains(Ljava/lang/Object;)Z
+; v1 : Ljava/util/Set; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l6ec2
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+	goto	l6eac
+l6ec2:
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+	goto	l6eac
+.end method
+
+.method public setBirthday(Ljava/lang/String;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v1 (Ljava/lang/String;)
+	iput-object	v1,v0,com/google/ads/AdRequest.b Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+.method public setExtras(Ljava/util/Map;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)V" }
+.end annotation
+.limit registers 2
+; this: v0 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v1 (Ljava/util/Map;)
+	iput-object	v1,v0,com/google/ads/AdRequest.d Ljava/util/Map;
+; v1 : Ljava/util/Map; , v0 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+.method public setGender(Lcom/google/ads/AdRequest$Gender;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v1 (Lcom/google/ads/AdRequest$Gender;)
+	iput-object	v1,v0,com/google/ads/AdRequest.a Lcom/google/ads/AdRequest$Gender;
+; v1 : Lcom/google/ads/AdRequest$Gender; , v0 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+.method public setKeywords(Ljava/util/Set;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/String;" , ">;)V" }
+.end annotation
+.limit registers 2
+; this: v0 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v1 (Ljava/util/Set;)
+	iput-object	v1,v0,com/google/ads/AdRequest.c Ljava/util/Set;
+; v1 : Ljava/util/Set; , v0 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+.method public setLocation(Landroid/location/Location;)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v1 (Landroid/location/Location;)
+	iput-object	v1,v0,com/google/ads/AdRequest.e Landroid/location/Location;
+; v1 : Landroid/location/Location; , v0 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+.method public setTestDevices(Ljava/util/Set;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/String;" , ">;)V" }
+.end annotation
+.limit registers 2
+; this: v0 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v1 (Ljava/util/Set;)
+	iput-object	v1,v0,com/google/ads/AdRequest.h Ljava/util/Set;
+; v1 : Ljava/util/Set; , v0 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+.method public setTesting(Z)V
+.limit registers 2
+; this: v0 (Lcom/google/ads/AdRequest;)
+; parameter[0] : v1 (Z)
+	iput-boolean	v1,v0,com/google/ads/AdRequest.f Z
+; v1 : single-length , v0 : Lcom/google/ads/AdRequest;
+	return-void	
+.end method
+
+

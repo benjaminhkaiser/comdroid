@@ -1,0 +1,16 @@
+.class public final com/google/ads/R
+.super java/lang/Object
+
+.inner class layout inner com/google/ads/R$layout outer com/google/ads/R
+.inner class id inner com/google/ads/R$id outer com/google/ads/R
+.inner class attr inner com/google/ads/R$attr outer com/google/ads/R
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/google/ads/R;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/R;
+	return-void	
+.end method
+
+

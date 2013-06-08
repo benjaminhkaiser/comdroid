@@ -1,0 +1,30 @@
+.class public actionxl/mast/MastApp
+.super android/app/Application
+.source MastApp.java
+
+.field public angleSensor Lactionxl/mast/AngleSensor;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lactionxl/mast/MastApp;)
+.line 5
+	invoke-direct	{v0},android/app/Application/<init>	; <init>()V
+; v0 : Lactionxl/mast/MastApp;
+	return-void	
+.end method
+
+.method public onCreate()V
+.limit registers 2
+; this: v1 (Lactionxl/mast/MastApp;)
+.line 14
+	new-instance	v0,actionxl/mast/AngleSensor
+; v0 : Lactionxl/mast/AngleSensor;
+	invoke-direct	{v0},actionxl/mast/AngleSensor/<init>	; <init>()V
+; v0 : Lactionxl/mast/AngleSensor;
+	iput-object	v0,v1,actionxl/mast/MastApp.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v1 : Lactionxl/mast/MastApp;
+.line 15
+	return-void	
+.end method
+
+

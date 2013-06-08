@@ -1,0 +1,74 @@
+.class public actionxl/mast/Calibrate
+.super android/app/Activity
+.source Calibrate.java
+
+.field angleSensor Lactionxl/mast/AngleSensor;
+.field calibrateView Lactionxl/mast/CalibrateView;
+.field current Landroid/widget/TextView;
+.field preview Lactionxl/mast/Preview;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lactionxl/mast/Calibrate;)
+.line 8
+	invoke-direct	{v0},android/app/Activity/<init>	; <init>()V
+; v0 : Lactionxl/mast/Calibrate;
+	return-void	
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 3
+; this: v1 (Lactionxl/mast/Calibrate;)
+; parameter[0] : v2 (Landroid/os/Bundle;)
+.line 16
+	invoke-super	{v1,v2},android/app/Activity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v1 : Lactionxl/mast/Calibrate; , v2 : Landroid/os/Bundle;
+.line 17
+	const/4	v0,1
+; v0 : single-length
+	invoke-virtual	{v1,v0},actionxl/mast/Calibrate/requestWindowFeature	; requestWindowFeature(I)Z
+; v1 : Lactionxl/mast/Calibrate; , v0 : single-length
+.line 18
+	const/high16	v0,32515
+; v0 : single-length
+	invoke-virtual	{v1,v0},actionxl/mast/Calibrate/setContentView	; setContentView(I)V
+; v1 : Lactionxl/mast/Calibrate; , v0 : single-length
+.line 19
+	invoke-virtual	{v1},actionxl/mast/Calibrate/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v1 : Lactionxl/mast/Calibrate;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	check-cast	v0,actionxl/mast/MastApp
+; v0 : Lactionxl/mast/MastApp;
+	iget-object	v0,v0,actionxl/mast/MastApp.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v0 : Lactionxl/mast/AngleSensor;
+	iput-object	v0,v1,actionxl/mast/Calibrate.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v1 : Lactionxl/mast/Calibrate;
+.line 23
+	return-void	
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.limit registers 4
+; this: v2 (Lactionxl/mast/Calibrate;)
+; parameter[0] : v3 (Landroid/view/MotionEvent;)
+.line 28
+	iget-object	v0,v2,actionxl/mast/Calibrate.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v2 : Lactionxl/mast/Calibrate;
+	iget-object	v1,v2,actionxl/mast/Calibrate.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v2 : Lactionxl/mast/Calibrate;
+	iget	v1,v1,actionxl/mast/AngleSensor.slope F
+; v1 : single-length , v1 : single-length
+	iput	v1,v0,actionxl/mast/AngleSensor.inclineCal F
+; v1 : single-length , v0 : Lactionxl/mast/AngleSensor;
+.line 29
+	invoke-virtual	{v2},actionxl/mast/Calibrate/finish	; finish()V
+; v2 : Lactionxl/mast/Calibrate;
+.line 30
+	const/4	v0,1
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

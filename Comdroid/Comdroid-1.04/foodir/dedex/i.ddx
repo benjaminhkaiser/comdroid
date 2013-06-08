@@ -1,0 +1,11 @@
+.interface public abstract i
+.super java/lang/Object
+
+
+.method public abstract a(Ld;Ljava/util/HashMap;Landroid/webkit/WebView;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/HashMap" , "<" , "Ljava/lang/String;" , "Ljava/lang/String;" , ">;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.end method
+
+

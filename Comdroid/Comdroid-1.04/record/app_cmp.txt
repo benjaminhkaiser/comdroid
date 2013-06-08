@@ -1,0 +1,92 @@
+##test case 1: run with decompressing and dedexing followed by analysis
+time ./runComDroid.sh ~/undergradproj/miniapps/zzyy.puzzle.jigsaw.app17.ice.hockey-10.apk dest
+
+real	0m11.141s
+user	0m5.876s
+sys	0m1.204s
+
+##test case 2: run only analysis
+time ./runComDroid.sh dest
+
+real	0m3.880s
+user	0m2.052s
+sys	0m0.084s
+-------------------------------------------------------------------------------------------
+##test case 1: run with decompressing and dedexing followed by analysis
+./runComDroid.sh ~/undergradproj/miniapps/zzz.tac.test-7.apk dest
+
+real	0m4.718s
+user	0m2.656s
+sys	0m0.592s
+
+##test case 2: run only analysis
+time ./runComDroid.sh dest
+
+real	0m0.983s
+user	0m0.720s
+sys	0m0.040s
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+1 thread test in middle app
+real     12m 21.550s
+user     4m38.437s
+sys      0m56.936s
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+4 threads test in middle app
+real	7m42.065s
+user	4m44.750s
+sys	1m2.248s
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+6 threads running
+real	3m5.817s
+user	4m44.534s
+sys	0m56.408s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+8 threads running
+real	2m24.167s
+user	4m49.142s
+sys	0m58.104s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+12 threads running
+real	1m56.642s
+user	5m3.219s
+sys	1m0.932s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+16 threads running
+real	1m30.344s
+user	5m21.460s
+sys	1m3.328s
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+##################################################################################
+##################################################################################
+##################################################################################
+Following is test result for midapps with air.com* and apps for a*
+
+for midapps.........3041
+real	142m46.615s
+user	99m29.113s
+sys	130m8.196s
+
+
+#####################################################################
+###############Modified on June 5th
+###############
+###############For small apps, (renamed from midapps) containing around 220 apps
+###############
+> 16 threads
+real  6m26.063s
+user  22m10.075s
+sys   3m46.966s
+

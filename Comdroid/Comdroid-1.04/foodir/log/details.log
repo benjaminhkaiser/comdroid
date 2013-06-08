@@ -1,0 +1,205 @@
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+app
+
+Examining app manifest...
+******************************************************************************************
+Uses permission android.permission.INTERNET
+Component: .AppEntry activity
+
+Examining app DDX ...
+******************************************************************************************
+Intent: air/com/aboutweb/riacon/AppEntry/BroadcastIntent(Ljava/lang/String;Ljava/lang/String;)@11
+Sink: air/com/aboutweb/riacon/AppEntry/BroadcastIntent(Ljava/lang/String;Ljava/lang/String;)@25
+Intent: air/com/aboutweb/riacon/AppEntry/launchAIRService()@12
+Sink: air/com/aboutweb/riacon/AppEntry/launchAIRService()@29
+Method: air/com/aboutweb/riacon/AppEntry/onActivityResult(IILandroid/content/Intent;)@0
+Method: air/com/aboutweb/riacon/AppEntry/onNewIntent(Landroid/content/Intent;)@0
+
+Details...
+******************************************************************************************
+
+Processing com/adobe/air/ResourceIdMap/<init>(Ljava/lang/Class;)...
+******************************************************************************************
+***End processing com/adobe/air/ResourceIdMap/<init>(Ljava/lang/Class;)
+
+Processing com/adobe/air/ResourceIdMap/<init>(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/adobe/air/ResourceIdMap/<init>(Ljava/lang/String;)
+
+Processing air/com/aboutweb/riacon/R$attr/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/R$attr/<init>()
+
+Processing air/com/aboutweb/riacon/AppEntry$3/<init>(Lair/com/aboutweb/riacon/AppEntry;)...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry$3/<init>(Lair/com/aboutweb/riacon/AppEntry;)
+
+Processing air/com/aboutweb/riacon/AppEntry/<clinit>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry/<clinit>()
+
+Processing air/com/aboutweb/riacon/AppEntry/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry/<init>()
+
+Processing air/com/aboutweb/riacon/AppEntry$4/<init>(Lair/com/aboutweb/riacon/AppEntry;)...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry$4/<init>(Lair/com/aboutweb/riacon/AppEntry;)
+
+Processing air/com/aboutweb/riacon/R/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/R/<init>()
+
+Processing air/com/aboutweb/riacon/AppEntry$1/<init>(Lair/com/aboutweb/riacon/AppEntry;)...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry$1/<init>(Lair/com/aboutweb/riacon/AppEntry;)
+
+Processing air/com/aboutweb/riacon/R$raw/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/R$raw/<init>()
+
+Processing air/com/aboutweb/riacon/R$string/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/R$string/<init>()
+
+Processing air/com/aboutweb/riacon/AppEntry$2/<init>(Lair/com/aboutweb/riacon/AppEntry;)...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry$2/<init>(Lair/com/aboutweb/riacon/AppEntry;)
+
+Processing air/com/aboutweb/riacon/GetVersionCode/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/GetVersionCode/<init>()
+
+Processing air/com/aboutweb/riacon/R$style/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/R$style/<init>()
+
+Processing air/com/aboutweb/riacon/R$drawable/<init>()...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/R$drawable/<init>()
+
+Processing air/com/aboutweb/riacon/AppEntry/BroadcastIntent(Ljava/lang/String;Ljava/lang/String;)...
+******************************************************************************************
+Set action: could not find action
+Found Activity Sink, src_line:69, ddx_line:25
+***End processing air/com/aboutweb/riacon/AppEntry/BroadcastIntent(Ljava/lang/String;Ljava/lang/String;)
+
+Processing air/com/aboutweb/riacon/AppEntry/launchAIRService()...
+******************************************************************************************
+Found init, src_line:271, ddx_line:12
+Found Service Sink, src_line:306, ddx_line:29
+***End processing air/com/aboutweb/riacon/AppEntry/launchAIRService()
+
+Processing air/com/aboutweb/riacon/AppEntry/onActivityResult(IILandroid/content/Intent;)...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry/onActivityResult(IILandroid/content/Intent;)
+
+Processing air/com/aboutweb/riacon/AppEntry/onNewIntent(Landroid/content/Intent;)...
+******************************************************************************************
+***End processing air/com/aboutweb/riacon/AppEntry/onNewIntent(Landroid/content/Intent;)
+
+Second pass processing...
+******************************************************************************************
+
+Processing air/com/aboutweb/riacon/AppEntry/launchMarketPlaceForAIR()...
+******************************************************************************************
+Found Activity Sink, src_line:69, ddx_line:25
+***End processing air/com/aboutweb/riacon/AppEntry/launchMarketPlaceForAIR()
+
+Finding methods using intents
+******************************************************************************************
+
+Dynamic receiver resolving...
+******************************************************************************************
+
+Find component vulnerabilities
+******************************************************************************************
+!!!Component implementation for .AppEntry cannot be found
+
+Find intent vulnerabilities
+******************************************************************************************
+Possible Activity Hijacking: air/com/aboutweb/riacon/AppEntry/BroadcastIntent(Ljava/lang/String;Ljava/lang/String;)@25, Source Line: 69, hasExtras=false, hasRead=false, hasWrite=false
+
+Print intent summary
+******************************************************************************************
+**************************
+air/com/aboutweb/riacon/AppEntry/BroadcastIntent(Ljava/lang/String;Ljava/lang/String;)@11
+invoke-static	{v4,v0},android/content/Intent/parseUri	; parseUri(Ljava/lang/String;I)Landroid/content/Intent;
+Explicit: false
+Destination Type: activity
+Done: true
+**************************
+air/com/aboutweb/riacon/AppEntry/launchAIRService()@12
+invoke-direct	{v1,v2},android/content/Intent/<init>	; <init>(Ljava/lang/String;)V
+Explicit: true
+Explicit Destination: com.adobe.air.AIRService
+Destination Type: service
+Done: true
+
+Print component summary
+******************************************************************************************
+Activities: 1
+Services: 0
+Receivers: 0
+DynamicReceivers: 0
+Activity-aliases: 0
+Providers: 0
+Total: 1
+Public: 1
+
+Print intent and sink summary
+******************************************************************************************
+Intents: 4
+air/com/aboutweb/riacon/AppEntry/BroadcastIntent(Ljava/lang/String;Ljava/lang/String;)@11
+air/com/aboutweb/riacon/AppEntry/launchAIRService()@12
+air/com/aboutweb/riacon/AppEntry/onActivityResult(IILandroid/content/Intent;)@0
+air/com/aboutweb/riacon/AppEntry/onNewIntent(Landroid/content/Intent;)@0
+Method: 2
+Other: 1
+Typical: 1
+
+Found sink: 2 of 4
+Explicit: 1 of 2
+Non-pending Explicit Intents: 1 of 2
+
+Pending Sinks: 0
+Other Sinks: 2 of 2
+
+Activity Sinks: 1
+Service Sinks: 1
+Broadcast Sinks: 0
+	sendBroadcast Sinks: 0
+	sendOrderedBroadcast Sinks: 0
+	sendStickyBroadcast Sinks: 0
+	sendStickyOrderedBroadcast Sinks: 0
+
+Print exposure summary
+******************************************************************************************
+Exposure to Components
+Malicious Activity Start: 0 of 1
+Malicious Service Start: 0 of 0
+Malicious Data Injection: 0 of 0
+Protected Activity Vuln: 0
+Protected Service Vuln: 0
+Protected Receiver Vuln: 0
+
+Exposure to Intents
+Activity Hijacking: 1 of 1
+Service Hijacking: 0 of 1
+Broadcast Exposure: 0 of 0
+	Intent Sniffing: 0
+	Intent Theft: 0
+	Result Modification: 0
+
+Explicit Intents to Public Components
+  To Activity: 0
+  To Service: 0
+  To Receiver: 0
+
+Found check perms
+******************************************************************************************
+Nothing
+
+Weird errors
+******************************************************************************************
+!!!Component implementation for .AppEntry cannot be found

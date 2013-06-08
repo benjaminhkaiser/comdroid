@@ -1,0 +1,204 @@
+.class public actionxl/mast/CalibrateView
+.super android/view/View
+.source CalibrateView.java
+
+.field angleSensor Lactionxl/mast/AngleSensor;
+.field linePaint Landroid/graphics/Paint;
+.field pointPaint Landroid/graphics/Paint;
+.field textPaint Landroid/graphics/Paint;
+.field x F
+.field y F
+
+.method public <init>(Landroid/content/Context;Lactionxl/mast/AngleSensor;)V
+.limit registers 6
+; this: v3 (Lactionxl/mast/CalibrateView;)
+; parameter[0] : v4 (Landroid/content/Context;)
+; parameter[1] : v5 (Lactionxl/mast/AngleSensor;)
+	const/high16	v0,17302
+; v0 : single-length
+.line 16
+	invoke-direct	{v3,v4},android/view/View/<init>	; <init>(Landroid/content/Context;)V
+; v3 : Lactionxl/mast/CalibrateView; , v4 : Landroid/content/Context;
+.line 18
+	iput	v0,v3,actionxl/mast/CalibrateView.x F
+; v0 : single-length , v3 : Lactionxl/mast/CalibrateView;
+.line 19
+	iput	v0,v3,actionxl/mast/CalibrateView.y F
+; v0 : single-length , v3 : Lactionxl/mast/CalibrateView;
+.line 21
+	new-instance	v0,android/graphics/Paint
+; v0 : Landroid/graphics/Paint;
+	invoke-direct	{v0},android/graphics/Paint/<init>	; <init>()V
+; v0 : Landroid/graphics/Paint;
+	iput-object	v0,v3,actionxl/mast/CalibrateView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v3 : Lactionxl/mast/CalibrateView;
+.line 22
+	iget-object	v0,v3,actionxl/mast/CalibrateView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v3 : Lactionxl/mast/CalibrateView;
+	const/high16	v1,65280
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setColor	; setColor(I)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 23
+	iget-object	v0,v3,actionxl/mast/CalibrateView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v3 : Lactionxl/mast/CalibrateView;
+	const/high16	v1,16800
+; v1 : single-length
+	invoke-virtual	{v3},actionxl/mast/CalibrateView/getContext	; getContext()Landroid/content/Context;
+; v3 : Lactionxl/mast/CalibrateView;
+	move-result-object	v2
+; v2 : Landroid/content/Context;
+	invoke-virtual	{v2},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v2 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Landroid/content/res/Resources;
+	invoke-virtual	{v2},android/content/res/Resources/getDisplayMetrics	; getDisplayMetrics()Landroid/util/DisplayMetrics;
+; v2 : Landroid/content/res/Resources;
+	move-result-object	v2
+; v2 : Landroid/util/DisplayMetrics;
+	iget	v2,v2,android/util/DisplayMetrics.density F
+; v2 : single-length , v2 : single-length
+	mul-float/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setTextSize	; setTextSize(F)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 25
+	iput-object	v5,v3,actionxl/mast/CalibrateView.angleSensor Lactionxl/mast/AngleSensor;
+; v5 : Lactionxl/mast/AngleSensor; , v3 : Lactionxl/mast/CalibrateView;
+.line 26
+	return-void	
+.end method
+
+.method protected onDraw(Landroid/graphics/Canvas;)V
+.limit registers 6
+; this: v4 (Lactionxl/mast/CalibrateView;)
+; parameter[0] : v5 (Landroid/graphics/Canvas;)
+	const/high16	v3,16544
+; v3 : single-length
+.line 39
+	invoke-super	{v4,v5},android/view/View/onDraw	; onDraw(Landroid/graphics/Canvas;)V
+; v4 : Lactionxl/mast/CalibrateView; , v5 : Landroid/graphics/Canvas;
+.line 41
+	const/4	v0,0
+; v0 : single-length
+	sget-object	v1,android/graphics/PorterDuff$Mode.SRC Landroid/graphics/PorterDuff$Mode;
+; v1 : Landroid/graphics/PorterDuff$Mode;
+	invoke-virtual	{v5,v0,v1},android/graphics/Canvas/drawColor	; drawColor(ILandroid/graphics/PorterDuff$Mode;)V
+; v5 : Landroid/graphics/Canvas; , v0 : single-length , v1 : Landroid/graphics/PorterDuff$Mode;
+.line 42
+	iget-object	v0,v4,actionxl/mast/CalibrateView.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v4 : Lactionxl/mast/CalibrateView;
+	iget-boolean	v0,v0,actionxl/mast/AngleSensor.vertical Z
+; v0 : single-length , v0 : single-length
+	if-eqz	v0,l3512
+; v0 : single-length
+.line 43
+	iget	v0,v4,actionxl/mast/CalibrateView.x F
+; v0 : single-length , v4 : Lactionxl/mast/CalibrateView;
+	iget	v1,v4,actionxl/mast/CalibrateView.y F
+; v1 : single-length , v4 : Lactionxl/mast/CalibrateView;
+	invoke-virtual	{v5,v0,v1},android/graphics/Canvas/translate	; translate(FF)V
+; v5 : Landroid/graphics/Canvas; , v0 : single-length , v1 : single-length
+.line 44
+	const/high16	v0,49844
+; v0 : single-length
+	invoke-virtual	{v5,v0},android/graphics/Canvas/rotate	; rotate(F)V
+; v5 : Landroid/graphics/Canvas; , v0 : single-length
+.line 45
+	iget-object	v0,v4,actionxl/mast/CalibrateView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/CalibrateView;
+	sget-object	v1,android/graphics/Paint$Style.FILL Landroid/graphics/Paint$Style;
+; v1 : Landroid/graphics/Paint$Style;
+	invoke-virtual	{v0,v1},android/graphics/Paint/setStyle	; setStyle(Landroid/graphics/Paint$Style;)V
+; v0 : Landroid/graphics/Paint; , v1 : Landroid/graphics/Paint$Style;
+.line 46
+	iget-object	v0,v4,actionxl/mast/CalibrateView.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v4 : Lactionxl/mast/CalibrateView;
+	iget-object	v0,v0,actionxl/mast/AngleSensor.angleString Ljava/lang/String;
+; v0 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	const/high16	v1,49312
+; v1 : single-length
+	iget-object	v2,v4,actionxl/mast/CalibrateView.textPaint Landroid/graphics/Paint;
+; v2 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/CalibrateView;
+	invoke-virtual	{v5,v0,v3,v1,v2},android/graphics/Canvas/drawText	; drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+; v5 : Landroid/graphics/Canvas; , v0 : Ljava/lang/String; , v3 : single-length , v1 : single-length , v2 : Landroid/graphics/Paint;
+.line 47
+	iget	v0,v4,actionxl/mast/CalibrateView.x F
+; v0 : single-length , v4 : Lactionxl/mast/CalibrateView;
+	neg-float	v0,v0
+; v0 : single-length , v0 : single-length
+	iget	v1,v4,actionxl/mast/CalibrateView.y F
+; v1 : single-length , v4 : Lactionxl/mast/CalibrateView;
+	neg-float	v1,v1
+; v1 : single-length , v1 : single-length
+	invoke-virtual	{v5,v0,v1},android/graphics/Canvas/translate	; translate(FF)V
+; v5 : Landroid/graphics/Canvas; , v0 : single-length , v1 : single-length
+.line 49
+	invoke-virtual	{v5},android/graphics/Canvas/restore	; restore()V
+; v5 : Landroid/graphics/Canvas;
+l350a:
+.line 54
+	invoke-virtual	{v4},actionxl/mast/CalibrateView/invalidate	; invalidate()V
+; v4 : Lactionxl/mast/CalibrateView;
+.line 55
+	return-void	
+l3512:
+.line 51
+	iget-object	v0,v4,actionxl/mast/CalibrateView.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v4 : Lactionxl/mast/CalibrateView;
+	iget-object	v0,v0,actionxl/mast/AngleSensor.angleString Ljava/lang/String;
+; v0 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	iget	v1,v4,actionxl/mast/CalibrateView.x F
+; v1 : single-length , v4 : Lactionxl/mast/CalibrateView;
+	add-float/2addr	v1,v3
+; v1 : single-length , v3 : single-length
+	iget	v2,v4,actionxl/mast/CalibrateView.y F
+; v2 : single-length , v4 : Lactionxl/mast/CalibrateView;
+	sub-float/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	iget-object	v3,v4,actionxl/mast/CalibrateView.textPaint Landroid/graphics/Paint;
+; v3 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/CalibrateView;
+	invoke-virtual	{v5,v0,v1,v2,v3},android/graphics/Canvas/drawText	; drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+; v5 : Landroid/graphics/Canvas; , v0 : Ljava/lang/String; , v1 : single-length , v2 : single-length , v3 : Landroid/graphics/Paint;
+	goto	l350a
+.end method
+
+.method protected onSizeChanged(IIII)V
+.limit registers 7
+; this: v2 (Lactionxl/mast/CalibrateView;)
+; parameter[0] : v3 (I)
+; parameter[1] : v4 (I)
+; parameter[2] : v5 (I)
+; parameter[3] : v6 (I)
+	const/high16	v1,16384
+; v1 : single-length
+.line 31
+	invoke-super	{v2,v3,v4,v5,v6},android/view/View/onSizeChanged	; onSizeChanged(IIII)V
+; v2 : Lactionxl/mast/CalibrateView; , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length
+.line 32
+	invoke-virtual	{v2},actionxl/mast/CalibrateView/getHeight	; getHeight()I
+; v2 : Lactionxl/mast/CalibrateView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	div-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	iput	v0,v2,actionxl/mast/CalibrateView.y F
+; v0 : single-length , v2 : Lactionxl/mast/CalibrateView;
+.line 33
+	invoke-virtual	{v2},actionxl/mast/CalibrateView/getWidth	; getWidth()I
+; v2 : Lactionxl/mast/CalibrateView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	div-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	iput	v0,v2,actionxl/mast/CalibrateView.x F
+; v0 : single-length , v2 : Lactionxl/mast/CalibrateView;
+.line 34
+	return-void	
+.end method
+
+

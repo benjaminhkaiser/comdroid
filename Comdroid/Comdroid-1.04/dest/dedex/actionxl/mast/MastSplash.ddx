@@ -1,0 +1,79 @@
+.class public actionxl/mast/MastSplash
+.super android/app/Activity
+.source MastSplash.java
+
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lactionxl/mast/MastSplash;)
+.line 8
+	invoke-direct	{v0},android/app/Activity/<init>	; <init>()V
+; v0 : Lactionxl/mast/MastSplash;
+	return-void	
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 3
+; this: v1 (Lactionxl/mast/MastSplash;)
+; parameter[0] : v2 (Landroid/os/Bundle;)
+.line 13
+	invoke-super	{v1,v2},android/app/Activity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v1 : Lactionxl/mast/MastSplash; , v2 : Landroid/os/Bundle;
+.line 15
+	const/4	v0,1
+; v0 : single-length
+	invoke-virtual	{v1,v0},actionxl/mast/MastSplash/requestWindowFeature	; requestWindowFeature(I)Z
+; v1 : Lactionxl/mast/MastSplash; , v0 : single-length
+.line 16
+	const	v0,2130903043	; 0x7f030003
+; v0 : single-length
+	invoke-virtual	{v1,v0},actionxl/mast/MastSplash/setContentView	; setContentView(I)V
+; v1 : Lactionxl/mast/MastSplash; , v0 : single-length
+.line 17
+	return-void	
+.end method
+
+.method public onKeyDown(ILandroid/view/KeyEvent;)Z
+.limit registers 5
+; this: v2 (Lactionxl/mast/MastSplash;)
+; parameter[0] : v3 (I)
+; parameter[1] : v4 (Landroid/view/KeyEvent;)
+	const/4	v1,1
+; v1 : single-length
+.line 29
+	const/4	v0,4
+; v0 : single-length
+	if-ne	v3,v0,l3fde
+; v3 : single-length , v0 : single-length
+.line 30
+	invoke-virtual	{v2,v1},actionxl/mast/MastSplash/moveTaskToBack	; moveTaskToBack(Z)Z
+; v2 : Lactionxl/mast/MastSplash; , v1 : single-length
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+l3fdc:
+.line 33
+	return	v0
+; v0 : single-length
+l3fde:
+	invoke-super	{v2,v3,v4},android/app/Activity/onKeyDown	; onKeyDown(ILandroid/view/KeyEvent;)Z
+; v2 : Lactionxl/mast/MastSplash; , v3 : single-length , v4 : Landroid/view/KeyEvent;
+	move-result	v0
+; v0 : single-length
+	goto	l3fdc
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.limit registers 3
+; this: v1 (Lactionxl/mast/MastSplash;)
+; parameter[0] : v2 (Landroid/view/MotionEvent;)
+.line 23
+	invoke-virtual	{v1},actionxl/mast/MastSplash/finish	; finish()V
+; v1 : Lactionxl/mast/MastSplash;
+.line 24
+	const/4	v0,1
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

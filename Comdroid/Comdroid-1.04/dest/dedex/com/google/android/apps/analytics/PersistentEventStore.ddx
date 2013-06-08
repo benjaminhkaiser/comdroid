@@ -1,0 +1,926 @@
+.class com/google/android/apps/analytics/PersistentEventStore
+.super java/lang/Object
+.implements com/google/android/apps/analytics/EventStore
+
+.inner class DataBaseHelper inner com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper outer com/google/android/apps/analytics/PersistentEventStore
+.field private static final ACCOUNT_ID Ljava/lang/String; = "account_id"
+.field private static final ACTION Ljava/lang/String; = "action"
+.field private static final CATEGORY Ljava/lang/String; = "category"
+.field private static final DATABASE_NAME Ljava/lang/String; = "google_analytics.db"
+.field private static final DATABASE_VERSION I = 1	; 0x1
+.field private static final EVENT_ID Ljava/lang/String; = "event_id"
+.field private static final LABEL Ljava/lang/String; = "label"
+.field private static final MAX_EVENTS I = 1000	; 0x3e8
+.field private static final RANDOM_VAL Ljava/lang/String; = "random_val"
+.field private static final REFERRER Ljava/lang/String; = "referrer"
+.field private static final SCREEN_HEIGHT Ljava/lang/String; = "screen_height"
+.field private static final SCREEN_WIDTH Ljava/lang/String; = "screen_width"
+.field private static final STORE_ID Ljava/lang/String; = "store_id"
+.field private static final TIMESTAMP_CURRENT Ljava/lang/String; = "timestamp_current"
+.field private static final TIMESTAMP_FIRST Ljava/lang/String; = "timestamp_first"
+.field private static final TIMESTAMP_PREVIOUS Ljava/lang/String; = "timestamp_previous"
+.field private static final USER_ID Ljava/lang/String; = "user_id"
+.field private static final VALUE Ljava/lang/String; = "value"
+.field private static final VISITS Ljava/lang/String; = "visits"
+.field private compiledCountStatement Landroid/database/sqlite/SQLiteStatement;
+.field private databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+.field private numStoredEvents I
+.field private sessionUpdated Z
+.field private storeId I
+.field private timestampCurrent J
+.field private timestampFirst J
+.field private timestampPrevious J
+.field private visits I
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 3
+; this: v1 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+; parameter[0] : v2 (Landroid/content/Context;)
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v0},com/google/android/apps/analytics/PersistentEventStore/<init>	; <init>(Landroid/content/Context;Ljava/lang/String;)V
+; v1 : Lcom/google/android/apps/analytics/PersistentEventStore; , v2 : Landroid/content/Context; , v0 : single-length
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Ljava/lang/String;)V
+.limit registers 4
+; this: v1 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Ljava/lang/String;)
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,com/google/android/apps/analytics/PersistentEventStore.compiledCountStatement Landroid/database/sqlite/SQLiteStatement;
+; v0 : single-length , v1 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	if-eqz	v3,l5b94
+; v3 : Ljava/lang/String;
+	new-instance	v0,com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	invoke-direct	{v0,v2,v3},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/<init>	; <init>(Landroid/content/Context;Ljava/lang/String;)V
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v2 : Landroid/content/Context; , v3 : Ljava/lang/String;
+	iput-object	v0,v1,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v1 : Lcom/google/android/apps/analytics/PersistentEventStore;
+l5b92:
+	return-void	
+l5b94:
+	new-instance	v0,com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	invoke-direct	{v0,v2},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v2 : Landroid/content/Context;
+	iput-object	v0,v1,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v1 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	goto	l5b92
+.end method
+
+.method private storeUpdatedSession()V
+.limit registers 10
+; this: v9 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+	const/4	v8,1
+; v8 : single-length
+	iget-object	v0,v9,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v9 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getWritableDatabase	; getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	new-instance	v1,android/content/ContentValues
+; v1 : Landroid/content/ContentValues;
+	invoke-direct	{v1},android/content/ContentValues/<init>	; <init>()V
+; v1 : Landroid/content/ContentValues;
+	const-string	v2,"timestamp_previous"
+; v2 : Ljava/lang/String;
+	iget-wide	v3,v9,com/google/android/apps/analytics/PersistentEventStore.timestampPrevious J
+; v3 : double-length , v9 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Long;
+	const-string	v2,"timestamp_current"
+; v2 : Ljava/lang/String;
+	iget-wide	v3,v9,com/google/android/apps/analytics/PersistentEventStore.timestampCurrent J
+; v3 : double-length , v9 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Long;
+	const-string	v2,"visits"
+; v2 : Ljava/lang/String;
+	iget	v3,v9,com/google/android/apps/analytics/PersistentEventStore.visits I
+; v3 : single-length , v9 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	const-string	v2,"session"
+; v2 : Ljava/lang/String;
+	const-string	v3,"timestamp_first=?"
+; v3 : Ljava/lang/String;
+	new-array	v4,v8,[Ljava/lang/String;
+; v4 : [Ljava/lang/String; , v8 : single-length
+	const/4	v5,0
+; v5 : single-length
+	iget-wide	v6,v9,com/google/android/apps/analytics/PersistentEventStore.timestampFirst J
+; v6 : double-length , v9 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v6,v7},java/lang/Long/toString	; toString(J)Ljava/lang/String;
+; v6 : double-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	aput-object	v6,v4,v5
+; v6 : Ljava/lang/String; , v4 : [Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v0,v2,v1,v3,v4},android/database/sqlite/SQLiteDatabase/update	; update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v2 : Ljava/lang/String; , v1 : Landroid/content/ContentValues; , v3 : Ljava/lang/String; , v4 : [Ljava/lang/String;
+	iput-boolean	v8,v9,com/google/android/apps/analytics/PersistentEventStore.sessionUpdated Z
+; v8 : single-length , v9 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	return-void	
+.end method
+
+.method public deleteEvent(J)V
+.limit registers 7
+; this: v4 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+; parameter[0] : v5 (J)
+	iget-object	v0,v4,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v4 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getWritableDatabase	; getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	const-string	v1,"events"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"event_id="
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v5,v6},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v5 : double-length
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v0,v1,v2,v3},android/database/sqlite/SQLiteDatabase/delete	; delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : single-length
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l5c98
+; v0 : single-length
+	iget	v0,v4,com/google/android/apps/analytics/PersistentEventStore.numStoredEvents I
+; v0 : single-length , v4 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	const/4	v1,1
+; v1 : single-length
+	sub-int/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	iput	v0,v4,com/google/android/apps/analytics/PersistentEventStore.numStoredEvents I
+; v0 : single-length , v4 : Lcom/google/android/apps/analytics/PersistentEventStore;
+l5c98:
+	return-void	
+.end method
+
+.method public getNumStoredEvents()I
+.limit registers 3
+; this: v2 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+	iget-object	v0,v2,com/google/android/apps/analytics/PersistentEventStore.compiledCountStatement Landroid/database/sqlite/SQLiteStatement;
+; v0 : Landroid/database/sqlite/SQLiteStatement; , v2 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	if-nez	v0,l5cd0
+; v0 : Landroid/database/sqlite/SQLiteStatement;
+	iget-object	v0,v2,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v2 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getReadableDatabase	; getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	const-string	v1,"SELECT COUNT(*) from events"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/database/sqlite/SQLiteDatabase/compileStatement	; compileStatement(Ljava/lang/String;)Landroid/database/sqlite/SQLiteStatement;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteStatement;
+	iput-object	v0,v2,com/google/android/apps/analytics/PersistentEventStore.compiledCountStatement Landroid/database/sqlite/SQLiteStatement;
+; v0 : Landroid/database/sqlite/SQLiteStatement; , v2 : Lcom/google/android/apps/analytics/PersistentEventStore;
+l5cd0:
+	iget-object	v0,v2,com/google/android/apps/analytics/PersistentEventStore.compiledCountStatement Landroid/database/sqlite/SQLiteStatement;
+; v0 : Landroid/database/sqlite/SQLiteStatement; , v2 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},android/database/sqlite/SQLiteStatement/simpleQueryForLong	; simpleQueryForLong()J
+; v0 : Landroid/database/sqlite/SQLiteStatement;
+	move-result-wide	v0
+; v0 : double-length
+	long-to-int	v0,v0
+; v0 : single-length , v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getReferrer()Ljava/lang/String;
+.limit registers 10
+; this: v9 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+	const/4	v8,0
+; v8 : single-length
+	const/4	v3,0
+; v3 : single-length
+	iget-object	v0,v9,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v9 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getReadableDatabase	; getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	const-string	v1,"install_referrer"
+; v1 : Ljava/lang/String;
+	const/4	v2,1
+; v2 : single-length
+	new-array	v2,v2,[Ljava/lang/String;
+; v2 : [Ljava/lang/String; , v2 : [Ljava/lang/String;
+	const-string	v4,"referrer"
+; v4 : Ljava/lang/String;
+	aput-object	v4,v2,v8
+; v4 : Ljava/lang/String; , v2 : [Ljava/lang/String; , v8 : single-length
+	move-object	v4,v3
+; v4 : single-length , v3 : single-length
+	move-object	v5,v3
+; v5 : single-length , v3 : single-length
+	move-object	v6,v3
+; v6 : single-length , v3 : single-length
+	move-object	v7,v3
+; v7 : single-length , v3 : single-length
+	invoke-virtual/range	{v0..v7},android/database/sqlite/SQLiteDatabase/query;	query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : Ljava/lang/String; , v2 : [Ljava/lang/String; , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+	invoke-interface	{v0},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v0 : Landroid/database/Cursor;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l5d3e
+; v1 : single-length
+	invoke-interface	{v0,v8},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v0 : Landroid/database/Cursor; , v8 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+l5d36:
+	invoke-interface	{v0},android/database/Cursor/close	; close()V
+; v0 : Landroid/database/Cursor;
+	return-object	v1
+; v1 : single-length
+l5d3e:
+	move-object	v1,v3
+; v1 : single-length , v3 : single-length
+	goto	l5d36
+.end method
+
+.method public getStoreId()I
+.limit registers 2
+; this: v1 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+	iget	v0,v1,com/google/android/apps/analytics/PersistentEventStore.storeId I
+; v0 : single-length , v1 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public peekEvents()[Lcom/google/android/apps/analytics/Event;
+.limit registers 2
+; this: v1 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+	const/16	v0,1000
+; v0 : single-length
+	invoke-virtual	{v1,v0},com/google/android/apps/analytics/PersistentEventStore/peekEvents	; peekEvents(I)[Lcom/google/android/apps/analytics/Event;
+; v1 : Lcom/google/android/apps/analytics/PersistentEventStore; , v0 : single-length
+	move-result-object	v0
+; v0 : [Lcom/google/android/apps/analytics/Event;
+	return-object	v0
+; v0 : [Lcom/google/android/apps/analytics/Event;
+.end method
+
+.method public peekEvents(I)[Lcom/google/android/apps/analytics/Event;
+.limit registers 22
+; this: v20 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+; parameter[0] : v21 (I)
+	move-object/from16	v0,v20
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore; , v20 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	iget-object	v0,v0,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-object	v2,v0
+; v2 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	invoke-virtual	{v2},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getReadableDatabase	; getReadableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v2 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v2
+; v2 : Landroid/database/sqlite/SQLiteDatabase;
+	const-string	v3,"events"
+; v3 : Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	const/4	v5,0
+; v5 : single-length
+	const/4	v6,0
+; v6 : single-length
+	const/4	v7,0
+; v7 : single-length
+	const/4	v8,0
+; v8 : single-length
+	const-string	v9,"event_id"
+; v9 : Ljava/lang/String;
+	invoke-static/range	{v21},java/lang/Integer/toString;	toString(I)Ljava/lang/String;
+; v21 : single-length
+	move-result-object	v10
+; v10 : Ljava/lang/String;
+	invoke-virtual/range	{v2..v10},android/database/sqlite/SQLiteDatabase/query;	query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v2 : Landroid/database/sqlite/SQLiteDatabase; , v3 : Ljava/lang/String; , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length , v9 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-result-object	v18
+; v18 : Landroid/database/Cursor;
+	new-instance	v19,java/util/ArrayList
+; v19 : Ljava/util/ArrayList;
+	invoke-direct/range	{v19},java/util/ArrayList/<init>;	<init>()V
+; v19 : Ljava/util/ArrayList;
+l5dca:
+	invoke-interface/range	{v18},android/database/Cursor/moveToNext;	moveToNext()Z
+; v18 : Landroid/database/Cursor;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l5ee0
+; v2 : single-length
+	new-instance	v2,com/google/android/apps/analytics/Event
+; v2 : Lcom/google/android/apps/analytics/Event;
+	const/4	v3,0
+; v3 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getLong	; getLong(I)J
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result-wide	v3
+; v3 : double-length
+	const/4	v5,1
+; v5 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v5
+; v1 : single-length , v5 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v5
+; v5 : single-length
+	const/4	v6,2
+; v6 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v6
+; v1 : single-length , v6 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	const/4	v7,3
+; v7 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v7
+; v1 : single-length , v7 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v7
+; v7 : single-length
+	const/4	v8,4
+; v8 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v8
+; v1 : single-length , v8 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v8
+; v8 : single-length
+	const/4	v9,5
+; v9 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v9
+; v1 : single-length , v9 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v9
+; v9 : single-length
+	const/4	v10,6
+; v10 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v10
+; v1 : single-length , v10 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v10
+; v10 : single-length
+	const/4	v11,7
+; v11 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v11
+; v1 : single-length , v11 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v11
+; v11 : single-length
+	const/16	v12,8
+; v12 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v12
+; v1 : single-length , v12 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result-object	v12
+; v12 : Ljava/lang/String;
+	const/16	v13,9
+; v13 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v13
+; v1 : single-length , v13 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result-object	v13
+; v13 : Ljava/lang/String;
+	const/16	v14,10
+; v14 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v14
+; v1 : single-length , v14 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result-object	v14
+; v14 : Ljava/lang/String;
+	const/16	v15,11
+; v15 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move	v1,v15
+; v1 : single-length , v15 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v15
+; v15 : single-length
+	const/16	v16,12
+; v16 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move/from16	v1,v16
+; v1 : single-length , v16 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v16
+; v16 : single-length
+	const/16	v17,13
+; v17 : single-length
+	move-object/from16	v0,v18
+; v0 : Landroid/database/Cursor; , v18 : Landroid/database/Cursor;
+	move/from16	v1,v17
+; v1 : single-length , v17 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v17
+; v17 : single-length
+	invoke-direct/range	{v2..v17},com/google/android/apps/analytics/Event/<init>;	<init>(JILjava/lang/String;IIIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V
+; v2 : Lcom/google/android/apps/analytics/Event; , v3 : double-length , v5 : single-length , v6 : Ljava/lang/String; , v7 : single-length , v8 : single-length , v9 : single-length , v10 : single-length , v11 : single-length , v12 : Ljava/lang/String; , v13 : Ljava/lang/String; , v14 : Ljava/lang/String; , v15 : single-length , v16 : single-length , v17 : single-length
+	move-object/from16	v0,v19
+; v0 : Ljava/util/ArrayList; , v19 : Ljava/util/ArrayList;
+	move-object	v1,v2
+; v1 : Lcom/google/android/apps/analytics/Event; , v2 : Lcom/google/android/apps/analytics/Event;
+	invoke-interface	{v0,v1},java/util/List/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/ArrayList; , v1 : Lcom/google/android/apps/analytics/Event;
+	goto/16	l5dca
+l5ee0:
+	invoke-interface/range	{v18},android/database/Cursor/close;	close()V
+; v18 : Landroid/database/Cursor;
+	invoke-interface/range	{v19},java/util/List/size;	size()I
+; v19 : Ljava/util/ArrayList;
+	move-result	v2
+; v2 : single-length
+	new-array	v2,v2,[Lcom/google/android/apps/analytics/Event;
+; v2 : [Lcom/google/android/apps/analytics/Event; , v2 : [Lcom/google/android/apps/analytics/Event;
+	move-object/from16	v0,v19
+; v0 : Ljava/util/ArrayList; , v19 : Ljava/util/ArrayList;
+	move-object	v1,v2
+; v1 : [Lcom/google/android/apps/analytics/Event; , v2 : [Lcom/google/android/apps/analytics/Event;
+	invoke-interface	{v0,v1},java/util/List/toArray	; toArray([Ljava/lang/Object;)[Ljava/lang/Object;
+; v0 : Ljava/util/ArrayList; , v1 : [Lcom/google/android/apps/analytics/Event;
+	move-result-object	v20
+; v20 : [Ljava/lang/Object;
+	check-cast	v20,[Lcom/google/android/apps/analytics/Event
+; v20 : [Lcom/google/android/apps/analytics/Event
+	return-object	v20
+; v20 : [Lcom/google/android/apps/analytics/Event
+.end method
+
+.method public putEvent(Lcom/google/android/apps/analytics/Event;)V
+.limit registers 9
+; this: v7 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+; parameter[0] : v8 (Lcom/google/android/apps/analytics/Event;)
+	iget	v0,v7,com/google/android/apps/analytics/PersistentEventStore.numStoredEvents I
+; v0 : single-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	const/16	v1,1000
+; v1 : single-length
+	if-lt	v0,v1,l5f34
+; v0 : single-length , v1 : single-length
+	const-string	v0,"googleanalytics"
+; v0 : Ljava/lang/String;
+	const-string	v1,"Store full. Not storing last event."
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+l5f32:
+	return-void	
+l5f34:
+	iget-boolean	v0,v7,com/google/android/apps/analytics/PersistentEventStore.sessionUpdated Z
+; v0 : single-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	if-nez	v0,l5f42
+; v0 : single-length
+	invoke-direct	{v7},com/google/android/apps/analytics/PersistentEventStore/storeUpdatedSession	; storeUpdatedSession()V
+; v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+l5f42:
+	iget-object	v0,v7,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getWritableDatabase	; getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	new-instance	v1,android/content/ContentValues
+; v1 : Landroid/content/ContentValues;
+	invoke-direct	{v1},android/content/ContentValues/<init>	; <init>()V
+; v1 : Landroid/content/ContentValues;
+	const-string	v2,"user_id"
+; v2 : Ljava/lang/String;
+	iget	v3,v8,com/google/android/apps/analytics/Event.userId I
+; v3 : single-length , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	const-string	v2,"account_id"
+; v2 : Ljava/lang/String;
+	iget-object	v3,v8,com/google/android/apps/analytics/Event.accountId Ljava/lang/String;
+; v3 : Ljava/lang/String; , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	const-string	v2,"random_val"
+; v2 : Ljava/lang/String;
+	invoke-static	{},java/lang/Math/random	; random()D
+; 
+	nop	
+	move-result-wide	v3
+; v3 : double-length
+	const-wide	v5,4746794007244308480	; 0x41dfffffffc00000
+; v5 : double-length
+	mul-double/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	double-to-int	v3,v3
+; v3 : single-length , v3 : single-length
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	const-string	v2,"timestamp_first"
+; v2 : Ljava/lang/String;
+	iget-wide	v3,v7,com/google/android/apps/analytics/PersistentEventStore.timestampFirst J
+; v3 : double-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Long;
+	const-string	v2,"timestamp_previous"
+; v2 : Ljava/lang/String;
+	iget-wide	v3,v7,com/google/android/apps/analytics/PersistentEventStore.timestampPrevious J
+; v3 : double-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Long;
+	const-string	v2,"timestamp_current"
+; v2 : Ljava/lang/String;
+	iget-wide	v3,v7,com/google/android/apps/analytics/PersistentEventStore.timestampCurrent J
+; v3 : double-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Long;
+	const-string	v2,"visits"
+; v2 : Ljava/lang/String;
+	iget	v3,v7,com/google/android/apps/analytics/PersistentEventStore.visits I
+; v3 : single-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	const-string	v2,"category"
+; v2 : Ljava/lang/String;
+	iget-object	v3,v8,com/google/android/apps/analytics/Event.category Ljava/lang/String;
+; v3 : Ljava/lang/String; , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	const-string	v2,"action"
+; v2 : Ljava/lang/String;
+	iget-object	v3,v8,com/google/android/apps/analytics/Event.action Ljava/lang/String;
+; v3 : Ljava/lang/String; , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	const-string	v2,"label"
+; v2 : Ljava/lang/String;
+	iget-object	v3,v8,com/google/android/apps/analytics/Event.label Ljava/lang/String;
+; v3 : Ljava/lang/String; , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	const-string	v2,"value"
+; v2 : Ljava/lang/String;
+	iget	v3,v8,com/google/android/apps/analytics/Event.value I
+; v3 : single-length , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	const-string	v2,"screen_width"
+; v2 : Ljava/lang/String;
+	iget	v3,v8,com/google/android/apps/analytics/Event.screenWidth I
+; v3 : single-length , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	const-string	v2,"screen_height"
+; v2 : Ljava/lang/String;
+	iget	v3,v8,com/google/android/apps/analytics/Event.screenHeight I
+; v3 : single-length , v8 : Lcom/google/android/apps/analytics/Event;
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v1,v2,v3},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	const-string	v2,"events"
+; v2 : Ljava/lang/String;
+	const-string	v3,"event_id"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v2,v3,v1},android/database/sqlite/SQLiteDatabase/insert	; insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v1 : Landroid/content/ContentValues;
+	move-result-wide	v0
+; v0 : double-length
+	const-wide/16	v2,65535
+; v2 : double-length
+	cmp-long	v0,v0,v2
+; v0 : single-length , v0 : single-length , v2 : double-length
+	if-eqz	v0,l5f32
+; v0 : single-length
+	iget	v0,v7,com/google/android/apps/analytics/PersistentEventStore.numStoredEvents I
+; v0 : single-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	iput	v0,v7,com/google/android/apps/analytics/PersistentEventStore.numStoredEvents I
+; v0 : single-length , v7 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	goto/16	l5f32
+.end method
+
+.method public setReferrer(Ljava/lang/String;)V
+.limit registers 6
+; this: v4 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+; parameter[0] : v5 (Ljava/lang/String;)
+	iget-object	v0,v4,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v4 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getWritableDatabase	; getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	new-instance	v1,android/content/ContentValues
+; v1 : Landroid/content/ContentValues;
+	invoke-direct	{v1},android/content/ContentValues/<init>	; <init>()V
+; v1 : Landroid/content/ContentValues;
+	const-string	v2,"referrer"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2,v5},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Landroid/content/ContentValues; , v2 : Ljava/lang/String; , v5 : Ljava/lang/String;
+	const-string	v2,"install_referrer"
+; v2 : Ljava/lang/String;
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v0,v2,v3,v1},android/database/sqlite/SQLiteDatabase/insert	; insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v2 : Ljava/lang/String; , v3 : single-length , v1 : Landroid/content/ContentValues;
+	return-void	
+.end method
+
+.method public startNewVisit()V
+.limit registers 13
+; this: v12 (Lcom/google/android/apps/analytics/PersistentEventStore;)
+	const-wide/16	v9,1000
+; v9 : double-length
+	const/4	v8,0
+; v8 : single-length
+	const/4	v2,0
+; v2 : single-length
+	const-string	v11,"timestamp_first"
+; v11 : Ljava/lang/String;
+	const-string	v1,"session"
+; v1 : Ljava/lang/String;
+	iput-boolean	v8,v12,com/google/android/apps/analytics/PersistentEventStore.sessionUpdated Z
+; v8 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v12},com/google/android/apps/analytics/PersistentEventStore/getNumStoredEvents	; getNumStoredEvents()I
+; v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v12,com/google/android/apps/analytics/PersistentEventStore.numStoredEvents I
+; v0 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	iget-object	v0,v12,com/google/android/apps/analytics/PersistentEventStore.databaseHelper Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-virtual	{v0},com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/getWritableDatabase	; getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	const-string	v3,"session"
+; v3 : Ljava/lang/String;
+	move-object	v3,v2
+; v3 : single-length , v2 : single-length
+	move-object	v4,v2
+; v4 : single-length , v2 : single-length
+	move-object	v5,v2
+; v5 : single-length , v2 : single-length
+	move-object	v6,v2
+; v6 : single-length , v2 : single-length
+	move-object	v7,v2
+; v7 : single-length , v2 : single-length
+	invoke-virtual/range	{v0..v7},android/database/sqlite/SQLiteDatabase/query;	query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : Ljava/lang/String; , v2 : single-length , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length
+	move-result-object	v2
+; v2 : Landroid/database/Cursor;
+	invoke-interface	{v2},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v2 : Landroid/database/Cursor;
+	move-result	v3
+; v3 : single-length
+	if-nez	v3,l61fa
+; v3 : single-length
+	invoke-static	{},java/lang/System/currentTimeMillis	; currentTimeMillis()J
+; 
+	nop	
+	move-result-wide	v3
+; v3 : double-length
+	div-long/2addr	v3,v9
+; v3 : double-length , v9 : double-length
+	iput-wide	v3,v12,com/google/android/apps/analytics/PersistentEventStore.timestampFirst J
+; v3 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	iput-wide	v3,v12,com/google/android/apps/analytics/PersistentEventStore.timestampPrevious J
+; v3 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	iput-wide	v3,v12,com/google/android/apps/analytics/PersistentEventStore.timestampCurrent J
+; v3 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	const/4	v3,1
+; v3 : single-length
+	iput	v3,v12,com/google/android/apps/analytics/PersistentEventStore.visits I
+; v3 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	new-instance	v3,java/security/SecureRandom
+; v3 : Ljava/security/SecureRandom;
+	invoke-direct	{v3},java/security/SecureRandom/<init>	; <init>()V
+; v3 : Ljava/security/SecureRandom;
+	invoke-virtual	{v3},java/security/SecureRandom/nextInt	; nextInt()I
+; v3 : Ljava/security/SecureRandom;
+	move-result	v3
+; v3 : single-length
+	const	v4,2147483647	; 0x7fffffff
+; v4 : single-length
+	and-int/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	iput	v3,v12,com/google/android/apps/analytics/PersistentEventStore.storeId I
+; v3 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	new-instance	v3,android/content/ContentValues
+; v3 : Landroid/content/ContentValues;
+	invoke-direct	{v3},android/content/ContentValues/<init>	; <init>()V
+; v3 : Landroid/content/ContentValues;
+	const-string	v4,"timestamp_first"
+; v4 : Ljava/lang/String;
+	iget-wide	v4,v12,com/google/android/apps/analytics/PersistentEventStore.timestampFirst J
+; v4 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v4,v5},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v4 : double-length
+	move-result-object	v4
+; v4 : Ljava/lang/Long;
+	invoke-virtual	{v3,v11,v4},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v3 : Landroid/content/ContentValues; , v11 : Ljava/lang/String; , v4 : Ljava/lang/Long;
+	const-string	v4,"timestamp_previous"
+; v4 : Ljava/lang/String;
+	iget-wide	v5,v12,com/google/android/apps/analytics/PersistentEventStore.timestampPrevious J
+; v5 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v5,v6},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v5 : double-length
+	move-result-object	v5
+; v5 : Ljava/lang/Long;
+	invoke-virtual	{v3,v4,v5},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v3 : Landroid/content/ContentValues; , v4 : Ljava/lang/String; , v5 : Ljava/lang/Long;
+	const-string	v4,"timestamp_current"
+; v4 : Ljava/lang/String;
+	iget-wide	v5,v12,com/google/android/apps/analytics/PersistentEventStore.timestampCurrent J
+; v5 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v5,v6},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v5 : double-length
+	move-result-object	v5
+; v5 : Ljava/lang/Long;
+	invoke-virtual	{v3,v4,v5},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Long;)V
+; v3 : Landroid/content/ContentValues; , v4 : Ljava/lang/String; , v5 : Ljava/lang/Long;
+	const-string	v4,"visits"
+; v4 : Ljava/lang/String;
+	iget	v5,v12,com/google/android/apps/analytics/PersistentEventStore.visits I
+; v5 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v5},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v5 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/Integer;
+	invoke-virtual	{v3,v4,v5},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v3 : Landroid/content/ContentValues; , v4 : Ljava/lang/String; , v5 : Ljava/lang/Integer;
+	const-string	v4,"store_id"
+; v4 : Ljava/lang/String;
+	iget	v5,v12,com/google/android/apps/analytics/PersistentEventStore.storeId I
+; v5 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{v5},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v5 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/Integer;
+	invoke-virtual	{v3,v4,v5},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v3 : Landroid/content/ContentValues; , v4 : Ljava/lang/String; , v5 : Ljava/lang/Integer;
+	const-string	v4,"session"
+; v4 : Ljava/lang/String;
+	const-string	v4,"timestamp_first"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v11,v3},android/database/sqlite/SQLiteDatabase/insert	; insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : Ljava/lang/String; , v11 : Ljava/lang/String; , v3 : Landroid/content/ContentValues;
+l61f2:
+	invoke-interface	{v2},android/database/Cursor/close	; close()V
+; v2 : Landroid/database/Cursor;
+	return-void	
+l61fa:
+	invoke-interface	{v2,v8},android/database/Cursor/getLong	; getLong(I)J
+; v2 : Landroid/database/Cursor; , v8 : single-length
+	move-result-wide	v0
+; v0 : double-length
+	iput-wide	v0,v12,com/google/android/apps/analytics/PersistentEventStore.timestampFirst J
+; v0 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	const/4	v0,2
+; v0 : single-length
+	invoke-interface	{v2,v0},android/database/Cursor/getLong	; getLong(I)J
+; v2 : Landroid/database/Cursor; , v0 : single-length
+	move-result-wide	v0
+; v0 : double-length
+	iput-wide	v0,v12,com/google/android/apps/analytics/PersistentEventStore.timestampPrevious J
+; v0 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-static	{},java/lang/System/currentTimeMillis	; currentTimeMillis()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+	div-long/2addr	v0,v9
+; v0 : double-length , v9 : double-length
+	iput-wide	v0,v12,com/google/android/apps/analytics/PersistentEventStore.timestampCurrent J
+; v0 : double-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	const/4	v0,3
+; v0 : single-length
+	invoke-interface	{v2,v0},android/database/Cursor/getInt	; getInt(I)I
+; v2 : Landroid/database/Cursor; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	iput	v0,v12,com/google/android/apps/analytics/PersistentEventStore.visits I
+; v0 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	const/4	v0,4
+; v0 : single-length
+	invoke-interface	{v2,v0},android/database/Cursor/getInt	; getInt(I)I
+; v2 : Landroid/database/Cursor; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+	iput	v0,v12,com/google/android/apps/analytics/PersistentEventStore.storeId I
+; v0 : single-length , v12 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	goto	l61f2
+.end method
+
+

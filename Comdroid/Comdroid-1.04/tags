@@ -1,0 +1,218 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+Component	ParseManifest.rb	/^class Component$/;"	c
+FieldObj	FieldObj.rb	/^class FieldObj$/;"	c
+IntentAnalysis	intentanalysis.rb	/^class IntentAnalysis$/;"	c
+IntentObj	IntentObj.rb	/^class IntentObj$/;"	c
+Register	Register.rb	/^class Register$/;"	c
+SinkObj	SinkObj.rb	/^class SinkObj$/;"	c
+THREAD_NUM	getddx.py	/^THREAD_NUM=40$/;"	v
+THREAD_NUM	nativemt.py	/^THREAD_NUM=16$/;"	v
+THREAD_NUM	testscript.py	/^THREAD_NUM=16$/;"	v
+actionStats	intentanalysis.rb	/^def actionStats(filedir)$/;"	f
+addIntent	SinkObj.rb	/^def addIntent(intent)$/;"	f	class:SinkObj
+addLink	Register.rb	/^def addLink(reg)$/;"	f	class:Register
+add_weird_error	intentanalysis.rb	/^def add_weird_error(str)$/;"	f
+addregister	IntentObj.rb	/^def addregister(reg)$/;"	f	class:IntentObj
+allHasChooser	intentanalysis.rb	/^def allHasChooser(sink)$/;"	f
+anyHasExtra	intentanalysis.rb	/^def anyHasExtra(sink)$/;"	f
+anyHasRead	intentanalysis.rb	/^def anyHasRead(sink)$/;"	f
+anyHasWrite	intentanalysis.rb	/^def anyHasWrite(sink)$/;"	f
+banner	intentanalysis.rb	/^def banner(str)$/;"	f
+canonicalize_method_name	intentanalysis.rb	/^def canonicalize_method_name(method)$/;"	f
+checkIntentSending	intentanalysis.rb	/^def checkIntentSending(componentName, componentActions)$/;"	f
+checkIntentVulns	intentanalysis.rb	/^def checkIntentVulns(sink)$/;"	f
+component_analysis	intentanalysis.rb	/^def component_analysis(component)$/;"	f
+copyLinks	Register.rb	/^def copyLinks(register)$/;"	f	class:Register
+correctRegisterType	intentanalysis.rb	/^def correctRegisterType(name, type, vregisters)$/;"	f
+count	getddx.py	/^count=0$/;"	v
+count	nativemt.py	/^count=0$/;"	v
+count	testscript.py	/^count=0$/;"	v
+debug	getddx.py	/^debug = 1$/;"	v
+debug	nativemt.py	/^debug = 1$/;"	v
+debug	nativetest.py	/^debug = 1$/;"	v
+debug	testscript.py	/^debug = 1$/;"	v
+directory	getddx.py	/^directory = '\/home\/sx2151\/undergradproj\/apps\/'$/;"	v
+directory	nativemt.py	/^directory = '\/home\/sx2151\/undergradproj\/apps\/'$/;"	v
+directory	nativetest.py	/^directory = '\/home\/sx2151\/undergradproj\/apps\/'$/;"	v
+directory	testscript.py	/^directory = '\/home\/sx2151\/undergradproj\/apps\/'$/;"	v
+doesMethodTakeStringParam	intentanalysis.rb	/^def doesMethodTakeStringParam(meth)$/;"	f
+elevate_intent_use_level	intentanalysis.rb	/^def elevate_intent_use_level(current, changeTo)$/;"	f
+end	getddx.py	/^   end = end if end<listing_len else listing_len$/;"	v
+end	getddx.py	/^   end = start + slice_size$/;"	v
+end	getddx.py	/^end=0$/;"	v
+end	nativemt.py	/^   end = start + slice_size$/;"	v
+end	nativemt.py	/^end=0$/;"	v
+end	testscript.py	/^   end = start + slice_size$/;"	v
+end	testscript.py	/^end=0$/;"	v
+entries	getddx.py	/^                entries = os.listdir(ele)$/;"	v
+entries	nativemt.py	/^                entries = os.listdir(ele)$/;"	v
+entries	nativetest.py	/^                entries = os.listdir(ele)$/;"	v
+entries	testscript.py	/^                entries = os.listdir(ele)$/;"	v
+entries2	getddx.py	/^                entries2 = map(lambda x: ele+x, entries)$/;"	v
+entries2	nativemt.py	/^                entries2 = map(lambda x: ele+x, entries)$/;"	v
+entries2	nativetest.py	/^                entries2 = map(lambda x: ele+x, entries)$/;"	v
+entries2	testscript.py	/^                entries2 = map(lambda x: ele+x, entries)$/;"	v
+errfh	nativemt.py	/^errfh = open(missresult,'w')$/;"	v
+errfh	testscript.py	/^errfh = open(missresult,'w')$/;"	v
+finalerrhash	nativemt.py	/^finalerrhash={}$/;"	v
+finalerrhash	testscript.py	/^finalerrhash={}$/;"	v
+finalhash	nativemt.py	/^finalhash={}$/;"	v
+finalhash	testscript.py	/^finalhash={}$/;"	v
+findActionMisuse	intentanalysis.rb	/^def findActionMisuse()$/;"	f
+findProtectedBroadcastVuln	intentanalysis.rb	/^def findProtectedBroadcastVuln()$/;"	f
+findReverseCallGraph	intentanalysis.rb	/^def findReverseCallGraph()$/;"	f
+find_by_index	nativemt.py	/^def find_by_index(cmd):$/;"	f
+find_by_index	nativetest.py	/^def find_by_index(cmd):$/;"	f
+find_by_index	testscript.py	/^def find_by_index(cmd):$/;"	f
+find_by_intmfile	nativemt.py	/^def find_by_intmfile(cmd, logpath):$/;"	f
+find_by_intmfile	nativetest.py	/^def find_by_intmfile(cmd, logpath):$/;"	f
+find_by_intmfile	testscript.py	/^def find_by_intmfile(cmd, logpath):$/;"	f
+find_by_intmfile2	nativemt.py	/^def find_by_intmfile2(cmd, logpath):$/;"	f
+find_by_intmfile2	nativetest.py	/^def find_by_intmfile2(cmd, logpath):$/;"	f
+find_by_intmfile2	testscript.py	/^def find_by_intmfile2(cmd, logpath):$/;"	f
+find_by_regex	nativemt.py	/^def find_by_regex(cmd):$/;"	f
+find_by_regex	nativetest.py	/^def find_by_regex(cmd):$/;"	f
+find_by_regex	testscript.py	/^def find_by_regex(cmd):$/;"	f
+find_component_vulnerabilities	intentanalysis.rb	/^def find_component_vulnerabilities()$/;"	f
+find_intent_vulnerabilities	intentanalysis.rb	/^def find_intent_vulnerabilities()$/;"	f
+find_max	intentanalysis.rb	/^def find_max(list)$/;"	f
+find_return_register	intentanalysis.rb	/^def find_return_register(code, i)$/;"	f
+find_threats	nativemt.py	/^def find_threats(files, logpath, finalhash, finalerrhash):$/;"	f
+find_threats	nativetest.py	/^def find_threats(files):$/;"	f
+find_threats	testscript.py	/^def find_threats(files, logpath, finalhash, finalerrhash):$/;"	f
+gen_ddx	getddx.py	/^def gen_ddx(files, logpath):$/;"	f
+getAliasName	ParseManifest.rb	/^def getAliasName(c)$/;"	f
+getApplicationPermissions	ParseManifest.rb	/^def getApplicationPermissions(doc)$/;"	f
+getComponents	ParseManifest.rb	/^def getComponents(doc, app_perm, protected_Broadcasts)$/;"	f
+getDefinedPermissions	ParseManifest.rb	/^def getDefinedPermissions(doc)$/;"	f
+getExtraCallingMethods	intentanalysis.rb	/^def getExtraCallingMethods()$/;"	f
+getName	ParseManifest.rb	/^def getName(c)$/;"	f
+getProtectedBroadcasts	ParseManifest.rb	/^def getProtectedBroadcasts()$/;"	f
+getProtectionLevel	ParseManifest.rb	/^def getProtectionLevel(p)$/;"	f
+getReceivingActions	intentanalysis.rb	/^def getReceivingActions(filedir)$/;"	f
+getSendingActions	intentanalysis.rb	/^def getSendingActions(filedir)$/;"	f
+getType	FieldObj.rb	/^def getType()$/;"	f	class:FieldObj
+getType	ParseManifest.rb	/^def getType(c)$/;"	f
+getType	Register.rb	/^def getType()$/;"	f	class:Register
+getUsesPermissions	ParseManifest.rb	/^def getUsesPermissions(doc)$/;"	f
+getVisibility	ParseManifest.rb	/^def getVisibility(tag)$/;"	f
+get_cmd_args	intentanalysis.rb	/^def get_cmd_args()$/;"	f	class:IntentAnalysis
+get_code	intentanalysis.rb	/^def get_code(method)$/;"	f
+get_comment_type	intentanalysis.rb	/^def get_comment_type(line, reg)$/;"	f
+get_file_list	intentanalysis.rb	/^def get_file_list(fn)$/;"	f
+get_param_regs	intentanalysis.rb	/^def get_param_regs(paramregstring)$/;"	f
+get_reg_range	intentanalysis.rb	/^def get_reg_range(range, param_pos)$/;"	f
+get_register	intentanalysis.rb	/^def get_register(line, param_pos)$/;"	f
+handle_line	intentanalysis.rb	/^def handle_line(line, directive, data)$/;"	f
+hasData	ParseManifest.rb	/^def hasData(tag)$/;"	f
+hasExportedFlag	ParseManifest.rb	/^def hasExportedFlag(tag)$/;"	f
+hasExportedFlagTrue	ParseManifest.rb	/^def hasExportedFlagTrue(tag)$/;"	f
+hasRegister	intentanalysis.rb	/^def hasRegister(name, vregisters)$/;"	f
+hasStrongProtection	intentanalysis.rb	/^def hasStrongProtection(perm)$/;"	f
+hasregister	IntentObj.rb	/^def hasregister(reg)$/;"	f	class:IntentObj
+hitresult	nativemt.py	/^hitresult =logdir+"\/result.json"$/;"	v
+hitresult	testscript.py	/^hitresult =logdir+"\/result.json"$/;"	v
+initialize	FieldObj.rb	/^def initialize(nam, cls, oType)$/;"	f	class:FieldObj
+initialize	IntentObj.rb	/^def initialize(meth, lnum, line, src_lnum)$/;"	f	class:IntentObj
+initialize	ParseManifest.rb	/^def initialize(n, v, t)$/;"	f	class:Component
+initialize	Register.rb	/^def initialize(nam, oType, val)$/;"	f	class:Register
+initialize	SinkObj.rb	/^def initialize(meth, lnum, slnum, line, type, ctype)$/;"	f	class:SinkObj
+initialize	intentanalysis.rb	/^def initialize$/;"	f	class:IntentAnalysis
+investigate_methods	intentanalysis.rb	/^def investigate_methods(to_investigate, method_calls, methods_with_intent_use)$/;"	f
+listing	getddx.py	/^    listing = []$/;"	v
+listing	getddx.py	/^    listing = map(lambda x: directory+x, listing)$/;"	v
+listing	getddx.py	/^    listing = os.listdir(directory)$/;"	v
+listing	nativemt.py	/^    listing = []$/;"	v
+listing	nativemt.py	/^    listing = map(lambda x: directory+x, listing)$/;"	v
+listing	nativemt.py	/^    listing = os.listdir(directory)$/;"	v
+listing	nativetest.py	/^    listing = []$/;"	v
+listing	nativetest.py	/^    listing = os.listdir(directory)$/;"	v
+listing	testscript.py	/^    listing = []$/;"	v
+listing	testscript.py	/^    listing = map(lambda x: directory+x, listing)$/;"	v
+listing	testscript.py	/^    listing = os.listdir(directory)$/;"	v
+listing2	nativetest.py	/^    listing2 = map(lambda x: directory+x, listing)$/;"	v
+listing_len	getddx.py	/^listing_len = len(listing)$/;"	v
+listing_len	nativemt.py	/^listing_len = len(listing)$/;"	v
+listing_len	testscript.py	/^listing_len = len(listing)$/;"	v
+listing_slice	getddx.py	/^   listing_slice = listing[start:end]$/;"	v
+listing_slice	nativemt.py	/^   listing_slice = listing[start:end]$/;"	v
+listing_slice	nativemt.py	/^listing_slice = listing[end:listing_len] #deal with remainant file$/;"	v
+listing_slice	testscript.py	/^   listing_slice = listing[start:end]$/;"	v
+listing_slice	testscript.py	/^listing_slice = listing[end:listing_len] #deal with remainant file$/;"	v
+lock	getddx.py	/^lock = threading.Lock()$/;"	v
+lock	nativemt.py	/^lock = threading.Lock()$/;"	v
+lock	testscript.py	/^lock = threading.Lock()$/;"	v
+logStats	intentanalysis.rb	/^def logStats()$/;"	f
+logdir	getddx.py	/^logdir = '\/home\/sx2151\/undergradproj\/log\/'$/;"	v
+logdir	nativemt.py	/^logdir = '\/home\/sx2151\/undergradproj\/log\/'$/;"	v
+logdir	testscript.py	/^logdir = '\/home\/sx2151\/undergradproj\/log\/'$/;"	v
+logpath	getddx.py	/^   logpath = logdir$/;"	v
+logpath	nativemt.py	/^   logpath = logdir+"\/testresult_"+str(i)$/;"	v
+logpath	nativemt.py	/^logpath = logdir+"\/testresult_"+str(THREAD_NUM)$/;"	v
+logpath	testscript.py	/^   logpath = logdir+"\/testresult_"+str(i)$/;"	v
+logpath	testscript.py	/^logpath = logdir+"\/testresult_"+str(THREAD_NUM)$/;"	v
+look_for_intent_use	intentanalysis.rb	/^def look_for_intent_use(method, getIntent)$/;"	f
+look_for_values	intentanalysis.rb	/^def look_for_values(method, code, first, params)$/;"	f
+main	intentanalysis.rb	/^def main()$/;"	f
+make_param_array	intentanalysis.rb	/^def make_param_array(params, vregisters)$/;"	f
+mark_sink	intentanalysis.rb	/^def mark_sink(method, pos, intent)$/;"	f
+missresult	nativemt.py	/^missresult = logdir+"\/miss.json"$/;"	v
+missresult	testscript.py	/^missresult = logdir+"\/miss.json"$/;"	v
+outfh	nativemt.py	/^outfh = open(hitresult, "w")$/;"	v
+outfh	testscript.py	/^outfh = open(hitresult, "w")$/;"	v
+parse_for_method	intentanalysis.rb	/^def parse_for_method(line)$/;"	f
+printData	intentanalysis.rb	/^def printData(filename, array)$/;"	f
+print_components	intentanalysis.rb	/^def print_components()$/;"	f
+print_intents	intentanalysis.rb	/^def print_intents()$/;"	f
+print_stats	intentanalysis.rb	/^def print_stats()$/;"	f
+print_to_test_file	intentanalysis.rb	/^def print_to_test_file(fileName, appname, componentName)$/;"	f
+print_vulns	intentanalysis.rb	/^def print_vulns()$/;"	f
+processManifest	ParseManifest.rb	/^def processManifest(filename)$/;"	f
+recordRegister	intentanalysis.rb	/^def recordRegister(name, type, value, vregisters)$/;"	f
+record_intent	intentanalysis.rb	/^def record_intent(line, register)$/;"	f
+record_intentFilter	intentanalysis.rb	/^def record_intentFilter()$/;"	f
+record_methods	intentanalysis.rb	/^def record_methods(fn)$/;"	f
+record_sink	intentanalysis.rb	/^def record_sink(line, call_type)$/;"	f
+reduceRedundancies	intentanalysis.rb	/^def reduceRedundancies()$/;"	f
+removeLink	Register.rb	/^def removeLink(reg)$/;"	f	class:Register
+removeRegister	intentanalysis.rb	/^def removeRegister(reg, vregisters)$/;"	f
+removeregister	IntentObj.rb	/^def removeregister(reg)$/;"	f	class:IntentObj
+reset	intentanalysis.rb	/^def reset()$/;"	f
+save_method_code	intentanalysis.rb	/^def save_method_code()$/;"	f
+setExplicitDestination	intentanalysis.rb	/^def setExplicitDestination(intent, reg, type, vregisters, location)$/;"	f
+setRegister	Register.rb	/^def setRegister(nam, oType, val)$/;"	f	class:Register
+setType	FieldObj.rb	/^def setType(type)$/;"	f	class:FieldObj
+sink_found	intentanalysis.rb	/^def sink_found(method, intent, line, i, src_lnum, marksink=true)$/;"	f
+slash_to_dot	intentanalysis.rb	/^def slash_to_dot(str)$/;"	f
+slice_size	getddx.py	/^slice_size = listing_len\/THREAD_NUM$/;"	v
+slice_size	nativemt.py	/^slice_size = listing_len\/THREAD_NUM$/;"	v
+slice_size	testscript.py	/^slice_size = listing_len\/THREAD_NUM$/;"	v
+start	getddx.py	/^   start = i*slice_size$/;"	v
+start	getddx.py	/^start=0$/;"	v
+start	nativemt.py	/^   start = i*slice_size$/;"	v
+start	nativemt.py	/^start=0$/;"	v
+start	testscript.py	/^   start = i*slice_size$/;"	v
+start	testscript.py	/^start=0$/;"	v
+stowawayOutput	intentanalysis.rb	/^def stowawayOutput()$/;"	f
+targets	getddx.py	/^targets = sys.argv[1:]$/;"	v
+targets	nativemt.py	/^targets = sys.argv[1:]$/;"	v
+targets	nativetest.py	/^targets = sys.argv[1:]$/;"	v
+targets	testscript.py	/^targets = sys.argv[1:]$/;"	v
+thread	getddx.py	/^   thread = threading.Thread(target=gen_ddx, args=(listing_slice,logpath))$/;"	v
+thread	nativemt.py	/^   thread = threading.Thread(target=find_threats, args=(listing_slice,logpath,finalhash, finalerrhash))$/;"	v
+thread	nativemt.py	/^thread = threading.Thread(target=find_threats, args=(listing_slice,logpath,finalhash, finalerrhash))$/;"	v
+thread	testscript.py	/^   thread = threading.Thread(target=find_threats, args=(listing_slice,logpath,finalhash, finalerrhash))$/;"	v
+thread	testscript.py	/^thread = threading.Thread(target=find_threats, args=(listing_slice,logpath,finalhash, finalerrhash))$/;"	v
+threads	getddx.py	/^threads=[]$/;"	v
+threads	nativemt.py	/^threads=[]$/;"	v
+threads	testscript.py	/^threads=[]$/;"	v
+trackVulnComponents	intentanalysis.rb	/^def trackVulnComponents(name)$/;"	f
+trackVulnIntents	intentanalysis.rb	/^def trackVulnIntents(name)$/;"	f
+vuln_increment	intentanalysis.rb	/^def vuln_increment(type)$/;"	f
+write_componenttotal_file	intentanalysis.rb	/^def write_componenttotal_file(total)$/;"	f
+write_explicit_file	intentanalysis.rb	/^def write_explicit_file(explicit, done)$/;"	f

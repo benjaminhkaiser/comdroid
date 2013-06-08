@@ -1,0 +1,1467 @@
+.class public final c
+.super java/lang/Object
+.implements java/lang/Runnable
+
+.inner class e inner c$e outer c
+.inner class c inner c$c outer c
+.inner class a inner c$a outer c
+.inner class b inner c$b outer c
+.inner class d inner c$d outer c
+.field private a Ljava/lang/String;
+.field private b Ljava/lang/String;
+.field private c Lb;
+.field private d Ld;
+.field private e Lcom/google/ads/AdRequest;
+.field private f Landroid/webkit/WebView;
+.field private g Ljava/lang/String;
+.field private h Ljava/util/LinkedList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/LinkedList" , "<" , "Ljava/lang/String;" , ">;" }
+  .end annotation
+.end field
+.field private volatile i Z
+.field private j Lcom/google/ads/AdRequest$ErrorCode;
+.field private k Z
+.field private l I
+.field private m Ljava/lang/Thread;
+
+.method public <init>(Ld;)V
+.limit registers 6
+; this: v4 (Lc;)
+; parameter[0] : v5 (Ld;)
+	const/4	v3,0
+; v3 : single-length
+	const/4	v2,0
+; v2 : single-length
+	invoke-direct	{v4},java/lang/Object/<init>	; <init>()V
+; v4 : Lc;
+	iput-object	v5,v4,c.d Ld;
+; v5 : Ld; , v4 : Lc;
+	iput-object	v2,v4,c.g Ljava/lang/String;
+; v2 : single-length , v4 : Lc;
+	iput-object	v2,v4,c.b Ljava/lang/String;
+; v2 : single-length , v4 : Lc;
+	new-instance	v0,java/util/LinkedList
+; v0 : Ljava/util/LinkedList;
+	invoke-direct	{v0},java/util/LinkedList/<init>	; <init>()V
+; v0 : Ljava/util/LinkedList;
+	iput-object	v0,v4,c.h Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v4 : Lc;
+	iput-object	v2,v4,c.j Lcom/google/ads/AdRequest$ErrorCode;
+; v2 : single-length , v4 : Lc;
+	iput-boolean	v3,v4,c.k Z
+; v3 : single-length , v4 : Lc;
+	const/4	v0,15
+; v0 : single-length
+	iput	v0,v4,c.l I
+; v0 : single-length , v4 : Lc;
+	invoke-virtual	{v5},d/e	; e()Landroid/app/Activity;
+; v5 : Ld;
+	move-result-object	v0
+; v0 : Landroid/app/Activity;
+	if-eqz	v0,l5542
+; v0 : Landroid/app/Activity;
+	new-instance	v1,g
+; v1 : Lg;
+	invoke-virtual	{v0},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v0 : Landroid/app/Activity;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-direct	{v1,v0,v2},g/<init>	; <init>(Landroid/content/Context;Lcom/google/ads/AdSize;)V
+; v1 : Lg; , v0 : Landroid/content/Context; , v2 : single-length
+	iput-object	v1,v4,c.f Landroid/webkit/WebView;
+; v1 : Lg; , v4 : Lc;
+	iget-object	v0,v4,c.f Landroid/webkit/WebView;
+; v0 : Landroid/webkit/WebView; , v4 : Lc;
+	new-instance	v1,h
+; v1 : Lh;
+	sget-object	v2,a.a Ljava/util/Map;
+; v2 : Ljava/util/Map;
+	invoke-direct	{v1,v5,v2,v3,v3},h/<init>	; <init>(Ld;Ljava/util/Map;ZZ)V
+; v1 : Lh; , v5 : Ld; , v2 : Ljava/util/Map; , v3 : single-length , v3 : single-length
+	invoke-virtual	{v0,v1},android/webkit/WebView/setWebViewClient	; setWebViewClient(Landroid/webkit/WebViewClient;)V
+; v0 : Landroid/webkit/WebView; , v1 : Lh;
+	iget-object	v0,v4,c.f Landroid/webkit/WebView;
+; v0 : Landroid/webkit/WebView; , v4 : Lc;
+	const/16	v1,8
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/webkit/WebView/setVisibility	; setVisibility(I)V
+; v0 : Landroid/webkit/WebView; , v1 : single-length
+	iget-object	v0,v4,c.f Landroid/webkit/WebView;
+; v0 : Landroid/webkit/WebView; , v4 : Lc;
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/webkit/WebView/setWillNotDraw	; setWillNotDraw(Z)V
+; v0 : Landroid/webkit/WebView; , v1 : single-length
+	new-instance	v0,b
+; v0 : Lb;
+	invoke-direct	{v0,v4,v5},b/<init>	; <init>(Lc;Ld;)V
+; v0 : Lb; , v4 : Lc; , v5 : Ld;
+	iput-object	v0,v4,c.c Lb;
+; v0 : Lb; , v4 : Lc;
+l5540:
+	return-void	
+l5542:
+	iput-object	v2,v4,c.f Landroid/webkit/WebView;
+; v2 : single-length , v4 : Lc;
+	iput-object	v2,v4,c.c Lb;
+; v2 : single-length , v4 : Lc;
+	const-string	v0,"activity was null while trying to create an AdLoader."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	l5540
+.end method
+
+.method private a(Lcom/google/ads/AdRequest;Landroid/app/Activity;)Ljava/lang/String;
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 11
+; this: v8 (Lc;)
+; parameter[0] : v9 (Lcom/google/ads/AdRequest;)
+; parameter[1] : v10 (Landroid/app/Activity;)
+.catch android/content/pm/PackageManager$NameNotFoundException from l56cc to l56dc using l57d2
+	const-wide/16	v6,0
+; v6 : double-length
+	invoke-virtual	{v10},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v10 : Landroid/app/Activity;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-virtual	{v9,v0},com/google/ads/AdRequest/getRequestMap	; getRequestMap(Landroid/content/Context;)Ljava/util/Map;
+; v9 : Lcom/google/ads/AdRequest; , v0 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/util/Map;
+	iget-object	v2,v8,c.d Ld;
+; v2 : Ld; , v8 : Lc;
+	invoke-virtual	{v2},d/l	; l()Lf;
+; v2 : Ld;
+	move-result-object	v2
+; v2 : Lf;
+	invoke-virtual	{v2},f/h	; h()J
+; v2 : Lf;
+	move-result-wide	v3
+; v3 : double-length
+	cmp-long	v5,v3,v6
+; v5 : single-length , v3 : double-length , v6 : double-length
+	if-lez	v5,l55aa
+; v5 : single-length
+	const-string	v5,"prl"
+; v5 : Ljava/lang/String;
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	invoke-interface	{v1,v5,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v5 : Ljava/lang/String; , v3 : Ljava/lang/Long;
+l55aa:
+	invoke-virtual	{v2},f/g	; g()Ljava/lang/String;
+; v2 : Lf;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	if-eqz	v3,l55c0
+; v3 : Ljava/lang/String;
+	const-string	v4,"ppcl"
+; v4 : Ljava/lang/String;
+	invoke-interface	{v1,v4,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v4 : Ljava/lang/String; , v3 : Ljava/lang/String;
+l55c0:
+	invoke-virtual	{v2},f/f	; f()Ljava/lang/String;
+; v2 : Lf;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	if-eqz	v3,l55d6
+; v3 : Ljava/lang/String;
+	const-string	v4,"pcl"
+; v4 : Ljava/lang/String;
+	invoke-interface	{v1,v4,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v4 : Ljava/lang/String; , v3 : Ljava/lang/String;
+l55d6:
+	invoke-virtual	{v2},f/e	; e()J
+; v2 : Lf;
+	move-result-wide	v3
+; v3 : double-length
+	cmp-long	v5,v3,v6
+; v5 : single-length , v3 : double-length , v6 : double-length
+	if-lez	v5,l55f8
+; v5 : single-length
+	const-string	v5,"pcc"
+; v5 : Ljava/lang/String;
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	invoke-interface	{v1,v5,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v5 : Ljava/lang/String; , v3 : Ljava/lang/Long;
+l55f8:
+	const-string	v3,"preqs"
+; v3 : Ljava/lang/String;
+	invoke-static	{},f/i	; i()J
+; 
+	nop	
+	move-result-wide	v4
+; v4 : double-length
+	invoke-static	{v4,v5},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v4 : double-length
+	move-result-object	v4
+; v4 : Ljava/lang/Long;
+	invoke-interface	{v1,v3,v4},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v4 : Ljava/lang/Long;
+	invoke-virtual	{v2},f/j	; j()Ljava/lang/String;
+; v2 : Lf;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	if-eqz	v3,l5628
+; v3 : Ljava/lang/String;
+	const-string	v4,"pai"
+; v4 : Ljava/lang/String;
+	invoke-interface	{v1,v4,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v4 : Ljava/lang/String; , v3 : Ljava/lang/String;
+l5628:
+	invoke-virtual	{v2},f/k	; k()Z
+; v2 : Lf;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l5642
+; v3 : single-length
+	const-string	v3,"aoi_timeout"
+; v3 : Ljava/lang/String;
+	const-string	v4,"true"
+; v4 : Ljava/lang/String;
+	invoke-interface	{v1,v3,v4},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+l5642:
+	invoke-virtual	{v2},f/m	; m()Z
+; v2 : Lf;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l565c
+; v3 : single-length
+	const-string	v3,"aoi_nofill"
+; v3 : Ljava/lang/String;
+	const-string	v4,"true"
+; v4 : Ljava/lang/String;
+	invoke-interface	{v1,v3,v4},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+l565c:
+	invoke-virtual	{v2},f/p	; p()Ljava/lang/String;
+; v2 : Lf;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	if-eqz	v3,l5672
+; v3 : Ljava/lang/String;
+	const-string	v4,"pit"
+; v4 : Ljava/lang/String;
+	invoke-interface	{v1,v4,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v4 : Ljava/lang/String; , v3 : Ljava/lang/String;
+l5672:
+	invoke-virtual	{v2},f/a	; a()V
+; v2 : Lf;
+	invoke-virtual	{v2},f/d	; d()V
+; v2 : Lf;
+	iget-object	v2,v8,c.d Ld;
+; v2 : Ld; , v8 : Lc;
+	invoke-virtual	{v2},d/f	; f()Lcom/google/ads/Ad;
+; v2 : Ld;
+	move-result-object	v2
+; v2 : Lcom/google/ads/Ad;
+	instance-of	v2,v2,com/google/ads/InterstitialAd
+; v2 : single-length , v2 : single-length
+	if-eqz	v2,l5762
+; v2 : single-length
+	const-string	v2,"format"
+; v2 : Ljava/lang/String;
+	const-string	v3,"interstitial_mb"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+l56a0:
+	const-string	v2,"slotname"
+; v2 : Ljava/lang/String;
+	iget-object	v3,v8,c.d Ld;
+; v3 : Ld; , v8 : Lc;
+	invoke-virtual	{v3},d/h	; h()Ljava/lang/String;
+; v3 : Ld;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	const-string	v2,"js"
+; v2 : Ljava/lang/String;
+	const-string	v3,"afma-sdk-a-v4.1.1"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	invoke-virtual	{v0},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+l56cc:
+	invoke-virtual	{v0},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v0 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Landroid/content/pm/PackageManager;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v3,v2,v4},android/content/pm/PackageManager/getPackageInfo	; getPackageInfo(Ljava/lang/String;I)Landroid/content/pm/PackageInfo;
+; v3 : Landroid/content/pm/PackageManager; , v2 : Ljava/lang/String; , v4 : single-length
+l56dc:
+	move-result-object	v2
+; v2 : Landroid/content/pm/PackageInfo;
+	iget	v2,v2,android/content/pm/PackageInfo.versionCode I
+; v2 : single-length , v2 : single-length
+	const-string	v3,"msid"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-interface	{v1,v3,v4},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	const-string	v3,"app_name"
+; v3 : Ljava/lang/String;
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	invoke-direct	{v4},java/lang/StringBuilder/<init>	; <init>()V
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4,v2},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v4,".android."
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v2,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v2,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v1,v3,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	const-string	v2,"isu"
+; v2 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;)Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/AdUtil/d	; d(Landroid/content/Context;)Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	if-nez	v2,l57e4
+; v2 : Ljava/lang/String;
+	new-instance	v0,c$d
+; v0 : Lc$d;
+	const-string	v1,"NETWORK_ERROR"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v8,v1},c$d/<init>	; <init>(Lc;Ljava/lang/String;)V
+; v0 : Lc$d; , v8 : Lc; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Lc$d;
+l5762:
+	iget-object	v2,v8,c.d Ld;
+; v2 : Ld; , v8 : Lc;
+	invoke-virtual	{v2},d/k	; k()Lcom/google/ads/AdSize;
+; v2 : Ld;
+	move-result-object	v2
+; v2 : Lcom/google/ads/AdSize;
+	invoke-virtual	{v2},com/google/ads/AdSize/toString	; toString()Ljava/lang/String;
+; v2 : Lcom/google/ads/AdSize;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	if-eqz	v3,l5786
+; v3 : Ljava/lang/String;
+	const-string	v2,"format"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	goto	l56a0
+l5786:
+	new-instance	v3,java/util/HashMap
+; v3 : Ljava/util/HashMap;
+	invoke-direct	{v3},java/util/HashMap/<init>	; <init>()V
+; v3 : Ljava/util/HashMap;
+	const-string	v4,"w"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v2},com/google/ads/AdSize/getWidth	; getWidth()I
+; v2 : Lcom/google/ads/AdSize;
+	move-result	v5
+; v5 : single-length
+	invoke-static	{v5},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v5 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/Integer;
+	invoke-interface	{v3,v4,v5},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v3 : Ljava/util/HashMap; , v4 : Ljava/lang/String; , v5 : Ljava/lang/Integer;
+	const-string	v4,"h"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v2},com/google/ads/AdSize/getHeight	; getHeight()I
+; v2 : Lcom/google/ads/AdSize;
+	move-result	v2
+; v2 : single-length
+	invoke-static	{v2},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Integer;
+	invoke-interface	{v3,v4,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v3 : Ljava/util/HashMap; , v4 : Ljava/lang/String; , v2 : Ljava/lang/Integer;
+	const-string	v2,"ad_frame"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/util/HashMap;
+	goto/16	l56a0
+l57d2:
+	move-exception	v0
+; v0 : android/content/pm/PackageManager$NameNotFoundException
+	new-instance	v0,c$b
+; v0 : Lc$b;
+	const-string	v1,"NameNotFoundException"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v8,v1},c$b/<init>	; <init>(Lc;Ljava/lang/String;)V
+; v0 : Lc$b; , v8 : Lc; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Lc$b;
+l57e4:
+	const-string	v3,"net"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v3,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/AdUtil/e	; e(Landroid/content/Context;)Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	if-eqz	v2,l5810
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v2},java/lang/String/length	; length()I
+; v2 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,l5810
+; v3 : single-length
+	const-string	v3,"cap"
+; v3 : Ljava/lang/String;
+	invoke-interface	{v1,v3,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v2 : Ljava/lang/String;
+l5810:
+	const-string	v2,"u_audio"
+; v2 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/AdUtil/f	; f(Landroid/content/Context;)Lcom/google/ads/util/AdUtil$a;
+; v0 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Lcom/google/ads/util/AdUtil$a;
+	invoke-virtual	{v3},com/google/ads/util/AdUtil$a/ordinal	; ordinal()I
+; v3 : Lcom/google/ads/util/AdUtil$a;
+	move-result	v3
+; v3 : single-length
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-interface	{v1,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+	invoke-static	{v10},com/google/ads/util/AdUtil/a	; a(Landroid/app/Activity;)Landroid/util/DisplayMetrics;
+; v10 : Landroid/app/Activity;
+	move-result-object	v2
+; v2 : Landroid/util/DisplayMetrics;
+	const-string	v3,"u_sd"
+; v3 : Ljava/lang/String;
+	iget	v4,v2,android/util/DisplayMetrics.density F
+; v4 : single-length , v2 : Landroid/util/DisplayMetrics;
+	invoke-static	{v4},java/lang/Float/valueOf	; valueOf(F)Ljava/lang/Float;
+; v4 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/Float;
+	invoke-interface	{v1,v3,v4},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v4 : Ljava/lang/Float;
+	const-string	v3,"u_h"
+; v3 : Ljava/lang/String;
+	invoke-static	{v0,v2},com/google/ads/util/AdUtil/a	; a(Landroid/content/Context;Landroid/util/DisplayMetrics;)I
+; v0 : Landroid/content/Context; , v2 : Landroid/util/DisplayMetrics;
+	move-result	v4
+; v4 : single-length
+	invoke-static	{v4},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v4 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/Integer;
+	invoke-interface	{v1,v3,v4},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v4 : Ljava/lang/Integer;
+	const-string	v3,"u_w"
+; v3 : Ljava/lang/String;
+	invoke-static	{v0,v2},com/google/ads/util/AdUtil/b	; b(Landroid/content/Context;Landroid/util/DisplayMetrics;)I
+; v0 : Landroid/content/Context; , v2 : Landroid/util/DisplayMetrics;
+	move-result	v0
+; v0 : single-length
+	invoke-static	{v0},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Integer;
+	invoke-interface	{v1,v3,v0},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v3 : Ljava/lang/String; , v0 : Ljava/lang/Integer;
+	const-string	v0,"hl"
+; v0 : Ljava/lang/String;
+	invoke-static	{},java/util/Locale/getDefault	; getDefault()Ljava/util/Locale;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Ljava/util/Locale;
+	invoke-virtual	{v2},java/util/Locale/getLanguage	; getLanguage()Ljava/lang/String;
+; v2 : Ljava/util/Locale;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v1,v0,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-static	{},com/google/ads/util/AdUtil/c	; c()Z
+; 
+	nop	
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l58be
+; v0 : single-length
+	const-string	v0,"simulator"
+; v0 : Ljava/lang/String;
+	const/4	v2,1
+; v2 : single-length
+	invoke-static	{v2},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Integer;
+	invoke-interface	{v1,v0,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Map; , v0 : Ljava/lang/String; , v2 : Ljava/lang/Integer;
+l58be:
+	invoke-static	{v1},com/google/ads/util/AdUtil/a	; a(Ljava/util/Map;)Ljava/lang/String;
+; v1 : Ljava/util/Map;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"<html><head><script src="http://www.gstatic.com/afma/sdk-core-v40.js"></script><script>AFMA_buildAdURL("
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,");"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"</script></head><body></body></html>"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"adRequestUrlHtml: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/google/ads/util/a/c	; c(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method private a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 11
+; this: v8 (Lc;)
+; parameter[0] : v9 (Lcom/google/ads/AdRequest$ErrorCode;)
+; parameter[1] : v10 (Z)
+	iget-object	v0,v8,c.c Lb;
+; v0 : Lb; , v8 : Lc;
+	invoke-virtual	{v0},b/a	; a()V
+; v0 : Lb;
+	iget-object	v7,v8,c.d Ld;
+; v7 : Ld; , v8 : Lc;
+	new-instance	v0,c$a
+; v0 : Lc$a;
+	iget-object	v2,v8,c.d Ld;
+; v2 : Ld; , v8 : Lc;
+	iget-object	v3,v8,c.f Landroid/webkit/WebView;
+; v3 : Landroid/webkit/WebView; , v8 : Lc;
+	iget-object	v4,v8,c.c Lb;
+; v4 : Lb; , v8 : Lc;
+	move-object	v1,v8
+; v1 : Lc; , v8 : Lc;
+	move-object	v5,v9
+; v5 : Lcom/google/ads/AdRequest$ErrorCode; , v9 : Lcom/google/ads/AdRequest$ErrorCode;
+	move	v6,v10
+; v6 : single-length , v10 : single-length
+	invoke-direct/range	{v0..v6},c$a/<init>;	<init>(Lc;Ld;Landroid/webkit/WebView;Lb;Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v0 : Lc$a; , v1 : Lc; , v2 : Ld; , v3 : Landroid/webkit/WebView; , v4 : Lb; , v5 : Lcom/google/ads/AdRequest$ErrorCode; , v6 : single-length
+	invoke-virtual	{v7,v0},d/a	; a(Ljava/lang/Runnable;)V
+; v7 : Ld; , v0 : Lc$a;
+	return-void	
+.end method
+
+.method final a()V
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 2
+; this: v1 (Lc;)
+	const-string	v0,"AdLoader cancelled."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	iget-object	v0,v1,c.f Landroid/webkit/WebView;
+; v0 : Landroid/webkit/WebView; , v1 : Lc;
+	invoke-virtual	{v0},android/webkit/WebView/stopLoading	; stopLoading()V
+; v0 : Landroid/webkit/WebView;
+	iget-object	v0,v1,c.f Landroid/webkit/WebView;
+; v0 : Landroid/webkit/WebView; , v1 : Lc;
+	invoke-virtual	{v0},android/webkit/WebView/destroy	; destroy()V
+; v0 : Landroid/webkit/WebView;
+	iget-object	v0,v1,c.m Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lc;
+	if-eqz	v0,l59ce
+; v0 : Ljava/lang/Thread;
+	iget-object	v0,v1,c.m Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lc;
+	invoke-virtual	{v0},java/lang/Thread/interrupt	; interrupt()V
+; v0 : Ljava/lang/Thread;
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,c.m Ljava/lang/Thread;
+; v0 : single-length , v1 : Lc;
+l59ce:
+	iget-object	v0,v1,c.c Lb;
+; v0 : Lb; , v1 : Lc;
+	invoke-virtual	{v0},b/a	; a()V
+; v0 : Lb;
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,c.i Z
+; v0 : single-length , v1 : Lc;
+	return-void	
+.end method
+
+.method public final synchronized a(I)V
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 3
+; this: v1 (Lc;)
+; parameter[0] : v2 (I)
+.catch java/lang/Exception from l59f2 to l59f6 using l59fa
+	monitor-enter	v1
+; v1 : Lc;
+l59f2:
+	iput	v2,v1,c.l I
+; v2 : single-length , v1 : Lc;
+l59f6:
+	monitor-exit	v1
+; v1 : Lc;
+	return-void	
+l59fa:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lc;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public final synchronized a(Lcom/google/ads/AdRequest$ErrorCode;)V
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 3
+; this: v1 (Lc;)
+; parameter[0] : v2 (Lcom/google/ads/AdRequest$ErrorCode;)
+.catch java/lang/Exception from l5a1e to l5a28 using l5a2c
+	monitor-enter	v1
+; v1 : Lc;
+l5a1e:
+	iput-object	v2,v1,c.j Lcom/google/ads/AdRequest$ErrorCode;
+; v2 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : Lc;
+	invoke-virtual	{v1},java/lang/Object/notify	; notify()V
+; v1 : Lc;
+l5a28:
+	monitor-exit	v1
+; v1 : Lc;
+	return-void	
+l5a2c:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lc;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method final a(Lcom/google/ads/AdRequest;)V
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 3
+; this: v1 (Lc;)
+; parameter[0] : v2 (Lcom/google/ads/AdRequest;)
+	iput-object	v2,v1,c.e Lcom/google/ads/AdRequest;
+; v2 : Lcom/google/ads/AdRequest; , v1 : Lc;
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,c.i Z
+; v0 : single-length , v1 : Lc;
+	new-instance	v0,java/lang/Thread
+; v0 : Ljava/lang/Thread;
+	invoke-direct	{v0,v1},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v0 : Ljava/lang/Thread; , v1 : Lc;
+	iput-object	v0,v1,c.m Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lc;
+	iget-object	v0,v1,c.m Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lc;
+	invoke-virtual	{v0},java/lang/Thread/start	; start()V
+; v0 : Ljava/lang/Thread;
+	return-void	
+.end method
+
+.method final synchronized a(Ljava/lang/String;)V
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 3
+; this: v1 (Lc;)
+; parameter[0] : v2 (Ljava/lang/String;)
+.catch java/lang/Exception from l5a86 to l5a90 using l5a94
+	monitor-enter	v1
+; v1 : Lc;
+l5a86:
+	iget-object	v0,v1,c.h Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v1 : Lc;
+	invoke-virtual	{v0,v2},java/util/LinkedList/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/LinkedList; , v2 : Ljava/lang/String;
+l5a90:
+	monitor-exit	v1
+; v1 : Lc;
+	return-void	
+l5a94:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lc;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method final synchronized a(Ljava/lang/String;Ljava/lang/String;)V
+.throws Lc$b;
+.throws Lc$d;
+.limit registers 4
+; this: v1 (Lc;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/String;)
+.catch java/lang/Exception from l5aba to l5ac8 using l5acc
+	monitor-enter	v1
+; v1 : Lc;
+l5aba:
+	iput-object	v3,v1,c.a Ljava/lang/String;
+; v3 : Ljava/lang/String; , v1 : Lc;
+	iput-object	v2,v1,c.b Ljava/lang/String;
+; v2 : Ljava/lang/String; , v1 : Lc;
+	invoke-virtual	{v1},java/lang/Object/notify	; notify()V
+; v1 : Lc;
+l5ac8:
+	monitor-exit	v1
+; v1 : Lc;
+	return-void	
+l5acc:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lc;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method final synchronized b()V
+.limit registers 2
+; this: v1 (Lc;)
+.catch java/lang/Exception from l5af4 to l5afe using l5b02
+	monitor-enter	v1
+; v1 : Lc;
+	const/4	v0,1
+; v0 : single-length
+l5af4:
+	iput-boolean	v0,v1,c.k Z
+; v0 : single-length , v1 : Lc;
+	invoke-virtual	{v1},java/lang/Object/notify	; notify()V
+; v1 : Lc;
+l5afe:
+	monitor-exit	v1
+; v1 : Lc;
+	return-void	
+l5b02:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lc;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public final synchronized b(Ljava/lang/String;)V
+.limit registers 3
+; this: v1 (Lc;)
+; parameter[0] : v2 (Ljava/lang/String;)
+.catch java/lang/Exception from l5b26 to l5b30 using l5b34
+	monitor-enter	v1
+; v1 : Lc;
+l5b26:
+	iput-object	v2,v1,c.g Ljava/lang/String;
+; v2 : Ljava/lang/String; , v1 : Lc;
+	invoke-virtual	{v1},java/lang/Object/notify	; notify()V
+; v1 : Lc;
+l5b30:
+	monitor-exit	v1
+; v1 : Lc;
+	return-void	
+l5b34:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lc;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public final run()V
+.limit registers 12
+; this: v11 (Lc;)
+.catch java/lang/Exception from l5f02 to l5f18 using l5bb2
+.catch java/lang/Exception from l5eba to l5efe using l5f00
+.catch java/lang/Exception from l5eba to l5efe using l5bb2
+.catch java/lang/Exception from l5eb4 to l5eb6 using l5bb2
+.catch java/lang/Exception from l5e88 to l5eb4 using l5f00
+.catch java/lang/Exception from l5e88 to l5eb4 using l5bb2
+.catch java/lang/Exception from l5e80 to l5e82 using l5bb2
+.catch java/lang/Exception from l5e58 to l5e80 using l5f00
+.catch java/lang/Exception from l5e58 to l5e80 using l5bb2
+.catch java/lang/InterruptedException from l5e52 to l5e58 using l5e86
+.catch java/lang/Exception from l5e52 to l5e58 using l5f00
+.catch java/lang/Exception from l5e52 to l5e58 using l5bb2
+.catch java/lang/Exception from l5e00 to l5e40 using l5f00
+.catch java/lang/Exception from l5e00 to l5e40 using l5bb2
+.catch java/lang/Exception from l5dfa to l5dfc using l5bb2
+.catch java/lang/Exception from l5dae to l5dfa using l5f00
+.catch java/lang/Exception from l5dae to l5dfa using l5bb2
+.catch java/lang/Exception from l5da8 to l5daa using l5bb2
+.catch java/lang/Exception from l5d94 to l5da8 using l5f00
+.catch java/lang/Exception from l5d94 to l5da8 using l5bb2
+.catch java/lang/Exception from l5d8e to l5d90 using l5bb2
+.catch java/lang/Exception from l5d62 to l5d8e using l5f00
+.catch java/lang/Exception from l5d62 to l5d8e using l5bb2
+.catch java/lang/Exception from l5d5a to l5d5c using l5bb2
+.catch java/lang/Exception from l5d52 to l5d56 using l5f00
+.catch java/lang/Exception from l5d52 to l5d56 using l5bb2
+.catch java/lang/InterruptedException from l5d4c to l5d52 using l5d60
+.catch java/lang/Exception from l5d4c to l5d52 using l5f00
+.catch java/lang/Exception from l5d4c to l5d52 using l5bb2
+.catch java/lang/Exception from l5d28 to l5d3c using l5f00
+.catch java/lang/Exception from l5d28 to l5d3c using l5bb2
+.catch java/lang/Exception from l5d22 to l5d24 using l5bb2
+.catch java/lang/Exception from l5cd6 to l5d22 using l5f00
+.catch java/lang/Exception from l5cd6 to l5d22 using l5bb2
+.catch java/lang/Exception from l5cd0 to l5cd2 using l5bb2
+.catch java/lang/Exception from l5cbc to l5cd0 using l5f00
+.catch java/lang/Exception from l5cbc to l5cd0 using l5bb2
+.catch java/lang/Exception from l5cb6 to l5cb8 using l5bb2
+.catch java/lang/Exception from l5c8a to l5cb6 using l5f00
+.catch java/lang/Exception from l5c8a to l5cb6 using l5bb2
+.catch java/lang/Exception from l5c84 to l5c86 using l5bb2
+.catch java/lang/Exception from l5c4c to l5c84 using l5f00
+.catch java/lang/Exception from l5c4c to l5c84 using l5bb2
+.catch java/lang/Exception from l5c46 to l5c48 using l5bb2
+.catch java/lang/Exception from l5c0e to l5c46 using l5f00
+.catch java/lang/Exception from l5c0e to l5c46 using l5bb2
+.catch java/lang/Exception from l5c08 to l5c0a using l5bb2
+.catch java/lang/Exception from l5c00 to l5c04 using l5f00
+.catch java/lang/Exception from l5c00 to l5c04 using l5bb2
+.catch java/lang/InterruptedException from l5bfa to l5c00 using l5c88
+.catch java/lang/Exception from l5bfa to l5c00 using l5f00
+.catch java/lang/Exception from l5bfa to l5c00 using l5bb2
+.catch java/lang/Exception from l5bc4 to l5bf0 using l5f00
+.catch java/lang/Exception from l5bc4 to l5bf0 using l5bb2
+.catch c$d from l5bb8 to l5bc2 using l5c0c
+.catch c$b from l5bb8 to l5bc2 using l5c4a
+.catch java/lang/Exception from l5bb8 to l5bc2 using l5f00
+.catch java/lang/Exception from l5bb8 to l5bc2 using l5bb2
+.catch java/lang/Exception from l5bae to l5bb0 using l5bb2
+.catch java/lang/Exception from l5b88 to l5bae using l5f00
+.catch java/lang/Exception from l5b88 to l5bae using l5bb2
+.catch java/lang/Exception from l5b84 to l5b86 using l5bb2
+.catch java/lang/Exception from l5b5e to l5b84 using l5f00
+.catch java/lang/Exception from l5b5e to l5b84 using l5bb2
+	const-wide/16	v9,0
+; v9 : double-length
+	monitor-enter	v11
+; v11 : Lc;
+l5b5e:
+	iget-object	v0,v11,c.f Landroid/webkit/WebView;
+; v0 : Landroid/webkit/WebView; , v11 : Lc;
+	if-eqz	v0,l5b6e
+; v0 : Landroid/webkit/WebView;
+	iget-object	v0,v11,c.c Lb;
+; v0 : Lb; , v11 : Lc;
+	if-nez	v0,l5b88
+; v0 : Lb;
+l5b6e:
+	const-string	v0,"adRequestWebView was null while trying to load an ad."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5b84:
+	monitor-exit	v11
+; v11 : Lc;
+l5b86:
+	return-void	
+l5b88:
+	iget-object	v0,v11,c.d Ld;
+; v0 : Ld; , v11 : Lc;
+	invoke-virtual	{v0},d/e	; e()Landroid/app/Activity;
+; v0 : Ld;
+	move-result-object	v0
+; v0 : Landroid/app/Activity;
+	if-nez	v0,l5bb8
+; v0 : Landroid/app/Activity;
+	const-string	v0,"activity was null while forming an ad request."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5bae:
+	monitor-exit	v11
+; v11 : Lc;
+l5bb0:
+	goto	l5b86
+l5bb2:
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v11
+; v11 : Lc;
+	throw	v0
+; v0 : java/lang/Exception
+l5bb8:
+	iget-object	v1,v11,c.e Lcom/google/ads/AdRequest;
+; v1 : Lcom/google/ads/AdRequest; , v11 : Lc;
+	invoke-direct	{v11,v1,v0},c/a	; a(Lcom/google/ads/AdRequest;Landroid/app/Activity;)Ljava/lang/String;
+; v11 : Lc; , v1 : Lcom/google/ads/AdRequest; , v0 : Landroid/app/Activity;
+l5bc2:
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+l5bc4:
+	iget-object	v1,v11,c.d Ld;
+; v1 : Ld; , v11 : Lc;
+	new-instance	v2,c$c
+; v2 : Lc$c;
+	iget-object	v3,v11,c.f Landroid/webkit/WebView;
+; v3 : Landroid/webkit/WebView; , v11 : Lc;
+	const/4	v4,0
+; v4 : single-length
+	invoke-direct	{v2,v11,v3,v4,v0},c$c/<init>	; <init>(Lc;Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)V
+; v2 : Lc$c; , v11 : Lc; , v3 : Landroid/webkit/WebView; , v4 : single-length , v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},d/a	; a(Ljava/lang/Runnable;)V
+; v1 : Ld; , v2 : Lc$c;
+	iget-object	v0,v11,c.d Ld;
+; v0 : Ld; , v11 : Lc;
+	invoke-virtual	{v0},d/n	; n()J
+; v0 : Ld;
+	move-result-wide	v0
+; v0 : double-length
+	invoke-static	{},android/os/SystemClock/elapsedRealtime	; elapsedRealtime()J
+; 
+	nop	
+l5bf0:
+	move-result-wide	v2
+; v2 : double-length
+	cmp-long	v4,v0,v9
+; v4 : single-length , v0 : double-length , v9 : double-length
+	if-lez	v4,l5c00
+; v4 : single-length
+l5bfa:
+	invoke-virtual	{v11,v0,v1},java/lang/Object/wait	; wait(J)V
+; v11 : Lc; , v0 : double-length
+l5c00:
+	iget-boolean	v4,v11,c.i Z
+; v4 : single-length , v11 : Lc;
+l5c04:
+	if-eqz	v4,l5cbc
+; v4 : single-length
+l5c08:
+	monitor-exit	v11
+; v11 : Lc;
+l5c0a:
+	goto	l5b86
+l5c0c:
+	move-exception	v0
+; v0 : c$d
+l5c0e:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Unable to connect to network: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : c$d
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NETWORK_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5c46:
+	monitor-exit	v11
+; v11 : Lc;
+l5c48:
+	goto	l5b86
+l5c4a:
+	move-exception	v0
+; v0 : c$b
+l5c4c:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Caught internal exception: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : c$b
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5c84:
+	monitor-exit	v11
+; v11 : Lc;
+l5c86:
+	goto	l5b86
+l5c88:
+	move-exception	v0
+; v0 : java/lang/InterruptedException
+l5c8a:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"AdLoader InterruptedException while getting the URL: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : java/lang/InterruptedException
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l5cb6:
+	monitor-exit	v11
+; v11 : Lc;
+l5cb8:
+	goto/16	l5b86
+l5cbc:
+	iget-object	v4,v11,c.j Lcom/google/ads/AdRequest$ErrorCode;
+; v4 : Lcom/google/ads/AdRequest$ErrorCode; , v11 : Lc;
+	if-eqz	v4,l5cd6
+; v4 : Lcom/google/ads/AdRequest$ErrorCode;
+	iget-object	v0,v11,c.j Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode; , v11 : Lc;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5cd0:
+	monitor-exit	v11
+; v11 : Lc;
+l5cd2:
+	goto/16	l5b86
+l5cd6:
+	iget-object	v4,v11,c.g Ljava/lang/String;
+; v4 : Ljava/lang/String; , v11 : Lc;
+	if-nez	v4,l5d28
+; v4 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"AdLoader timed out after "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v0,v1},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"ms while getting the URL."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NETWORK_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5d22:
+	monitor-exit	v11
+; v11 : Lc;
+l5d24:
+	goto/16	l5b86
+l5d28:
+	iget-object	v4,v11,c.c Lb;
+; v4 : Lb; , v11 : Lc;
+	iget-object	v5,v11,c.g Ljava/lang/String;
+; v5 : Ljava/lang/String; , v11 : Lc;
+	invoke-virtual	{v4,v5},b/a	; a(Ljava/lang/String;)V
+; v4 : Lb; , v5 : Ljava/lang/String;
+	invoke-static	{},android/os/SystemClock/elapsedRealtime	; elapsedRealtime()J
+; 
+	nop	
+l5d3c:
+	move-result-wide	v4
+; v4 : double-length
+	sub-long/2addr	v4,v2
+; v4 : double-length , v2 : double-length
+	sub-long	v4,v0,v4
+; v4 : double-length , v0 : double-length , v4 : double-length
+	cmp-long	v6,v4,v9
+; v6 : single-length , v4 : double-length , v9 : double-length
+	if-lez	v6,l5d52
+; v6 : single-length
+l5d4c:
+	invoke-virtual	{v11,v4,v5},java/lang/Object/wait	; wait(J)V
+; v11 : Lc; , v4 : double-length
+l5d52:
+	iget-boolean	v4,v11,c.i Z
+; v4 : single-length , v11 : Lc;
+l5d56:
+	if-eqz	v4,l5d94
+; v4 : single-length
+l5d5a:
+	monitor-exit	v11
+; v11 : Lc;
+l5d5c:
+	goto/16	l5b86
+l5d60:
+	move-exception	v0
+; v0 : java/lang/InterruptedException
+l5d62:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"AdLoader InterruptedException while getting the HTML: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : java/lang/InterruptedException
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l5d8e:
+	monitor-exit	v11
+; v11 : Lc;
+l5d90:
+	goto/16	l5b86
+l5d94:
+	iget-object	v4,v11,c.j Lcom/google/ads/AdRequest$ErrorCode;
+; v4 : Lcom/google/ads/AdRequest$ErrorCode; , v11 : Lc;
+	if-eqz	v4,l5dae
+; v4 : Lcom/google/ads/AdRequest$ErrorCode;
+	iget-object	v0,v11,c.j Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode; , v11 : Lc;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5da8:
+	monitor-exit	v11
+; v11 : Lc;
+l5daa:
+	goto/16	l5b86
+l5dae:
+	iget-object	v4,v11,c.b Ljava/lang/String;
+; v4 : Ljava/lang/String; , v11 : Lc;
+	if-nez	v4,l5e00
+; v4 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"AdLoader timed out after "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v0,v1},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"ms while getting the HTML."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NETWORK_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,0
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5dfa:
+	monitor-exit	v11
+; v11 : Lc;
+l5dfc:
+	goto/16	l5b86
+l5e00:
+	iget-object	v4,v11,c.d Ld;
+; v4 : Ld; , v11 : Lc;
+	invoke-virtual	{v4},d/i	; i()Lg;
+; v4 : Ld;
+	move-result-object	v4
+; v4 : Lg;
+	iget-object	v5,v11,c.d Ld;
+; v5 : Ld; , v11 : Lc;
+	invoke-virtual	{v5},d/j	; j()Lh;
+; v5 : Ld;
+	move-result-object	v5
+; v5 : Lh;
+	invoke-virtual	{v5},h/a	; a()V
+; v5 : Lh;
+	iget-object	v5,v11,c.d Ld;
+; v5 : Ld; , v11 : Lc;
+	new-instance	v6,c$c
+; v6 : Lc$c;
+	iget-object	v7,v11,c.a Ljava/lang/String;
+; v7 : Ljava/lang/String; , v11 : Lc;
+	iget-object	v8,v11,c.b Ljava/lang/String;
+; v8 : Ljava/lang/String; , v11 : Lc;
+	invoke-direct	{v6,v11,v4,v7,v8},c$c/<init>	; <init>(Lc;Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)V
+; v6 : Lc$c; , v11 : Lc; , v4 : Lg; , v7 : Ljava/lang/String; , v8 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},d/a	; a(Ljava/lang/Runnable;)V
+; v5 : Ld; , v6 : Lc$c;
+	invoke-static	{},android/os/SystemClock/elapsedRealtime	; elapsedRealtime()J
+; 
+	nop	
+l5e40:
+	move-result-wide	v4
+; v4 : double-length
+	sub-long	v2,v4,v2
+; v2 : double-length , v4 : double-length , v2 : double-length
+	sub-long	v2,v0,v2
+; v2 : double-length , v0 : double-length , v2 : double-length
+	cmp-long	v4,v2,v9
+; v4 : single-length , v2 : double-length , v9 : double-length
+	if-lez	v4,l5e58
+; v4 : single-length
+l5e52:
+	invoke-virtual	{v11,v2,v3},java/lang/Object/wait	; wait(J)V
+; v11 : Lc; , v2 : double-length
+l5e58:
+	iget-boolean	v2,v11,c.k Z
+; v2 : single-length , v11 : Lc;
+	if-eqz	v2,l5eba
+; v2 : single-length
+	iget-object	v0,v11,c.d Ld;
+; v0 : Ld; , v11 : Lc;
+	new-instance	v1,c$e
+; v1 : Lc$e;
+	iget-object	v2,v11,c.d Ld;
+; v2 : Ld; , v11 : Lc;
+	iget-object	v3,v11,c.h Ljava/util/LinkedList;
+; v3 : Ljava/util/LinkedList; , v11 : Lc;
+	iget	v4,v11,c.l I
+; v4 : single-length , v11 : Lc;
+	invoke-direct	{v1,v11,v2,v3,v4},c$e/<init>	; <init>(Lc;Ld;Ljava/util/LinkedList;I)V
+; v1 : Lc$e; , v11 : Lc; , v2 : Ld; , v3 : Ljava/util/LinkedList; , v4 : single-length
+	invoke-virtual	{v0,v1},d/a	; a(Ljava/lang/Runnable;)V
+; v0 : Ld; , v1 : Lc$e;
+l5e80:
+	monitor-exit	v11
+; v11 : Lc;
+l5e82:
+	goto/16	l5b86
+l5e86:
+	move-exception	v0
+; v0 : java/lang/InterruptedException
+l5e88:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"AdLoader InterruptedException while loading the HTML: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : java/lang/InterruptedException
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l5eb4:
+	monitor-exit	v11
+; v11 : Lc;
+l5eb6:
+	goto/16	l5b86
+l5eba:
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"AdLoader timed out after "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v0,v1},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"ms while loading the HTML."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.NETWORK_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,1
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5efe:
+	goto	l5e80
+l5f00:
+	move-exception	v0
+; v0 : java/lang/Exception
+l5f02:
+	const-string	v1,"An unknown error occurred in AdLoader."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/a/a	; a(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/Exception
+	sget-object	v0,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v0 : Lcom/google/ads/AdRequest$ErrorCode;
+	const/4	v1,1
+; v1 : single-length
+	invoke-direct	{v11,v0,v1},c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;Z)V
+; v11 : Lc; , v0 : Lcom/google/ads/AdRequest$ErrorCode; , v1 : single-length
+l5f18:
+	goto	l5e80
+.end method
+
+

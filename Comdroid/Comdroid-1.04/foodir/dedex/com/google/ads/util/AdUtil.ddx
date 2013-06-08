@@ -1,0 +1,1876 @@
+.class public final com/google/ads/util/AdUtil
+.super java/lang/Object
+
+.inner class UserActivityReceiver inner com/google/ads/util/AdUtil$UserActivityReceiver outer com/google/ads/util/AdUtil
+.inner class a inner com/google/ads/util/AdUtil$a outer com/google/ads/util/AdUtil
+.field public static final a I
+.field private static b Ljava/lang/Boolean;
+.field private static c Ljava/lang/String;
+.field private static d Ljava/lang/String;
+.field private static e Landroid/media/AudioManager;
+.field private static f Z
+.field private static g Z
+.field private static h Ljava/lang/String;
+
+.method static <clinit>()V
+.limit registers 3
+.catch java/lang/NumberFormatException from l7df6 to l7e00 using l7e20
+	const/4	v2,0
+; v2 : single-length
+l7df6:
+	sget-object	v0,android/os/Build$VERSION.SDK Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v0 : Ljava/lang/String;
+l7e00:
+	move-result	v0
+; v0 : single-length
+l7e02:
+	sput	v0,com/google/ads/util/AdUtil.a I
+; v0 : I
+	sput-object	v2,com/google/ads/util/AdUtil.b Ljava/lang/Boolean;
+; v2 : Ljava/lang/Boolean;
+	sput-object	v2,com/google/ads/util/AdUtil.c Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	const/4	v0,1
+; v0 : single-length
+	sput-boolean	v0,com/google/ads/util/AdUtil.f Z
+; v0 : Z
+	const/4	v0,0
+; v0 : single-length
+	sput-boolean	v0,com/google/ads/util/AdUtil.g Z
+; v0 : Z
+	sput-object	v2,com/google/ads/util/AdUtil.h Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	return-void	
+l7e20:
+	move-exception	v0
+; v0 : java/lang/NumberFormatException
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"The Android SDK version couldn't be parsed to an int: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	sget-object	v1,android/os/Build$VERSION.SDK Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	const-string	v0,"Defaulting to Android SDK version 3."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	const/4	v0,3
+; v0 : single-length
+	goto	l7e02
+.end method
+
+.method private <init>()V
+.limit registers 1
+; this: v0 (Lcom/google/ads/util/AdUtil;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/util/AdUtil;
+	return-void	
+.end method
+
+.method public static a()I
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 2
+	sget	v0,com/google/ads/util/AdUtil.a I
+; v0 : single-length
+	const/16	v1,9
+; v1 : single-length
+	if-lt	v0,v1,l7ea4
+; v0 : single-length , v1 : single-length
+	const/4	v0,6
+; v0 : single-length
+l7ea2:
+	return	v0
+; v0 : single-length
+l7ea4:
+	const/4	v0,0
+; v0 : single-length
+	goto	l7ea2
+.end method
+
+.method public static a(Landroid/content/Context;Landroid/util/DisplayMetrics;)I
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 4
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/DisplayMetrics;)
+	sget	v0,com/google/ads/util/AdUtil.a I
+; v0 : single-length
+	const/4	v1,4
+; v1 : single-length
+	if-lt	v0,v1,l7ecc
+; v0 : single-length , v1 : single-length
+	invoke-static	{v2,v3},com/google/ads/util/c/a	; a(Landroid/content/Context;Landroid/util/DisplayMetrics;)I
+; v2 : Landroid/content/Context; , v3 : Landroid/util/DisplayMetrics;
+	move-result	v0
+; v0 : single-length
+l7eca:
+	return	v0
+; v0 : single-length
+l7ecc:
+	iget	v0,v3,android/util/DisplayMetrics.heightPixels I
+; v0 : single-length , v3 : Landroid/util/DisplayMetrics;
+	goto	l7eca
+.end method
+
+.method public static a(Landroid/app/Activity;)Landroid/util/DisplayMetrics;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 3
+; parameter[0] : v2 (Landroid/app/Activity;)
+	new-instance	v0,android/util/DisplayMetrics
+; v0 : Landroid/util/DisplayMetrics;
+	invoke-direct	{v0},android/util/DisplayMetrics/<init>	; <init>()V
+; v0 : Landroid/util/DisplayMetrics;
+	invoke-virtual	{v2},android/app/Activity/getWindowManager	; getWindowManager()Landroid/view/WindowManager;
+; v2 : Landroid/app/Activity;
+	move-result-object	v1
+; v1 : Landroid/view/WindowManager;
+	invoke-interface	{v1},android/view/WindowManager/getDefaultDisplay	; getDefaultDisplay()Landroid/view/Display;
+; v1 : Landroid/view/WindowManager;
+	move-result-object	v1
+; v1 : Landroid/view/Display;
+	invoke-virtual	{v1,v0},android/view/Display/getMetrics	; getMetrics(Landroid/util/DisplayMetrics;)V
+; v1 : Landroid/view/Display; , v0 : Landroid/util/DisplayMetrics;
+	return-object	v0
+; v0 : Landroid/util/DisplayMetrics;
+.end method
+
+.method public static a(Landroid/content/Context;)Ljava/lang/String;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 3
+; parameter[0] : v2 (Landroid/content/Context;)
+	sget-object	v0,com/google/ads/util/AdUtil.c Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	if-nez	v0,l7f72
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v2},android/content/Context/getContentResolver	; getContentResolver()Landroid/content/ContentResolver;
+; v2 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/ContentResolver;
+	const-string	v1,"android_id"
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},android/provider/Settings$Secure/getString	; getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Landroid/content/ContentResolver; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v0,l7f44
+; v0 : Ljava/lang/String;
+	invoke-static	{},com/google/ads/util/AdUtil/c	; c()Z
+; 
+	nop	
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l7f58
+; v1 : single-length
+l7f44:
+	const-string	v0,"emulator"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/AdUtil/a	; a(Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+l7f50:
+	if-nez	v0,l7f62
+; v0 : Ljava/lang/String;
+	const/4	v0,0
+; v0 : single-length
+l7f56:
+	return-object	v0
+; v0 : Ljava/lang/String;
+l7f58:
+	invoke-static	{v0},com/google/ads/util/AdUtil/a	; a(Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	l7f50
+l7f62:
+	sget-object	v1,java/util/Locale.US Ljava/util/Locale;
+; v1 : Ljava/util/Locale;
+	invoke-virtual	{v0,v1},java/lang/String/toUpperCase	; toUpperCase(Ljava/util/Locale;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/util/Locale;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/util/AdUtil.c Ljava/lang/String;
+; v0 : Ljava/lang/String;
+l7f72:
+	sget-object	v0,com/google/ads/util/AdUtil.c Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	goto	l7f56
+.end method
+
+.method public static a(Landroid/location/Location;)Ljava/lang/String;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 10
+; parameter[0] : v9 (Landroid/location/Location;)
+	const-wide	v7,4711630319722168320	; 0x416312d000000000
+; v7 : double-length
+	if-nez	v9,l7f9a
+; v9 : Landroid/location/Location;
+	const/4	v0,0
+; v0 : single-length
+l7f98:
+	return-object	v0
+; v0 : Ljava/lang/String;
+l7f9a:
+	const-string	v0,"role: 6 producer: 24 historical_role: 1 historical_producer: 12 timestamp: %d latlng < latitude_e7: %d longitude_e7: %d> radius: %"
+; v0 : Ljava/lang/String;
+	const/4	v1,4
+; v1 : single-length
+	new-array	v1,v1,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v1 : [Ljava/lang/Object;
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v9},android/location/Location/getTime	; getTime()J
+; v9 : Landroid/location/Location;
+	move-result-wide	v3
+; v3 : double-length
+	const-wide/16	v5,1000
+; v5 : double-length
+	mul-long/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	aput-object	v3,v1,v2
+; v3 : Ljava/lang/Long; , v1 : [Ljava/lang/Object; , v2 : single-length
+	const/4	v2,1
+; v2 : single-length
+	invoke-virtual	{v9},android/location/Location/getLatitude	; getLatitude()D
+; v9 : Landroid/location/Location;
+	move-result-wide	v3
+; v3 : double-length
+	mul-double/2addr	v3,v7
+; v3 : double-length , v7 : double-length
+	double-to-long	v3,v3
+; v3 : double-length , v3 : double-length
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	aput-object	v3,v1,v2
+; v3 : Ljava/lang/Long; , v1 : [Ljava/lang/Object; , v2 : single-length
+	const/4	v2,2
+; v2 : single-length
+	invoke-virtual	{v9},android/location/Location/getLongitude	; getLongitude()D
+; v9 : Landroid/location/Location;
+	move-result-wide	v3
+; v3 : double-length
+	mul-double/2addr	v3,v7
+; v3 : double-length , v7 : double-length
+	double-to-long	v3,v3
+; v3 : double-length , v3 : double-length
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	aput-object	v3,v1,v2
+; v3 : Ljava/lang/Long; , v1 : [Ljava/lang/Object; , v2 : single-length
+	const/4	v2,3
+; v2 : single-length
+	invoke-virtual	{v9},android/location/Location/getAccuracy	; getAccuracy()F
+; v9 : Landroid/location/Location;
+	move-result	v3
+; v3 : single-length
+	const/high16	v4,17530
+; v4 : single-length
+	mul-float/2addr	v3,v4
+; v3 : single-length , v4 : single-length
+	float-to-long	v3,v3
+; v3 : double-length , v3 : double-length
+	invoke-static	{v3,v4},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v3 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+	aput-object	v3,v1,v2
+; v3 : Ljava/lang/Long; , v1 : [Ljava/lang/Object; , v2 : single-length
+	invoke-static	{v0,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/AdUtil/b	; b(Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"e1+"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	l7f98
+.end method
+
+.method public static a(Ljava/lang/String;)Ljava/lang/String;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 8
+; parameter[0] : v7 (Ljava/lang/String;)
+.catch java/security/NoSuchAlgorithmException from l8070 to l80be using l80c2
+	const/4	v6,0
+; v6 : single-length
+	const/4	v0,0
+; v0 : single-length
+	if-eqz	v7,l80c0
+; v7 : Ljava/lang/String;
+	invoke-virtual	{v7},java/lang/String/length	; length()I
+; v7 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-lez	v1,l80c0
+; v1 : single-length
+l8070:
+	const-string	v0,"MD5"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/security/MessageDigest/getInstance	; getInstance(Ljava/lang/String;)Ljava/security/MessageDigest;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/security/MessageDigest;
+	invoke-virtual	{v7},java/lang/String/getBytes	; getBytes()[B
+; v7 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : [B
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v7},java/lang/String/length	; length()I
+; v7 : Ljava/lang/String;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v0,v1,v2,v3},java/security/MessageDigest/update	; update([BII)V
+; v0 : Ljava/security/MessageDigest; , v1 : [B , v2 : single-length , v3 : single-length
+	const-string	v1,"%032X"
+; v1 : Ljava/lang/String;
+	const/4	v2,1
+; v2 : single-length
+	new-array	v2,v2,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v2 : [Ljava/lang/Object;
+	const/4	v3,0
+; v3 : single-length
+	new-instance	v4,java/math/BigInteger
+; v4 : Ljava/math/BigInteger;
+	const/4	v5,1
+; v5 : single-length
+	invoke-virtual	{v0},java/security/MessageDigest/digest	; digest()[B
+; v0 : Ljava/security/MessageDigest;
+	move-result-object	v0
+; v0 : [B
+	invoke-direct	{v4,v5,v0},java/math/BigInteger/<init>	; <init>(I[B)V
+; v4 : Ljava/math/BigInteger; , v5 : single-length , v0 : [B
+	aput-object	v4,v2,v3
+; v4 : Ljava/math/BigInteger; , v2 : [Ljava/lang/Object; , v3 : single-length
+	invoke-static	{v1,v2},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : [Ljava/lang/Object;
+l80be:
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+l80c0:
+	return-object	v0
+; v0 : Ljava/lang/String;
+l80c2:
+	move-exception	v0
+; v0 : java/security/NoSuchAlgorithmException
+	const/16	v0,32
+; v0 : single-length
+	invoke-virtual	{v7,v6,v0},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v7 : Ljava/lang/String; , v6 : single-length , v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	l80c0
+.end method
+
+.method public static a(Ljava/util/Map;)Ljava/lang/String;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 4
+; parameter[0] : v3 (Ljava/util/Map;)
+.catch org/json/JSONException from l80f6 to l8104 using l8108
+	const/4	v0,0
+; v0 : single-length
+l80f6:
+	invoke-static	{v3},com/google/ads/util/AdUtil/b	; b(Ljava/util/Map;)Lorg/json/JSONObject;
+; v3 : Ljava/util/Map;
+	move-result-object	v1
+; v1 : Lorg/json/JSONObject;
+	invoke-virtual	{v1},org/json/JSONObject/toString	; toString()Ljava/lang/String;
+; v1 : Lorg/json/JSONObject;
+l8104:
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+l8106:
+	return-object	v0
+; v0 : single-length
+l8108:
+	move-exception	v1
+; v1 : org/json/JSONException
+	const-string	v2,"JsonException in serialization: "
+; v2 : Ljava/lang/String;
+	invoke-static	{v2,v1},com/google/ads/util/a/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v2 : Ljava/lang/String; , v1 : org/json/JSONException
+	goto	l8106
+.end method
+
+.method private static a(Ljava/util/Set;)Lorg/json/JSONArray;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 5
+; parameter[0] : v4 (Ljava/util/Set;)
+.catch java/lang/ClassCastException from l81d2 to l81e4 using l81e6
+.catch java/lang/ClassCastException from l81a8 to l81ba using l81bc
+	new-instance	v0,org/json/JSONArray
+; v0 : Lorg/json/JSONArray;
+	invoke-direct	{v0},org/json/JSONArray/<init>	; <init>()V
+; v0 : Lorg/json/JSONArray;
+	if-eqz	v4,l8152
+; v4 : Ljava/util/Set;
+	invoke-interface	{v4},java/util/Set/isEmpty	; isEmpty()Z
+; v4 : Ljava/util/Set;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l8154
+; v1 : single-length
+l8152:
+	return-object	v0
+; v0 : Lorg/json/JSONArray;
+l8154:
+	invoke-interface	{v4},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v4 : Ljava/util/Set;
+	move-result-object	v1
+; v1 : Ljava/util/Iterator;
+l815c:
+	invoke-interface	{v1},java/util/Iterator/hasNext	; hasNext()Z
+; v1 : Ljava/util/Iterator;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l8152
+; v2 : single-length
+	invoke-interface	{v1},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v1 : Ljava/util/Iterator;
+	move-result-object	v4
+; v4 : Ljava/lang/Object;
+	instance-of	v2,v4,java/lang/String
+; v2 : single-length , v4 : Ljava/lang/Object;
+	if-nez	v2,l8198
+; v2 : single-length
+	instance-of	v2,v4,java/lang/Integer
+; v2 : single-length , v4 : Ljava/lang/Object;
+	if-nez	v2,l8198
+; v2 : single-length
+	instance-of	v2,v4,java/lang/Double
+; v2 : single-length , v4 : Ljava/lang/Object;
+	if-nez	v2,l8198
+; v2 : single-length
+	instance-of	v2,v4,java/lang/Long
+; v2 : single-length , v4 : Ljava/lang/Object;
+	if-nez	v2,l8198
+; v2 : single-length
+	instance-of	v2,v4,java/lang/Float
+; v2 : single-length , v4 : Ljava/lang/Object;
+	if-eqz	v2,l81a0
+; v2 : single-length
+l8198:
+	invoke-virtual	{v0,v4},org/json/JSONArray/put	; put(Ljava/lang/Object;)Lorg/json/JSONArray;
+; v0 : Lorg/json/JSONArray; , v4 : Ljava/lang/Object;
+	goto	l815c
+l81a0:
+	instance-of	v2,v4,java/util/Map
+; v2 : single-length , v4 : Ljava/lang/Object;
+	if-eqz	v2,l81ca
+; v2 : single-length
+l81a8:
+	check-cast	v4,java/util/Map
+; v4 : Ljava/util/Map;
+	invoke-static	{v4},com/google/ads/util/AdUtil/b	; b(Ljava/util/Map;)Lorg/json/JSONObject;
+; v4 : Ljava/util/Map;
+	move-result-object	v2
+; v2 : Lorg/json/JSONObject;
+	invoke-virtual	{v0,v2},org/json/JSONArray/put	; put(Ljava/lang/Object;)Lorg/json/JSONArray;
+; v0 : Lorg/json/JSONArray; , v2 : Lorg/json/JSONObject;
+l81ba:
+	goto	l815c
+l81bc:
+	move-exception	v2
+; v2 : java/lang/ClassCastException
+	const-string	v3,"Unknown map type in json serialization: "
+; v3 : Ljava/lang/String;
+	invoke-static	{v3,v2},com/google/ads/util/a/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v3 : Ljava/lang/String; , v2 : java/lang/ClassCastException
+	goto	l815c
+l81ca:
+	instance-of	v2,v4,java/util/Set
+; v2 : single-length , v4 : Ljava/lang/Object;
+	if-eqz	v2,l81f4
+; v2 : single-length
+l81d2:
+	check-cast	v4,java/util/Set
+; v4 : Ljava/util/Set;
+	invoke-static	{v4},com/google/ads/util/AdUtil/a	; a(Ljava/util/Set;)Lorg/json/JSONArray;
+; v4 : Ljava/util/Set;
+	move-result-object	v2
+; v2 : Lorg/json/JSONArray;
+	invoke-virtual	{v0,v2},org/json/JSONArray/put	; put(Ljava/lang/Object;)Lorg/json/JSONArray;
+; v0 : Lorg/json/JSONArray; , v2 : Lorg/json/JSONArray;
+l81e4:
+	goto	l815c
+l81e6:
+	move-exception	v2
+; v2 : java/lang/ClassCastException
+	const-string	v3,"Unknown map type in json serialization: "
+; v3 : Ljava/lang/String;
+	invoke-static	{v3,v2},com/google/ads/util/a/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v3 : Ljava/lang/String; , v2 : java/lang/ClassCastException
+	goto	l815c
+l81f4:
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Unknown value in json serialization: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v4},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/Object;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-static	{v2},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v2 : Ljava/lang/String;
+	goto	l815c
+.end method
+
+.method public static a(Landroid/webkit/WebView;)V
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 3
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+	invoke-virtual	{v2},android/webkit/WebView/getContext	; getContext()Landroid/content/Context;
+; v2 : Landroid/webkit/WebView;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-virtual	{v0},android/content/Context/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-static	{v0},com/google/ads/util/AdUtil/h	; h(Landroid/content/Context;)Ljava/lang/String;
+; v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v2},android/webkit/WebView/getSettings	; getSettings()Landroid/webkit/WebSettings;
+; v2 : Landroid/webkit/WebView;
+	move-result-object	v1
+; v1 : Landroid/webkit/WebSettings;
+	invoke-virtual	{v1,v0},android/webkit/WebSettings/setUserAgentString	; setUserAgentString(Ljava/lang/String;)V
+; v1 : Landroid/webkit/WebSettings; , v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public static a(Ljava/net/HttpURLConnection;Landroid/content/Context;)V
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 4
+; parameter[0] : v2 (Ljava/net/HttpURLConnection;)
+; parameter[1] : v3 (Landroid/content/Context;)
+	const-string	v0,"User-Agent"
+; v0 : Ljava/lang/String;
+	invoke-static	{v3},com/google/ads/util/AdUtil/h	; h(Landroid/content/Context;)Ljava/lang/String;
+; v3 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v2,v0,v1},java/net/HttpURLConnection/setRequestProperty	; setRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+; v2 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public static a(Z)V
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 1
+; parameter[0] : v0 (Z)
+	sput-boolean	v0,com/google/ads/util/AdUtil.f Z
+; v0 : Z
+	return-void	
+.end method
+
+.method public static a(Landroid/net/Uri;)Z
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Set" , "<" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONArray;" }
+.end annotation
+.limit registers 3
+; parameter[0] : v2 (Landroid/net/Uri;)
+	invoke-virtual	{v2},android/net/Uri/getScheme	; getScheme()Ljava/lang/String;
+; v2 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"http"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/String/equalsIgnoreCase	; equalsIgnoreCase(Ljava/lang/String;)Z
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l82e8
+; v1 : single-length
+	const-string	v1,"https"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/String/equalsIgnoreCase	; equalsIgnoreCase(Ljava/lang/String;)Z
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l82ec
+; v0 : single-length
+l82e8:
+	const/4	v0,1
+; v0 : single-length
+l82ea:
+	return	v0
+; v0 : single-length
+l82ec:
+	const/4	v0,0
+; v0 : single-length
+	goto	l82ea
+.end method
+
+.method public static b()I
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONObject;" }
+.end annotation
+.limit registers 2
+	sget	v0,com/google/ads/util/AdUtil.a I
+; v0 : single-length
+	const/16	v1,9
+; v1 : single-length
+	if-lt	v0,v1,l8310
+; v0 : single-length , v1 : single-length
+	const/4	v0,7
+; v0 : single-length
+l830e:
+	return	v0
+; v0 : single-length
+l8310:
+	const/4	v0,1
+; v0 : single-length
+	goto	l830e
+.end method
+
+.method public static b(Landroid/content/Context;Landroid/util/DisplayMetrics;)I
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONObject;" }
+.end annotation
+.limit registers 4
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/DisplayMetrics;)
+	sget	v0,com/google/ads/util/AdUtil.a I
+; v0 : single-length
+	const/4	v1,4
+; v1 : single-length
+	if-lt	v0,v1,l8338
+; v0 : single-length , v1 : single-length
+	invoke-static	{v2,v3},com/google/ads/util/c/b	; b(Landroid/content/Context;Landroid/util/DisplayMetrics;)I
+; v2 : Landroid/content/Context; , v3 : Landroid/util/DisplayMetrics;
+	move-result	v0
+; v0 : single-length
+l8336:
+	return	v0
+; v0 : single-length
+l8338:
+	iget	v0,v3,android/util/DisplayMetrics.widthPixels I
+; v0 : single-length , v3 : Landroid/util/DisplayMetrics;
+	goto	l8336
+.end method
+
+.method private static b(Ljava/lang/String;)Ljava/lang/String;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONObject;" }
+.end annotation
+.limit registers 7
+; parameter[0] : v6 (Ljava/lang/String;)
+.catch java/security/GeneralSecurityException from l8350 to l83c0 using l83c4
+l8350:
+	const-string	v0,"AES/CBC/PKCS5Padding"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},javax/crypto/Cipher/getInstance	; getInstance(Ljava/lang/String;)Ljavax/crypto/Cipher;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljavax/crypto/Cipher;
+	const/4	v1,1
+; v1 : single-length
+	new-instance	v2,javax/crypto/spec/SecretKeySpec
+; v2 : Ljavax/crypto/spec/SecretKeySpec;
+	const/16	v3,16
+; v3 : single-length
+	new-array	v3,v3,[B
+; v3 : [B , v3 : [B
+	fill-array-data	v3,l83cc
+; v3 : [B
+	const-string	v4,"AES"
+; v4 : Ljava/lang/String;
+	invoke-direct	{v2,v3,v4},javax/crypto/spec/SecretKeySpec/<init>	; <init>([BLjava/lang/String;)V
+; v2 : Ljavax/crypto/spec/SecretKeySpec; , v3 : [B , v4 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},javax/crypto/Cipher/init	; init(ILjava/security/Key;)V
+; v0 : Ljavax/crypto/Cipher; , v1 : single-length , v2 : Ljavax/crypto/spec/SecretKeySpec;
+	invoke-virtual	{v0},javax/crypto/Cipher/getIV	; getIV()[B
+; v0 : Ljavax/crypto/Cipher;
+	move-result-object	v1
+; v1 : [B
+	invoke-virtual	{v6},java/lang/String/getBytes	; getBytes()[B
+; v6 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : [B
+	invoke-virtual	{v0,v2},javax/crypto/Cipher/doFinal	; doFinal([B)[B
+; v0 : Ljavax/crypto/Cipher; , v2 : [B
+	move-result-object	v0
+; v0 : [B
+	array-length	v2,v1
+; v2 : single-length , v1 : [B
+	array-length	v3,v0
+; v3 : single-length , v0 : [B
+	add-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	new-array	v2,v2,[B
+; v2 : [B , v2 : [B
+	const/4	v3,0
+; v3 : single-length
+	const/4	v4,0
+; v4 : single-length
+	array-length	v5,v1
+; v5 : single-length , v1 : [B
+	invoke-static	{v1,v3,v2,v4,v5},java/lang/System/arraycopy	; arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+; v1 : [B , v3 : single-length , v2 : [B , v4 : single-length , v5 : single-length
+	const/4	v3,0
+; v3 : single-length
+	array-length	v1,v1
+; v1 : single-length , v1 : single-length
+	array-length	v4,v0
+; v4 : single-length , v0 : [B
+	invoke-static	{v0,v3,v2,v1,v4},java/lang/System/arraycopy	; arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
+; v0 : [B , v3 : single-length , v2 : [B , v1 : single-length , v4 : single-length
+	invoke-static	{v2},com/google/ads/util/b/a	; a([B)Ljava/lang/String;
+; v2 : [B
+l83c0:
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+l83c2:
+	return-object	v0
+; v0 : single-length
+l83c4:
+	move-exception	v0
+; v0 : java/security/GeneralSecurityException
+	const/4	v0,0
+; v0 : single-length
+	goto	l83c2
+l83ca:	data-array
+		0x00, 0x00
+	end data-array
+l83cc:	data-array
+		0x0A	; #0
+		0x37	; #1
+		0x90	; #2
+		0xD1	; #3
+		0xFA	; #4
+		0x07	; #5
+		0x0B	; #6
+		0x4B	; #7
+		0xF9	; #8
+		0x87	; #9
+		0x79	; #10
+		0x45	; #11
+		0x50	; #12
+		0xC3	; #13
+		0x0F	; #14
+		0x05	; #15
+	end data-array
+.end method
+
+.method public static b(Landroid/net/Uri;)Ljava/util/HashMap;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONObject;" }
+.end annotation
+.limit registers 10
+; parameter[0] : v9 (Landroid/net/Uri;)
+	const/4	v8,0
+; v8 : single-length
+	const/4	v7,0
+; v7 : single-length
+	if-nez	v9,l8410
+; v9 : Landroid/net/Uri;
+	move-object	v0,v8
+; v0 : single-length , v8 : single-length
+l840e:
+	return-object	v0
+; v0 : Ljava/util/HashMap;
+l8410:
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	invoke-virtual	{v9},android/net/Uri/getEncodedQuery	; getEncodedQuery()Ljava/lang/String;
+; v9 : Landroid/net/Uri;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	if-eqz	v1,l840e
+; v1 : Ljava/lang/String;
+	const-string	v2,"&"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/String/split	; split(Ljava/lang/String;)[Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : [Ljava/lang/String;
+	array-length	v2,v1
+; v2 : single-length , v1 : [Ljava/lang/String;
+	move	v3,v7
+; v3 : single-length , v7 : single-length
+l8436:
+	if-ge	v3,v2,l840e
+; v3 : single-length , v2 : single-length
+	aget-object	v4,v1,v3
+; v4 : Ljava/lang/String; , v1 : [Ljava/lang/String; , v3 : single-length
+	const/16	v5,61
+; v5 : single-length
+	invoke-virtual	{v4,v5},java/lang/String/indexOf	; indexOf(I)I
+; v4 : Ljava/lang/String; , v5 : single-length
+	move-result	v5
+; v5 : single-length
+	const/4	v6,15
+; v6 : single-length
+	if-ne	v5,v6,l8454
+; v5 : single-length , v6 : single-length
+	move-object	v0,v8
+; v0 : single-length , v8 : single-length
+	goto	l840e
+l8454:
+	invoke-virtual	{v4,v7,v5},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v4 : Ljava/lang/String; , v7 : single-length , v5 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	add-int/lit8	v5,v5,1
+; v5 : single-length , v5 : single-length
+	invoke-virtual	{v4,v5},java/lang/String/substring	; substring(I)Ljava/lang/String;
+; v4 : Ljava/lang/String; , v5 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-static	{v6},java/net/URLDecoder/decode	; decode(Ljava/lang/String;)Ljava/lang/String;
+; v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-static	{v4},java/net/URLDecoder/decode	; decode(Ljava/lang/String;)Ljava/lang/String;
+; v4 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v0,v5,v4},java/util/HashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v5 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	add-int/lit8	v3,v3,1
+; v3 : single-length , v3 : single-length
+	goto	l8436
+.end method
+
+.method private static b(Ljava/util/Map;)Lorg/json/JSONObject;
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONObject;" }
+.end annotation
+.limit registers 6
+; parameter[0] : v5 (Ljava/util/Map;)
+.catch java/lang/ClassCastException from l8544 to l8556 using l8558
+.catch java/lang/ClassCastException from l851a to l852c using l852e
+	new-instance	v2,org/json/JSONObject
+; v2 : Lorg/json/JSONObject;
+	invoke-direct	{v2},org/json/JSONObject/<init>	; <init>()V
+; v2 : Lorg/json/JSONObject;
+	if-eqz	v5,l84ae
+; v5 : Ljava/util/Map;
+	invoke-interface	{v5},java/util/Map/isEmpty	; isEmpty()Z
+; v5 : Ljava/util/Map;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l84b2
+; v0 : single-length
+l84ae:
+	move-object	v0,v2
+; v0 : Lorg/json/JSONObject; , v2 : Lorg/json/JSONObject;
+l84b0:
+	return-object	v0
+; v0 : Lorg/json/JSONObject;
+l84b2:
+	invoke-interface	{v5},java/util/Map/keySet	; keySet()Ljava/util/Set;
+; v5 : Ljava/util/Map;
+	move-result-object	v0
+; v0 : Ljava/util/Set;
+	invoke-interface	{v0},java/util/Set/iterator	; iterator()Ljava/util/Iterator;
+; v0 : Ljava/util/Set;
+	move-result-object	v3
+; v3 : Ljava/util/Iterator;
+l84c2:
+	invoke-interface	{v3},java/util/Iterator/hasNext	; hasNext()Z
+; v3 : Ljava/util/Iterator;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l8594
+; v0 : single-length
+	invoke-interface	{v3},java/util/Iterator/next	; next()Ljava/lang/Object;
+; v3 : Ljava/util/Iterator;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+	invoke-interface	{v5,v0},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v5 : Ljava/util/Map; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	instance-of	v4,v1,java/lang/String
+; v4 : single-length , v1 : Ljava/lang/Object;
+	if-nez	v4,l850a
+; v4 : single-length
+	instance-of	v4,v1,java/lang/Integer
+; v4 : single-length , v1 : Ljava/lang/Object;
+	if-nez	v4,l850a
+; v4 : single-length
+	instance-of	v4,v1,java/lang/Double
+; v4 : single-length , v1 : Ljava/lang/Object;
+	if-nez	v4,l850a
+; v4 : single-length
+	instance-of	v4,v1,java/lang/Long
+; v4 : single-length , v1 : Ljava/lang/Object;
+	if-nez	v4,l850a
+; v4 : single-length
+	instance-of	v4,v1,java/lang/Float
+; v4 : single-length , v1 : Ljava/lang/Object;
+	if-eqz	v4,l8512
+; v4 : single-length
+l850a:
+	invoke-virtual	{v2,v0,v1},org/json/JSONObject/put	; put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+; v2 : Lorg/json/JSONObject; , v0 : Ljava/lang/String; , v1 : Ljava/lang/Object;
+	goto	l84c2
+l8512:
+	instance-of	v4,v1,java/util/Map
+; v4 : single-length , v1 : Ljava/lang/Object;
+	if-eqz	v4,l853c
+; v4 : single-length
+l851a:
+	check-cast	v1,java/util/Map
+; v1 : Ljava/util/Map;
+	invoke-static	{v1},com/google/ads/util/AdUtil/b	; b(Ljava/util/Map;)Lorg/json/JSONObject;
+; v1 : Ljava/util/Map;
+	move-result-object	v1
+; v1 : Lorg/json/JSONObject;
+	invoke-virtual	{v2,v0,v1},org/json/JSONObject/put	; put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+; v2 : Lorg/json/JSONObject; , v0 : Ljava/lang/String; , v1 : Lorg/json/JSONObject;
+l852c:
+	goto	l84c2
+l852e:
+	move-exception	v0
+; v0 : java/lang/ClassCastException
+	const-string	v1,"Unknown map type in json serialization: "
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/a/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/ClassCastException
+	goto	l84c2
+l853c:
+	instance-of	v4,v1,java/util/Set
+; v4 : single-length , v1 : Ljava/lang/Object;
+	if-eqz	v4,l8566
+; v4 : single-length
+l8544:
+	check-cast	v1,java/util/Set
+; v1 : Ljava/util/Set;
+	invoke-static	{v1},com/google/ads/util/AdUtil/a	; a(Ljava/util/Set;)Lorg/json/JSONArray;
+; v1 : Ljava/util/Set;
+	move-result-object	v1
+; v1 : Lorg/json/JSONArray;
+	invoke-virtual	{v2,v0,v1},org/json/JSONObject/put	; put(Ljava/lang/String;Ljava/lang/Object;)Lorg/json/JSONObject;
+; v2 : Lorg/json/JSONObject; , v0 : Ljava/lang/String; , v1 : Lorg/json/JSONArray;
+l8556:
+	goto	l84c2
+l8558:
+	move-exception	v0
+; v0 : java/lang/ClassCastException
+	const-string	v1,"Unknown map type in json serialization: "
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/a/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/ClassCastException
+	goto	l84c2
+l8566:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v4,"Unknown value in json serialization: "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v0,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/Object;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	l84c2
+l8594:
+	move-object	v0,v2
+; v0 : Lorg/json/JSONObject; , v2 : Lorg/json/JSONObject;
+	goto	l84b0
+.end method
+
+.method public static b(Landroid/content/Context;)Z
+.throws Lorg/json/JSONException;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lorg/json/JSONObject;" }
+.end annotation
+.limit registers 6
+; parameter[0] : v5 (Landroid/content/Context;)
+	const/4	v4,0
+; v4 : single-length
+	const/4	v3,15
+; v3 : single-length
+	invoke-virtual	{v5},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v5 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/pm/PackageManager;
+	invoke-virtual	{v5},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v5 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	const-string	v2,"android.permission.INTERNET"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2,v1},android/content/pm/PackageManager/checkPermission	; checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Landroid/content/pm/PackageManager; , v2 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	if-ne	v2,v3,l85f2
+; v2 : single-length , v3 : single-length
+	const-string	v0,"INTERNET permissions must be enabled in AndroidManifest.xml."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	move	v0,v4
+; v0 : single-length , v4 : single-length
+l85f0:
+	return	v0
+; v0 : single-length
+l85f2:
+	const-string	v2,"android.permission.ACCESS_NETWORK_STATE"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2,v1},android/content/pm/PackageManager/checkPermission	; checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Landroid/content/pm/PackageManager; , v2 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-ne	v0,v3,l8610
+; v0 : single-length , v3 : single-length
+	const-string	v0,"ACCESS_NETWORK_STATE permissions must be enabled in AndroidManifest.xml."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	move	v0,v4
+; v0 : single-length , v4 : single-length
+	goto	l85f0
+l8610:
+	const/4	v0,1
+; v0 : single-length
+	goto	l85f0
+.end method
+
+.method public static c()Z
+.limit registers 2
+	const-string	v0,"unknown"
+; v0 : Ljava/lang/String;
+	sget-object	v1,android/os/Build.BOARD Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l8664
+; v0 : single-length
+	const-string	v0,"generic"
+; v0 : Ljava/lang/String;
+	sget-object	v1,android/os/Build.DEVICE Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l8664
+; v0 : single-length
+	const-string	v0,"generic"
+; v0 : Ljava/lang/String;
+	sget-object	v1,android/os/Build.BRAND Ljava/lang/String;
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l8664
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l8662:
+	return	v0
+; v0 : single-length
+l8664:
+	const/4	v0,0
+; v0 : single-length
+	goto	l8662
+.end method
+
+.method public static c(Landroid/content/Context;)Z
+.limit registers 5
+; parameter[0] : v4 (Landroid/content/Context;)
+	const/4	v3,0
+; v3 : single-length
+	sget-object	v0,com/google/ads/util/AdUtil.b Ljava/lang/Boolean;
+; v0 : Ljava/lang/Boolean;
+	if-eqz	v0,l8690
+; v0 : Ljava/lang/Boolean;
+	sget-object	v0,com/google/ads/util/AdUtil.b Ljava/lang/Boolean;
+; v0 : Ljava/lang/Boolean;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+l868e:
+	return	v0
+; v0 : single-length
+l8690:
+	invoke-virtual	{v4},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v4 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/pm/PackageManager;
+	new-instance	v1,android/content/Intent
+; v1 : Landroid/content/Intent;
+	const-class	v2,com/google/ads/AdActivity
+; v2 : Ljava/lang/Class;
+	invoke-direct	{v1,v4,v2},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v1 : Landroid/content/Intent; , v4 : Landroid/content/Context; , v2 : Ljava/lang/Class;
+	const/high16	v2,1
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2},android/content/pm/PackageManager/resolveActivity	; resolveActivity(Landroid/content/Intent;I)Landroid/content/pm/ResolveInfo;
+; v0 : Landroid/content/pm/PackageManager; , v1 : Landroid/content/Intent; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/content/pm/ResolveInfo;
+	const/4	v1,1
+; v1 : single-length
+	if-eqz	v0,l86c0
+; v0 : Landroid/content/pm/ResolveInfo;
+	iget-object	v2,v0,android/content/pm/ResolveInfo.activityInfo Landroid/content/pm/ActivityInfo;
+; v2 : Landroid/content/pm/ActivityInfo; , v0 : Landroid/content/pm/ResolveInfo;
+	if-nez	v2,l86da
+; v2 : Landroid/content/pm/ActivityInfo;
+l86c0:
+	const-string	v0,"Could not find com.google.ads.AdActivity, please make sure it is registered in AndroidManifest.xml."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	move	v0,v3
+; v0 : single-length , v3 : single-length
+l86cc:
+	invoke-static	{v0},java/lang/Boolean/valueOf	; valueOf(Z)Ljava/lang/Boolean;
+; v0 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/Boolean;
+	sput-object	v1,com/google/ads/util/AdUtil.b Ljava/lang/Boolean;
+; v1 : Ljava/lang/Boolean;
+	goto	l868e
+l86da:
+	iget-object	v2,v0,android/content/pm/ResolveInfo.activityInfo Landroid/content/pm/ActivityInfo;
+; v2 : Landroid/content/pm/ActivityInfo; , v0 : Landroid/content/pm/ResolveInfo;
+	iget	v2,v2,android/content/pm/ActivityInfo.configChanges I
+; v2 : single-length , v2 : single-length
+	and-int/lit8	v2,v2,16
+; v2 : single-length , v2 : single-length
+	if-nez	v2,l86f6
+; v2 : single-length
+	const-string	v1,"The android:configChanges value of the com.google.ads.AdActivity must include keyboard."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/google/ads/util/a/b	; b(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+l86f6:
+	iget-object	v2,v0,android/content/pm/ResolveInfo.activityInfo Landroid/content/pm/ActivityInfo;
+; v2 : Landroid/content/pm/ActivityInfo; , v0 : Landroid/content/pm/ResolveInfo;
+	iget	v2,v2,android/content/pm/ActivityInfo.configChanges I
+; v2 : single-length , v2 : single-length
+	and-int/lit8	v2,v2,32
+; v2 : single-length , v2 : single-length
+	if-nez	v2,l8712
+; v2 : single-length
+	const-string	v1,"The android:configChanges value of the com.google.ads.AdActivity must include keyboardHidden."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/google/ads/util/a/b	; b(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+l8712:
+	iget-object	v0,v0,android/content/pm/ResolveInfo.activityInfo Landroid/content/pm/ActivityInfo;
+; v0 : Landroid/content/pm/ActivityInfo; , v0 : Landroid/content/pm/ActivityInfo;
+	iget	v0,v0,android/content/pm/ActivityInfo.configChanges I
+; v0 : single-length , v0 : single-length
+	and-int/lit16	v0,v0,128
+; v0 : single-length , v0 : single-length
+	if-nez	v0,l8730
+; v0 : single-length
+	const-string	v0,"The android:configChanges value of the com.google.ads.AdActivity must include orientation."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	move	v0,v3
+; v0 : single-length , v3 : single-length
+	goto	l86cc
+l8730:
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	l86cc
+.end method
+
+.method public static d(Landroid/content/Context;)Ljava/lang/String;
+.limit registers 2
+; parameter[0] : v1 (Landroid/content/Context;)
+	const-string	v0,"connectivity"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},android/content/Context/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v1 : Landroid/content/Context; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/net/ConnectivityManager
+; v1 : Landroid/net/ConnectivityManager;
+	invoke-virtual	{v1},android/net/ConnectivityManager/getActiveNetworkInfo	; getActiveNetworkInfo()Landroid/net/NetworkInfo;
+; v1 : Landroid/net/ConnectivityManager;
+	move-result-object	v0
+; v0 : Landroid/net/NetworkInfo;
+	if-nez	v0,l8764
+; v0 : Landroid/net/NetworkInfo;
+	const/4	v0,0
+; v0 : single-length
+l8762:
+	return-object	v0
+; v0 : Ljava/lang/String;
+l8764:
+	invoke-virtual	{v0},android/net/NetworkInfo/getType	; getType()I
+; v0 : Landroid/net/NetworkInfo;
+	move-result	v0
+; v0 : single-length
+	packed-switch	v0,0
+		ps876c_8778	; case 0
+		ps876c_877e	; case 1
+		default: ps876c_default
+; v0 : single-length
+ps876c_default:
+	const-string	v0,"unknown"
+; v0 : Ljava/lang/String;
+	goto	l8762
+ps876c_8778:
+	const-string	v0,"ed"
+; v0 : Ljava/lang/String;
+	goto	l8762
+ps876c_877e:
+	const-string	v0,"wi"
+; v0 : Ljava/lang/String;
+	goto	l8762
+.end method
+
+.method public static d()Z
+.limit registers 1
+	sget-boolean	v0,com/google/ads/util/AdUtil.f Z
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static e(Landroid/content/Context;)Ljava/lang/String;
+.limit registers 7
+; parameter[0] : v6 (Landroid/content/Context;)
+	const/high16	v5,1
+; v5 : single-length
+	sget-object	v0,com/google/ads/util/AdUtil.d Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	if-nez	v0,l88c6
+; v0 : Ljava/lang/String;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v6 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Landroid/content/pm/PackageManager;
+	new-instance	v2,android/content/Intent
+; v2 : Landroid/content/Intent;
+	const-string	v3,"android.intent.action.VIEW"
+; v3 : Ljava/lang/String;
+	const-string	v4,"geo:0,0?q=donuts"
+; v4 : Ljava/lang/String;
+	invoke-static	{v4},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v4 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Landroid/net/Uri;
+	invoke-direct	{v2,v3,v4},android/content/Intent/<init>	; <init>(Ljava/lang/String;Landroid/net/Uri;)V
+; v2 : Landroid/content/Intent; , v3 : Ljava/lang/String; , v4 : Landroid/net/Uri;
+	invoke-virtual	{v1,v2,v5},android/content/pm/PackageManager/queryIntentActivities	; queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+; v1 : Landroid/content/pm/PackageManager; , v2 : Landroid/content/Intent; , v5 : single-length
+	move-result-object	v2
+; v2 : Ljava/util/List;
+	if-eqz	v2,l880c
+; v2 : Ljava/util/List;
+	invoke-interface	{v2},java/util/List/size	; size()I
+; v2 : Ljava/util/List;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,l8816
+; v2 : single-length
+l880c:
+	const-string	v2,"m"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+l8816:
+	new-instance	v2,android/content/Intent
+; v2 : Landroid/content/Intent;
+	const-string	v3,"android.intent.action.VIEW"
+; v3 : Ljava/lang/String;
+	const-string	v4,"market://search?q=pname:com.google"
+; v4 : Ljava/lang/String;
+	invoke-static	{v4},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v4 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Landroid/net/Uri;
+	invoke-direct	{v2,v3,v4},android/content/Intent/<init>	; <init>(Ljava/lang/String;Landroid/net/Uri;)V
+; v2 : Landroid/content/Intent; , v3 : Ljava/lang/String; , v4 : Landroid/net/Uri;
+	invoke-virtual	{v1,v2,v5},android/content/pm/PackageManager/queryIntentActivities	; queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+; v1 : Landroid/content/pm/PackageManager; , v2 : Landroid/content/Intent; , v5 : single-length
+	move-result-object	v2
+; v2 : Ljava/util/List;
+	if-eqz	v2,l8848
+; v2 : Ljava/util/List;
+	invoke-interface	{v2},java/util/List/size	; size()I
+; v2 : Ljava/util/List;
+	move-result	v2
+; v2 : single-length
+	if-nez	v2,l8868
+; v2 : single-length
+l8848:
+	invoke-virtual	{v0},java/lang/StringBuilder/length	; length()I
+; v0 : Ljava/lang/StringBuilder;
+	move-result	v2
+; v2 : single-length
+	if-lez	v2,l885e
+; v2 : single-length
+	const-string	v2,","
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+l885e:
+	const-string	v2,"a"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+l8868:
+	new-instance	v2,android/content/Intent
+; v2 : Landroid/content/Intent;
+	const-string	v3,"android.intent.action.VIEW"
+; v3 : Ljava/lang/String;
+	const-string	v4,"tel://6509313940"
+; v4 : Ljava/lang/String;
+	invoke-static	{v4},android/net/Uri/parse	; parse(Ljava/lang/String;)Landroid/net/Uri;
+; v4 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Landroid/net/Uri;
+	invoke-direct	{v2,v3,v4},android/content/Intent/<init>	; <init>(Ljava/lang/String;Landroid/net/Uri;)V
+; v2 : Landroid/content/Intent; , v3 : Ljava/lang/String; , v4 : Landroid/net/Uri;
+	invoke-virtual	{v1,v2,v5},android/content/pm/PackageManager/queryIntentActivities	; queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+; v1 : Landroid/content/pm/PackageManager; , v2 : Landroid/content/Intent; , v5 : single-length
+	move-result-object	v1
+; v1 : Ljava/util/List;
+	if-eqz	v1,l889a
+; v1 : Ljava/util/List;
+	invoke-interface	{v1},java/util/List/size	; size()I
+; v1 : Ljava/util/List;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l88ba
+; v1 : single-length
+l889a:
+	invoke-virtual	{v0},java/lang/StringBuilder/length	; length()I
+; v0 : Ljava/lang/StringBuilder;
+	move-result	v1
+; v1 : single-length
+	if-lez	v1,l88b0
+; v1 : single-length
+	const-string	v1,","
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+l88b0:
+	const-string	v1,"t"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+l88ba:
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/util/AdUtil.d Ljava/lang/String;
+; v0 : Ljava/lang/String;
+l88c6:
+	sget-object	v0,com/google/ads/util/AdUtil.d Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public static f(Landroid/content/Context;)Lcom/google/ads/util/AdUtil$a;
+.limit registers 4
+; parameter[0] : v3 (Landroid/content/Context;)
+	const/4	v2,1
+; v2 : single-length
+	sget-object	v0,com/google/ads/util/AdUtil.e Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager;
+	if-nez	v0,l88fa
+; v0 : Landroid/media/AudioManager;
+	const-string	v0,"audio"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},android/content/Context/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v3 : Landroid/content/Context; , v0 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/Object;
+	check-cast	v3,android/media/AudioManager
+; v3 : Landroid/media/AudioManager;
+	sput-object	v3,com/google/ads/util/AdUtil.e Landroid/media/AudioManager;
+; v3 : Landroid/media/AudioManager;
+l88fa:
+	sget-object	v0,com/google/ads/util/AdUtil$a.f Lcom/google/ads/util/AdUtil$a;
+; v0 : Lcom/google/ads/util/AdUtil$a;
+	sget-object	v0,com/google/ads/util/AdUtil.e Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager;
+	invoke-virtual	{v0},android/media/AudioManager/getMode	; getMode()I
+; v0 : Landroid/media/AudioManager;
+	move-result	v0
+; v0 : single-length
+	invoke-static	{},com/google/ads/util/AdUtil/c	; c()Z
+; 
+	nop	
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l891c
+; v1 : single-length
+	sget-object	v0,com/google/ads/util/AdUtil$a.e Lcom/google/ads/util/AdUtil$a;
+; v0 : Lcom/google/ads/util/AdUtil$a;
+l891a:
+	return-object	v0
+; v0 : Lcom/google/ads/util/AdUtil$a;
+l891c:
+	sget-object	v1,com/google/ads/util/AdUtil.e Landroid/media/AudioManager;
+; v1 : Landroid/media/AudioManager;
+	invoke-virtual	{v1},android/media/AudioManager/isMusicActive	; isMusicActive()Z
+; v1 : Landroid/media/AudioManager;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l8946
+; v1 : single-length
+	sget-object	v1,com/google/ads/util/AdUtil.e Landroid/media/AudioManager;
+; v1 : Landroid/media/AudioManager;
+	invoke-virtual	{v1},android/media/AudioManager/isSpeakerphoneOn	; isSpeakerphoneOn()Z
+; v1 : Landroid/media/AudioManager;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l8946
+; v1 : single-length
+	const/4	v1,2
+; v1 : single-length
+	if-eq	v0,v1,l8946
+; v0 : single-length , v1 : single-length
+	if-ne	v0,v2,l894c
+; v0 : single-length , v2 : single-length
+l8946:
+	sget-object	v0,com/google/ads/util/AdUtil$a.d Lcom/google/ads/util/AdUtil$a;
+; v0 : Lcom/google/ads/util/AdUtil$a;
+	goto	l891a
+l894c:
+	sget-object	v0,com/google/ads/util/AdUtil.e Landroid/media/AudioManager;
+; v0 : Landroid/media/AudioManager;
+	invoke-virtual	{v0},android/media/AudioManager/getRingerMode	; getRingerMode()I
+; v0 : Landroid/media/AudioManager;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l8960
+; v0 : single-length
+	if-ne	v0,v2,l8966
+; v0 : single-length , v2 : single-length
+l8960:
+	sget-object	v0,com/google/ads/util/AdUtil$a.d Lcom/google/ads/util/AdUtil$a;
+; v0 : Lcom/google/ads/util/AdUtil$a;
+	goto	l891a
+l8966:
+	sget-object	v0,com/google/ads/util/AdUtil$a.b Lcom/google/ads/util/AdUtil$a;
+; v0 : Lcom/google/ads/util/AdUtil$a;
+	goto	l891a
+.end method
+
+.method public static g(Landroid/content/Context;)V
+.limit registers 3
+; parameter[0] : v2 (Landroid/content/Context;)
+	sget-boolean	v0,com/google/ads/util/AdUtil.g Z
+; v0 : single-length
+	if-eqz	v0,l8986
+; v0 : single-length
+l8984:
+	return-void	
+l8986:
+	new-instance	v0,android/content/IntentFilter
+; v0 : Landroid/content/IntentFilter;
+	invoke-direct	{v0},android/content/IntentFilter/<init>	; <init>()V
+; v0 : Landroid/content/IntentFilter;
+	const-string	v1,"android.intent.action.USER_PRESENT"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/IntentFilter/addAction	; addAction(Ljava/lang/String;)V
+; v0 : Landroid/content/IntentFilter; , v1 : Ljava/lang/String;
+	const-string	v1,"android.intent.action.SCREEN_OFF"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/IntentFilter/addAction	; addAction(Ljava/lang/String;)V
+; v0 : Landroid/content/IntentFilter; , v1 : Ljava/lang/String;
+	new-instance	v1,com/google/ads/util/AdUtil$UserActivityReceiver
+; v1 : Lcom/google/ads/util/AdUtil$UserActivityReceiver;
+	invoke-direct	{v1},com/google/ads/util/AdUtil$UserActivityReceiver/<init>	; <init>()V
+; v1 : Lcom/google/ads/util/AdUtil$UserActivityReceiver;
+	invoke-virtual	{v2,v1,v0},android/content/Context/registerReceiver	; registerReceiver(Landroid/content/BroadcastReceiver;Landroid/content/IntentFilter;)Landroid/content/Intent;
+; v2 : Landroid/content/Context; , v1 : Lcom/google/ads/util/AdUtil$UserActivityReceiver; , v0 : Landroid/content/IntentFilter;
+	const/4	v0,1
+; v0 : single-length
+	sput-boolean	v0,com/google/ads/util/AdUtil.g Z
+; v0 : Z
+	goto	l8984
+.end method
+
+.method private static h(Landroid/content/Context;)Ljava/lang/String;
+.limit registers 7
+; parameter[0] : v6 (Landroid/content/Context;)
+	sget-object	v0,com/google/ads/util/AdUtil.h Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	if-nez	v0,l8bc0
+; v0 : Ljava/lang/String;
+	new-instance	v0,android/webkit/WebView
+; v0 : Landroid/webkit/WebView;
+	invoke-direct	{v0,v6},android/webkit/WebView/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/webkit/WebView; , v6 : Landroid/content/Context;
+	invoke-virtual	{v0},android/webkit/WebView/getSettings	; getSettings()Landroid/webkit/WebSettings;
+; v0 : Landroid/webkit/WebView;
+	move-result-object	v0
+; v0 : Landroid/webkit/WebSettings;
+	invoke-virtual	{v0},android/webkit/WebSettings/getUserAgentString	; getUserAgentString()Ljava/lang/String;
+; v0 : Landroid/webkit/WebSettings;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v0,l8a0e
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/length	; length()I
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l8a0e
+; v1 : single-length
+	const-string	v1,"Java0"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l8b72
+; v1 : single-length
+l8a0e:
+	const-string	v0,"os.name"
+; v0 : Ljava/lang/String;
+	const-string	v1,"Linux"
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},java/lang/System/getProperty	; getProperty(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Android "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	sget-object	v2,android/os/Build$VERSION.RELEASE Ljava/lang/String;
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{},java/util/Locale/getDefault	; getDefault()Ljava/util/Locale;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Ljava/util/Locale;
+	invoke-virtual	{v2},java/util/Locale/getLanguage	; getLanguage()Ljava/lang/String;
+; v2 : Ljava/util/Locale;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	sget-object	v4,java/util/Locale.US Ljava/util/Locale;
+; v4 : Ljava/util/Locale;
+	invoke-virtual	{v3,v4},java/lang/String/toLowerCase	; toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+; v3 : Ljava/lang/String; , v4 : Ljava/util/Locale;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v3},java/lang/String/length	; length()I
+; v3 : Ljava/lang/String;
+	move-result	v4
+; v4 : single-length
+	if-nez	v4,l8a74
+; v4 : single-length
+	const-string	v3,"en"
+; v3 : Ljava/lang/String;
+l8a74:
+	invoke-virtual	{v2},java/util/Locale/getCountry	; getCountry()Ljava/lang/String;
+; v2 : Ljava/util/Locale;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	sget-object	v4,java/util/Locale.US Ljava/util/Locale;
+; v4 : Ljava/util/Locale;
+	invoke-virtual	{v2,v4},java/lang/String/toLowerCase	; toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Ljava/util/Locale;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v2},java/lang/String/length	; length()I
+; v2 : Ljava/lang/String;
+	move-result	v4
+; v4 : single-length
+	if-lez	v4,l8bc6
+; v4 : single-length
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	invoke-direct	{v4},java/lang/StringBuilder/<init>	; <init>()V
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"-"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+l8ac2:
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},java/lang/StringBuilder/<init>	; <init>()V
+; v3 : Ljava/lang/StringBuilder;
+	sget-object	v4,android/os/Build.MODEL Ljava/lang/String;
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4," Build/"
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	sget-object	v4,android/os/Build.ID Ljava/lang/String;
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	invoke-direct	{v4},java/lang/StringBuilder/<init>	; <init>()V
+; v4 : Ljava/lang/StringBuilder;
+	const-string	v5,"Mozilla/5.0 ("
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v5 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v4,"; U; "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v0,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"; "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"; "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,") AppleWebKit/0.0 (KHTML, like "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Gecko) Version/0.0 Mobile Safari/0.0"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+l8b72:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," (Mobile; "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"afma-sdk-a-v"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"4.1.1"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,")"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	sput-object	v0,com/google/ads/util/AdUtil.h Ljava/lang/String;
+; v0 : Ljava/lang/String;
+l8bc0:
+	sget-object	v0,com/google/ads/util/AdUtil.h Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+l8bc6:
+	move-object	v2,v3
+; v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	goto/16	l8ac2
+.end method
+
+

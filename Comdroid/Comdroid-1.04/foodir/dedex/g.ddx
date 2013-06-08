@@ -1,0 +1,287 @@
+.class public final g
+.super android/webkit/WebView
+
+.field private a Lcom/google/ads/AdActivity;
+.field private b Lcom/google/ads/AdSize;
+
+.method public <init>(Landroid/content/Context;Lcom/google/ads/AdSize;)V
+.limit registers 6
+; this: v3 (Lg;)
+; parameter[0] : v4 (Landroid/content/Context;)
+; parameter[1] : v5 (Lcom/google/ads/AdSize;)
+	const/4	v2,0
+; v2 : single-length
+	invoke-direct	{v3,v4},android/webkit/WebView/<init>	; <init>(Landroid/content/Context;)V
+; v3 : Lg; , v4 : Landroid/content/Context;
+	iput-object	v5,v3,g.b Lcom/google/ads/AdSize;
+; v5 : Lcom/google/ads/AdSize; , v3 : Lg;
+	invoke-virtual	{v3,v2},g/setBackgroundColor	; setBackgroundColor(I)V
+; v3 : Lg; , v2 : single-length
+	invoke-static	{v3},com/google/ads/util/AdUtil/a	; a(Landroid/webkit/WebView;)V
+; v3 : Lg;
+	invoke-virtual	{v3},g/getSettings	; getSettings()Landroid/webkit/WebSettings;
+; v3 : Lg;
+	move-result-object	v0
+; v0 : Landroid/webkit/WebSettings;
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/webkit/WebSettings/setJavaScriptEnabled	; setJavaScriptEnabled(Z)V
+; v0 : Landroid/webkit/WebSettings; , v1 : single-length
+	invoke-virtual	{v3,v2},g/setScrollBarStyle	; setScrollBarStyle(I)V
+; v3 : Lg; , v2 : single-length
+	return-void	
+.end method
+
+.method public final a()V
+.limit registers 2
+; this: v1 (Lg;)
+	iget-object	v0,v1,g.a Lcom/google/ads/AdActivity;
+; v0 : Lcom/google/ads/AdActivity; , v1 : Lg;
+	if-eqz	v0,la7ea
+; v0 : Lcom/google/ads/AdActivity;
+	iget-object	v0,v1,g.a Lcom/google/ads/AdActivity;
+; v0 : Lcom/google/ads/AdActivity; , v1 : Lg;
+	invoke-virtual	{v0},com/google/ads/AdActivity/finish	; finish()V
+; v0 : Lcom/google/ads/AdActivity;
+la7ea:
+	return-void	
+.end method
+
+.method public final a(Lcom/google/ads/AdActivity;)V
+.limit registers 2
+; this: v0 (Lg;)
+; parameter[0] : v1 (Lcom/google/ads/AdActivity;)
+	iput-object	v1,v0,g.a Lcom/google/ads/AdActivity;
+; v1 : Lcom/google/ads/AdActivity; , v0 : Lg;
+	return-void	
+.end method
+
+.method public final b()Lcom/google/ads/AdActivity;
+.limit registers 2
+; this: v1 (Lg;)
+	iget-object	v0,v1,g.a Lcom/google/ads/AdActivity;
+; v0 : Lcom/google/ads/AdActivity; , v1 : Lg;
+	return-object	v0
+; v0 : Lcom/google/ads/AdActivity;
+.end method
+
+.method public final loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.limit registers 8
+; this: v2 (Lg;)
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Ljava/lang/String;)
+; parameter[2] : v5 (Ljava/lang/String;)
+; parameter[3] : v6 (Ljava/lang/String;)
+; parameter[4] : v7 (Ljava/lang/String;)
+.catch java/lang/Exception from la82c to la832 using la834
+la82c:
+	invoke-super/range	{v2..v7},android/webkit/WebView/loadDataWithBaseURL;	loadDataWithBaseURL(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+; v2 : Lg; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : Ljava/lang/String; , v6 : Ljava/lang/String; , v7 : Ljava/lang/String;
+la832:
+	return-void	
+la834:
+	move-exception	v0
+; v0 : java/lang/Exception
+	const-string	v1,"An error occurred while loading data in AdWebView:"
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/a/a	; a(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/Exception
+	goto	la832
+.end method
+
+.method public final loadUrl(Ljava/lang/String;)V
+.limit registers 4
+; this: v2 (Lg;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.catch java/lang/Exception from la860 to la866 using la868
+la860:
+	invoke-super	{v2,v3},android/webkit/WebView/loadUrl	; loadUrl(Ljava/lang/String;)V
+; v2 : Lg; , v3 : Ljava/lang/String;
+la866:
+	return-void	
+la868:
+	move-exception	v0
+; v0 : java/lang/Exception
+	const-string	v1,"An error occurred while loading a URL in AdWebView:"
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/a/a	; a(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/Exception
+	goto	la866
+.end method
+
+.method protected final onMeasure(II)V
+.limit registers 11
+; this: v8 (Lg;)
+; parameter[0] : v9 (I)
+; parameter[1] : v10 (I)
+	const/4	v7,0
+; v7 : single-length
+	invoke-virtual	{v8},g/isInEditMode	; isInEditMode()Z
+; v8 : Lg;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,la8aa
+; v0 : single-length
+	invoke-super	{v8,v9,v10},android/webkit/WebView/onMeasure	; onMeasure(II)V
+; v8 : Lg; , v9 : single-length , v10 : single-length
+la8a8:
+	return-void	
+la8aa:
+	iget-object	v0,v8,g.b Lcom/google/ads/AdSize;
+; v0 : Lcom/google/ads/AdSize; , v8 : Lg;
+	if-nez	v0,la8ba
+; v0 : Lcom/google/ads/AdSize;
+	invoke-super	{v8,v9,v10},android/webkit/WebView/onMeasure	; onMeasure(II)V
+; v8 : Lg; , v9 : single-length , v10 : single-length
+	goto	la8a8
+la8ba:
+	invoke-static	{v9},android/view/View$MeasureSpec/getMode	; getMode(I)I
+; v9 : single-length
+	move-result	v0
+; v0 : single-length
+	invoke-static	{v9},android/view/View$MeasureSpec/getSize	; getSize(I)I
+; v9 : single-length
+	move-result	v1
+; v1 : single-length
+	invoke-static	{v10},android/view/View$MeasureSpec/getMode	; getMode(I)I
+; v10 : single-length
+	move-result	v2
+; v2 : single-length
+	invoke-static	{v10},android/view/View$MeasureSpec/getSize	; getSize(I)I
+; v10 : single-length
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v8},g/getContext	; getContext()Landroid/content/Context;
+; v8 : Lg;
+	move-result-object	v4
+; v4 : Landroid/content/Context;
+	invoke-virtual	{v4},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v4 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	invoke-virtual	{v4},android/content/res/Resources/getDisplayMetrics	; getDisplayMetrics()Landroid/util/DisplayMetrics;
+; v4 : Landroid/content/res/Resources;
+	move-result-object	v4
+; v4 : Landroid/util/DisplayMetrics;
+	iget	v4,v4,android/util/DisplayMetrics.density F
+; v4 : single-length , v4 : single-length
+	iget-object	v5,v8,g.b Lcom/google/ads/AdSize;
+; v5 : Lcom/google/ads/AdSize; , v8 : Lg;
+	invoke-virtual	{v5},com/google/ads/AdSize/getWidth	; getWidth()I
+; v5 : Lcom/google/ads/AdSize;
+	move-result	v5
+; v5 : single-length
+	int-to-float	v5,v5
+; v5 : single-length , v5 : single-length
+	mul-float/2addr	v5,v4
+; v5 : single-length , v4 : single-length
+	float-to-int	v5,v5
+; v5 : single-length , v5 : single-length
+	iget-object	v6,v8,g.b Lcom/google/ads/AdSize;
+; v6 : Lcom/google/ads/AdSize; , v8 : Lg;
+	invoke-virtual	{v6},com/google/ads/AdSize/getHeight	; getHeight()I
+; v6 : Lcom/google/ads/AdSize;
+	move-result	v6
+; v6 : single-length
+	int-to-float	v6,v6
+; v6 : single-length , v6 : single-length
+	mul-float/2addr	v6,v4
+; v6 : single-length , v4 : single-length
+	float-to-int	v6,v6
+; v6 : single-length , v6 : single-length
+	if-eqz	v0,la922
+; v0 : single-length
+	if-nez	v2,la92a
+; v2 : single-length
+la922:
+	invoke-super	{v8,v9,v10},android/webkit/WebView/onMeasure	; onMeasure(II)V
+; v8 : Lg; , v9 : single-length , v10 : single-length
+	goto	la8a8
+la92a:
+	int-to-float	v0,v5
+; v0 : single-length , v5 : single-length
+	const/high16	v2,16576
+; v2 : single-length
+	mul-float/2addr	v2,v4
+; v2 : single-length , v4 : single-length
+	sub-float/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+	int-to-float	v2,v1
+; v2 : single-length , v1 : single-length
+	cmpl-float	v0,v0,v2
+; v0 : single-length , v0 : single-length , v2 : single-length
+	if-gtz	v0,la942
+; v0 : single-length
+	if-le	v6,v3,la9ca
+; v6 : single-length , v3 : single-length
+la942:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,"Not enough space to show ad! Wants: <"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v5},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v5 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,", "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v6},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v6 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,">, Has: <"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,", "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,">"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	const/16	v0,8
+; v0 : single-length
+	invoke-virtual	{v8,v0},g/setVisibility	; setVisibility(I)V
+; v8 : Lg; , v0 : single-length
+	invoke-virtual	{v8,v7,v7},g/setMeasuredDimension	; setMeasuredDimension(II)V
+; v8 : Lg; , v7 : single-length , v7 : single-length
+	goto/16	la8a8
+la9ca:
+	invoke-super	{v8,v9,v10},android/webkit/WebView/onMeasure	; onMeasure(II)V
+; v8 : Lg; , v9 : single-length , v10 : single-length
+	goto/16	la8a8
+.end method
+
+

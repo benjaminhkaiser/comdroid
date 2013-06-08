@@ -1,0 +1,685 @@
+.class public actionxl/mast/Mast
+.super android/app/Activity
+.source Mast.java
+
+.field private static $SWITCH_TABLE$actionxl$mast$AngleSensor$Units [I
+.field angleSensor Lactionxl/mast/AngleSensor;
+.field camera Landroid/hardware/Camera;
+.field holdButton Landroid/widget/Button;
+.field line Lactionxl/mast/LineView;
+.field preview Lactionxl/mast/Preview;
+
+.method static $SWITCH_TABLE$actionxl$mast$AngleSensor$Units()[I
+.limit registers 3
+.catch java/lang/NoSuchFieldError from l3ab8 to l3aca using l3ad0
+.catch java/lang/NoSuchFieldError from l3aa6 to l3ab8 using l3ad4
+.catch java/lang/NoSuchFieldError from l3a94 to l3aa6 using l3ad8
+.catch java/lang/NoSuchFieldError from l3a82 to l3a94 using l3adc
+.catch java/lang/NoSuchFieldError from l3a70 to l3a82 using l3ae0
+.line 20
+	sget-object	v0,actionxl/mast/Mast.$SWITCH_TABLE$actionxl$mast$AngleSensor$Units [I
+; v0 : [I
+	if-eqz	v0,l3a62
+; v0 : [I
+l3a60:
+	return-object	v0
+; v0 : [I
+l3a62:
+	invoke-static	{},actionxl/mast/AngleSensor$Units/values	; values()[Lactionxl/mast/AngleSensor$Units;
+; 
+	nop	
+	move-result-object	v0
+; v0 : [Lactionxl/mast/AngleSensor$Units;
+	array-length	v0,v0
+; v0 : single-length , v0 : single-length
+	new-array	v0,v0,[I
+; v0 : [I , v0 : [I
+l3a70:
+	sget-object	v1,actionxl/mast/AngleSensor$Units.Degrees Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	invoke-virtual	{v1},actionxl/mast/AngleSensor$Units/ordinal	; ordinal()I
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,1
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l3a82:
+	sget-object	v1,actionxl/mast/AngleSensor$Units.Percentage Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	invoke-virtual	{v1},actionxl/mast/AngleSensor$Units/ordinal	; ordinal()I
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,2
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l3a94:
+	sget-object	v1,actionxl/mast/AngleSensor$Units.inftDecimal Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	invoke-virtual	{v1},actionxl/mast/AngleSensor$Units/ordinal	; ordinal()I
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,4
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l3aa6:
+	sget-object	v1,actionxl/mast/AngleSensor$Units.inftFractional Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	invoke-virtual	{v1},actionxl/mast/AngleSensor$Units/ordinal	; ordinal()I
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,5
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l3ab8:
+	sget-object	v1,actionxl/mast/AngleSensor$Units.mmM Lactionxl/mast/AngleSensor$Units;
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	invoke-virtual	{v1},actionxl/mast/AngleSensor$Units/ordinal	; ordinal()I
+; v1 : Lactionxl/mast/AngleSensor$Units;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,3
+; v2 : single-length
+	aput	v2,v0,v1
+; v2 : single-length , v0 : [I , v1 : single-length
+l3aca:
+	sput-object	v0,actionxl/mast/Mast.$SWITCH_TABLE$actionxl$mast$AngleSensor$Units [I
+; v0 : [I
+	goto	l3a60
+l3ad0:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l3aca
+l3ad4:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l3ab8
+l3ad8:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l3aa6
+l3adc:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l3a94
+l3ae0:
+	move-exception	v1
+; v1 : java/lang/NoSuchFieldError
+	goto	l3a82
+.end method
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lactionxl/mast/Mast;)
+.line 20
+	invoke-direct	{v0},android/app/Activity/<init>	; <init>()V
+; v0 : Lactionxl/mast/Mast;
+	return-void	
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 10
+; this: v8 (Lactionxl/mast/Mast;)
+; parameter[0] : v9 (Landroid/os/Bundle;)
+	const/4	v7,0
+; v7 : single-length
+	const/4	v6,1
+; v6 : single-length
+.line 32
+	invoke-super	{v8,v9},android/app/Activity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v8 : Lactionxl/mast/Mast; , v9 : Landroid/os/Bundle;
+.line 34
+	invoke-virtual	{v8,v6},actionxl/mast/Mast/requestWindowFeature	; requestWindowFeature(I)Z
+; v8 : Lactionxl/mast/Mast; , v6 : single-length
+.line 35
+	const	v2,2130903042	; 0x7f030002
+; v2 : single-length
+	invoke-virtual	{v8,v2},actionxl/mast/Mast/setContentView	; setContentView(I)V
+; v8 : Lactionxl/mast/Mast; , v2 : single-length
+.line 37
+	invoke-virtual	{v8},actionxl/mast/Mast/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v8 : Lactionxl/mast/Mast;
+	move-result-object	v2
+; v2 : Landroid/content/Context;
+	check-cast	v2,actionxl/mast/MastApp
+; v2 : Lactionxl/mast/MastApp;
+	iget-object	v2,v2,actionxl/mast/MastApp.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v2 : Lactionxl/mast/AngleSensor;
+	iput-object	v2,v8,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v8 : Lactionxl/mast/Mast;
+.line 39
+	new-instance	v2,actionxl/mast/Preview
+; v2 : Lactionxl/mast/Preview;
+	invoke-direct	{v2,v8},actionxl/mast/Preview/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Lactionxl/mast/Preview; , v8 : Lactionxl/mast/Mast;
+	iput-object	v2,v8,actionxl/mast/Mast.preview Lactionxl/mast/Preview;
+; v2 : Lactionxl/mast/Preview; , v8 : Lactionxl/mast/Mast;
+.line 40
+	const	v2,2131099649	; 0x7f060001
+; v2 : single-length
+	invoke-virtual	{v8,v2},actionxl/mast/Mast/findViewById	; findViewById(I)Landroid/view/View;
+; v8 : Lactionxl/mast/Mast; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/FrameLayout
+; v2 : Landroid/widget/FrameLayout;
+	iget-object	v3,v8,actionxl/mast/Mast.preview Lactionxl/mast/Preview;
+; v3 : Lactionxl/mast/Preview; , v8 : Lactionxl/mast/Mast;
+	invoke-virtual	{v2,v3},android/widget/FrameLayout/addView	; addView(Landroid/view/View;)V
+; v2 : Landroid/widget/FrameLayout; , v3 : Lactionxl/mast/Preview;
+.line 42
+	new-instance	v2,actionxl/mast/LineView
+; v2 : Lactionxl/mast/LineView;
+	iget-object	v3,v8,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v3 : Lactionxl/mast/AngleSensor; , v8 : Lactionxl/mast/Mast;
+	invoke-direct	{v2,v8,v3},actionxl/mast/LineView/<init>	; <init>(Landroid/content/Context;Lactionxl/mast/AngleSensor;)V
+; v2 : Lactionxl/mast/LineView; , v8 : Lactionxl/mast/Mast; , v3 : Lactionxl/mast/AngleSensor;
+	iput-object	v2,v8,actionxl/mast/Mast.line Lactionxl/mast/LineView;
+; v2 : Lactionxl/mast/LineView; , v8 : Lactionxl/mast/Mast;
+.line 43
+	const	v2,2131099650	; 0x7f060002
+; v2 : single-length
+	invoke-virtual	{v8,v2},actionxl/mast/Mast/findViewById	; findViewById(I)Landroid/view/View;
+; v8 : Lactionxl/mast/Mast; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/FrameLayout
+; v2 : Landroid/widget/FrameLayout;
+	iget-object	v3,v8,actionxl/mast/Mast.line Lactionxl/mast/LineView;
+; v3 : Lactionxl/mast/LineView; , v8 : Lactionxl/mast/Mast;
+	invoke-virtual	{v2,v3},android/widget/FrameLayout/addView	; addView(Landroid/view/View;)V
+; v2 : Landroid/widget/FrameLayout; , v3 : Lactionxl/mast/LineView;
+.line 45
+	iget-object	v2,v8,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v8 : Lactionxl/mast/Mast;
+	invoke-virtual	{v8,v7},actionxl/mast/Mast/getPreferences	; getPreferences(I)Landroid/content/SharedPreferences;
+; v8 : Lactionxl/mast/Mast; , v7 : single-length
+	move-result-object	v3
+; v3 : Landroid/content/SharedPreferences;
+	const-string	v4,"inclineCal"
+; v4 : Ljava/lang/String;
+	const/4	v5,0
+; v5 : single-length
+	invoke-interface	{v3,v4,v5},android/content/SharedPreferences/getFloat	; getFloat(Ljava/lang/String;F)F
+; v3 : Landroid/content/SharedPreferences; , v4 : Ljava/lang/String; , v5 : single-length
+	move-result	v3
+; v3 : single-length
+	iput	v3,v2,actionxl/mast/AngleSensor.inclineCal F
+; v3 : single-length , v2 : Lactionxl/mast/AngleSensor;
+.line 46
+	iget-object	v2,v8,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v8 : Lactionxl/mast/Mast;
+	invoke-virtual	{v8,v7},actionxl/mast/Mast/getPreferences	; getPreferences(I)Landroid/content/SharedPreferences;
+; v8 : Lactionxl/mast/Mast; , v7 : single-length
+	move-result-object	v3
+; v3 : Landroid/content/SharedPreferences;
+	const-string	v4,"units"
+; v4 : Ljava/lang/String;
+.line 47
+	const-string	v5,"Degrees"
+; v5 : Ljava/lang/String;
+.line 46
+	invoke-interface	{v3,v4,v5},android/content/SharedPreferences/getString	; getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v3 : Landroid/content/SharedPreferences; , v4 : Ljava/lang/String; , v5 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-static	{v3},actionxl/mast/AngleSensor$Units/valueOf	; valueOf(Ljava/lang/String;)Lactionxl/mast/AngleSensor$Units;
+; v3 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Lactionxl/mast/AngleSensor$Units;
+	iput-object	v3,v2,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v3 : Lactionxl/mast/AngleSensor$Units; , v2 : Lactionxl/mast/AngleSensor;
+.line 49
+	const	v2,2131099651	; 0x7f060003
+; v2 : single-length
+	invoke-virtual	{v8,v2},actionxl/mast/Mast/findViewById	; findViewById(I)Landroid/view/View;
+; v8 : Lactionxl/mast/Mast; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/Button
+; v2 : Landroid/widget/Button;
+	iput-object	v2,v8,actionxl/mast/Mast.holdButton Landroid/widget/Button;
+; v2 : Landroid/widget/Button; , v8 : Lactionxl/mast/Mast;
+.line 50
+	iget-object	v2,v8,actionxl/mast/Mast.holdButton Landroid/widget/Button;
+; v2 : Landroid/widget/Button; , v8 : Lactionxl/mast/Mast;
+	new-instance	v3,actionxl/mast/Mast$1
+; v3 : Lactionxl/mast/Mast$1;
+	invoke-direct	{v3,v8},actionxl/mast/Mast$1/<init>	; <init>(Lactionxl/mast/Mast;)V
+; v3 : Lactionxl/mast/Mast$1; , v8 : Lactionxl/mast/Mast;
+	invoke-virtual	{v2,v3},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v2 : Landroid/widget/Button; , v3 : Lactionxl/mast/Mast$1;
+.line 60
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	invoke-direct	{v0},android/content/Intent/<init>	; <init>()V
+; v0 : Landroid/content/Intent;
+.line 61
+	const-string	v2,"actionxl.mast"
+; v2 : Ljava/lang/String;
+	const-string	v3,"actionxl.mast.MastSplash"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v2,v3},android/content/Intent/setClassName	; setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+.line 62
+	invoke-virtual	{v8,v0},actionxl/mast/Mast/startActivity	; startActivity(Landroid/content/Intent;)V
+; v8 : Lactionxl/mast/Mast; , v0 : Landroid/content/Intent;
+.line 64
+	const-string	v2,"sensor"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v8,v2},actionxl/mast/Mast/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v8 : Lactionxl/mast/Mast; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	check-cast	v1,android/hardware/SensorManager
+; v1 : Landroid/hardware/SensorManager;
+.line 65
+	iget-object	v2,v8,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v8 : Lactionxl/mast/Mast;
+	invoke-virtual	{v1,v6},android/hardware/SensorManager/getDefaultSensor	; getDefaultSensor(I)Landroid/hardware/Sensor;
+; v1 : Landroid/hardware/SensorManager; , v6 : single-length
+	move-result-object	v3
+; v3 : Landroid/hardware/Sensor;
+	invoke-virtual	{v1,v2,v3,v6},android/hardware/SensorManager/registerListener	; registerListener(Landroid/hardware/SensorEventListener;Landroid/hardware/Sensor;I)Z
+; v1 : Landroid/hardware/SensorManager; , v2 : Lactionxl/mast/AngleSensor; , v3 : Landroid/hardware/Sensor; , v6 : single-length
+.line 68
+	invoke-static	{},com/google/android/apps/analytics/GoogleAnalyticsTracker/getInstance	; getInstance()Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	const-string	v3,"UA-16020140-4"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3,v8},com/google/android/apps/analytics/GoogleAnalyticsTracker/start	; start(Ljava/lang/String;Landroid/content/Context;)V
+; v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v3 : Ljava/lang/String; , v8 : Lactionxl/mast/Mast;
+.line 69
+	invoke-static	{},com/google/android/apps/analytics/GoogleAnalyticsTracker/getInstance	; getInstance()Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	const-string	v3,"splash"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},com/google/android/apps/analytics/GoogleAnalyticsTracker/trackPageView	; trackPageView(Ljava/lang/String;)V
+; v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v3 : Ljava/lang/String;
+.line 70
+	invoke-static	{},com/google/android/apps/analytics/GoogleAnalyticsTracker/getInstance	; getInstance()Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-virtual	{v2},com/google/android/apps/analytics/GoogleAnalyticsTracker/dispatch	; dispatch()Z
+; v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+.line 71
+	return-void	
+.end method
+
+.method public onCreateOptionsMenu(Landroid/view/Menu;)Z
+.limit registers 6
+; this: v4 (Lactionxl/mast/Mast;)
+; parameter[0] : v5 (Landroid/view/Menu;)
+	const/4	v3,1
+; v3 : single-length
+.line 75
+	invoke-virtual	{v4},actionxl/mast/Mast/getMenuInflater	; getMenuInflater()Landroid/view/MenuInflater;
+; v4 : Lactionxl/mast/Mast;
+	move-result-object	v0
+; v0 : Landroid/view/MenuInflater;
+.line 76
+	const/high16	v1,32517
+; v1 : single-length
+	invoke-virtual	{v0,v1,v5},android/view/MenuInflater/inflate	; inflate(ILandroid/view/Menu;)V
+; v0 : Landroid/view/MenuInflater; , v1 : single-length , v5 : Landroid/view/Menu;
+.line 77
+	invoke-static	{},actionxl/mast/Mast/$SWITCH_TABLE$actionxl$mast$AngleSensor$Units	; $SWITCH_TABLE$actionxl$mast$AngleSensor$Units()[I
+; 
+	nop	
+	move-result-object	v1
+; v1 : [I
+	iget-object	v2,v4,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v4 : Lactionxl/mast/Mast;
+	iget-object	v2,v2,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units; , v2 : Lactionxl/mast/AngleSensor$Units;
+	invoke-virtual	{v2},actionxl/mast/AngleSensor$Units/ordinal	; ordinal()I
+; v2 : Lactionxl/mast/AngleSensor$Units;
+	move-result	v2
+; v2 : single-length
+	aget	v1,v1,v2
+; v1 : single-length , v1 : single-length , v2 : single-length
+	packed-switch	v1,1
+		ps3cf0_3cf8	; case 1
+		ps3cf0_3d0e	; case 2
+		ps3cf0_3d24	; case 3
+		ps3cf0_3d3a	; case 4
+		ps3cf0_3d50	; case 5
+		default: ps3cf0_default
+; v1 : single-length
+l3cf6:
+.line 95
+	return	v3
+; v3 : single-length
+ps3cf0_3cf8:
+.line 80
+	const	v1,2131099656	; 0x7f060008
+; v1 : single-length
+	invoke-interface	{v5,v1},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v5 : Landroid/view/Menu; , v1 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/MenuItem;
+	invoke-interface	{v1,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v1 : Landroid/view/MenuItem; , v3 : single-length
+	goto	l3cf6
+ps3cf0_3d0e:
+.line 83
+	const	v1,2131099657	; 0x7f060009
+; v1 : single-length
+	invoke-interface	{v5,v1},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v5 : Landroid/view/Menu; , v1 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/MenuItem;
+	invoke-interface	{v1,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v1 : Landroid/view/MenuItem; , v3 : single-length
+	goto	l3cf6
+ps3cf0_3d24:
+.line 86
+	const	v1,2131099658	; 0x7f06000a
+; v1 : single-length
+	invoke-interface	{v5,v1},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v5 : Landroid/view/Menu; , v1 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/MenuItem;
+	invoke-interface	{v1,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v1 : Landroid/view/MenuItem; , v3 : single-length
+	goto	l3cf6
+ps3cf0_3d3a:
+.line 89
+	const	v1,2131099659	; 0x7f06000b
+; v1 : single-length
+	invoke-interface	{v5,v1},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v5 : Landroid/view/Menu; , v1 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/MenuItem;
+	invoke-interface	{v1,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v1 : Landroid/view/MenuItem; , v3 : single-length
+	goto	l3cf6
+ps3cf0_3d50:
+.line 92
+	const	v1,2131099660	; 0x7f06000c
+; v1 : single-length
+	invoke-interface	{v5,v1},android/view/Menu/findItem	; findItem(I)Landroid/view/MenuItem;
+; v5 : Landroid/view/Menu; , v1 : single-length
+	move-result-object	v1
+; v1 : Landroid/view/MenuItem;
+	invoke-interface	{v1,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v1 : Landroid/view/MenuItem; , v3 : single-length
+	goto	l3cf6
+.line 77
+l3d66:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method protected onDestroy()V
+.limit registers 4
+; this: v3 (Lactionxl/mast/Mast;)
+.line 163
+	invoke-super	{v3},android/app/Activity/onDestroy	; onDestroy()V
+; v3 : Lactionxl/mast/Mast;
+.line 165
+	const/4	v1,0
+; v1 : single-length
+	invoke-virtual	{v3,v1},actionxl/mast/Mast/getPreferences	; getPreferences(I)Landroid/content/SharedPreferences;
+; v3 : Lactionxl/mast/Mast; , v1 : single-length
+	move-result-object	v1
+; v1 : Landroid/content/SharedPreferences;
+	invoke-interface	{v1},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v1 : Landroid/content/SharedPreferences;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+.line 166
+	const-string	v1,"inclineCal"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v3,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v3 : Lactionxl/mast/Mast;
+	iget	v2,v2,actionxl/mast/AngleSensor.inclineCal F
+; v2 : single-length , v2 : single-length
+	invoke-interface	{v0,v1,v2},android/content/SharedPreferences$Editor/putFloat	; putFloat(Ljava/lang/String;F)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v1 : Ljava/lang/String; , v2 : single-length
+.line 167
+	const-string	v1,"units"
+; v1 : Ljava/lang/String;
+	iget-object	v2,v3,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v3 : Lactionxl/mast/Mast;
+	iget-object	v2,v2,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units; , v2 : Lactionxl/mast/AngleSensor$Units;
+	invoke-virtual	{v2},actionxl/mast/AngleSensor$Units/toString	; toString()Ljava/lang/String;
+; v2 : Lactionxl/mast/AngleSensor$Units;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},android/content/SharedPreferences$Editor/putString	; putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 168
+	invoke-interface	{v0},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v0 : Landroid/content/SharedPreferences$Editor;
+.line 170
+	invoke-static	{},com/google/android/apps/analytics/GoogleAnalyticsTracker/getInstance	; getInstance()Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; 
+	nop	
+	move-result-object	v1
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-virtual	{v1},com/google/android/apps/analytics/GoogleAnalyticsTracker/stop	; stop()V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+.line 171
+	return-void	
+.end method
+
+.method public onOptionsItemSelected(Landroid/view/MenuItem;)Z
+.limit registers 7
+; this: v5 (Lactionxl/mast/Mast;)
+; parameter[0] : v6 (Landroid/view/MenuItem;)
+.var 0 is i1 Landroid/content/Intent; from l3e52 to l3e6a
+	const/4	v4,0
+; v4 : single-length
+	const/4	v3,1
+; v3 : single-length
+.line 107
+	iget-object	v1,v5,actionxl/mast/Mast.line Lactionxl/mast/LineView;
+; v1 : Lactionxl/mast/LineView; , v5 : Lactionxl/mast/Mast;
+	iput-boolean	v4,v1,actionxl/mast/LineView.calibrating Z
+; v4 : single-length , v1 : Lactionxl/mast/LineView;
+.line 109
+	iget-object	v1,v5,actionxl/mast/Mast.line Lactionxl/mast/LineView;
+; v1 : Lactionxl/mast/LineView; , v5 : Lactionxl/mast/Mast;
+	iput-boolean	v4,v1,actionxl/mast/LineView.paused Z
+; v4 : single-length , v1 : Lactionxl/mast/LineView;
+.line 110
+	invoke-interface	{v6},android/view/MenuItem/getItemId	; getItemId()I
+; v6 : Landroid/view/MenuItem;
+	move-result	v1
+; v1 : single-length
+	packed-switch	v1,2131099652
+		ps3e1c_3e26	; case 2131099652
+		ps3e1c_3e6a	; case 2131099653
+		ps3e1c_3e78	; case 2131099654
+		ps3e1c_3e22	; case 2131099655
+		ps3e1c_3e84	; case 2131099656
+		ps3e1c_3e9a	; case 2131099657
+		ps3e1c_3eb0	; case 2131099658
+		ps3e1c_3ec6	; case 2131099659
+		ps3e1c_3edc	; case 2131099660
+		ps3e1c_3e48	; case 2131099661
+		default: ps3e1c_default
+; v1 : single-length
+ps3e1c_default:
+	move	v1,v4
+; v1 : single-length , v4 : single-length
+l3e24:
+.line 157
+	return	v1
+; v1 : single-length
+ps3e1c_3e26:
+.line 120
+	iget-object	v1,v5,actionxl/mast/Mast.holdButton Landroid/widget/Button;
+; v1 : Landroid/widget/Button; , v5 : Lactionxl/mast/Mast;
+	const-string	v2,"Hold"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/Button/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/Button; , v2 : Ljava/lang/String;
+.line 121
+	iget-object	v1,v5,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v5 : Lactionxl/mast/Mast;
+	iput-boolean	v4,v1,actionxl/mast/AngleSensor.Holding Z
+; v4 : single-length , v1 : Lactionxl/mast/AngleSensor;
+.line 122
+	iget-object	v1,v5,actionxl/mast/Mast.line Lactionxl/mast/LineView;
+; v1 : Lactionxl/mast/LineView; , v5 : Lactionxl/mast/Mast;
+	iput-boolean	v3,v1,actionxl/mast/LineView.calibrating Z
+; v3 : single-length , v1 : Lactionxl/mast/LineView;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 123
+	goto	l3e24
+ps3e1c_3e48:
+.line 125
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	invoke-direct	{v0},android/content/Intent/<init>	; <init>()V
+; v0 : Landroid/content/Intent;
+.line 126
+	const-string	v1,"actionxl.mast"
+; v1 : Ljava/lang/String;
+	const-string	v2,"actionxl.mast.Instructions"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},android/content/Intent/setClassName	; setClassName(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 127
+	invoke-virtual	{v5,v0},actionxl/mast/Mast/startActivity	; startActivity(Landroid/content/Intent;)V
+; v5 : Lactionxl/mast/Mast; , v0 : Landroid/content/Intent;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 128
+	goto	l3e24
+ps3e1c_3e6a:
+.line 130
+	iget-object	v1,v5,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v5 : Lactionxl/mast/Mast;
+	const/4	v2,0
+; v2 : single-length
+	iput	v2,v1,actionxl/mast/AngleSensor.inclineCal F
+; v2 : single-length , v1 : Lactionxl/mast/AngleSensor;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 131
+	goto	l3e24
+ps3e1c_3e78:
+.line 133
+	iget-object	v1,v5,actionxl/mast/Mast.line Lactionxl/mast/LineView;
+; v1 : Lactionxl/mast/LineView; , v5 : Lactionxl/mast/Mast;
+	iput-boolean	v3,v1,actionxl/mast/LineView.paused Z
+; v3 : single-length , v1 : Lactionxl/mast/LineView;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 134
+	goto	l3e24
+ps3e1c_3e84:
+.line 136
+	invoke-interface	{v6,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v6 : Landroid/view/MenuItem; , v3 : single-length
+.line 137
+	iget-object	v1,v5,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v5 : Lactionxl/mast/Mast;
+	sget-object	v2,actionxl/mast/AngleSensor$Units.Degrees Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units;
+	iput-object	v2,v1,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units; , v1 : Lactionxl/mast/AngleSensor;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 138
+	goto	l3e24
+ps3e1c_3e9a:
+.line 140
+	invoke-interface	{v6,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v6 : Landroid/view/MenuItem; , v3 : single-length
+.line 141
+	iget-object	v1,v5,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v5 : Lactionxl/mast/Mast;
+	sget-object	v2,actionxl/mast/AngleSensor$Units.Percentage Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units;
+	iput-object	v2,v1,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units; , v1 : Lactionxl/mast/AngleSensor;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 142
+	goto	l3e24
+ps3e1c_3eb0:
+.line 144
+	invoke-interface	{v6,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v6 : Landroid/view/MenuItem; , v3 : single-length
+.line 145
+	iget-object	v1,v5,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v5 : Lactionxl/mast/Mast;
+	sget-object	v2,actionxl/mast/AngleSensor$Units.mmM Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units;
+	iput-object	v2,v1,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units; , v1 : Lactionxl/mast/AngleSensor;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 146
+	goto	l3e24
+ps3e1c_3ec6:
+.line 148
+	invoke-interface	{v6,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v6 : Landroid/view/MenuItem; , v3 : single-length
+.line 149
+	iget-object	v1,v5,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v5 : Lactionxl/mast/Mast;
+	sget-object	v2,actionxl/mast/AngleSensor$Units.inftDecimal Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units;
+	iput-object	v2,v1,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units; , v1 : Lactionxl/mast/AngleSensor;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 150
+	goto	l3e24
+ps3e1c_3edc:
+.line 152
+	invoke-interface	{v6,v3},android/view/MenuItem/setChecked	; setChecked(Z)Landroid/view/MenuItem;
+; v6 : Landroid/view/MenuItem; , v3 : single-length
+.line 153
+	iget-object	v1,v5,actionxl/mast/Mast.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v5 : Lactionxl/mast/Mast;
+	sget-object	v2,actionxl/mast/AngleSensor$Units.inftFractional Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units;
+	iput-object	v2,v1,actionxl/mast/AngleSensor.currentUnits Lactionxl/mast/AngleSensor$Units;
+; v2 : Lactionxl/mast/AngleSensor$Units; , v1 : Lactionxl/mast/AngleSensor;
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+.line 154
+	goto	l3e24
+.line 110
+l3ef2:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method public onPrepareOptionsMenu(Landroid/view/Menu;)Z
+.limit registers 3
+; this: v1 (Lactionxl/mast/Mast;)
+; parameter[0] : v2 (Landroid/view/Menu;)
+.line 102
+	invoke-super	{v1,v2},android/app/Activity/onPrepareOptionsMenu	; onPrepareOptionsMenu(Landroid/view/Menu;)Z
+; v1 : Lactionxl/mast/Mast; , v2 : Landroid/view/Menu;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+

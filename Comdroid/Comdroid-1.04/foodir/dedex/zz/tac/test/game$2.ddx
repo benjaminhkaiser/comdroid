@@ -1,0 +1,57 @@
+.class zz/tac/test/game$2
+.super android/os/CountDownTimer
+.source game.java
+
+.enclosing method zz/manualpainter()V
+.field final this$0 Lzz/tac/test/game;
+
+.method <init>(Lzz/tac/test/game;JJ)V
+.limit registers 6
+; this: v0 (Lzz/tac/test/game$2;)
+; parameter[0] : v1 (Lzz/tac/test/game;)
+; parameter[1] : v2 (J)
+; parameter[2] : v4 (J)
+.line 1
+	iput-object	v1,v0,zz/tac/test/game$2.this$0 Lzz/tac/test/game;
+; v1 : Lzz/tac/test/game; , v0 : Lzz/tac/test/game$2;
+.line 2057
+	invoke-direct	{v0,v2,v3,v4,v5},android/os/CountDownTimer/<init>	; <init>(JJ)V
+; v0 : Lzz/tac/test/game$2; , v2 : double-length , v4 : double-length
+	return-void	
+.end method
+
+.method public onFinish()V
+.limit registers 3
+; this: v2 (Lzz/tac/test/game$2;)
+.line 2065
+	sget-object	v0,zz/tac/test/game.textView Landroid/widget/TextView;
+; v0 : Landroid/widget/TextView;
+	const-string	v1,"New Game!"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v0 : Landroid/widget/TextView; , v1 : Ljava/lang/String;
+.line 2067
+	iget-object	v0,v2,zz/tac/test/game$2.this$0 Lzz/tac/test/game;
+; v0 : Lzz/tac/test/game; , v2 : Lzz/tac/test/game$2;
+	invoke-static	{v0},zz/tac/test/game/access$3	; access$3(Lzz/tac/test/game;)V
+; v0 : Lzz/tac/test/game;
+.line 2068
+	return-void	
+.end method
+
+.method public onTick(J)V
+.limit registers 5
+; this: v2 (Lzz/tac/test/game$2;)
+; parameter[0] : v3 (J)
+.line 2060
+	sget-object	v0,zz/tac/test/game.textView Landroid/widget/TextView;
+; v0 : Landroid/widget/TextView;
+	const-string	v1,""
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/widget/TextView/setText	; setText(Ljava/lang/CharSequence;)V
+; v0 : Landroid/widget/TextView; , v1 : Ljava/lang/String;
+.line 2062
+	return-void	
+.end method
+
+

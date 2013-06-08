@@ -1,0 +1,561 @@
+.class public actionxl/mast/LineView
+.super android/view/View
+.source LineView.java
+
+.field angleSensor Lactionxl/mast/AngleSensor;
+.field calibrating Z
+.field density F
+.field linePaint Landroid/graphics/Paint;
+.field paused Z
+.field pointPaint Landroid/graphics/Paint;
+.field textBGPaint Landroid/graphics/Paint;
+.field textPaint Landroid/graphics/Paint;
+.field x F
+.field y F
+
+.method public <init>(Landroid/content/Context;Lactionxl/mast/AngleSensor;)V
+.limit registers 7
+; this: v4 (Lactionxl/mast/LineView;)
+; parameter[0] : v5 (Landroid/content/Context;)
+; parameter[1] : v6 (Lactionxl/mast/AngleSensor;)
+	const/16	v2,255
+; v2 : single-length
+	const/4	v3,0
+; v3 : single-length
+.line 18
+	invoke-direct	{v4,v5},android/view/View/<init>	; <init>(Landroid/content/Context;)V
+; v4 : Lactionxl/mast/LineView; , v5 : Landroid/content/Context;
+.line 20
+	invoke-virtual	{v4},actionxl/mast/LineView/getContext	; getContext()Landroid/content/Context;
+; v4 : Lactionxl/mast/LineView;
+	move-result-object	v0
+; v0 : Landroid/content/Context;
+	invoke-virtual	{v0},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v0 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/res/Resources;
+	invoke-virtual	{v0},android/content/res/Resources/getDisplayMetrics	; getDisplayMetrics()Landroid/util/DisplayMetrics;
+; v0 : Landroid/content/res/Resources;
+	move-result-object	v0
+; v0 : Landroid/util/DisplayMetrics;
+	iget	v0,v0,android/util/DisplayMetrics.density F
+; v0 : single-length , v0 : single-length
+	iput	v0,v4,actionxl/mast/LineView.density F
+; v0 : single-length , v4 : Lactionxl/mast/LineView;
+.line 22
+	new-instance	v0,android/graphics/Paint
+; v0 : Landroid/graphics/Paint;
+	invoke-direct	{v0},android/graphics/Paint/<init>	; <init>()V
+; v0 : Landroid/graphics/Paint;
+	iput-object	v0,v4,actionxl/mast/LineView.pointPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+.line 23
+	iget-object	v0,v4,actionxl/mast/LineView.pointPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+	invoke-virtual	{v0,v2,v3,v2,v3},android/graphics/Paint/setARGB	; setARGB(IIII)V
+; v0 : Landroid/graphics/Paint; , v2 : single-length , v3 : single-length , v2 : single-length , v3 : single-length
+.line 24
+	iget-object	v0,v4,actionxl/mast/LineView.pointPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+	const/high16	v1,16672
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setStrokeWidth	; setStrokeWidth(F)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 26
+	new-instance	v0,android/graphics/Paint
+; v0 : Landroid/graphics/Paint;
+	invoke-direct	{v0},android/graphics/Paint/<init>	; <init>()V
+; v0 : Landroid/graphics/Paint;
+	iput-object	v0,v4,actionxl/mast/LineView.linePaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+.line 27
+	iget-object	v0,v4,actionxl/mast/LineView.linePaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+	invoke-virtual	{v0,v2,v3,v2,v3},android/graphics/Paint/setARGB	; setARGB(IIII)V
+; v0 : Landroid/graphics/Paint; , v2 : single-length , v3 : single-length , v2 : single-length , v3 : single-length
+.line 28
+	iget-object	v0,v4,actionxl/mast/LineView.linePaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+	const/high16	v1,16384
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setStrokeWidth	; setStrokeWidth(F)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 30
+	new-instance	v0,android/graphics/Paint
+; v0 : Landroid/graphics/Paint;
+	invoke-direct	{v0},android/graphics/Paint/<init>	; <init>()V
+; v0 : Landroid/graphics/Paint;
+	iput-object	v0,v4,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+.line 31
+	iget-object	v0,v4,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+	const/4	v1,15
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setColor	; setColor(I)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 32
+	iget-object	v0,v4,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+	const/high16	v1,16800
+; v1 : single-length
+	iget	v2,v4,actionxl/mast/LineView.density F
+; v2 : single-length , v4 : Lactionxl/mast/LineView;
+	mul-float/2addr	v1,v2
+; v1 : single-length , v2 : single-length
+	invoke-virtual	{v0,v1},android/graphics/Paint/setTextSize	; setTextSize(F)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length
+.line 34
+	new-instance	v0,android/graphics/Paint
+; v0 : Landroid/graphics/Paint;
+	invoke-direct	{v0},android/graphics/Paint/<init>	; <init>()V
+; v0 : Landroid/graphics/Paint;
+	iput-object	v0,v4,actionxl/mast/LineView.textBGPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+.line 35
+	iget-object	v0,v4,actionxl/mast/LineView.textBGPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v4 : Lactionxl/mast/LineView;
+	const/16	v1,128
+; v1 : single-length
+	invoke-virtual	{v0,v1,v3,v3,v3},android/graphics/Paint/setARGB	; setARGB(IIII)V
+; v0 : Landroid/graphics/Paint; , v1 : single-length , v3 : single-length , v3 : single-length , v3 : single-length
+.line 37
+	iput-object	v6,v4,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v6 : Lactionxl/mast/AngleSensor; , v4 : Lactionxl/mast/LineView;
+.line 38
+	iput-boolean	v3,v4,actionxl/mast/LineView.paused Z
+; v3 : single-length , v4 : Lactionxl/mast/LineView;
+.line 39
+	return-void	
+.end method
+
+.method protected onDraw(Landroid/graphics/Canvas;)V
+.limit registers 11
+; this: v9 (Lactionxl/mast/LineView;)
+; parameter[0] : v10 (Landroid/graphics/Canvas;)
+	const/high16	v7,16800
+; v7 : single-length
+	const/high16	v6,49844
+; v6 : single-length
+	const/high16	v5,16640
+; v5 : single-length
+	const/4	v1,0
+; v1 : single-length
+.line 78
+	invoke-super	{v9,v10},android/view/View/onDraw	; onDraw(Landroid/graphics/Canvas;)V
+; v9 : Lactionxl/mast/LineView; , v10 : Landroid/graphics/Canvas;
+.line 81
+	iget-boolean	v0,v9,actionxl/mast/LineView.calibrating Z
+; v0 : single-length , v9 : Lactionxl/mast/LineView;
+	if-eqz	v0,l37cc
+; v0 : single-length
+.line 83
+	invoke-virtual	{v9},actionxl/mast/LineView/getHeight	; getHeight()I
+; v9 : Lactionxl/mast/LineView;
+	move-result	v0
+; v0 : single-length
+	const/16	v2,80
+; v2 : single-length
+	sub-int/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+	int-to-float	v2,v0
+; v2 : single-length , v0 : single-length
+	invoke-virtual	{v9},actionxl/mast/LineView/getWidth	; getWidth()I
+; v9 : Lactionxl/mast/LineView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v3,v0
+; v3 : single-length , v0 : single-length
+	invoke-virtual	{v9},actionxl/mast/LineView/getHeight	; getHeight()I
+; v9 : Lactionxl/mast/LineView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v4,v0
+; v4 : single-length , v0 : single-length
+	iget-object	v5,v9,actionxl/mast/LineView.textBGPaint Landroid/graphics/Paint;
+; v5 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	move-object	v0,v10
+; v0 : Landroid/graphics/Canvas; , v10 : Landroid/graphics/Canvas;
+	invoke-virtual/range	{v0..v5},android/graphics/Canvas/drawRect;	drawRect(FFFFLandroid/graphics/Paint;)V
+; v0 : Landroid/graphics/Canvas; , v1 : single-length , v2 : single-length , v3 : single-length , v4 : single-length , v5 : Landroid/graphics/Paint;
+.line 86
+	const-string	v0,"Hold the phone on a level surface,"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9},actionxl/mast/LineView/getHeight	; getHeight()I
+; v9 : Lactionxl/mast/LineView;
+	move-result	v2
+; v2 : single-length
+	const/16	v3,45
+; v3 : single-length
+	sub-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	iget-object	v3,v9,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v3 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v7,v2,v3},android/graphics/Canvas/drawText	; drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+; v10 : Landroid/graphics/Canvas; , v0 : Ljava/lang/String; , v7 : single-length , v2 : single-length , v3 : Landroid/graphics/Paint;
+.line 87
+	const-string	v0,"then tap the screen."
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v9},actionxl/mast/LineView/getHeight	; getHeight()I
+; v9 : Lactionxl/mast/LineView;
+	move-result	v2
+; v2 : single-length
+	const/16	v3,20
+; v3 : single-length
+	sub-int/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	int-to-float	v2,v2
+; v2 : single-length , v2 : single-length
+	iget-object	v3,v9,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v3 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v7,v2,v3},android/graphics/Canvas/drawText	; drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+; v10 : Landroid/graphics/Canvas; , v0 : Ljava/lang/String; , v7 : single-length , v2 : single-length , v3 : Landroid/graphics/Paint;
+l376c:
+.line 117
+	iget	v0,v9,actionxl/mast/LineView.x F
+; v0 : single-length , v9 : Lactionxl/mast/LineView;
+	iget	v2,v9,actionxl/mast/LineView.y F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	iget-object	v3,v9,actionxl/mast/LineView.pointPaint Landroid/graphics/Paint;
+; v3 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v2,v3},android/graphics/Canvas/drawPoint	; drawPoint(FFLandroid/graphics/Paint;)V
+; v10 : Landroid/graphics/Canvas; , v0 : single-length , v2 : single-length , v3 : Landroid/graphics/Paint;
+.line 119
+	iget	v2,v9,actionxl/mast/LineView.y F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v9},actionxl/mast/LineView/getWidth	; getWidth()I
+; v9 : Lactionxl/mast/LineView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v3,v0
+; v3 : single-length , v0 : single-length
+	iget	v4,v9,actionxl/mast/LineView.y F
+; v4 : single-length , v9 : Lactionxl/mast/LineView;
+	iget-object	v5,v9,actionxl/mast/LineView.linePaint Landroid/graphics/Paint;
+; v5 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	move-object	v0,v10
+; v0 : Landroid/graphics/Canvas; , v10 : Landroid/graphics/Canvas;
+	invoke-virtual/range	{v0..v5},android/graphics/Canvas/drawLine;	drawLine(FFFFLandroid/graphics/Paint;)V
+; v0 : Landroid/graphics/Canvas; , v1 : single-length , v2 : single-length , v3 : single-length , v4 : single-length , v5 : Landroid/graphics/Paint;
+.line 120
+	iget	v3,v9,actionxl/mast/LineView.x F
+; v3 : single-length , v9 : Lactionxl/mast/LineView;
+	iget	v5,v9,actionxl/mast/LineView.x F
+; v5 : single-length , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v9},actionxl/mast/LineView/getHeight	; getHeight()I
+; v9 : Lactionxl/mast/LineView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v6,v0
+; v6 : single-length , v0 : single-length
+	iget-object	v7,v9,actionxl/mast/LineView.linePaint Landroid/graphics/Paint;
+; v7 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	move-object	v2,v10
+; v2 : Landroid/graphics/Canvas; , v10 : Landroid/graphics/Canvas;
+	move	v4,v1
+; v4 : single-length , v1 : single-length
+	invoke-virtual/range	{v2..v7},android/graphics/Canvas/drawLine;	drawLine(FFFFLandroid/graphics/Paint;)V
+; v2 : Landroid/graphics/Canvas; , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : Landroid/graphics/Paint;
+.line 124
+	iget-boolean	v0,v9,actionxl/mast/LineView.paused Z
+; v0 : single-length , v9 : Lactionxl/mast/LineView;
+	if-nez	v0,l37ca
+; v0 : single-length
+.line 125
+	invoke-virtual	{v9},actionxl/mast/LineView/invalidate	; invalidate()V
+; v9 : Lactionxl/mast/LineView;
+l37ca:
+.line 127
+	return-void	
+l37cc:
+.line 89
+	new-instance	v8,android/graphics/Rect
+; v8 : Landroid/graphics/Rect;
+	invoke-direct	{v8},android/graphics/Rect/<init>	; <init>()V
+; v8 : Landroid/graphics/Rect;
+.line 90
+	iget-object	v0,v9,actionxl/mast/LineView.textBGPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	iget-object	v2,v9,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v9 : Lactionxl/mast/LineView;
+	iget-object	v2,v2,actionxl/mast/AngleSensor.angleString Ljava/lang/String;
+; v2 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	const/4	v3,0
+; v3 : single-length
+	iget-object	v4,v9,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v4 : Lactionxl/mast/AngleSensor; , v9 : Lactionxl/mast/LineView;
+	iget-object	v4,v4,actionxl/mast/AngleSensor.angleString Ljava/lang/String;
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String;
+	invoke-virtual	{v4},java/lang/String/length	; length()I
+; v4 : Ljava/lang/String;
+	move-result	v4
+; v4 : single-length
+	invoke-virtual	{v0,v2,v3,v4,v8},android/graphics/Paint/getTextBounds	; getTextBounds(Ljava/lang/String;IILandroid/graphics/Rect;)V
+; v0 : Landroid/graphics/Paint; , v2 : Ljava/lang/String; , v3 : single-length , v4 : single-length , v8 : Landroid/graphics/Rect;
+.line 93
+	iget-object	v0,v9,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v9 : Lactionxl/mast/LineView;
+	iget-boolean	v0,v0,actionxl/mast/AngleSensor.vertical Z
+; v0 : single-length , v0 : single-length
+	if-eqz	v0,l389c
+; v0 : single-length
+.line 94
+	iget	v0,v9,actionxl/mast/LineView.x F
+; v0 : single-length , v9 : Lactionxl/mast/LineView;
+	iget	v2,v9,actionxl/mast/LineView.y F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v2},android/graphics/Canvas/translate	; translate(FF)V
+; v10 : Landroid/graphics/Canvas; , v0 : single-length , v2 : single-length
+.line 95
+	const	v0,1076677837	; 0x402ccccd
+; v0 : single-length
+	iget	v2,v9,actionxl/mast/LineView.density F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	mul-float/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+	const	v2,1074161254	; 0x40066666
+; v2 : single-length
+	iget	v3,v9,actionxl/mast/LineView.density F
+; v3 : single-length , v9 : Lactionxl/mast/LineView;
+	mul-float/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	invoke-virtual	{v10,v0,v2},android/graphics/Canvas/scale	; scale(FF)V
+; v10 : Landroid/graphics/Canvas; , v0 : single-length , v2 : single-length
+.line 96
+	invoke-virtual	{v10,v6},android/graphics/Canvas/rotate	; rotate(F)V
+; v10 : Landroid/graphics/Canvas; , v6 : single-length
+.line 97
+	iget-object	v0,v9,actionxl/mast/LineView.textBGPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v8,v0},android/graphics/Canvas/drawRect	; drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+; v10 : Landroid/graphics/Canvas; , v8 : Landroid/graphics/Rect; , v0 : Landroid/graphics/Paint;
+.line 98
+	invoke-virtual	{v10},android/graphics/Canvas/restore	; restore()V
+; v10 : Landroid/graphics/Canvas;
+.line 99
+	iget	v0,v9,actionxl/mast/LineView.x F
+; v0 : single-length , v9 : Lactionxl/mast/LineView;
+	iget	v2,v9,actionxl/mast/LineView.y F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v2},android/graphics/Canvas/translate	; translate(FF)V
+; v10 : Landroid/graphics/Canvas; , v0 : single-length , v2 : single-length
+.line 100
+	invoke-virtual	{v10,v6},android/graphics/Canvas/rotate	; rotate(F)V
+; v10 : Landroid/graphics/Canvas; , v6 : single-length
+.line 101
+	iget-object	v0,v9,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	sget-object	v2,android/graphics/Paint$Style.FILL Landroid/graphics/Paint$Style;
+; v2 : Landroid/graphics/Paint$Style;
+	invoke-virtual	{v0,v2},android/graphics/Paint/setStyle	; setStyle(Landroid/graphics/Paint$Style;)V
+; v0 : Landroid/graphics/Paint; , v2 : Landroid/graphics/Paint$Style;
+.line 102
+	iget-object	v0,v9,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v9 : Lactionxl/mast/LineView;
+	iget-object	v0,v0,actionxl/mast/AngleSensor.angleString Ljava/lang/String;
+; v0 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	const/high16	v2,49408
+; v2 : single-length
+	iget-object	v3,v9,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v3 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v5,v2,v3},android/graphics/Canvas/drawText	; drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+; v10 : Landroid/graphics/Canvas; , v0 : Ljava/lang/String; , v5 : single-length , v2 : single-length , v3 : Landroid/graphics/Paint;
+.line 103
+	iget	v0,v9,actionxl/mast/LineView.x F
+; v0 : single-length , v9 : Lactionxl/mast/LineView;
+	neg-float	v0,v0
+; v0 : single-length , v0 : single-length
+	iget	v2,v9,actionxl/mast/LineView.y F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	neg-float	v2,v2
+; v2 : single-length , v2 : single-length
+	invoke-virtual	{v10,v0,v2},android/graphics/Canvas/translate	; translate(FF)V
+; v10 : Landroid/graphics/Canvas; , v0 : single-length , v2 : single-length
+.line 105
+	invoke-virtual	{v10},android/graphics/Canvas/restore	; restore()V
+; v10 : Landroid/graphics/Canvas;
+	goto/16	l376c
+l389c:
+.line 107
+	invoke-virtual	{v10},android/graphics/Canvas/restore	; restore()V
+; v10 : Landroid/graphics/Canvas;
+.line 108
+	iget	v0,v9,actionxl/mast/LineView.x F
+; v0 : single-length , v9 : Lactionxl/mast/LineView;
+	iget	v2,v9,actionxl/mast/LineView.y F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v2},android/graphics/Canvas/translate	; translate(FF)V
+; v10 : Landroid/graphics/Canvas; , v0 : single-length , v2 : single-length
+.line 109
+	const	v0,1074580685	; 0x400ccccd
+; v0 : single-length
+	iget	v2,v9,actionxl/mast/LineView.density F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	mul-float/2addr	v0,v2
+; v0 : single-length , v2 : single-length
+	const/high16	v2,16448
+; v2 : single-length
+	iget	v3,v9,actionxl/mast/LineView.density F
+; v3 : single-length , v9 : Lactionxl/mast/LineView;
+	mul-float/2addr	v2,v3
+; v2 : single-length , v3 : single-length
+	invoke-virtual	{v10,v0,v2},android/graphics/Canvas/scale	; scale(FF)V
+; v10 : Landroid/graphics/Canvas; , v0 : single-length , v2 : single-length
+.line 110
+	iget-object	v0,v9,actionxl/mast/LineView.textBGPaint Landroid/graphics/Paint;
+; v0 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v8,v0},android/graphics/Canvas/drawRect	; drawRect(Landroid/graphics/Rect;Landroid/graphics/Paint;)V
+; v10 : Landroid/graphics/Canvas; , v8 : Landroid/graphics/Rect; , v0 : Landroid/graphics/Paint;
+.line 111
+	invoke-virtual	{v10},android/graphics/Canvas/restore	; restore()V
+; v10 : Landroid/graphics/Canvas;
+.line 113
+	iget-object	v0,v9,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v0 : Lactionxl/mast/AngleSensor; , v9 : Lactionxl/mast/LineView;
+	iget-object	v0,v0,actionxl/mast/AngleSensor.angleString Ljava/lang/String;
+; v0 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	iget	v2,v9,actionxl/mast/LineView.x F
+; v2 : single-length , v9 : Lactionxl/mast/LineView;
+	add-float/2addr	v2,v5
+; v2 : single-length , v5 : single-length
+	iget	v3,v9,actionxl/mast/LineView.y F
+; v3 : single-length , v9 : Lactionxl/mast/LineView;
+	sub-float/2addr	v3,v5
+; v3 : single-length , v5 : single-length
+	iget-object	v4,v9,actionxl/mast/LineView.textPaint Landroid/graphics/Paint;
+; v4 : Landroid/graphics/Paint; , v9 : Lactionxl/mast/LineView;
+	invoke-virtual	{v10,v0,v2,v3,v4},android/graphics/Canvas/drawText	; drawText(Ljava/lang/String;FFLandroid/graphics/Paint;)V
+; v10 : Landroid/graphics/Canvas; , v0 : Ljava/lang/String; , v2 : single-length , v3 : single-length , v4 : Landroid/graphics/Paint;
+	goto/16	l376c
+.end method
+
+.method protected onSizeChanged(IIII)V
+.limit registers 7
+; this: v2 (Lactionxl/mast/LineView;)
+; parameter[0] : v3 (I)
+; parameter[1] : v4 (I)
+; parameter[2] : v5 (I)
+; parameter[3] : v6 (I)
+	const/high16	v1,16384
+; v1 : single-length
+.line 44
+	invoke-super	{v2,v3,v4,v5,v6},android/view/View/onSizeChanged	; onSizeChanged(IIII)V
+; v2 : Lactionxl/mast/LineView; , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length
+.line 45
+	invoke-virtual	{v2},actionxl/mast/LineView/getHeight	; getHeight()I
+; v2 : Lactionxl/mast/LineView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	div-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	iput	v0,v2,actionxl/mast/LineView.y F
+; v0 : single-length , v2 : Lactionxl/mast/LineView;
+.line 46
+	invoke-virtual	{v2},actionxl/mast/LineView/getWidth	; getWidth()I
+; v2 : Lactionxl/mast/LineView;
+	move-result	v0
+; v0 : single-length
+	int-to-float	v0,v0
+; v0 : single-length , v0 : single-length
+	div-float/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	iput	v0,v2,actionxl/mast/LineView.x F
+; v0 : single-length , v2 : Lactionxl/mast/LineView;
+.line 47
+	return-void	
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+.limit registers 6
+; this: v4 (Lactionxl/mast/LineView;)
+; parameter[0] : v5 (Landroid/view/MotionEvent;)
+.catch java/lang/InterruptedException from l39aa to l39b0 using l39ba
+	const/4	v3,0
+; v3 : single-length
+.line 52
+	invoke-super	{v4,v5},android/view/View/onTouchEvent	; onTouchEvent(Landroid/view/MotionEvent;)Z
+; v4 : Lactionxl/mast/LineView; , v5 : Landroid/view/MotionEvent;
+.line 53
+	iget-boolean	v1,v4,actionxl/mast/LineView.calibrating Z
+; v1 : single-length , v4 : Lactionxl/mast/LineView;
+	if-eqz	v1,l3974
+; v1 : single-length
+.line 55
+	iput-boolean	v3,v4,actionxl/mast/LineView.calibrating Z
+; v3 : single-length , v4 : Lactionxl/mast/LineView;
+.line 56
+	iget-object	v1,v4,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v1 : Lactionxl/mast/AngleSensor; , v4 : Lactionxl/mast/LineView;
+	iget-object	v2,v4,actionxl/mast/LineView.angleSensor Lactionxl/mast/AngleSensor;
+; v2 : Lactionxl/mast/AngleSensor; , v4 : Lactionxl/mast/LineView;
+	iget	v2,v2,actionxl/mast/AngleSensor.slope F
+; v2 : single-length , v2 : single-length
+	iput	v2,v1,actionxl/mast/AngleSensor.inclineCal F
+; v2 : single-length , v1 : Lactionxl/mast/AngleSensor;
+l3970:
+	move	v1,v3
+; v1 : single-length , v3 : single-length
+l3972:
+.line 72
+	return	v1
+; v1 : single-length
+l3974:
+.line 57
+	invoke-virtual	{v5},android/view/MotionEvent/getAction	; getAction()I
+; v5 : Landroid/view/MotionEvent;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l398e
+; v1 : single-length
+	invoke-virtual	{v5},android/view/MotionEvent/getAction	; getAction()I
+; v5 : Landroid/view/MotionEvent;
+	move-result	v1
+; v1 : single-length
+	const/4	v2,2
+; v2 : single-length
+	if-ne	v1,v2,l3970
+; v1 : single-length , v2 : single-length
+l398e:
+.line 59
+	invoke-virtual	{v5},android/view/MotionEvent/getX	; getX()F
+; v5 : Landroid/view/MotionEvent;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,actionxl/mast/LineView.x F
+; v1 : single-length , v4 : Lactionxl/mast/LineView;
+.line 60
+	invoke-virtual	{v5},android/view/MotionEvent/getY	; getY()F
+; v5 : Landroid/view/MotionEvent;
+	move-result	v1
+; v1 : single-length
+	iput	v1,v4,actionxl/mast/LineView.y F
+; v1 : single-length , v4 : Lactionxl/mast/LineView;
+.line 63
+	const-wide/16	v1,16
+; v1 : double-length
+l39aa:
+	invoke-static	{v1,v2},java/lang/Thread/sleep	; sleep(J)V
+; v1 : double-length
+l39b0:
+.line 69
+	invoke-virtual	{v4},actionxl/mast/LineView/invalidate	; invalidate()V
+; v4 : Lactionxl/mast/LineView;
+.line 70
+	const/4	v1,1
+; v1 : single-length
+	goto	l3972
+l39ba:
+.line 65
+	move-exception	v0
+; v0 : java/lang/InterruptedException
+.line 67
+	invoke-virtual	{v0},java/lang/InterruptedException/printStackTrace	; printStackTrace()V
+; v0 : java/lang/InterruptedException
+	goto	l39b0
+.end method
+
+

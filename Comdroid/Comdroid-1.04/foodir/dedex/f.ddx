@@ -1,0 +1,531 @@
+.class public final f
+.super java/lang/Object
+
+.field private static f J
+.field public a Ljava/lang/String;
+.field private b Ljava/util/LinkedList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/LinkedList" , "<" , "Ljava/lang/Long;" , ">;" }
+  .end annotation
+.end field
+.field private c J
+.field private d J
+.field private e Ljava/util/LinkedList;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/LinkedList" , "<" , "Ljava/lang/Long;" , ">;" }
+  .end annotation
+.end field
+.field private g Ljava/lang/String;
+.field private h Z
+.field private i Z
+
+.method static <clinit>()V
+.limit registers 2
+	const-wide/16	v0,0
+; v0 : double-length
+	sput-wide	v0,f.f J
+; v0 : J
+	return-void	
+.end method
+
+.method <init>()V
+.limit registers 2
+; this: v1 (Lf;)
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lf;
+	iput-boolean	v0,v1,f.h Z
+; v0 : single-length , v1 : Lf;
+	iput-boolean	v0,v1,f.i Z
+; v0 : single-length , v1 : Lf;
+	new-instance	v0,java/util/LinkedList
+; v0 : Ljava/util/LinkedList;
+	invoke-direct	{v0},java/util/LinkedList/<init>	; <init>()V
+; v0 : Ljava/util/LinkedList;
+	iput-object	v0,v1,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v1 : Lf;
+	new-instance	v0,java/util/LinkedList
+; v0 : Ljava/util/LinkedList;
+	invoke-direct	{v0},java/util/LinkedList/<init>	; <init>()V
+; v0 : Ljava/util/LinkedList;
+	iput-object	v0,v1,f.e Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v1 : Lf;
+	invoke-virtual	{v1},f/a	; a()V
+; v1 : Lf;
+	return-void	
+.end method
+
+.method static i()J
+.limit registers 2
+	sget-wide	v0,f.f J
+; v0 : double-length
+	return-wide	v0
+; v0 : double-length
+.end method
+
+.method final a()V
+.limit registers 5
+; this: v4 (Lf;)
+	const-wide/16	v2,0
+; v2 : double-length
+	const/4	v1,0
+; v1 : single-length
+	iget-object	v0,v4,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v4 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/clear	; clear()V
+; v0 : Ljava/util/LinkedList;
+	iput-wide	v2,v4,f.c J
+; v2 : double-length , v4 : Lf;
+	iput-wide	v2,v4,f.d J
+; v2 : double-length , v4 : Lf;
+	iget-object	v0,v4,f.e Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v4 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/clear	; clear()V
+; v0 : Ljava/util/LinkedList;
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v4,f.g Ljava/lang/String;
+; v0 : single-length , v4 : Lf;
+	iput-boolean	v1,v4,f.h Z
+; v1 : single-length , v4 : Lf;
+	iput-boolean	v1,v4,f.i Z
+; v1 : single-length , v4 : Lf;
+	return-void	
+.end method
+
+.method public final a(Ljava/lang/String;)V
+.limit registers 4
+; this: v2 (Lf;)
+; parameter[0] : v3 (Ljava/lang/String;)
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Prior ad identifier = "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	iput-object	v3,v2,f.g Ljava/lang/String;
+; v3 : Ljava/lang/String; , v2 : Lf;
+	return-void	
+.end method
+
+.method final b()V
+.limit registers 4
+; this: v3 (Lf;)
+	const-string	v0,"Ad clicked."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	iget-object	v0,v3,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v3 : Lf;
+	invoke-static	{},android/os/SystemClock/elapsedRealtime	; elapsedRealtime()J
+; 
+	nop	
+	move-result-wide	v1
+; v1 : double-length
+	invoke-static	{v1,v2},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v1 : double-length
+	move-result-object	v1
+; v1 : Ljava/lang/Long;
+	invoke-virtual	{v0,v1},java/util/LinkedList/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/LinkedList; , v1 : Ljava/lang/Long;
+	return-void	
+.end method
+
+.method public final b(Ljava/lang/String;)V
+.limit registers 4
+; this: v2 (Lf;)
+; parameter[0] : v3 (Ljava/lang/String;)
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Prior impression ticket = "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	iput-object	v3,v2,f.a Ljava/lang/String;
+; v3 : Ljava/lang/String; , v2 : Lf;
+	return-void	
+.end method
+
+.method final c()V
+.limit registers 3
+; this: v2 (Lf;)
+	const-string	v0,"Ad request loaded."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	invoke-static	{},android/os/SystemClock/elapsedRealtime	; elapsedRealtime()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+	iput-wide	v0,v2,f.c J
+; v0 : double-length , v2 : Lf;
+	return-void	
+.end method
+
+.method final d()V
+.limit registers 5
+; this: v4 (Lf;)
+	const-string	v0,"Ad request started."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	invoke-static	{},android/os/SystemClock/elapsedRealtime	; elapsedRealtime()J
+; 
+	nop	
+	move-result-wide	v0
+; v0 : double-length
+	iput-wide	v0,v4,f.d J
+; v0 : double-length , v4 : Lf;
+	sget-wide	v0,f.f J
+; v0 : double-length
+	const-wide/16	v2,1
+; v2 : double-length
+	add-long/2addr	v0,v2
+; v0 : double-length , v2 : double-length
+	sput-wide	v0,f.f J
+; v0 : J
+	return-void	
+.end method
+
+.method final e()J
+.limit registers 3
+; this: v2 (Lf;)
+	iget-object	v0,v2,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v2 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/size	; size()I
+; v0 : Ljava/util/LinkedList;
+	move-result	v0
+; v0 : single-length
+	iget-object	v1,v2,f.e Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v2 : Lf;
+	invoke-virtual	{v1},java/util/LinkedList/size	; size()I
+; v1 : Ljava/util/LinkedList;
+	move-result	v1
+; v1 : single-length
+	if-eq	v0,v1,la52a
+; v0 : single-length , v1 : single-length
+	const-wide/16	v0,65535
+; v0 : double-length
+la528:
+	return-wide	v0
+; v0 : double-length
+la52a:
+	iget-object	v0,v2,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v2 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/size	; size()I
+; v0 : Ljava/util/LinkedList;
+	move-result	v0
+; v0 : single-length
+	int-to-long	v0,v0
+; v0 : double-length , v0 : double-length
+	goto	la528
+.end method
+
+.method final f()Ljava/lang/String;
+.limit registers 8
+; this: v7 (Lf;)
+	iget-object	v0,v7,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/isEmpty	; isEmpty()Z
+; v0 : Ljava/util/LinkedList;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,la578
+; v0 : single-length
+	iget-object	v0,v7,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/size	; size()I
+; v0 : Ljava/util/LinkedList;
+	move-result	v0
+; v0 : single-length
+	iget-object	v1,v7,f.e Ljava/util/LinkedList;
+; v1 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v1},java/util/LinkedList/size	; size()I
+; v1 : Ljava/util/LinkedList;
+	move-result	v1
+; v1 : single-length
+	if-eq	v0,v1,la57c
+; v0 : single-length , v1 : single-length
+la578:
+	const/4	v0,0
+; v0 : single-length
+la57a:
+	return-object	v0
+; v0 : Ljava/lang/String;
+la57c:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const/4	v0,0
+; v0 : single-length
+	move	v2,v0
+; v2 : single-length , v0 : single-length
+la58a:
+	iget-object	v0,v7,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/size	; size()I
+; v0 : Ljava/util/LinkedList;
+	move-result	v0
+; v0 : single-length
+	if-ge	v2,v0,la5f0
+; v2 : single-length , v0 : single-length
+	if-eqz	v2,la5a8
+; v2 : single-length
+	const-string	v0,","
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+la5a8:
+	iget-object	v0,v7,f.e Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0,v2},java/util/LinkedList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/LinkedList; , v2 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v3
+; v3 : double-length
+	iget-object	v0,v7,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0,v2},java/util/LinkedList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/LinkedList; , v2 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v5
+; v5 : double-length
+	sub-long/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	invoke-static	{v3,v4},java/lang/Long/toString	; toString(J)Ljava/lang/String;
+; v3 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	add-int/lit8	v0,v2,1
+; v0 : single-length , v2 : single-length
+	move	v2,v0
+; v2 : single-length , v0 : single-length
+	goto	la58a
+la5f0:
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	la57a
+.end method
+
+.method final g()Ljava/lang/String;
+.limit registers 8
+; this: v7 (Lf;)
+	iget-object	v0,v7,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/isEmpty	; isEmpty()Z
+; v0 : Ljava/util/LinkedList;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,la620
+; v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+la61e:
+	return-object	v0
+; v0 : Ljava/lang/String;
+la620:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const/4	v0,0
+; v0 : single-length
+	move	v2,v0
+; v2 : single-length , v0 : single-length
+la62e:
+	iget-object	v0,v7,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0},java/util/LinkedList/size	; size()I
+; v0 : Ljava/util/LinkedList;
+	move-result	v0
+; v0 : single-length
+	if-ge	v2,v0,la680
+; v2 : single-length , v0 : single-length
+	if-eqz	v2,la64c
+; v2 : single-length
+	const-string	v0,","
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+la64c:
+	iget-object	v0,v7,f.b Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v7 : Lf;
+	invoke-virtual	{v0,v2},java/util/LinkedList/get	; get(I)Ljava/lang/Object;
+; v0 : Ljava/util/LinkedList; , v2 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/Long
+; v0 : Ljava/lang/Long;
+	invoke-virtual	{v0},java/lang/Long/longValue	; longValue()J
+; v0 : Ljava/lang/Long;
+	move-result-wide	v3
+; v3 : double-length
+	iget-wide	v5,v7,f.c J
+; v5 : double-length , v7 : Lf;
+	sub-long/2addr	v3,v5
+; v3 : double-length , v5 : double-length
+	invoke-static	{v3,v4},java/lang/Long/toString	; toString(J)Ljava/lang/String;
+; v3 : double-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	add-int/lit8	v0,v2,1
+; v0 : single-length , v2 : single-length
+	move	v2,v0
+; v2 : single-length , v0 : single-length
+	goto	la62e
+la680:
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	goto	la61e
+.end method
+
+.method final h()J
+.limit registers 5
+; this: v4 (Lf;)
+	iget-wide	v0,v4,f.c J
+; v0 : double-length , v4 : Lf;
+	iget-wide	v2,v4,f.d J
+; v2 : double-length , v4 : Lf;
+	sub-long/2addr	v0,v2
+; v0 : double-length , v2 : double-length
+	return-wide	v0
+; v0 : double-length
+.end method
+
+.method final j()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lf;)
+	iget-object	v0,v1,f.g Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lf;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method final k()Z
+.limit registers 2
+; this: v1 (Lf;)
+	iget-boolean	v0,v1,f.h Z
+; v0 : single-length , v1 : Lf;
+	return	v0
+; v0 : single-length
+.end method
+
+.method final l()V
+.limit registers 2
+; this: v1 (Lf;)
+	const-string	v0,"Interstitial network error."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,f.h Z
+; v0 : single-length , v1 : Lf;
+	return-void	
+.end method
+
+.method final m()Z
+.limit registers 2
+; this: v1 (Lf;)
+	iget-boolean	v0,v1,f.i Z
+; v0 : single-length , v1 : Lf;
+	return	v0
+; v0 : single-length
+.end method
+
+.method final n()V
+.limit registers 2
+; this: v1 (Lf;)
+	const-string	v0,"Interstitial no fill."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,f.i Z
+; v0 : single-length , v1 : Lf;
+	return-void	
+.end method
+
+.method public final o()V
+.limit registers 4
+; this: v3 (Lf;)
+	const-string	v0,"Landing page dismissed."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	iget-object	v0,v3,f.e Ljava/util/LinkedList;
+; v0 : Ljava/util/LinkedList; , v3 : Lf;
+	invoke-static	{},android/os/SystemClock/elapsedRealtime	; elapsedRealtime()J
+; 
+	nop	
+	move-result-wide	v1
+; v1 : double-length
+	invoke-static	{v1,v2},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v1 : double-length
+	move-result-object	v1
+; v1 : Ljava/lang/Long;
+	invoke-virtual	{v0,v1},java/util/LinkedList/add	; add(Ljava/lang/Object;)Z
+; v0 : Ljava/util/LinkedList; , v1 : Ljava/lang/Long;
+	return-void	
+.end method
+
+.method final p()Ljava/lang/String;
+.limit registers 2
+; this: v1 (Lf;)
+	iget-object	v0,v1,f.a Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lf;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+

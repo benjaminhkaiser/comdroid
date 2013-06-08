@@ -1,0 +1,138 @@
+.class actionxl/mast/Preview
+.super android/view/SurfaceView
+.source CameraView.java
+.implements android/view/SurfaceHolder$Callback
+
+.field public camera Landroid/hardware/Camera;
+.field mHolder Landroid/view/SurfaceHolder;
+
+.method <init>(Landroid/content/Context;)V
+.limit registers 4
+; this: v2 (Lactionxl/mast/Preview;)
+; parameter[0] : v3 (Landroid/content/Context;)
+.line 17
+	invoke-direct	{v2,v3},android/view/SurfaceView/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Lactionxl/mast/Preview; , v3 : Landroid/content/Context;
+.line 21
+	invoke-virtual	{v2},actionxl/mast/Preview/getHolder	; getHolder()Landroid/view/SurfaceHolder;
+; v2 : Lactionxl/mast/Preview;
+	move-result-object	v0
+; v0 : Landroid/view/SurfaceHolder;
+	iput-object	v0,v2,actionxl/mast/Preview.mHolder Landroid/view/SurfaceHolder;
+; v0 : Landroid/view/SurfaceHolder; , v2 : Lactionxl/mast/Preview;
+.line 22
+	iget-object	v0,v2,actionxl/mast/Preview.mHolder Landroid/view/SurfaceHolder;
+; v0 : Landroid/view/SurfaceHolder; , v2 : Lactionxl/mast/Preview;
+	invoke-interface	{v0,v2},android/view/SurfaceHolder/addCallback	; addCallback(Landroid/view/SurfaceHolder$Callback;)V
+; v0 : Landroid/view/SurfaceHolder; , v2 : Lactionxl/mast/Preview;
+.line 23
+	iget-object	v0,v2,actionxl/mast/Preview.mHolder Landroid/view/SurfaceHolder;
+; v0 : Landroid/view/SurfaceHolder; , v2 : Lactionxl/mast/Preview;
+	const/4	v1,3
+; v1 : single-length
+	invoke-interface	{v0,v1},android/view/SurfaceHolder/setType	; setType(I)V
+; v0 : Landroid/view/SurfaceHolder; , v1 : single-length
+.line 24
+	return-void	
+.end method
+
+.method public draw(Landroid/graphics/Canvas;)V
+.limit registers 2
+; this: v0 (Lactionxl/mast/Preview;)
+; parameter[0] : v1 (Landroid/graphics/Canvas;)
+.line 58
+	invoke-super	{v0,v1},android/view/SurfaceView/draw	; draw(Landroid/graphics/Canvas;)V
+; v0 : Lactionxl/mast/Preview; , v1 : Landroid/graphics/Canvas;
+.line 59
+	return-void	
+.end method
+
+.method public surfaceChanged(Landroid/view/SurfaceHolder;III)V
+.limit registers 7
+; this: v2 (Lactionxl/mast/Preview;)
+; parameter[0] : v3 (Landroid/view/SurfaceHolder;)
+; parameter[1] : v4 (I)
+; parameter[2] : v5 (I)
+; parameter[3] : v6 (I)
+.line 50
+	iget-object	v1,v2,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v1 : Landroid/hardware/Camera; , v2 : Lactionxl/mast/Preview;
+	invoke-virtual	{v1},android/hardware/Camera/getParameters	; getParameters()Landroid/hardware/Camera$Parameters;
+; v1 : Landroid/hardware/Camera;
+	move-result-object	v0
+; v0 : Landroid/hardware/Camera$Parameters;
+.line 51
+	invoke-virtual	{v0,v5,v6},android/hardware/Camera$Parameters/setPreviewSize	; setPreviewSize(II)V
+; v0 : Landroid/hardware/Camera$Parameters; , v5 : single-length , v6 : single-length
+.line 52
+	iget-object	v1,v2,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v1 : Landroid/hardware/Camera; , v2 : Lactionxl/mast/Preview;
+	invoke-virtual	{v1,v0},android/hardware/Camera/setParameters	; setParameters(Landroid/hardware/Camera$Parameters;)V
+; v1 : Landroid/hardware/Camera; , v0 : Landroid/hardware/Camera$Parameters;
+.line 53
+	iget-object	v1,v2,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v1 : Landroid/hardware/Camera; , v2 : Lactionxl/mast/Preview;
+	invoke-virtual	{v1},android/hardware/Camera/startPreview	; startPreview()V
+; v1 : Landroid/hardware/Camera;
+.line 54
+	return-void	
+.end method
+
+.method public surfaceCreated(Landroid/view/SurfaceHolder;)V
+.limit registers 4
+; this: v2 (Lactionxl/mast/Preview;)
+; parameter[0] : v3 (Landroid/view/SurfaceHolder;)
+.catch java/io/IOException from l40ac to l40b6 using l40b8
+.line 29
+	invoke-static	{},android/hardware/Camera/open	; open()Landroid/hardware/Camera;
+; 
+	nop	
+	move-result-object	v1
+; v1 : Landroid/hardware/Camera;
+	iput-object	v1,v2,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v1 : Landroid/hardware/Camera; , v2 : Lactionxl/mast/Preview;
+l40ac:
+.line 31
+	iget-object	v1,v2,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v1 : Landroid/hardware/Camera; , v2 : Lactionxl/mast/Preview;
+	invoke-virtual	{v1,v3},android/hardware/Camera/setPreviewDisplay	; setPreviewDisplay(Landroid/view/SurfaceHolder;)V
+; v1 : Landroid/hardware/Camera; , v3 : Landroid/view/SurfaceHolder;
+l40b6:
+.line 36
+	return-void	
+l40b8:
+.line 33
+	move-exception	v1
+; v1 : java/io/IOException
+	move-object	v0,v1
+; v0 : java/io/IOException , v1 : java/io/IOException
+.line 34
+	invoke-virtual	{v0},java/io/IOException/printStackTrace	; printStackTrace()V
+; v0 : java/io/IOException
+	goto	l40b6
+.end method
+
+.method public surfaceDestroyed(Landroid/view/SurfaceHolder;)V
+.limit registers 3
+; this: v1 (Lactionxl/mast/Preview;)
+; parameter[0] : v2 (Landroid/view/SurfaceHolder;)
+.line 42
+	iget-object	v0,v1,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v0 : Landroid/hardware/Camera; , v1 : Lactionxl/mast/Preview;
+	invoke-virtual	{v0},android/hardware/Camera/stopPreview	; stopPreview()V
+; v0 : Landroid/hardware/Camera;
+.line 43
+	iget-object	v0,v1,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v0 : Landroid/hardware/Camera; , v1 : Lactionxl/mast/Preview;
+	invoke-virtual	{v0},android/hardware/Camera/release	; release()V
+; v0 : Landroid/hardware/Camera;
+.line 44
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,actionxl/mast/Preview.camera Landroid/hardware/Camera;
+; v0 : single-length , v1 : Lactionxl/mast/Preview;
+.line 45
+	return-void	
+.end method
+
+

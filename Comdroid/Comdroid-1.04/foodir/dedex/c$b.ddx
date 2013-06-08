@@ -1,0 +1,19 @@
+.class final c$b
+.super java/lang/Exception
+
+.inner class b inner c$b outer c
+.field final a Lc;
+
+.method public <init>(Lc;Ljava/lang/String;)V
+.limit registers 3
+; this: v0 (Lc$b;)
+; parameter[0] : v1 (Lc;)
+; parameter[1] : v2 (Ljava/lang/String;)
+	iput-object	v1,v0,c$b.a Lc;
+; v1 : Lc; , v0 : Lc$b;
+	invoke-direct	{v0,v2},java/lang/Exception/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Lc$b; , v2 : Ljava/lang/String;
+	return-void	
+.end method
+
+

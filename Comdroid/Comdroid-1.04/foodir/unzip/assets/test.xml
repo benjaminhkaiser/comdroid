@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<rss version="2.0" xml:base="http://www.riacon.com/blog" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>News</title>
+    <link>http://www.riacon.com/blog</link>
+    <description></description>
+    <language>en</language>
+          <item>
+    <title>RIACon Venue Change</title>
+    <link>http://www.riacon.com/content/riacon-venue-change</link>
+    <description>&lt;p&gt;Bad News.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;We have recently been contacted by the Legacy Hotel that another company has purchased it. The new owners will no longer keep the lease on the conference center where RIACon would have taken place.&lt;/p&gt;
+&lt;p&gt;Great News!!!&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.riacon.com/content/riacon-venue-change&quot; target=&quot;_blank&quot;&gt;read more&lt;/a&gt;&lt;/p&gt;</description>
+     <comments>http://www.riacon.com/content/riacon-venue-change#comments</comments>
+ <pubDate>Tue, 06 Mar 2012 15:56:21 +0000</pubDate>
+ <dc:creator>pnacelli</dc:creator>
+ <guid isPermaLink="false">74 at http://www.riacon.com</guid>
+  </item>
+  <item>
+    <title>RIACon Is Back! August 6-7, 2012. Get Ready...</title>
+    <link>http://www.riacon.com/content/riacon-back-august-6-7-2012-get-ready</link>
+    <description>&lt;p&gt;RIACon - The Rich Internet Application Conference where architects and developers of all levels gather to share and learn about creating the next generation of web and mobile based applications.&lt;/p&gt;
+&lt;p&gt;At RIACon you&#039;ll get to network with fellow industry professionals and community leaders while being exposed to the most up to date skills needed for building great applications leveraging the best technologies available today.&lt;/p&gt;
+</description>
+     <comments>http://www.riacon.com/content/riacon-back-august-6-7-2012-get-ready#comments</comments>
+ <pubDate>Mon, 30 Jan 2012 22:19:50 +0000</pubDate>
+ <dc:creator>admin</dc:creator>
+ <guid isPermaLink="false">3 at http://www.riacon.com</guid>
+  </item>
+  </channel>
+</rss>

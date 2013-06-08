@@ -1,0 +1,552 @@
+.class public com/google/android/apps/analytics/GoogleAnalyticsTracker
+.super java/lang/Object
+
+.inner class DispatcherMessageHandler inner com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler outer com/google/android/apps/analytics/GoogleAnalyticsTracker
+.field static final DEBUG Z = false
+.field private static final INSTANCE Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; = null
+.field public static final TRACKER_TAG Ljava/lang/String; = "googleanalytics"
+.field public static final VERSION Ljava/lang/String; = "1.0"
+.field private accountId Ljava/lang/String;
+.field private connetivityManager Landroid/net/ConnectivityManager;
+.field private dispatchPeriod I
+.field private dispatchRunner Ljava/lang/Runnable;
+.field private dispatcher Lcom/google/android/apps/analytics/Dispatcher;
+.field private dispatcherIsBusy Z
+.field private eventStore Lcom/google/android/apps/analytics/EventStore;
+.field private eventsBeingDispatched I
+.field private eventsDispatched I
+.field private handler Landroid/os/Handler;
+.field private parent Landroid/content/Context;
+.field private powerSaveMode Z
+
+.method static <clinit>()V
+.limit registers 1
+	new-instance	v0,com/google/android/apps/analytics/GoogleAnalyticsTracker
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-direct	{v0},com/google/android/apps/analytics/GoogleAnalyticsTracker/<init>	; <init>()V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	sput-object	v0,com/google/android/apps/analytics/GoogleAnalyticsTracker.INSTANCE Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	return-void	
+.end method
+
+.method private <init>()V
+.limit registers 2
+; this: v1 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	new-instance	v0,com/google/android/apps/analytics/GoogleAnalyticsTracker$1
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$1;
+	invoke-direct	{v0,v1},com/google/android/apps/analytics/GoogleAnalyticsTracker$1/<init>	; <init>(Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$1; , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iput-object	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatchRunner Ljava/lang/Runnable;
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$1; , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	return-void	
+.end method
+
+.method private cancelPendingDispathes()V
+.limit registers 3
+; this: v2 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+	iget-object	v0,v2,com/google/android/apps/analytics/GoogleAnalyticsTracker.handler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget-object	v1,v2,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatchRunner Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v2 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-virtual	{v0,v1},android/os/Handler/removeCallbacks	; removeCallbacks(Ljava/lang/Runnable;)V
+; v0 : Landroid/os/Handler; , v1 : Ljava/lang/Runnable;
+	return-void	
+.end method
+
+.method private createEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+.limit registers 15
+; this: v9 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v10 (Ljava/lang/String;)
+; parameter[1] : v11 (Ljava/lang/String;)
+; parameter[2] : v12 (Ljava/lang/String;)
+; parameter[3] : v13 (Ljava/lang/String;)
+; parameter[4] : v14 (I)
+	new-instance	v0,com/google/android/apps/analytics/Event
+; v0 : Lcom/google/android/apps/analytics/Event;
+	iget-object	v1,v9,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v1 : Lcom/google/android/apps/analytics/EventStore; , v9 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v1},com/google/android/apps/analytics/EventStore/getStoreId	; getStoreId()I
+; v1 : Lcom/google/android/apps/analytics/EventStore;
+	move-result	v1
+; v1 : single-length
+	iget-object	v2,v9,com/google/android/apps/analytics/GoogleAnalyticsTracker.parent Landroid/content/Context;
+; v2 : Landroid/content/Context; , v9 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-virtual	{v2},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v2 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Landroid/content/res/Resources;
+	invoke-virtual	{v2},android/content/res/Resources/getDisplayMetrics	; getDisplayMetrics()Landroid/util/DisplayMetrics;
+; v2 : Landroid/content/res/Resources;
+	move-result-object	v2
+; v2 : Landroid/util/DisplayMetrics;
+	iget	v7,v2,android/util/DisplayMetrics.widthPixels I
+; v7 : single-length , v2 : Landroid/util/DisplayMetrics;
+	iget-object	v2,v9,com/google/android/apps/analytics/GoogleAnalyticsTracker.parent Landroid/content/Context;
+; v2 : Landroid/content/Context; , v9 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-virtual	{v2},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v2 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Landroid/content/res/Resources;
+	invoke-virtual	{v2},android/content/res/Resources/getDisplayMetrics	; getDisplayMetrics()Landroid/util/DisplayMetrics;
+; v2 : Landroid/content/res/Resources;
+	move-result-object	v2
+; v2 : Landroid/util/DisplayMetrics;
+	iget	v8,v2,android/util/DisplayMetrics.heightPixels I
+; v8 : single-length , v2 : Landroid/util/DisplayMetrics;
+	move-object	v2,v10
+; v2 : Ljava/lang/String; , v10 : Ljava/lang/String;
+	move-object	v3,v11
+; v3 : Ljava/lang/String; , v11 : Ljava/lang/String;
+	move-object	v4,v12
+; v4 : Ljava/lang/String; , v12 : Ljava/lang/String;
+	move-object	v5,v13
+; v5 : Ljava/lang/String; , v13 : Ljava/lang/String;
+	move	v6,v14
+; v6 : single-length , v14 : single-length
+	invoke-direct/range	{v0..v8},com/google/android/apps/analytics/Event/<init>;	<init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)V
+; v0 : Lcom/google/android/apps/analytics/Event; , v1 : single-length , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : Ljava/lang/String; , v6 : single-length , v7 : single-length , v8 : single-length
+	iget-object	v1,v9,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v1 : Lcom/google/android/apps/analytics/EventStore; , v9 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v1,v0},com/google/android/apps/analytics/EventStore/putEvent	; putEvent(Lcom/google/android/apps/analytics/Event;)V
+; v1 : Lcom/google/android/apps/analytics/EventStore; , v0 : Lcom/google/android/apps/analytics/Event;
+	invoke-direct	{v9},com/google/android/apps/analytics/GoogleAnalyticsTracker/resetPowerSaveMode	; resetPowerSaveMode()V
+; v9 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	return-void	
+.end method
+
+.method public static getInstance()Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+.limit registers 1
+	sget-object	v0,com/google/android/apps/analytics/GoogleAnalyticsTracker.INSTANCE Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	return-object	v0
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+.end method
+
+.method private maybeScheduleNextDispatch()V
+.limit registers 5
+; this: v4 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+	iget	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatchPeriod I
+; v0 : single-length , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-gez	v0,l48d6
+; v0 : single-length
+l48d4:
+	return-void	
+l48d6:
+	iget-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.handler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget-object	v1,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatchRunner Ljava/lang/Runnable;
+; v1 : Ljava/lang/Runnable; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget	v2,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatchPeriod I
+; v2 : single-length , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	mul-int/lit16	v2,v2,1000
+; v2 : single-length , v2 : single-length
+	int-to-long	v2,v2
+; v2 : double-length , v2 : double-length
+	invoke-virtual	{v0,v1,v2,v3},android/os/Handler/postDelayed	; postDelayed(Ljava/lang/Runnable;J)Z
+; v0 : Landroid/os/Handler; , v1 : Ljava/lang/Runnable; , v2 : double-length
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l48d4
+; v0 : single-length
+	goto	l48d4
+.end method
+
+.method private resetPowerSaveMode()V
+.limit registers 2
+; this: v1 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+	iget-boolean	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.powerSaveMode Z
+; v0 : single-length , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-eqz	v0,l491c
+; v0 : single-length
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.powerSaveMode Z
+; v0 : single-length , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-direct	{v1},com/google/android/apps/analytics/GoogleAnalyticsTracker/maybeScheduleNextDispatch	; maybeScheduleNextDispatch()V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+l491c:
+	return-void	
+.end method
+
+.method public dispatch()Z
+.limit registers 4
+; this: v3 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+	const/4	v2,1
+; v2 : single-length
+	const/4	v1,0
+; v1 : single-length
+	iget-boolean	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcherIsBusy Z
+; v0 : single-length , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-eqz	v0,l4946
+; v0 : single-length
+	invoke-direct	{v3},com/google/android/apps/analytics/GoogleAnalyticsTracker/maybeScheduleNextDispatch	; maybeScheduleNextDispatch()V
+; v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+l4944:
+	return	v0
+; v0 : single-length
+l4946:
+	iget-object	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.connetivityManager Landroid/net/ConnectivityManager;
+; v0 : Landroid/net/ConnectivityManager; , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-virtual	{v0},android/net/ConnectivityManager/getActiveNetworkInfo	; getActiveNetworkInfo()Landroid/net/NetworkInfo;
+; v0 : Landroid/net/ConnectivityManager;
+	move-result-object	v0
+; v0 : Landroid/net/NetworkInfo;
+	if-eqz	v0,l4962
+; v0 : Landroid/net/NetworkInfo;
+	invoke-virtual	{v0},android/net/NetworkInfo/isAvailable	; isAvailable()Z
+; v0 : Landroid/net/NetworkInfo;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l496c
+; v0 : single-length
+l4962:
+	invoke-direct	{v3},com/google/android/apps/analytics/GoogleAnalyticsTracker/maybeScheduleNextDispatch	; maybeScheduleNextDispatch()V
+; v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	l4944
+l496c:
+	iget-object	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v0 : Lcom/google/android/apps/analytics/EventStore; , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v0},com/google/android/apps/analytics/EventStore/getNumStoredEvents	; getNumStoredEvents()I
+; v0 : Lcom/google/android/apps/analytics/EventStore;
+	move-result	v0
+; v0 : single-length
+	iput	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsBeingDispatched I
+; v0 : single-length , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsBeingDispatched I
+; v0 : single-length , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-eqz	v0,l49ac
+; v0 : single-length
+	iput	v1,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsDispatched I
+; v1 : single-length , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget-object	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v0 : Lcom/google/android/apps/analytics/EventStore; , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v0},com/google/android/apps/analytics/EventStore/peekEvents	; peekEvents()[Lcom/google/android/apps/analytics/Event;
+; v0 : Lcom/google/android/apps/analytics/EventStore;
+	move-result-object	v0
+; v0 : [Lcom/google/android/apps/analytics/Event;
+	iget-object	v1,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcher Lcom/google/android/apps/analytics/Dispatcher;
+; v1 : Lcom/google/android/apps/analytics/Dispatcher; , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v1,v0},com/google/android/apps/analytics/Dispatcher/dispatchEvents	; dispatchEvents([Lcom/google/android/apps/analytics/Event;)V
+; v1 : Lcom/google/android/apps/analytics/Dispatcher; , v0 : [Lcom/google/android/apps/analytics/Event;
+	iput-boolean	v2,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcherIsBusy Z
+; v2 : single-length , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-direct	{v3},com/google/android/apps/analytics/GoogleAnalyticsTracker/maybeScheduleNextDispatch	; maybeScheduleNextDispatch()V
+; v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+	goto	l4944
+l49ac:
+	iput-boolean	v2,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker.powerSaveMode Z
+; v2 : single-length , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	l4944
+.end method
+
+.method dispatchFinished()V
+.limit registers 6
+; this: v5 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+	const/4	v4,0
+; v4 : single-length
+	iget	v0,v5,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsBeingDispatched I
+; v0 : single-length , v5 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget	v1,v5,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsDispatched I
+; v1 : single-length , v5 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	sub-int/2addr	v0,v1
+; v0 : single-length , v1 : single-length
+	if-eqz	v0,l4a10
+; v0 : single-length
+	const-string	v1,"googleanalytics"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Dispatcher thinks it finished, but there were "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v0},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2," failed events"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v1,v0},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v1 : Ljava/lang/String; , v0 : Ljava/lang/String;
+l4a10:
+	iput	v4,v5,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsBeingDispatched I
+; v4 : single-length , v5 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iput-boolean	v4,v5,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcherIsBusy Z
+; v4 : single-length , v5 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	return-void	
+.end method
+
+.method eventDispatched(J)V
+.limit registers 4
+; this: v1 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v2 (J)
+	iget-object	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v0 : Lcom/google/android/apps/analytics/EventStore; , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v0,v2,v3},com/google/android/apps/analytics/EventStore/deleteEvent	; deleteEvent(J)V
+; v0 : Lcom/google/android/apps/analytics/EventStore; , v2 : double-length
+	iget	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsDispatched I
+; v0 : single-length , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	iput	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsDispatched I
+; v0 : single-length , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	return-void	
+.end method
+
+.method public setDispatchPeriod(I)V
+.limit registers 3
+; this: v1 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v2 (I)
+	iget	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatchPeriod I
+; v0 : single-length , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iput	v2,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatchPeriod I
+; v2 : single-length , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-gtz	v0,l4a68
+; v0 : single-length
+	invoke-direct	{v1},com/google/android/apps/analytics/GoogleAnalyticsTracker/maybeScheduleNextDispatch	; maybeScheduleNextDispatch()V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+l4a66:
+	return-void	
+l4a68:
+	if-lez	v0,l4a66
+; v0 : single-length
+	invoke-direct	{v1},com/google/android/apps/analytics/GoogleAnalyticsTracker/cancelPendingDispathes	; cancelPendingDispathes()V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-direct	{v1},com/google/android/apps/analytics/GoogleAnalyticsTracker/maybeScheduleNextDispatch	; maybeScheduleNextDispatch()V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	goto	l4a66
+.end method
+
+.method public start(Ljava/lang/String;ILandroid/content/Context;)V
+.limit registers 10
+; this: v6 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v7 (Ljava/lang/String;)
+; parameter[1] : v8 (I)
+; parameter[2] : v9 (Landroid/content/Context;)
+	iget-object	v0,v6,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v0 : Lcom/google/android/apps/analytics/EventStore; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-nez	v0,l4ac4
+; v0 : Lcom/google/android/apps/analytics/EventStore;
+	new-instance	v0,com/google/android/apps/analytics/PersistentEventStore
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore;
+	invoke-direct	{v0,v9},com/google/android/apps/analytics/PersistentEventStore/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Lcom/google/android/apps/analytics/PersistentEventStore; , v9 : Landroid/content/Context;
+	move-object	v4,v0
+; v4 : Lcom/google/android/apps/analytics/PersistentEventStore; , v0 : Lcom/google/android/apps/analytics/PersistentEventStore;
+l4aa0:
+	iget-object	v0,v6,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcher Lcom/google/android/apps/analytics/Dispatcher;
+; v0 : Lcom/google/android/apps/analytics/Dispatcher; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-nez	v0,l4acc
+; v0 : Lcom/google/android/apps/analytics/Dispatcher;
+	new-instance	v0,com/google/android/apps/analytics/NetworkDispatcher
+; v0 : Lcom/google/android/apps/analytics/NetworkDispatcher;
+	invoke-direct	{v0},com/google/android/apps/analytics/NetworkDispatcher/<init>	; <init>()V
+; v0 : Lcom/google/android/apps/analytics/NetworkDispatcher;
+	move-object	v5,v0
+; v5 : Lcom/google/android/apps/analytics/NetworkDispatcher; , v0 : Lcom/google/android/apps/analytics/NetworkDispatcher;
+l4ab4:
+	move-object	v0,v6
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move-object	v1,v7
+; v1 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	move	v2,v8
+; v2 : single-length , v8 : single-length
+	move-object	v3,v9
+; v3 : Landroid/content/Context; , v9 : Landroid/content/Context;
+	invoke-virtual/range	{v0..v5},com/google/android/apps/analytics/GoogleAnalyticsTracker/start;	start(Ljava/lang/String;ILandroid/content/Context;Lcom/google/android/apps/analytics/EventStore;Lcom/google/android/apps/analytics/Dispatcher;)V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v1 : Ljava/lang/String; , v2 : single-length , v3 : Landroid/content/Context; , v4 : Ljava/lang/Object; , v5 : Ljava/lang/Object;
+	return-void	
+l4ac4:
+	iget-object	v0,v6,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v0 : Lcom/google/android/apps/analytics/EventStore; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move-object	v4,v0
+; v4 : Lcom/google/android/apps/analytics/EventStore; , v0 : Lcom/google/android/apps/analytics/EventStore;
+	goto	l4aa0
+l4acc:
+	iget-object	v0,v6,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcher Lcom/google/android/apps/analytics/Dispatcher;
+; v0 : Lcom/google/android/apps/analytics/Dispatcher; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move-object	v5,v0
+; v5 : Lcom/google/android/apps/analytics/Dispatcher; , v0 : Lcom/google/android/apps/analytics/Dispatcher;
+	goto	l4ab4
+.end method
+
+.method start(Ljava/lang/String;ILandroid/content/Context;Lcom/google/android/apps/analytics/EventStore;Lcom/google/android/apps/analytics/Dispatcher;)V
+.limit registers 10
+; this: v4 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v5 (Ljava/lang/String;)
+; parameter[1] : v6 (I)
+; parameter[2] : v7 (Landroid/content/Context;)
+; parameter[3] : v8 (Lcom/google/android/apps/analytics/EventStore;)
+; parameter[4] : v9 (Lcom/google/android/apps/analytics/Dispatcher;)
+	const/4	v3,0
+; v3 : single-length
+	iput-object	v5,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.accountId Ljava/lang/String;
+; v5 : Ljava/lang/String; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iput-object	v7,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.parent Landroid/content/Context;
+; v7 : Landroid/content/Context; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iput-object	v8,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v8 : Lcom/google/android/apps/analytics/EventStore; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v0 : Lcom/google/android/apps/analytics/EventStore; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v0},com/google/android/apps/analytics/EventStore/startNewVisit	; startNewVisit()V
+; v0 : Lcom/google/android/apps/analytics/EventStore;
+	iput-object	v9,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcher Lcom/google/android/apps/analytics/Dispatcher;
+; v9 : Lcom/google/android/apps/analytics/Dispatcher; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcher Lcom/google/android/apps/analytics/Dispatcher;
+; v0 : Lcom/google/android/apps/analytics/Dispatcher; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	new-instance	v1,com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler;
+	iget-object	v2,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.parent Landroid/content/Context;
+; v2 : Landroid/content/Context; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-virtual	{v2},android/content/Context/getMainLooper	; getMainLooper()Landroid/os/Looper;
+; v2 : Landroid/content/Context;
+	move-result-object	v2
+; v2 : Landroid/os/Looper;
+	invoke-direct	{v1,v4,v2},com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler/<init>	; <init>(Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;Landroid/os/Looper;)V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v2 : Landroid/os/Looper;
+	iget-object	v2,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventStore Lcom/google/android/apps/analytics/EventStore;
+; v2 : Lcom/google/android/apps/analytics/EventStore; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v2},com/google/android/apps/analytics/EventStore/getReferrer	; getReferrer()Ljava/lang/String;
+; v2 : Lcom/google/android/apps/analytics/EventStore;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},com/google/android/apps/analytics/Dispatcher/init	; init(Landroid/os/Handler;Ljava/lang/String;)V
+; v0 : Lcom/google/android/apps/analytics/Dispatcher; , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler; , v2 : Ljava/lang/String;
+	iput	v3,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.eventsBeingDispatched I
+; v3 : single-length , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iput-boolean	v3,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcherIsBusy Z
+; v3 : single-length , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	iget-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.connetivityManager Landroid/net/ConnectivityManager;
+; v0 : Landroid/net/ConnectivityManager; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-nez	v0,l4b54
+; v0 : Landroid/net/ConnectivityManager;
+	iget-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.parent Landroid/content/Context;
+; v0 : Landroid/content/Context; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	const-string	v1,"connectivity"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/Context/getSystemService	; getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+; v0 : Landroid/content/Context; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/net/ConnectivityManager
+; v0 : Landroid/net/ConnectivityManager;
+	iput-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.connetivityManager Landroid/net/ConnectivityManager;
+; v0 : Landroid/net/ConnectivityManager; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+l4b54:
+	iget-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.handler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	if-nez	v0,l4b7a
+; v0 : Landroid/os/Handler;
+	new-instance	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	invoke-virtual	{v7},android/content/Context/getMainLooper	; getMainLooper()Landroid/os/Looper;
+; v7 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Landroid/os/Looper;
+	invoke-direct	{v0,v1},android/os/Handler/<init>	; <init>(Landroid/os/Looper;)V
+; v0 : Landroid/os/Handler; , v1 : Landroid/os/Looper;
+	iput-object	v0,v4,com/google/android/apps/analytics/GoogleAnalyticsTracker.handler Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+l4b72:
+	invoke-virtual	{v4,v6},com/google/android/apps/analytics/GoogleAnalyticsTracker/setDispatchPeriod	; setDispatchPeriod(I)V
+; v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v6 : single-length
+	return-void	
+l4b7a:
+	invoke-direct	{v4},com/google/android/apps/analytics/GoogleAnalyticsTracker/cancelPendingDispathes	; cancelPendingDispathes()V
+; v4 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	goto	l4b72
+.end method
+
+.method public start(Ljava/lang/String;Landroid/content/Context;)V
+.limit registers 4
+; this: v1 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Landroid/content/Context;)
+	const/4	v0,15
+; v0 : single-length
+	invoke-virtual	{v1,v2,v0,v3},com/google/android/apps/analytics/GoogleAnalyticsTracker/start	; start(Ljava/lang/String;ILandroid/content/Context;)V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v2 : Ljava/lang/String; , v0 : single-length , v3 : Landroid/content/Context;
+	return-void	
+.end method
+
+.method public stop()V
+.limit registers 2
+; this: v1 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+	iget-object	v0,v1,com/google/android/apps/analytics/GoogleAnalyticsTracker.dispatcher Lcom/google/android/apps/analytics/Dispatcher;
+; v0 : Lcom/google/android/apps/analytics/Dispatcher; , v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	invoke-interface	{v0},com/google/android/apps/analytics/Dispatcher/stop	; stop()V
+; v0 : Lcom/google/android/apps/analytics/Dispatcher;
+	invoke-direct	{v1},com/google/android/apps/analytics/GoogleAnalyticsTracker/cancelPendingDispathes	; cancelPendingDispathes()V
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	return-void	
+.end method
+
+.method public trackEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+.limit registers 11
+; this: v6 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v7 (Ljava/lang/String;)
+; parameter[1] : v8 (Ljava/lang/String;)
+; parameter[2] : v9 (Ljava/lang/String;)
+; parameter[3] : v10 (I)
+	iget-object	v1,v6,com/google/android/apps/analytics/GoogleAnalyticsTracker.accountId Ljava/lang/String;
+; v1 : Ljava/lang/String; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move-object	v0,v6
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move-object	v2,v7
+; v2 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	move-object	v3,v8
+; v3 : Ljava/lang/String; , v8 : Ljava/lang/String;
+	move-object	v4,v9
+; v4 : Ljava/lang/String; , v9 : Ljava/lang/String;
+	move	v5,v10
+; v5 : single-length , v10 : single-length
+	invoke-direct/range	{v0..v5},com/google/android/apps/analytics/GoogleAnalyticsTracker/createEvent;	createEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	return-void	
+.end method
+
+.method public trackPageView(Ljava/lang/String;)V
+.limit registers 8
+; this: v6 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[0] : v7 (Ljava/lang/String;)
+	iget-object	v1,v6,com/google/android/apps/analytics/GoogleAnalyticsTracker.accountId Ljava/lang/String;
+; v1 : Ljava/lang/String; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	const-string	v2,"__##GOOGLEPAGEVIEW##__"
+; v2 : Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	const/4	v5,15
+; v5 : single-length
+	move-object	v0,v6
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v6 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+	move-object	v3,v7
+; v3 : Ljava/lang/String; , v7 : Ljava/lang/String;
+	invoke-direct/range	{v0..v5},com/google/android/apps/analytics/GoogleAnalyticsTracker/createEvent;	createEvent(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;I)V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String; , v4 : single-length , v5 : single-length
+	return-void	
+.end method
+
+

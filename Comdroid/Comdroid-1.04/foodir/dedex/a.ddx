@@ -1,0 +1,655 @@
+.class public final a
+.super java/lang/Object
+
+.field public static final a Ljava/util/Map;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" }
+  .end annotation
+.end field
+.field public static final b Ljava/util/Map;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" }
+  .end annotation
+.end field
+
+.method static <clinit>()V
+.limit registers 3
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	const-string	v1,"/invalidRequest"
+; v1 : Ljava/lang/String;
+	new-instance	v2,o
+; v2 : Lo;
+	invoke-direct	{v2},o/<init>	; <init>()V
+; v2 : Lo;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lo;
+	const-string	v1,"/loadAdURL"
+; v1 : Ljava/lang/String;
+	new-instance	v2,p
+; v2 : Lp;
+	invoke-direct	{v2},p/<init>	; <init>()V
+; v2 : Lp;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lp;
+	invoke-static	{v0},java/util/Collections/unmodifiableMap	; unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+; v0 : Ljava/util/HashMap;
+	move-result-object	v0
+; v0 : Ljava/util/Map;
+	sput-object	v0,a.a Ljava/util/Map;
+; v0 : Ljava/util/Map;
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	const-string	v1,"/open"
+; v1 : Ljava/lang/String;
+	new-instance	v2,r
+; v2 : Lr;
+	invoke-direct	{v2},r/<init>	; <init>()V
+; v2 : Lr;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lr;
+	const-string	v1,"/canOpenURLs"
+; v1 : Ljava/lang/String;
+	new-instance	v2,j
+; v2 : Lj;
+	invoke-direct	{v2},j/<init>	; <init>()V
+; v2 : Lj;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lj;
+	const-string	v1,"/close"
+; v1 : Ljava/lang/String;
+	new-instance	v2,l
+; v2 : Ll;
+	invoke-direct	{v2},l/<init>	; <init>()V
+; v2 : Ll;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ll;
+	const-string	v1,"/evalInOpener"
+; v1 : Ljava/lang/String;
+	new-instance	v2,m
+; v2 : Lm;
+	invoke-direct	{v2},m/<init>	; <init>()V
+; v2 : Lm;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lm;
+	const-string	v1,"/log"
+; v1 : Ljava/lang/String;
+	new-instance	v2,q
+; v2 : Lq;
+	invoke-direct	{v2},q/<init>	; <init>()V
+; v2 : Lq;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lq;
+	const-string	v1,"/click"
+; v1 : Ljava/lang/String;
+	new-instance	v2,k
+; v2 : Lk;
+	invoke-direct	{v2},k/<init>	; <init>()V
+; v2 : Lk;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lk;
+	const-string	v1,"/httpTrack"
+; v1 : Ljava/lang/String;
+	new-instance	v2,n
+; v2 : Ln;
+	invoke-direct	{v2},n/<init>	; <init>()V
+; v2 : Ln;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ln;
+	const-string	v1,"/reloadRequest"
+; v1 : Ljava/lang/String;
+	new-instance	v2,s
+; v2 : Ls;
+	invoke-direct	{v2},s/<init>	; <init>()V
+; v2 : Ls;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Ls;
+	const-string	v1,"/settings"
+; v1 : Ljava/lang/String;
+	new-instance	v2,t
+; v2 : Lt;
+	invoke-direct	{v2},t/<init>	; <init>()V
+; v2 : Lt;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lt;
+	const-string	v1,"/touch"
+; v1 : Ljava/lang/String;
+	new-instance	v2,u
+; v2 : Lu;
+	invoke-direct	{v2},u/<init>	; <init>()V
+; v2 : Lu;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lu;
+	const-string	v1,"/video"
+; v1 : Ljava/lang/String;
+	new-instance	v2,v
+; v2 : Lv;
+	invoke-direct	{v2},v/<init>	; <init>()V
+; v2 : Lv;
+	invoke-interface	{v0,v1,v2},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/HashMap; , v1 : Ljava/lang/String; , v2 : Lv;
+	invoke-static	{v0},java/util/Collections/unmodifiableMap	; unmodifiableMap(Ljava/util/Map;)Ljava/util/Map;
+; v0 : Ljava/util/HashMap;
+	move-result-object	v0
+; v0 : Ljava/util/Map;
+	sput-object	v0,a.b Ljava/util/Map;
+; v0 : Ljava/util/Map;
+	return-void	
+.end method
+
+.method private <init>()V
+.limit registers 1
+; this: v0 (La;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : La;
+	return-void	
+.end method
+
+.method public static a(Landroid/webkit/WebView;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" , "Landroid/net/Uri;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 3
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+	const-string	v0,"Calling onshow."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	const-string	v0,"onshow"
+; v0 : Ljava/lang/String;
+	const-string	v1,"{'version': 'afma-sdk-a-v4.1.1'}"
+; v1 : Ljava/lang/String;
+	invoke-static	{v2,v0,v1},a/a	; a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)V
+; v2 : Landroid/webkit/WebView; , v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public static a(Landroid/webkit/WebView;Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" , "Landroid/net/Uri;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 4
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+; parameter[1] : v3 (Ljava/lang/String;)
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"javascript:"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v2,v0},android/webkit/WebView/loadUrl	; loadUrl(Ljava/lang/String;)V
+; v2 : Landroid/webkit/WebView; , v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public static a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" , "Landroid/net/Uri;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 5
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+; parameter[1] : v3 (Ljava/lang/String;)
+; parameter[2] : v4 (Ljava/lang/String;)
+	const-string	v0,"AFMA_ReceiveMessage"
+; v0 : Ljava/lang/String;
+	if-eqz	v4,l4a7a
+; v4 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"('"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"', "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,");"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v2,v0},a/a	; a(Landroid/webkit/WebView;Ljava/lang/String;)V
+; v2 : Landroid/webkit/WebView; , v0 : Ljava/lang/String;
+l4a78:
+	return-void	
+l4a7a:
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"('"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"');"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v2,v0},a/a	; a(Landroid/webkit/WebView;Ljava/lang/String;)V
+; v2 : Landroid/webkit/WebView; , v0 : Ljava/lang/String;
+	goto	l4a78
+.end method
+
+.method public static a(Landroid/webkit/WebView;Ljava/util/Map;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" , "Landroid/net/Uri;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 4
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+; parameter[1] : v3 (Ljava/util/Map;)
+	new-instance	v0,org/json/JSONObject
+; v0 : Lorg/json/JSONObject;
+	invoke-direct	{v0,v3},org/json/JSONObject/<init>	; <init>(Ljava/util/Map;)V
+; v0 : Lorg/json/JSONObject; , v3 : Ljava/util/Map;
+	invoke-virtual	{v0},org/json/JSONObject/toString	; toString()Ljava/lang/String;
+; v0 : Lorg/json/JSONObject;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"openableURLs"
+; v1 : Ljava/lang/String;
+	invoke-static	{v2,v1,v0},a/a	; a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)V
+; v2 : Landroid/webkit/WebView; , v1 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method static a(Ld;Ljava/util/Map;Landroid/net/Uri;Landroid/webkit/WebView;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" , "Landroid/net/Uri;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 8
+; parameter[0] : v4 (Ld;)
+; parameter[1] : v5 (Ljava/util/Map;)
+; parameter[2] : v6 (Landroid/net/Uri;)
+; parameter[3] : v7 (Landroid/webkit/WebView;)
+	const/4	v3,0
+; v3 : single-length
+	invoke-static	{v6},com/google/ads/util/AdUtil/b	; b(Landroid/net/Uri;)Ljava/util/HashMap;
+; v6 : Landroid/net/Uri;
+	move-result-object	v1
+; v1 : Ljava/util/HashMap;
+	if-nez	v1,l4b16
+; v1 : Ljava/util/HashMap;
+	const-string	v0,"An error occurred while parsing the message parameters."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l4b14:
+	return-void	
+l4b16:
+	invoke-static	{v6},a/c	; c(Landroid/net/Uri;)Z
+; v6 : Landroid/net/Uri;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l4bf8
+; v0 : single-length
+	invoke-virtual	{v6},android/net/Uri/getHost	; getHost()Ljava/lang/String;
+; v6 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-nez	v0,l4b4a
+; v0 : Ljava/lang/String;
+	const-string	v0,"An error occurred while parsing the AMSG parameters."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	move-object	v2,v3
+; v2 : single-length , v3 : single-length
+l4b3a:
+	if-nez	v2,l4c1e
+; v2 : Ljava/lang/String;
+	const-string	v0,"An error occurred while parsing the message."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	l4b14
+l4b4a:
+	const-string	v2,"launch"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l4b90
+; v2 : single-length
+	const-string	v0,"a"
+; v0 : Ljava/lang/String;
+	const-string	v2,"intent"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v0,v2},java/util/HashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/HashMap; , v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	const-string	v0,"u"
+; v0 : Ljava/lang/String;
+	const-string	v2,"url"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/util/HashMap/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/HashMap; , v2 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	invoke-virtual	{v1,v0,v2},java/util/HashMap/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/HashMap; , v0 : Ljava/lang/String; , v2 : Ljava/lang/Object;
+	const-string	v0,"url"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v1,v0},java/util/HashMap/remove	; remove(Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/HashMap; , v0 : Ljava/lang/String;
+	const-string	v0,"/open"
+; v0 : Ljava/lang/String;
+	move-object	v2,v0
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	goto	l4b3a
+l4b90:
+	const-string	v2,"closecanvas"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+	if-eqz	v2,l4ba8
+; v2 : single-length
+	const-string	v0,"/close"
+; v0 : Ljava/lang/String;
+	move-object	v2,v0
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	goto	l4b3a
+l4ba8:
+	const-string	v2,"log"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l4bc0
+; v0 : single-length
+	const-string	v0,"/log"
+; v0 : Ljava/lang/String;
+	move-object	v2,v0
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	goto	l4b3a
+l4bc0:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v2,"An error occurred while parsing the AMSG: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v6},android/net/Uri/toString	; toString()Ljava/lang/String;
+; v6 : Landroid/net/Uri;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	move-object	v2,v3
+; v2 : single-length , v3 : single-length
+	goto	l4b3a
+l4bf8:
+	invoke-static	{v6},a/b	; b(Landroid/net/Uri;)Z
+; v6 : Landroid/net/Uri;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l4c10
+; v0 : single-length
+	invoke-virtual	{v6},android/net/Uri/getPath	; getPath()Ljava/lang/String;
+; v6 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	move-object	v2,v0
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	goto	l4b3a
+l4c10:
+	const-string	v0,"Message was neither a GMSG nor an AMSG."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	move-object	v2,v3
+; v2 : single-length , v3 : single-length
+	goto	l4b3a
+l4c1e:
+	invoke-interface	{v5,v2},java/util/Map/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v5 : Ljava/util/Map; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,i
+; v0 : Li;
+	if-nez	v0,l4c6a
+; v0 : Li;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"No AdResponse found, <message: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,">"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto/16	l4b14
+l4c6a:
+	invoke-interface	{v0,v4,v1,v7},i/a	; a(Ld;Ljava/util/HashMap;Landroid/webkit/WebView;)V
+; v0 : Li; , v4 : Ld; , v1 : Ljava/util/HashMap; , v7 : Landroid/webkit/WebView;
+	goto/16	l4b14
+.end method
+
+.method public static a(Landroid/net/Uri;)Z
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ld;" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Li;" , ">;" , "Landroid/net/Uri;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 3
+; parameter[0] : v2 (Landroid/net/Uri;)
+	const/4	v1,0
+; v1 : single-length
+	if-eqz	v2,l4c96
+; v2 : Landroid/net/Uri;
+	invoke-virtual	{v2},android/net/Uri/isHierarchical	; isHierarchical()Z
+; v2 : Landroid/net/Uri;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l4c9a
+; v0 : single-length
+l4c96:
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+l4c98:
+	return	v0
+; v0 : single-length
+l4c9a:
+	invoke-static	{v2},a/b	; b(Landroid/net/Uri;)Z
+; v2 : Landroid/net/Uri;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l4cb2
+; v0 : single-length
+	invoke-static	{v2},a/c	; c(Landroid/net/Uri;)Z
+; v2 : Landroid/net/Uri;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l4cb6
+; v0 : single-length
+l4cb2:
+	const/4	v0,1
+; v0 : single-length
+	goto	l4c98
+l4cb6:
+	move	v0,v1
+; v0 : single-length , v1 : single-length
+	goto	l4c98
+.end method
+
+.method public static b(Landroid/webkit/WebView;)V
+.limit registers 3
+; parameter[0] : v2 (Landroid/webkit/WebView;)
+	const-string	v0,"Calling onhide."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	const-string	v0,"onhide"
+; v0 : Ljava/lang/String;
+	const/4	v1,0
+; v1 : single-length
+	invoke-static	{v2,v0,v1},a/a	; a(Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)V
+; v2 : Landroid/webkit/WebView; , v0 : Ljava/lang/String; , v1 : single-length
+	return-void	
+.end method
+
+.method private static b(Landroid/net/Uri;)Z
+.limit registers 4
+; parameter[0] : v3 (Landroid/net/Uri;)
+	const/4	v2,0
+; v2 : single-length
+	invoke-virtual	{v3},android/net/Uri/getScheme	; getScheme()Ljava/lang/String;
+; v3 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v0,l4d12
+; v0 : Ljava/lang/String;
+	const-string	v1,"gmsg"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l4d16
+; v0 : single-length
+l4d12:
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+l4d14:
+	return	v0
+; v0 : single-length
+l4d16:
+	invoke-virtual	{v3},android/net/Uri/getAuthority	; getAuthority()Ljava/lang/String;
+; v3 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v0,l4d32
+; v0 : Ljava/lang/String;
+	const-string	v1,"mobileads.google.com"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l4d36
+; v0 : single-length
+l4d32:
+	move	v0,v2
+; v0 : single-length , v2 : single-length
+	goto	l4d14
+l4d36:
+	const/4	v0,1
+; v0 : single-length
+	goto	l4d14
+.end method
+
+.method private static c(Landroid/net/Uri;)Z
+.limit registers 3
+; parameter[0] : v2 (Landroid/net/Uri;)
+	invoke-virtual	{v2},android/net/Uri/getScheme	; getScheme()Ljava/lang/String;
+; v2 : Landroid/net/Uri;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	if-eqz	v0,l4d68
+; v0 : Ljava/lang/String;
+	const-string	v1,"admob"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l4d6c
+; v0 : single-length
+l4d68:
+	const/4	v0,0
+; v0 : single-length
+l4d6a:
+	return	v0
+; v0 : single-length
+l4d6c:
+	const/4	v0,1
+; v0 : single-length
+	goto	l4d6a
+.end method
+
+

@@ -1,0 +1,159 @@
+.class public final w
+.super java/lang/Object
+.implements java/lang/Runnable
+
+.field private a Landroid/content/Context;
+.field private b Ljava/lang/String;
+
+.method public <init>(Ljava/lang/String;Landroid/content/Context;)V
+.limit registers 3
+; this: v0 (Lw;)
+; parameter[0] : v1 (Ljava/lang/String;)
+; parameter[1] : v2 (Landroid/content/Context;)
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lw;
+	iput-object	v1,v0,w.b Ljava/lang/String;
+; v1 : Ljava/lang/String; , v0 : Lw;
+	iput-object	v2,v0,w.a Landroid/content/Context;
+; v2 : Landroid/content/Context; , v0 : Lw;
+	return-void	
+.end method
+
+.method public final run()V
+.limit registers 5
+; this: v4 (Lw;)
+.catch java/io/IOException from lb5c2 to lb5d4 using lb5d4
+.catch java/lang/Exception from lb54e to lb5c2 using lb5ca
+.catch java/io/IOException from lb504 to lb54e using lb5d4
+lb504:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Pinging URL: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	iget-object	v1,v4,w.b Ljava/lang/String;
+; v1 : Ljava/lang/String; , v4 : Lw;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/a/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	new-instance	v0,java/net/URL
+; v0 : Ljava/net/URL;
+	iget-object	v1,v4,w.b Ljava/lang/String;
+; v1 : Ljava/lang/String; , v4 : Lw;
+	invoke-direct	{v0,v1},java/net/URL/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/net/URL; , v1 : Ljava/lang/String;
+	invoke-virtual	{v0},java/net/URL/openConnection	; openConnection()Ljava/net/URLConnection;
+; v0 : Ljava/net/URL;
+	move-result-object	v0
+; v0 : Ljava/net/URLConnection;
+	check-cast	v0,java/net/HttpURLConnection
+; v0 : Ljava/net/HttpURLConnection;
+lb54e:
+	iget-object	v1,v4,w.a Landroid/content/Context;
+; v1 : Landroid/content/Context; , v4 : Lw;
+	invoke-static	{v0,v1},com/google/ads/util/AdUtil/a	; a(Ljava/net/HttpURLConnection;Landroid/content/Context;)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : Landroid/content/Context;
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v1},java/net/HttpURLConnection/setInstanceFollowRedirects	; setInstanceFollowRedirects(Z)V
+; v0 : Ljava/net/HttpURLConnection; , v1 : single-length
+	invoke-virtual	{v0},java/net/HttpURLConnection/connect	; connect()V
+; v0 : Ljava/net/HttpURLConnection;
+	invoke-virtual	{v0},java/net/HttpURLConnection/getResponseCode	; getResponseCode()I
+; v0 : Ljava/net/HttpURLConnection;
+	move-result	v1
+; v1 : single-length
+	const/16	v2,200
+; v2 : single-length
+	if-lt	v1,v2,lb57e
+; v1 : single-length , v2 : single-length
+	const/16	v2,300
+; v2 : single-length
+	if-lt	v1,v2,lb5c2
+; v1 : single-length , v2 : single-length
+lb57e:
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Did not receive 2XX (got "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v1},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v1 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,") from pinging URL: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	iget-object	v2,v4,w.b Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Lw;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/google/ads/util/a/e	; e(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+lb5c2:
+	invoke-virtual	{v0},java/net/HttpURLConnection/disconnect	; disconnect()V
+; v0 : Ljava/net/HttpURLConnection;
+lb5c8:
+	return-void	
+lb5ca:
+	move-exception	v1
+; v1 : java/lang/Exception
+	invoke-virtual	{v0},java/net/HttpURLConnection/disconnect	; disconnect()V
+; v0 : Ljava/net/HttpURLConnection;
+	throw	v1
+; v1 : java/lang/Exception
+lb5d4:
+	move-exception	v0
+; v0 : java/io/IOException
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Unable to ping the URL: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	iget-object	v2,v4,w.b Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : Lw;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/a/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/io/IOException
+	goto	lb5c8
+.end method
+
+

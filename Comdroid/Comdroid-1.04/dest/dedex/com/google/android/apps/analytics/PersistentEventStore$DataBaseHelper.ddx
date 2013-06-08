@@ -1,0 +1,407 @@
+.class com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper
+.super android/database/sqlite/SQLiteOpenHelper
+
+.inner class DataBaseHelper inner com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper outer com/google/android/apps/analytics/PersistentEventStore
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 5
+; this: v3 (Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;)
+; parameter[0] : v4 (Landroid/content/Context;)
+	const-string	v0,"google_analytics.db"
+; v0 : Ljava/lang/String;
+	const/4	v1,0
+; v1 : single-length
+	const/4	v2,1
+; v2 : single-length
+	invoke-direct	{v3,v4,v0,v1,v2},android/database/sqlite/SQLiteOpenHelper/<init>	; <init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+; v3 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v4 : Landroid/content/Context; , v0 : Ljava/lang/String; , v1 : single-length , v2 : single-length
+	return-void	
+.end method
+
+.method public <init>(Landroid/content/Context;Ljava/lang/String;)V
+.limit registers 5
+; this: v2 (Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;)
+; parameter[0] : v3 (Landroid/content/Context;)
+; parameter[1] : v4 (Ljava/lang/String;)
+	const/4	v0,0
+; v0 : single-length
+	const/4	v1,1
+; v1 : single-length
+	invoke-direct	{v2,v3,v4,v0,v1},android/database/sqlite/SQLiteOpenHelper/<init>	; <init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+; v2 : Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper; , v3 : Landroid/content/Context; , v4 : Ljava/lang/String; , v0 : single-length , v1 : single-length
+	return-void	
+.end method
+
+.method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+.limit registers 11
+; this: v9 (Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;)
+; parameter[0] : v10 (Landroid/database/sqlite/SQLiteDatabase;)
+	const/4	v5,1
+; v5 : single-length
+	const/4	v4,0
+; v4 : single-length
+	const-string	v8," '%s' INTEGER,"
+; v8 : Ljava/lang/String;
+	const-string	v7," '%s' CHAR(256) NOT NULL,"
+; v7 : Ljava/lang/String;
+	const-string	v6," '%s' INTEGER NOT NULL,"
+; v6 : Ljava/lang/String;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"CREATE TABLE events ("
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v2,v5,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v3,"event_id"
+; v3 : Ljava/lang/String;
+	aput-object	v3,v2,v4
+; v3 : Ljava/lang/String; , v2 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v1,v2},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"user_id"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' CHAR(256) NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"account_id"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v7,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v7 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"random_val"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"timestamp_first"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"timestamp_previous"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"timestamp_current"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"visits"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' CHAR(256) NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"category"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v7,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v7 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' CHAR(256) NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"action"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v7,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v7 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' CHAR(256), "
+; v1 : Ljava/lang/String;
+	new-array	v2,v5,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v3,"label"
+; v3 : Ljava/lang/String;
+	aput-object	v3,v2,v4
+; v3 : Ljava/lang/String; , v2 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v1,v2},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"value"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v8,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v8 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"screen_width"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v8,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v8 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER);"
+; v1 : Ljava/lang/String;
+	new-array	v2,v5,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v3,"screen_height"
+; v3 : Ljava/lang/String;
+	aput-object	v3,v2,v4
+; v3 : Ljava/lang/String; , v2 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v1,v2},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},android/database/sqlite/SQLiteDatabase/execSQL	; execSQL(Ljava/lang/String;)V
+; v10 : Landroid/database/sqlite/SQLiteDatabase; , v0 : Ljava/lang/String;
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"CREATE TABLE session ("
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER PRIMARY KEY,"
+; v1 : Ljava/lang/String;
+	new-array	v2,v5,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v3,"timestamp_first"
+; v3 : Ljava/lang/String;
+	aput-object	v3,v2,v4
+; v3 : Ljava/lang/String; , v2 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v1,v2},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"timestamp_previous"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"timestamp_current"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL,"
+; v1 : Ljava/lang/String;
+	new-array	v1,v5,[Ljava/lang/Object;
+; v1 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v2,"visits"
+; v2 : Ljava/lang/String;
+	aput-object	v2,v1,v4
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v6,v1},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String; , v1 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," '%s' INTEGER NOT NULL);"
+; v1 : Ljava/lang/String;
+	new-array	v2,v5,[Ljava/lang/Object;
+; v2 : [Ljava/lang/Object; , v5 : single-length
+	const-string	v3,"store_id"
+; v3 : Ljava/lang/String;
+	aput-object	v3,v2,v4
+; v3 : Ljava/lang/String; , v2 : [Ljava/lang/Object; , v4 : single-length
+	invoke-static	{v1,v2},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : [Ljava/lang/Object;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},android/database/sqlite/SQLiteDatabase/execSQL	; execSQL(Ljava/lang/String;)V
+; v10 : Landroid/database/sqlite/SQLiteDatabase; , v0 : Ljava/lang/String;
+	const-string	v0,"CREATE TABLE install_referrer (referrer TEXT PRIMARY KEY NOT NULL);"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v10,v0},android/database/sqlite/SQLiteDatabase/execSQL	; execSQL(Ljava/lang/String;)V
+; v10 : Landroid/database/sqlite/SQLiteDatabase; , v0 : Ljava/lang/String;
+	return-void	
+.end method
+
+.method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+.limit registers 6
+; this: v2 (Lcom/google/android/apps/analytics/PersistentEventStore$DataBaseHelper;)
+; parameter[0] : v3 (Landroid/database/sqlite/SQLiteDatabase;)
+; parameter[1] : v4 (I)
+; parameter[2] : v5 (I)
+	const-string	v0,"googleanalytics"
+; v0 : Ljava/lang/String;
+	const-string	v1,"Database upgrade attempted, with no upgrade method available"
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	return-void	
+.end method
+
+

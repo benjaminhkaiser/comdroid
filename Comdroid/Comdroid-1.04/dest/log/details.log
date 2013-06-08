@@ -1,0 +1,366 @@
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+app
+
+Examining app manifest...
+******************************************************************************************
+Uses permission android.permission.CAMERA
+Uses permission android.permission.INTERNET
+Uses permission android.permission.ACCESS_NETWORK_STATE
+Component: actionxl.mast.MastSplash activity
+Component: actionxl.mast.Mast activity
+Component: actionxl.mast.Instructions activity
+Component: actionxl.mast.Calibrate activity
+
+Examining app DDX ...
+******************************************************************************************
+Found method that returns string: actionxl/mast/AngleSensor/getFractionString(D)
+Intent: actionxl/mast/Mast/onCreate(Landroid/os/Bundle;)@135
+Sink: actionxl/mast/Mast/onCreate(Landroid/os/Bundle;)@145
+Intent: actionxl/mast/Mast/onOptionsItemSelected(Landroid/view/MenuItem;)@70
+Sink: actionxl/mast/Mast/onOptionsItemSelected(Landroid/view/MenuItem;)@80
+Found method that returns string: com/google/android/apps/analytics/EventStore/getReferrer()
+Found method that returns string: com/google/android/apps/analytics/AnalyticsReceiver/formatReferrer(Ljava/lang/String;)
+Method: com/google/android/apps/analytics/AnalyticsReceiver/onReceive(Landroid/content/Context;Landroid/content/Intent;)@0
+Found method that returns string: com/google/android/apps/analytics/Event/toString()
+Found method that returns string: com/google/android/apps/analytics/NetworkRequestUtil/constructEventRequestPath(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+Found method that returns string: com/google/android/apps/analytics/NetworkRequestUtil/constructPageviewRequestPath(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+Found method that returns string: com/google/android/apps/analytics/NetworkRequestUtil/encode(Ljava/lang/String;)
+Found method that returns string: com/google/android/apps/analytics/NetworkRequestUtil/getEscapedCookieString(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+Found method that returns string: com/google/android/apps/analytics/PersistentEventStore/getReferrer()
+Found method that returns string: com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/access$1000(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)
+Found method that returns string: com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/access$1100(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)
+
+Details...
+******************************************************************************************
+
+Processing actionxl/mast/AngleSensor$Units/<clinit>()...
+******************************************************************************************
+***End processing actionxl/mast/AngleSensor$Units/<clinit>()
+
+Processing actionxl/mast/AngleSensor$Units/<init>(Ljava/lang/String;I)...
+******************************************************************************************
+***End processing actionxl/mast/AngleSensor$Units/<init>(Ljava/lang/String;I)
+
+Processing actionxl/mast/AngleSensor/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/AngleSensor/<init>()
+
+Processing actionxl/mast/Calibrate/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/Calibrate/<init>()
+
+Processing actionxl/mast/CalibrateView/<init>(Landroid/content/Context;Lactionxl/mast/AngleSensor;)...
+******************************************************************************************
+***End processing actionxl/mast/CalibrateView/<init>(Landroid/content/Context;Lactionxl/mast/AngleSensor;)
+
+Processing actionxl/mast/Instructions/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/Instructions/<init>()
+
+Processing actionxl/mast/LineView/<init>(Landroid/content/Context;Lactionxl/mast/AngleSensor;)...
+******************************************************************************************
+***End processing actionxl/mast/LineView/<init>(Landroid/content/Context;Lactionxl/mast/AngleSensor;)
+
+Processing actionxl/mast/Mast$1/<init>(Lactionxl/mast/Mast;)...
+******************************************************************************************
+***End processing actionxl/mast/Mast$1/<init>(Lactionxl/mast/Mast;)
+
+Processing actionxl/mast/Mast/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/Mast/<init>()
+
+Processing actionxl/mast/MastApp/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/MastApp/<init>()
+
+Processing actionxl/mast/MastSplash/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/MastSplash/<init>()
+
+Processing actionxl/mast/Preview/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing actionxl/mast/Preview/<init>(Landroid/content/Context;)
+
+Processing actionxl/mast/R$attr/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/R$attr/<init>()
+
+Processing actionxl/mast/R$id/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/R$id/<init>()
+
+Processing actionxl/mast/R$drawable/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/R$drawable/<init>()
+
+Processing actionxl/mast/R$menu/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/R$menu/<init>()
+
+Processing actionxl/mast/R$layout/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/R$layout/<init>()
+
+Processing actionxl/mast/R/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/R/<init>()
+
+Processing actionxl/mast/R$string/<init>()...
+******************************************************************************************
+***End processing actionxl/mast/R$string/<init>()
+
+Processing com/google/android/apps/analytics/GoogleAnalyticsTracker$1/<init>(Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/GoogleAnalyticsTracker$1/<init>(Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+
+Processing com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler/<init>(Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;Landroid/os/Looper;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler/<init>(Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;Landroid/os/Looper;)
+
+Processing com/google/android/apps/analytics/GoogleAnalyticsTracker/<clinit>()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/GoogleAnalyticsTracker/<clinit>()
+
+Processing com/google/android/apps/analytics/GoogleAnalyticsTracker/<init>()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/GoogleAnalyticsTracker/<init>()
+
+Processing com/google/android/apps/analytics/AnalyticsReceiver/<init>()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/AnalyticsReceiver/<init>()
+
+Processing com/google/android/apps/analytics/Event/<init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/Event/<init>(ILjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;III)
+
+Processing com/google/android/apps/analytics/Event/<init>(JILjava/lang/String;IIIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;III)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/Event/<init>(JILjava/lang/String;IIIIILjava/lang/String;Ljava/lang/String;Ljava/lang/String;III)
+
+Processing com/google/android/apps/analytics/NetworkRequestUtil/<init>()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkRequestUtil/<init>()
+
+Processing com/google/android/apps/analytics/NetworkDispatcher/<clinit>()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher/<clinit>()
+
+Processing com/google/android/apps/analytics/NetworkDispatcher/<init>()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher/<init>()
+
+Processing com/google/android/apps/analytics/PersistentEventStore/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/PersistentEventStore/<init>(Landroid/content/Context;)
+
+Processing com/google/android/apps/analytics/PersistentEventStore/<init>(Landroid/content/Context;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/PersistentEventStore/<init>(Landroid/content/Context;Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/<init>(Landroid/content/Context;)
+
+Processing com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/<init>(Landroid/content/Context;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/PersistentEventStore$DataBaseHelper/<init>(Landroid/content/Context;Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread$AsyncDispatchTask/<init>(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;[Lcom/google/android/apps/analytics/Event;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread$AsyncDispatchTask/<init>(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;[Lcom/google/android/apps/analytics/Event;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Lcom/google/android/apps/analytics/PipelinedRequester;Ljava/lang/String;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Lcom/google/android/apps/analytics/PipelinedRequester;Ljava/lang/String;Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Lcom/google/android/apps/analytics/PipelinedRequester;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/apps/analytics/NetworkDispatcher$1;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Lcom/google/android/apps/analytics/PipelinedRequester;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/apps/analytics/NetworkDispatcher$1;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/apps/analytics/NetworkDispatcher$1;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/<init>(Landroid/os/Handler;Ljava/lang/String;Ljava/lang/String;Lcom/google/android/apps/analytics/NetworkDispatcher$1;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread$RequesterCallbacks/<init>(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread$RequesterCallbacks/<init>(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread$RequesterCallbacks/<init>(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;Lcom/google/android/apps/analytics/NetworkDispatcher$1;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread$RequesterCallbacks/<init>(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;Lcom/google/android/apps/analytics/NetworkDispatcher$1;)
+
+Processing com/google/android/apps/analytics/PipelinedRequester/<init>(Lorg/apache/http/HttpHost;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/PipelinedRequester/<init>(Lorg/apache/http/HttpHost;)
+
+Processing com/google/android/apps/analytics/PipelinedRequester/<init>(Lorg/apache/http/HttpHost;Lorg/apache/http/conn/scheme/SocketFactory;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/PipelinedRequester/<init>(Lorg/apache/http/HttpHost;Lorg/apache/http/conn/scheme/SocketFactory;)
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/access$1100(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/access$1100(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)
+
+Processing com/google/android/apps/analytics/NetworkRequestUtil/getEscapedCookieString(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)...
+******************************************************************************************
+Returning UTF-8 com/google/android/apps/analytics/NetworkRequestUtil/encode(Ljava/lang/String;)
+***End processing com/google/android/apps/analytics/NetworkRequestUtil/getEscapedCookieString(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/AnalyticsReceiver/formatReferrer(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/AnalyticsReceiver/formatReferrer(Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/EventStore/getReferrer()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/EventStore/getReferrer()
+
+Processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/access$1000(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkDispatcher$DispatcherThread/access$1000(Lcom/google/android/apps/analytics/NetworkDispatcher$DispatcherThread;)
+
+Processing com/google/android/apps/analytics/NetworkRequestUtil/constructEventRequestPath(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)...
+******************************************************************************************
+Returning UTF-8 com/google/android/apps/analytics/NetworkRequestUtil/getEscapedCookieString(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+***End processing com/google/android/apps/analytics/NetworkRequestUtil/constructEventRequestPath(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/PersistentEventStore/getReferrer()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/PersistentEventStore/getReferrer()
+
+Processing com/google/android/apps/analytics/NetworkRequestUtil/encode(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/NetworkRequestUtil/encode(Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/NetworkRequestUtil/constructPageviewRequestPath(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)...
+******************************************************************************************
+Returning UTF-8 com/google/android/apps/analytics/NetworkRequestUtil/encode(Ljava/lang/String;)
+Returning UTF-8 com/google/android/apps/analytics/NetworkRequestUtil/getEscapedCookieString(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+***End processing com/google/android/apps/analytics/NetworkRequestUtil/constructPageviewRequestPath(Lcom/google/android/apps/analytics/Event;Ljava/lang/String;)
+
+Processing com/google/android/apps/analytics/Event/toString()...
+******************************************************************************************
+***End processing com/google/android/apps/analytics/Event/toString()
+
+Processing actionxl/mast/AngleSensor/getFractionString(D)...
+******************************************************************************************
+***End processing actionxl/mast/AngleSensor/getFractionString(D)
+
+Processing com/google/android/apps/analytics/AnalyticsReceiver/onReceive(Landroid/content/Context;Landroid/content/Intent;)...
+******************************************************************************************
+Returning googleanalytics com/google/android/apps/analytics/AnalyticsReceiver/formatReferrer(Ljava/lang/String;)
+***End processing com/google/android/apps/analytics/AnalyticsReceiver/onReceive(Landroid/content/Context;Landroid/content/Intent;)
+
+Processing actionxl/mast/Mast/onOptionsItemSelected(Landroid/view/MenuItem;)...
+******************************************************************************************
+Found init, src_line:125, ddx_line:70
+Found Activity Sink, src_line:127, ddx_line:80
+***End processing actionxl/mast/Mast/onOptionsItemSelected(Landroid/view/MenuItem;)
+
+Processing actionxl/mast/Mast/onCreate(Landroid/os/Bundle;)...
+******************************************************************************************
+Found init, src_line:60, ddx_line:135
+Found Activity Sink, src_line:62, ddx_line:145
+***End processing actionxl/mast/Mast/onCreate(Landroid/os/Bundle;)
+
+Second pass processing...
+******************************************************************************************
+
+Finding methods using intents
+******************************************************************************************
+
+Dynamic receiver resolving...
+******************************************************************************************
+
+Find component vulnerabilities
+******************************************************************************************
+
+Find intent vulnerabilities
+******************************************************************************************
+
+Print intent summary
+******************************************************************************************
+**************************
+actionxl/mast/Mast/onCreate(Landroid/os/Bundle;)@135
+invoke-direct	{v0},android/content/Intent/<init>	; <init>()V
+Explicit: true
+Explicit Destination: actionxl.mast.MastSplash
+Destination Type: activity
+Done: true
+**************************
+actionxl/mast/Mast/onOptionsItemSelected(Landroid/view/MenuItem;)@70
+invoke-direct	{v0},android/content/Intent/<init>	; <init>()V
+Explicit: true
+Explicit Destination: actionxl.mast.Instructions
+Destination Type: activity
+Done: true
+
+Print component summary
+******************************************************************************************
+Activities: 4
+Services: 0
+Receivers: 0
+DynamicReceivers: 0
+Activity-aliases: 0
+Providers: 0
+Total: 4
+Public: 1
+
+Print intent and sink summary
+******************************************************************************************
+Intents: 3
+actionxl/mast/Mast/onCreate(Landroid/os/Bundle;)@135
+actionxl/mast/Mast/onOptionsItemSelected(Landroid/view/MenuItem;)@70
+com/google/android/apps/analytics/AnalyticsReceiver/onReceive(Landroid/content/Context;Landroid/content/Intent;)@0
+Method: 1
+Other: 0
+Typical: 2
+
+Found sink: 2 of 3
+Explicit: 2 of 2
+Non-pending Explicit Intents: 2 of 2
+
+Pending Sinks: 0
+Other Sinks: 2 of 2
+
+Activity Sinks: 2
+Service Sinks: 0
+Broadcast Sinks: 0
+	sendBroadcast Sinks: 0
+	sendOrderedBroadcast Sinks: 0
+	sendStickyBroadcast Sinks: 0
+	sendStickyOrderedBroadcast Sinks: 0
+
+Print exposure summary
+******************************************************************************************
+Exposure to Components
+Malicious Activity Start: 0 of 4
+Malicious Service Start: 0 of 0
+Malicious Data Injection: 0 of 0
+Protected Activity Vuln: 0
+Protected Service Vuln: 0
+Protected Receiver Vuln: 0
+
+Exposure to Intents
+Activity Hijacking: 0 of 2
+Service Hijacking: 0 of 0
+Broadcast Exposure: 0 of 0
+	Intent Sniffing: 0
+	Intent Theft: 0
+	Result Modification: 0
+
+Explicit Intents to Public Components
+  To Activity: 0
+  To Service: 0
+  To Receiver: 0
+
+Found check perms
+******************************************************************************************
+Nothing
+
+Weird errors
+******************************************************************************************
+Nothing

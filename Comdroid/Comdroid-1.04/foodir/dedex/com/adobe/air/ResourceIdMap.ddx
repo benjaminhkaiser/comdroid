@@ -1,0 +1,430 @@
+.class public com/adobe/air/ResourceIdMap
+.super java/lang/Object
+.source ResourceIdMap.java
+
+.field private static s_resourceMap Ljava/util/Hashtable;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Hashtable" , "<" , "Ljava/lang/String;" , "Ljava/util/Hashtable" , "<" , "Ljava/lang/String;" , "Ljava/lang/Integer;" , ">;>;" }
+  .end annotation
+.end field
+.field private m_resourceIds Ljava/util/Hashtable;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Hashtable" , "<" , "Ljava/lang/String;" , "Ljava/lang/Integer;" , ">;" }
+  .end annotation
+.end field
+
+.method public <init>(Ljava/lang/Class;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/lang/Class" , "<*>;)V" }
+.end annotation
+.limit registers 2
+; this: v0 (Lcom/adobe/air/ResourceIdMap;)
+; parameter[0] : v1 (Ljava/lang/Class;)
+.line 22
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/adobe/air/ResourceIdMap;
+.line 23
+	invoke-direct	{v0,v1},com/adobe/air/ResourceIdMap/init	; init(Ljava/lang/Class;)V
+; v0 : Lcom/adobe/air/ResourceIdMap; , v1 : Ljava/lang/Class;
+.line 24
+	return-void	
+.end method
+
+.method public <init>(Ljava/lang/String;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/lang/Class" , "<*>;)V" }
+.end annotation
+.limit registers 7
+; this: v5 (Lcom/adobe/air/ResourceIdMap;)
+; parameter[0] : v6 (Ljava/lang/String;)
+.catch java/lang/ClassNotFoundException from l38ca to l38d8 using l38da
+.line 10
+	invoke-direct	{v5},java/lang/Object/<init>	; <init>()V
+; v5 : Lcom/adobe/air/ResourceIdMap;
+l38ca:
+.line 14
+	invoke-static	{v6},java/lang/Class/forName	; forName(Ljava/lang/String;)Ljava/lang/Class;
+; v6 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/Class;
+	invoke-direct	{v5,v1},com/adobe/air/ResourceIdMap/init	; init(Ljava/lang/Class;)V
+; v5 : Lcom/adobe/air/ResourceIdMap; , v1 : Ljava/lang/Class;
+l38d8:
+.line 20
+	return-void	
+l38da:
+.line 16
+	move-exception	v1
+; v1 : java/lang/ClassNotFoundException
+	move-object	v0,v1
+; v0 : java/lang/ClassNotFoundException , v1 : java/lang/ClassNotFoundException
+.line 17
+	sget-object	v1,java/lang/System.out Ljava/io/PrintStream;
+; v1 : Ljava/io/PrintStream;
+	const-string	v2,"Class not found:  %s%n%n"
+; v2 : Ljava/lang/String;
+	const/4	v3,1
+; v3 : single-length
+	new-array	v3,v3,[Ljava/lang/Object;
+; v3 : [Ljava/lang/Object; , v3 : [Ljava/lang/Object;
+	const/4	v4,0
+; v4 : single-length
+	aput-object	v6,v3,v4
+; v6 : Ljava/lang/String; , v3 : [Ljava/lang/Object; , v4 : single-length
+	invoke-virtual	{v1,v2,v3},java/io/PrintStream/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+; v1 : Ljava/io/PrintStream; , v2 : Ljava/lang/String; , v3 : [Ljava/lang/Object;
+	goto	l38d8
+.end method
+
+.method private static gatherResourceInfo(Ljava/lang/Class;Ljava/util/Hashtable;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/lang/Class" , "<*>;" , "Ljava/util/Hashtable" , "<" , "Ljava/lang/String;" , "Ljava/lang/Integer;" , ">;)V" }
+.end annotation
+.limit registers 14
+; parameter[0] : v12 (Ljava/lang/Class;)
+; parameter[1] : v13 (Ljava/util/Hashtable;)
+.catch java/lang/IllegalArgumentException from l396e to l39e0 using l39e2
+.catch java/lang/IllegalAccessException from l396e to l39e0 using l39fa
+.var 0 is i$ I from l3926 to l3928
+.var 6 is len$ I from l3924 to l3928
+.var 12 is arr$ [Ljava/lang/Class; from l3922 to l3928
+.var 0 is clsName Ljava/lang/String; from l3938 to l3956
+.var 5 is i$ I from l3928 to l3964
+.var 3 is i$ I from l3964 to l3966
+.var 3 is f Ljava/lang/reflect/Field; from l396e to l39ac
+.var 8 is rscKey Ljava/lang/String; from l399c to l39c2
+.var 4 is i$ I from l3966 to l39c6
+.var 3 is i$ I from l39c6 to l39c8
+.var 3 is f Ljava/lang/reflect/Field; from l39ca to l39d2
+.var 8 is rscKey Ljava/lang/String; from l39ca to l39e2
+.var 3 is e Ljava/lang/IllegalArgumentException; from l39e4 to l39e8
+.var 3 is e Ljava/lang/IllegalAccessException; from l39fc to l3a00
+.var 4 is i$ I from l39c8 to l3a16
+.var 0 is i$ I from l3a16 to l3a18
+.var 1 is cls Ljava/lang/Class; from l3930 to l3a1a
+.var 2 is clsName Ljava/lang/String; from l3956 to l3a1a
+.var 7 is len$ I from l3962 to l3a1a
+.var 0 is clsName Ljava/lang/String; from l3a1c to l3a1e
+.line 49
+	invoke-virtual	{v12},java/lang/Class/getClasses	; getClasses()[Ljava/lang/Class;
+; v12 : Ljava/lang/Class;
+	move-result-object	v12
+; v12 : [Ljava/lang/Class;
+.line 50
+	move-object	v12,v12
+; v12 : [Ljava/lang/Class; , v12 : [Ljava/lang/Class;
+l3922:
+	array-length	v6,v12
+; v6 : single-length , v12 : [Ljava/lang/Class;
+l3924:
+	const/4	v0,0
+; v0 : single-length
+l3926:
+	move	v5,v0
+; v5 : single-length , v0 : single-length
+l3928:
+	if-ge	v5,v6,l3a1a
+; v5 : single-length , v6 : single-length
+	aget-object	v1,v12,v5
+; v1 : unknown , v12 : Ljava/lang/Object; , v5 : single-length
+.line 52
+	invoke-virtual	{v1},java/lang/Class/getName	; getName()Ljava/lang/String;
+; v1 : unknown
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 53
+	const/16	v2,36
+; v2 : single-length
+	invoke-virtual	{v0,v2},java/lang/String/lastIndexOf	; lastIndexOf(I)I
+; v0 : Ljava/lang/String; , v2 : single-length
+	move-result	v2
+; v2 : single-length
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+.line 54
+	if-lez	v2,l3a1c
+; v2 : single-length
+.line 56
+	invoke-virtual	{v0,v2},java/lang/String/substring	; substring(I)Ljava/lang/String;
+; v0 : Ljava/lang/String; , v2 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	move-object	v2,v0
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+l3956:
+.line 58
+	invoke-virtual	{v1},java/lang/Class/getDeclaredFields	; getDeclaredFields()[Ljava/lang/reflect/Field;
+; v1 : Ljava/lang/Class;
+	move-result-object	v0
+; v0 : [Ljava/lang/reflect/Field;
+.line 59
+	move-object	v0,v0
+; v0 : [Ljava/lang/reflect/Field; , v0 : [Ljava/lang/reflect/Field;
+	array-length	v7,v0
+; v7 : single-length , v0 : [Ljava/lang/reflect/Field;
+l3962:
+	const/4	v3,0
+; v3 : single-length
+l3964:
+	move	v4,v3
+; v4 : single-length , v3 : single-length
+l3966:
+	if-ge	v4,v7,l3a12
+; v4 : single-length , v7 : single-length
+	aget-object	v3,v0,v4
+; v3 : Ljava/lang/reflect/Field; , v0 : [Ljava/lang/reflect/Field; , v4 : single-length
+l396e:
+.line 63
+	const-string	v8,"%s.%s"
+; v8 : Ljava/lang/String;
+	const/4	v9,2
+; v9 : single-length
+	new-array	v9,v9,[Ljava/lang/Object;
+; v9 : [Ljava/lang/Object; , v9 : [Ljava/lang/Object;
+	const/4	v10,0
+; v10 : single-length
+	aput-object	v2,v9,v10
+; v2 : Ljava/lang/String; , v9 : [Ljava/lang/Object; , v10 : single-length
+	const/4	v10,1
+; v10 : single-length
+	invoke-virtual	{v3},java/lang/reflect/Field/getName	; getName()Ljava/lang/String;
+; v3 : Ljava/lang/reflect/Field;
+	move-result-object	v11
+; v11 : Ljava/lang/String;
+	aput-object	v11,v9,v10
+; v11 : Ljava/lang/String; , v9 : [Ljava/lang/Object; , v10 : single-length
+	invoke-static	{v8,v9},java/lang/String/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+; v8 : Ljava/lang/String; , v9 : [Ljava/lang/Object;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+	invoke-virtual	{v8},java/lang/String/intern	; intern()Ljava/lang/String;
+; v8 : Ljava/lang/String;
+	move-result-object	v8
+; v8 : Ljava/lang/String;
+.line 64
+	invoke-virtual	{v13,v8},java/util/Hashtable/containsKey	; containsKey(Ljava/lang/Object;)Z
+; v13 : Ljava/util/Hashtable; , v8 : Ljava/lang/String;
+	move-result	v9
+; v9 : single-length
+	if-eqz	v9,l39ca
+; v9 : single-length
+.line 66
+	sget-object	v3,java/lang/System.out Ljava/io/PrintStream;
+; v3 : Ljava/io/PrintStream;
+l39ac:
+	const-string	v9,"Did not add duplicate resource key %s"
+; v9 : Ljava/lang/String;
+	const/4	v10,1
+; v10 : single-length
+	new-array	v10,v10,[Ljava/lang/Object;
+; v10 : [Ljava/lang/Object; , v10 : [Ljava/lang/Object;
+	const/4	v11,0
+; v11 : single-length
+	aput-object	v8,v10,v11
+; v8 : Ljava/lang/String; , v10 : [Ljava/lang/Object; , v11 : single-length
+	invoke-virtual	{v3,v9,v10},java/io/PrintStream/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+; v3 : Ljava/io/PrintStream; , v9 : Ljava/lang/String; , v10 : [Ljava/lang/Object;
+l39c2:
+.line 59
+	add-int/lit8	v3,v4,1
+; v3 : single-length , v4 : single-length
+l39c6:
+	move	v4,v3
+; v4 : single-length , v3 : single-length
+l39c8:
+	goto	l3966
+l39ca:
+.line 71
+	invoke-virtual	{v3,v1},java/lang/reflect/Field/getInt	; getInt(Ljava/lang/Object;)I
+; v3 : Ljava/lang/reflect/Field; , v1 : Ljava/lang/Class;
+	move-result	v3
+; v3 : single-length
+l39d2:
+	invoke-static	{v3},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v3 : single-length
+	move-result-object	v3
+; v3 : Ljava/lang/Integer;
+	invoke-virtual	{v13,v8,v3},java/util/Hashtable/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v13 : Ljava/util/Hashtable; , v8 : Ljava/lang/String; , v3 : Ljava/lang/Integer;
+l39e0:
+	goto	l39c2
+l39e2:
+.line 74
+	move-exception	v3
+; v3 : java/lang/IllegalArgumentException
+.line 76
+	sget-object	v3,java/lang/System.out Ljava/io/PrintStream;
+; v3 : Ljava/io/PrintStream;
+l39e8:
+	const-string	v8,"IllegalArgumentException"
+; v8 : Ljava/lang/String;
+	const/4	v9,0
+; v9 : single-length
+	new-array	v9,v9,[Ljava/lang/Object;
+; v9 : [Ljava/lang/Object; , v9 : [Ljava/lang/Object;
+	invoke-virtual	{v3,v8,v9},java/io/PrintStream/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+; v3 : Ljava/io/PrintStream; , v8 : Ljava/lang/String; , v9 : [Ljava/lang/Object;
+	goto	l39c2
+l39fa:
+.line 78
+	move-exception	v3
+; v3 : java/lang/IllegalAccessException
+.line 80
+	sget-object	v3,java/lang/System.out Ljava/io/PrintStream;
+; v3 : Ljava/io/PrintStream;
+l3a00:
+	const-string	v8,"IllegalAccessException"
+; v8 : Ljava/lang/String;
+	const/4	v9,0
+; v9 : single-length
+	new-array	v9,v9,[Ljava/lang/Object;
+; v9 : [Ljava/lang/Object; , v9 : [Ljava/lang/Object;
+	invoke-virtual	{v3,v8,v9},java/io/PrintStream/format	; format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/io/PrintStream;
+; v3 : Ljava/io/PrintStream; , v8 : Ljava/lang/String; , v9 : [Ljava/lang/Object;
+	goto	l39c2
+l3a12:
+.line 50
+	add-int/lit8	v0,v5,1
+; v0 : single-length , v5 : single-length
+l3a16:
+	move	v5,v0
+; v5 : single-length , v0 : single-length
+l3a18:
+	goto	l3928
+l3a1a:
+.line 84
+	return-void	
+l3a1c:
+	move-object	v2,v0
+; v2 : Ljava/lang/String; , v0 : Ljava/lang/String;
+l3a1e:
+	goto	l3956
+.end method
+
+.method private init(Ljava/lang/Class;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/lang/Class" , "<*>;)V" }
+.end annotation
+.limit registers 5
+; this: v3 (Lcom/adobe/air/ResourceIdMap;)
+; parameter[0] : v4 (Ljava/lang/Class;)
+.line 28
+	sget-object	v0,com/adobe/air/ResourceIdMap.s_resourceMap Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable;
+	if-nez	v0,l3a56
+; v0 : Ljava/util/Hashtable;
+.line 30
+	new-instance	v0,java/util/Hashtable
+; v0 : Ljava/util/Hashtable;
+	invoke-direct	{v0},java/util/Hashtable/<init>	; <init>()V
+; v0 : Ljava/util/Hashtable;
+	sput-object	v0,com/adobe/air/ResourceIdMap.s_resourceMap Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable;
+l3a56:
+.line 32
+	sget-object	v0,com/adobe/air/ResourceIdMap.s_resourceMap Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable;
+	invoke-virtual	{v0,v4},java/util/Hashtable/contains	; contains(Ljava/lang/Object;)Z
+; v0 : Ljava/util/Hashtable; , v4 : Ljava/lang/Class;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l3a96
+; v0 : single-length
+.line 34
+	new-instance	v0,java/util/Hashtable
+; v0 : Ljava/util/Hashtable;
+	invoke-direct	{v0},java/util/Hashtable/<init>	; <init>()V
+; v0 : Ljava/util/Hashtable;
+	iput-object	v0,v3,com/adobe/air/ResourceIdMap.m_resourceIds Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable; , v3 : Lcom/adobe/air/ResourceIdMap;
+.line 35
+	iget-object	v0,v3,com/adobe/air/ResourceIdMap.m_resourceIds Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable; , v3 : Lcom/adobe/air/ResourceIdMap;
+	invoke-static	{v4,v0},com/adobe/air/ResourceIdMap/gatherResourceInfo	; gatherResourceInfo(Ljava/lang/Class;Ljava/util/Hashtable;)V
+; v4 : Ljava/lang/Class; , v0 : Ljava/util/Hashtable;
+.line 36
+	sget-object	v0,com/adobe/air/ResourceIdMap.s_resourceMap Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable;
+	invoke-virtual	{v4},java/lang/Class/getName	; getName()Ljava/lang/String;
+; v4 : Ljava/lang/Class;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	iget-object	v2,v3,com/adobe/air/ResourceIdMap.m_resourceIds Ljava/util/Hashtable;
+; v2 : Ljava/util/Hashtable; , v3 : Lcom/adobe/air/ResourceIdMap;
+	invoke-virtual	{v0,v1,v2},java/util/Hashtable/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Hashtable; , v1 : Ljava/lang/String; , v2 : Ljava/util/Hashtable;
+l3a94:
+.line 42
+	return-void	
+l3a96:
+.line 40
+	sget-object	v0,com/adobe/air/ResourceIdMap.s_resourceMap Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable;
+	invoke-virtual	{v0,v4},java/util/Hashtable/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Hashtable; , v4 : Ljava/lang/Class;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/util/Hashtable
+; v0 : Ljava/util/Hashtable;
+	iput-object	v0,v3,com/adobe/air/ResourceIdMap.m_resourceIds Ljava/util/Hashtable;
+; v0 : Ljava/util/Hashtable; , v3 : Lcom/adobe/air/ResourceIdMap;
+	goto	l3a94
+.end method
+
+.method public getId(Ljava/lang/String;)I
+.throws Ljava/lang/IllegalArgumentException;
+.throws Landroid/content/res/Resources$NotFoundException;
+.limit registers 4
+; this: v2 (Lcom/adobe/air/ResourceIdMap;)
+; parameter[0] : v3 (Ljava/lang/String;)
+.line 88
+	if-nez	v3,l3acc
+; v3 : Ljava/lang/String;
+.line 90
+	new-instance	v1,java/lang/IllegalArgumentException
+; v1 : Ljava/lang/IllegalArgumentException;
+	invoke-direct	{v1},java/lang/IllegalArgumentException/<init>	; <init>()V
+; v1 : Ljava/lang/IllegalArgumentException;
+	throw	v1
+; v1 : Ljava/lang/IllegalArgumentException;
+l3acc:
+.line 92
+	invoke-virtual	{v3},java/lang/String/intern	; intern()Ljava/lang/String;
+; v3 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 93
+	iget-object	v1,v2,com/adobe/air/ResourceIdMap.m_resourceIds Ljava/util/Hashtable;
+; v1 : Ljava/util/Hashtable; , v2 : Lcom/adobe/air/ResourceIdMap;
+	invoke-virtual	{v1,v0},java/util/Hashtable/containsKey	; containsKey(Ljava/lang/Object;)Z
+; v1 : Ljava/util/Hashtable; , v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l3af0
+; v1 : single-length
+.line 95
+	new-instance	v1,android/content/res/Resources$NotFoundException
+; v1 : Landroid/content/res/Resources$NotFoundException;
+	invoke-direct	{v1,v0},android/content/res/Resources$NotFoundException/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Landroid/content/res/Resources$NotFoundException; , v0 : Ljava/lang/String;
+	throw	v1
+; v1 : Landroid/content/res/Resources$NotFoundException;
+l3af0:
+.line 97
+	iget-object	v1,v2,com/adobe/air/ResourceIdMap.m_resourceIds Ljava/util/Hashtable;
+; v1 : Ljava/util/Hashtable; , v2 : Lcom/adobe/air/ResourceIdMap;
+	invoke-virtual	{v1,v0},java/util/Hashtable/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v1 : Ljava/util/Hashtable; , v0 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/Object;
+	check-cast	v2,java/lang/Integer
+; v2 : Ljava/lang/Integer;
+	invoke-virtual	{v2},java/lang/Integer/intValue	; intValue()I
+; v2 : Ljava/lang/Integer;
+	move-result	v1
+; v1 : single-length
+	return	v1
+; v1 : single-length
+.end method
+
+

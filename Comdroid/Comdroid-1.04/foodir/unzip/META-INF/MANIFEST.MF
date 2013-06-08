@@ -1,0 +1,90 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: assets/assets/twitter150x150.png
+SHA1-Digest: N8Jl5Sc7Ckmzttrj+12PA9RzVqk=
+
+Name: assets/META-INF/AIR/application.xml
+SHA1-Digest: WJf0Al6AIdt20wZMUB1BZtL3wAA=
+
+Name: assets/assets/news150x150.png
+SHA1-Digest: e+3PfbdainEiXfo02zMl7HRZVoY=
+
+Name: resources.arsc
+SHA1-Digest: T6XtVgqBCJALxiJQWMccPY7a1Oc=
+
+Name: assets/assets/speaker150x150.png
+SHA1-Digest: UhPwGzEdp4P7HFssL5HE5CJK8cw=
+
+Name: assets/assets/icons/riacon114x114.png
+SHA1-Digest: oF+iFuC5cK2Duk7yvzk7CdL6MsE=
+
+Name: assets/assets/icons/riacon72x72.png
+SHA1-Digest: ZUbAPU5gSBcsS6BeSiCf7M9KOqs=
+
+Name: res/raw/debuginfo
+SHA1-Digest: 7L/scY3nxFgbOcUfsZnlVxjtl6w=
+
+Name: AndroidManifest.xml
+SHA1-Digest: cvT6Shi8MwSfsXN4MtaHwR3+FFo=
+
+Name: res/drawable-ldpi/icon.png
+SHA1-Digest: z6K23pcdEvxw7xAfx4mo/1zD32o=
+
+Name: lib/armeabi-v7a/libNativeABI.so
+SHA1-Digest: 0AJBzFQr/W3tEOPuSpDhMgNqd8U=
+
+Name: res/drawable-mdpi/icon.png
+SHA1-Digest: VaMkFZxmVsh0eLn3eedjnw0bb44=
+
+Name: assets/test.xml
+SHA1-Digest: 3CdwQfEeX1xePQCa90VTs502ox4=
+
+Name: assets/assets/icons/riacon16x16.png
+SHA1-Digest: 6MqVsxQvXjem3OXbNpGyzpOXMqI=
+
+Name: assets/RIACon.swf
+SHA1-Digest: G44UuyE6oB4UH3YAnBkcA2vfYME=
+
+Name: assets/assets/map150x150.png
+SHA1-Digest: 2+vqyhvV2qFJGNm73mAHHVoY28M=
+
+Name: assets/assets/session150x150.jpg
+SHA1-Digest: rb+yagz0beEN7rXW4z/Q1+ev2Fg=
+
+Name: assets/blackberry-tablet.xml
+SHA1-Digest: V+yIJYsnS76u28pemRut3eHYSXc=
+
+Name: assets/assets/aboutweblogo.png
+SHA1-Digest: U2pPtsZcXwgs4PfwYgnMngVkudM=
+
+Name: assets/assets/riacon_badge.png
+SHA1-Digest: jO/p0ol75S+7+ommnhT5ETDJigE=
+
+Name: assets/assets/riacon-letters-only-650px.png
+SHA1-Digest: mLK8SEdmU96cHPHH6spzPX+A9Fk=
+
+Name: classes.dex
+SHA1-Digest: vRleQYu4moVaGVkdWb4fByVWO40=
+
+Name: assets/assets/icons/riacon36x36.png
+SHA1-Digest: z6K23pcdEvxw7xAfx4mo/1zD32o=
+
+Name: assets/assets/icons/riacon57x57.png
+SHA1-Digest: aFwR/PfRdOeaxFoUGfV9i+6r5Yo=
+
+Name: assets/assets/icons/riacon32x32.png
+SHA1-Digest: q9iMapBk10+XDFkT8+0l+pOYR90=
+
+Name: assets/assets/icons/riacon48x48.png
+SHA1-Digest: VaMkFZxmVsh0eLn3eedjnw0bb44=
+
+Name: res/drawable/mp_warning_32x32_n.png
+SHA1-Digest: eCFwTk+zmvIeM+w4WQEnsknkfNI=
+
+Name: res/drawable-hdpi/icon.png
+SHA1-Digest: ZUbAPU5gSBcsS6BeSiCf7M9KOqs=
+
+Name: assets/assets/riacon150x150.png
+SHA1-Digest: kZRzpKYX44G9tcvJnvuCU4CGyx8=
+

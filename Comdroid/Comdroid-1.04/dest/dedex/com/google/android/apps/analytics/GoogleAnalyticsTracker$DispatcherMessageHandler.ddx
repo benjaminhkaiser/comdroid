@@ -1,0 +1,57 @@
+.class com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler
+.super android/os/Handler
+
+.inner class DispatcherMessageHandler inner com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler outer com/google/android/apps/analytics/GoogleAnalyticsTracker
+.field final this$0 Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+
+.method public <init>(Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;Landroid/os/Looper;)V
+.limit registers 3
+; this: v0 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler;)
+; parameter[0] : v1 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;)
+; parameter[1] : v2 (Landroid/os/Looper;)
+	iput-object	v1,v0,com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler.this$0 Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; v1 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler;
+	invoke-direct	{v0,v2},android/os/Handler/<init>	; <init>(Landroid/os/Looper;)V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler; , v2 : Landroid/os/Looper;
+	return-void	
+.end method
+
+.method public handleMessage(Landroid/os/Message;)V
+.limit registers 5
+; this: v3 (Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler;)
+; parameter[0] : v4 (Landroid/os/Message;)
+	iget	v0,v4,android/os/Message.what I
+; v0 : single-length , v4 : Landroid/os/Message;
+	const	v1,13651479	; 0xd04e17
+; v1 : single-length
+	if-ne	v0,v1,l479e
+; v0 : single-length , v1 : single-length
+	iget-object	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler.this$0 Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler;
+	invoke-virtual	{v0},com/google/android/apps/analytics/GoogleAnalyticsTracker/dispatchFinished	; dispatchFinished()V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+l479c:
+	return-void	
+l479e:
+	iget	v0,v4,android/os/Message.what I
+; v0 : single-length , v4 : Landroid/os/Message;
+	const	v1,6178583	; 0x5e4717
+; v1 : single-length
+	if-ne	v0,v1,l479c
+; v0 : single-length , v1 : single-length
+	iget-object	v0,v3,com/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler.this$0 Lcom/google/android/apps/analytics/GoogleAnalyticsTracker;
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v3 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker$DispatcherMessageHandler;
+	iget-object	v3,v4,android/os/Message.obj Ljava/lang/Object;
+; v3 : Ljava/lang/Object; , v4 : Landroid/os/Message;
+	check-cast	v3,java/lang/Long
+; v3 : Ljava/lang/Long;
+	invoke-virtual	{v3},java/lang/Long/longValue	; longValue()J
+; v3 : Ljava/lang/Long;
+	move-result-wide	v1
+; v1 : double-length
+	invoke-virtual	{v0,v1,v2},com/google/android/apps/analytics/GoogleAnalyticsTracker/eventDispatched	; eventDispatched(J)V
+; v0 : Lcom/google/android/apps/analytics/GoogleAnalyticsTracker; , v1 : double-length
+	goto	l479c
+.end method
+
+
