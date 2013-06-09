@@ -11,4 +11,4 @@ echo $part
 #time ./nativemt.py ../../$log $(sed -n "$begin,$end p" /tmp/xushunyi/undergradproj/name.txt)
 
 sed -n "$begin,$end p" /tmp/xushunyi/undergradproj/name.txt > "$part"
-time ./nativemet.py -l ../../$log -f $part
+time ./nativemt.py -l ../../$log -f $part
