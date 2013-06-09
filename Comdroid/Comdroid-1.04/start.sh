@@ -1,7 +1,7 @@
 #!/bin/bash
 
-#end=`expr $1 \\* 48826`
-#begin=`expr $end - 48825`
+end=`expr $1 \\* 48826`
+begin=`expr $end - 48825`
 log="log$1"
 echo $begin
 echo $end
