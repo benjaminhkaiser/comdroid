@@ -8,7 +8,7 @@
 #
 #
 
-
+from optparse import OptionParser
 import os
 import sys
 import json
@@ -115,32 +115,44 @@ def find_threats(files, logpath, finalhash, finalerrhash):
         if (os.path.exists(logpath)):
             os.system("rm -r %s" % logpath)
 
+parser = OptionParser()
+parser.add_option("-f")
+parser.add_option("-l")
+(options, args) = parser.parse_args()
+
 directory = '/tmp/xushunyi/undergradproj/apps/'
 logdir = '/tmp/xushunyi/undergradproj/log/'
-if sys.argv[1]:
-   logdir = sys.argv[1]
+if options.l:
+   logdir = options.l
    if logdir[-1] != '/': logdir += '/'
 os.system("mkdir %s" %logdir)
 
-targets = sys.argv[2:]
-if targets:
-    listing = []
-    for ele in targets:
-        if os.path.isfile(ele):
-            listing.append(ele)
-        else:
-            if os.path.isdir(ele):
-                if ele[-1] != '/': ele += '/'
-                entries = os.listdir(ele)
-                entries2 = map(lambda x: ele+x, entries)
-                for v in entries2:
-                    listing.append(v)
-    #find_threats(listing)
-else:
-    listing = os.listdir(directory)
-    #listing2 = map(lambda x: directory+x, listing)
-    #find_threats(listing2)
-    listing = map(lambda x: directory+x, listing)
+if options.f:
+   file = open(options.f, 'r')
+   listing = file.readlines()
+   listing = map(lambda s:s.strip('\n'), listing)
+   file.close()
+   print listing
+
+#targets = sys.argv[2:]
+#if targets:
+#    listing = []
+#    for ele in targets:
+#        if os.path.isfile(ele):
+#            listing.append(ele)
+#        else:
+#            if os.path.isdir(ele):
+#                if ele[-1] != '/': ele += '/'
+#                entries = os.listdir(ele)
+#                entries2 = map(lambda x: ele+x, entries)
+#                for v in entries2:
+#                    listing.append(v)
+#    #find_threats(listing)
+#else:
+#    listing = os.listdir(directory)
+#    #listing2 = map(lambda x: directory+x, listing)
+#    #find_threats(listing2)
+#    listing = map(lambda x: directory+x, listing)
 
 listing_len = len(listing)
 slice_size = listing_len/THREAD_NUM
