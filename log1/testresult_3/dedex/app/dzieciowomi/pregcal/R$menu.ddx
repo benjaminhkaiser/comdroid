@@ -1,0 +1,20 @@
+.class public final app/dzieciowomi/pregcal/R$menu
+.super java/lang/Object
+.source R.java
+
+.inner class menu inner app/dzieciowomi/pregcal/R$menu outer app/dzieciowomi/pregcal/R
+.field public static final mainmenu I = 2131230720	; 0x7f080000
+.field public static final notesmenu I = 2131230721	; 0x7f080001
+.field public static final weeksmenu I = 2131230722	; 0x7f080002
+.field public static final widgetmenu I = 2131230723	; 0x7f080003
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/R$menu;)
+.line 481
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/R$menu;
+	return-void	
+.end method
+
+

@@ -1,0 +1,357 @@
+.class app/dzieciowomi/pregcal/DueDatePickerDialogPreference
+.super android/preference/DialogPreference
+.source PCSettingsView.java
+
+.field private mCalendar Ljava/util/Calendar;
+.field private mContext Landroid/content/Context;
+.field private mDateChangeListener Landroid/widget/DatePicker$OnDateChangedListener;
+
+.method public <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+.limit registers 4
+; this: v1 (Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)
+; parameter[0] : v2 (Landroid/content/Context;)
+; parameter[1] : v3 (Landroid/util/AttributeSet;)
+.line 211
+	invoke-direct	{v1,v2,v3},android/preference/DialogPreference/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v1 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v2 : Landroid/content/Context; , v3 : Landroid/util/AttributeSet;
+.line 252
+	new-instance	v0,app/dzieciowomi/pregcal/DueDatePickerDialogPreference$1
+; v0 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference$1;
+	invoke-direct	{v0,v1},app/dzieciowomi/pregcal/DueDatePickerDialogPreference$1/<init>	; <init>(Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)V
+; v0 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference$1; , v1 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	iput-object	v0,v1,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mDateChangeListener Landroid/widget/DatePicker$OnDateChangedListener;
+; v0 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference$1; , v1 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+.line 214
+	invoke-static	{},java/util/Calendar/getInstance	; getInstance()Ljava/util/Calendar;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Ljava/util/Calendar;
+	iput-object	v0,v1,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v0 : Ljava/util/Calendar; , v1 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+.line 215
+	iput-object	v2,v1,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mContext Landroid/content/Context;
+; v2 : Landroid/content/Context; , v1 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+.line 216
+	return-void	
+.end method
+
+.method static access$0(Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)Ljava/util/Calendar;
+.limit registers 2
+; parameter[0] : v1 (Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)
+.line 207
+	iget-object	v0,v1,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v0 : Ljava/util/Calendar; , v1 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	return-object	v0
+; v0 : Ljava/util/Calendar;
+.end method
+
+.method private getDateStr()Ljava/lang/String;
+.limit registers 4
+; this: v3 (Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)
+.line 273
+	const/4	v1,2
+; v1 : single-length
+	invoke-static	{},java/util/Locale/getDefault	; getDefault()Ljava/util/Locale;
+; 
+	nop	
+	move-result-object	v2
+; v2 : Ljava/util/Locale;
+	invoke-static	{v1,v2},java/text/DateFormat/getDateInstance	; getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+; v1 : single-length , v2 : Ljava/util/Locale;
+	move-result-object	v0
+; v0 : Ljava/text/DateFormat;
+.line 274
+	iget-object	v1,v3,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v1 : Ljava/util/Calendar; , v3 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	invoke-virtual	{v1},java/util/Calendar/getTime	; getTime()Ljava/util/Date;
+; v1 : Ljava/util/Calendar;
+	move-result-object	v1
+; v1 : Ljava/util/Date;
+	invoke-virtual	{v0,v1},java/text/DateFormat/format	; format(Ljava/util/Date;)Ljava/lang/String;
+; v0 : Ljava/text/DateFormat; , v1 : Ljava/util/Date;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	return-object	v1
+; v1 : Ljava/lang/String;
+.end method
+
+.method private getDaysDifference()I
+.limit registers 9
+; this: v8 (Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)
+.line 261
+	new-instance	v3,java/util/Date
+; v3 : Ljava/util/Date;
+	invoke-direct	{v3},java/util/Date/<init>	; <init>()V
+; v3 : Ljava/util/Date;
+.line 262
+	invoke-static	{},java/util/Calendar/getInstance	; getInstance()Ljava/util/Calendar;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Ljava/util/Calendar;
+.line 263
+	iget-object	v4,v8,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v4 : Ljava/util/Calendar; , v8 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	invoke-virtual	{v4},java/util/Calendar/getTime	; getTime()Ljava/util/Date;
+; v4 : Ljava/util/Calendar;
+	move-result-object	v4
+; v4 : Ljava/util/Date;
+	invoke-virtual	{v0,v4},java/util/Calendar/setTime	; setTime(Ljava/util/Date;)V
+; v0 : Ljava/util/Calendar; , v4 : Ljava/util/Date;
+.line 264
+	const/4	v4,5
+; v4 : single-length
+	const/16	v5,65256
+; v5 : single-length
+	invoke-virtual	{v0,v4,v5},java/util/Calendar/add	; add(II)V
+; v0 : Ljava/util/Calendar; , v4 : single-length , v5 : single-length
+.line 265
+	invoke-virtual	{v0},java/util/Calendar/getTime	; getTime()Ljava/util/Date;
+; v0 : Ljava/util/Calendar;
+	move-result-object	v2
+; v2 : Ljava/util/Date;
+.line 266
+	invoke-virtual	{v3},java/util/Date/getTime	; getTime()J
+; v3 : Ljava/util/Date;
+	move-result-wide	v4
+; v4 : double-length
+	invoke-virtual	{v2},java/util/Date/getTime	; getTime()J
+; v2 : Ljava/util/Date;
+	move-result-wide	v6
+; v6 : double-length
+	sub-long/2addr	v4,v6
+; v4 : double-length , v6 : double-length
+	long-to-double	v4,v4
+; v4 : double-length , v4 : double-length
+	const-wide	v6,4725570615333879808	; 0x4194997000000000
+; v6 : double-length
+	div-double/2addr	v4,v6
+; v4 : double-length , v6 : double-length
+	invoke-static	{v4,v5},java/lang/Math/floor	; floor(D)D
+; v4 : double-length
+	move-result-wide	v4
+; v4 : double-length
+	double-to-int	v1,v4
+; v1 : single-length , v4 : double-length
+.line 268
+	return	v1
+; v1 : single-length
+.end method
+
+.method protected onCreateDialogView()Landroid/view/View;
+.limit registers 6
+; this: v5 (Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)
+.line 246
+	new-instance	v0,android/widget/DatePicker
+; v0 : Landroid/widget/DatePicker;
+	invoke-virtual	{v5},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/getContext	; getContext()Landroid/content/Context;
+; v5 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-direct	{v0,v1},android/widget/DatePicker/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/widget/DatePicker; , v1 : Landroid/content/Context;
+.line 247
+	iget-object	v1,v5,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v1 : Ljava/util/Calendar; , v5 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	const/4	v2,1
+; v2 : single-length
+	invoke-virtual	{v1,v2},java/util/Calendar/get	; get(I)I
+; v1 : Ljava/util/Calendar; , v2 : single-length
+	move-result	v1
+; v1 : single-length
+	iget-object	v2,v5,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v2 : Ljava/util/Calendar; , v5 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	const/4	v3,2
+; v3 : single-length
+	invoke-virtual	{v2,v3},java/util/Calendar/get	; get(I)I
+; v2 : Ljava/util/Calendar; , v3 : single-length
+	move-result	v2
+; v2 : single-length
+	iget-object	v3,v5,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v3 : Ljava/util/Calendar; , v5 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	const/4	v4,5
+; v4 : single-length
+	invoke-virtual	{v3,v4},java/util/Calendar/get	; get(I)I
+; v3 : Ljava/util/Calendar; , v4 : single-length
+	move-result	v3
+; v3 : single-length
+	iget-object	v4,v5,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mDateChangeListener Landroid/widget/DatePicker$OnDateChangedListener;
+; v4 : Landroid/widget/DatePicker$OnDateChangedListener; , v5 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	invoke-virtual	{v0,v1,v2,v3,v4},android/widget/DatePicker/init	; init(IIILandroid/widget/DatePicker$OnDateChangedListener;)V
+; v0 : Landroid/widget/DatePicker; , v1 : single-length , v2 : single-length , v3 : single-length , v4 : Landroid/widget/DatePicker$OnDateChangedListener;
+.line 249
+	return-object	v0
+; v0 : Landroid/widget/DatePicker;
+.end method
+
+.method protected onDialogClosed(Z)V
+.limit registers 9
+; this: v7 (Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)
+; parameter[0] : v8 (Z)
+.var 0 is c Landroid/database/Cursor; from lda24 to ldac6
+.var 1 is calendar Ljava/util/Calendar; from ld9ea to ldac6
+.var 2 is p Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; from lda16 to ldac6
+	const-wide/16	v5,1
+; v5 : double-length
+.line 220
+	invoke-super	{v7,v8},android/preference/DialogPreference/onDialogClosed	; onDialogClosed(Z)V
+; v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v8 : single-length
+.line 221
+	if-eqz	v8,ldac6
+; v8 : single-length
+.line 222
+	invoke-direct	{v7},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/getDaysDifference	; getDaysDifference()I
+; v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	move-result	v3
+; v3 : single-length
+	if-ltz	v3,ldac8
+; v3 : single-length
+.line 223
+	invoke-direct	{v7},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/getDaysDifference	; getDaysDifference()I
+; v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	move-result	v3
+; v3 : single-length
+	const/16	v4,280
+; v4 : single-length
+	if-ge	v3,v4,ldac8
+; v3 : single-length , v4 : single-length
+.line 225
+	invoke-static	{},java/util/Calendar/getInstance	; getInstance()Ljava/util/Calendar;
+; 
+	nop	
+	move-result-object	v1
+; v1 : Ljava/util/Calendar;
+.line 226
+	iget-object	v3,v7,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mCalendar Ljava/util/Calendar;
+; v3 : Ljava/util/Calendar; , v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	invoke-virtual	{v3},java/util/Calendar/getTime	; getTime()Ljava/util/Date;
+; v3 : Ljava/util/Calendar;
+	move-result-object	v3
+; v3 : Ljava/util/Date;
+	invoke-virtual	{v1,v3},java/util/Calendar/setTime	; setTime(Ljava/util/Date;)V
+; v1 : Ljava/util/Calendar; , v3 : Ljava/util/Date;
+.line 227
+	const/4	v3,5
+; v3 : single-length
+	const/16	v4,65256
+; v4 : single-length
+	invoke-virtual	{v1,v3,v4},java/util/Calendar/add	; add(II)V
+; v1 : Ljava/util/Calendar; , v3 : single-length , v4 : single-length
+.line 228
+	new-instance	v2,app/dzieciowomi/pregcal/PCDatabaseAdapter
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+	iget-object	v3,v7,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mContext Landroid/content/Context;
+; v3 : Landroid/content/Context; , v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	invoke-direct	{v2,v3},app/dzieciowomi/pregcal/PCDatabaseAdapter/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; , v3 : Landroid/content/Context;
+.line 229
+	invoke-virtual	{v2},app/dzieciowomi/pregcal/PCDatabaseAdapter/open	; open()Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+.line 230
+	invoke-virtual	{v2,v5,v6},app/dzieciowomi/pregcal/PCDatabaseAdapter/fetchProfile	; fetchProfile(J)Landroid/database/Cursor;
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; , v5 : double-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+.line 231
+	invoke-interface	{v0},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v0 : Landroid/database/Cursor;
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,ldac0
+; v3 : single-length
+.line 232
+	invoke-virtual	{v1},java/util/Calendar/getTime	; getTime()Ljava/util/Date;
+; v1 : Ljava/util/Calendar;
+	move-result-object	v3
+; v3 : Ljava/util/Date;
+	invoke-virtual	{v3},java/util/Date/getTime	; getTime()J
+; v3 : Ljava/util/Date;
+	move-result-wide	v3
+; v3 : double-length
+	invoke-virtual	{v2,v5,v6,v3,v4},app/dzieciowomi/pregcal/PCDatabaseAdapter/updateProfileInitDate	; updateProfileInitDate(JJ)Z
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; , v5 : double-length , v3 : double-length
+	move-result	v3
+; v3 : single-length
+	if-eqz	v3,ldac0
+; v3 : single-length
+.line 233
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	iget-object	v4,v7,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mContext Landroid/content/Context;
+; v4 : Landroid/content/Context; , v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	const	v5,2131034121	; 0x7f050009
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/Context/getString	; getString(I)Ljava/lang/String;
+; v4 : Landroid/content/Context; , v5 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-static	{v4},java/lang/String/valueOf	; valueOf(Ljava/lang/Object;)Ljava/lang/String;
+; v4 : Ljava/lang/String;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-direct	{v3,v4},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	const-string	v4," "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-direct	{v7},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/getDateStr	; getDateStr()Ljava/lang/String;
+; v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4," "
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	iget-object	v4,v7,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mContext Landroid/content/Context;
+; v4 : Landroid/content/Context; , v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	const	v5,2131034124	; 0x7f05000c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/Context/getString	; getString(I)Ljava/lang/String;
+; v4 : Landroid/content/Context; , v5 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v7,v3},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/setSummary	; setSummary(Ljava/lang/CharSequence;)V
+; v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v3 : Ljava/lang/String;
+ldac0:
+.line 237
+	invoke-virtual	{v2},app/dzieciowomi/pregcal/PCDatabaseAdapter/close	; close()V
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+ldac6:
+.line 242
+	return-void	
+ldac8:
+.line 240
+	iget-object	v3,v7,app/dzieciowomi/pregcal/DueDatePickerDialogPreference.mContext Landroid/content/Context;
+; v3 : Landroid/content/Context; , v7 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	const	v4,2131034119	; 0x7f050007
+; v4 : single-length
+	const/4	v5,1
+; v5 : single-length
+	invoke-static	{v3,v4,v5},android/widget/Toast/makeText	; makeText(Landroid/content/Context;II)Landroid/widget/Toast;
+; v3 : Landroid/content/Context; , v4 : single-length , v5 : single-length
+	move-result-object	v3
+; v3 : Landroid/widget/Toast;
+	invoke-virtual	{v3},android/widget/Toast/show	; show()V
+; v3 : Landroid/widget/Toast;
+	goto	ldac6
+.end method
+
+

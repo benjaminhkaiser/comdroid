@@ -1,0 +1,182 @@
+.class public com/google/ads/mediation/admob/AdMobAdapterExtras
+.super java/lang/Object
+.source SourceFile
+.implements com/google/ads/mediation/NetworkExtras
+
+.field private a Z
+.field private b Z
+.field private c Ljava/util/Map;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;" }
+  .end annotation
+.end field
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+	const/4	v0,0
+; v0 : single-length
+.line 19
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 39
+	iput-boolean	v0,v1,com/google/ads/mediation/admob/AdMobAdapterExtras.a Z
+; v0 : single-length , v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 62
+	iput-boolean	v0,v1,com/google/ads/mediation/admob/AdMobAdapterExtras.b Z
+; v0 : single-length , v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 20
+	invoke-virtual	{v1},com/google/ads/mediation/admob/AdMobAdapterExtras/clearExtras	; clearExtras()Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 21
+	return-void	
+.end method
+
+.method public <init>(Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+; parameter[0] : v3 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 29
+	invoke-direct	{v2},com/google/ads/mediation/admob/AdMobAdapterExtras/<init>	; <init>()V
+; v2 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 31
+	if-eqz	v3,l256b0
+; v3 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 32
+	iget-boolean	v0,v3,com/google/ads/mediation/admob/AdMobAdapterExtras.a Z
+; v0 : single-length , v3 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	iput-boolean	v0,v2,com/google/ads/mediation/admob/AdMobAdapterExtras.a Z
+; v0 : single-length , v2 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 33
+	iget-boolean	v0,v3,com/google/ads/mediation/admob/AdMobAdapterExtras.b Z
+; v0 : single-length , v3 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	iput-boolean	v0,v2,com/google/ads/mediation/admob/AdMobAdapterExtras.b Z
+; v0 : single-length , v2 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 34
+	iget-object	v0,v2,com/google/ads/mediation/admob/AdMobAdapterExtras.c Ljava/util/Map;
+; v0 : Ljava/util/Map; , v2 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	iget-object	v1,v3,com/google/ads/mediation/admob/AdMobAdapterExtras.c Ljava/util/Map;
+; v1 : Ljava/util/Map; , v3 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	invoke-interface	{v0,v1},java/util/Map/putAll	; putAll(Ljava/util/Map;)V
+; v0 : Ljava/util/Map; , v1 : Ljava/util/Map;
+l256b0:
+.line 36
+	return-void	
+.end method
+
+.method public addExtra(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 4
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+; parameter[0] : v2 (Ljava/lang/String;)
+; parameter[1] : v3 (Ljava/lang/Object;)
+.line 134
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapterExtras.c Ljava/util/Map;
+; v0 : Ljava/util/Map; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	invoke-interface	{v0,v2,v3},java/util/Map/put	; put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+; v0 : Ljava/util/Map; , v2 : Ljava/lang/String; , v3 : Ljava/lang/Object;
+.line 135
+	return-object	v1
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.end method
+
+.method public clearExtras()Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 121
+	new-instance	v0,java/util/HashMap
+; v0 : Ljava/util/HashMap;
+	invoke-direct	{v0},java/util/HashMap/<init>	; <init>()V
+; v0 : Ljava/util/HashMap;
+	iput-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapterExtras.c Ljava/util/Map;
+; v0 : Ljava/util/HashMap; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 122
+	return-object	v1
+; v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.end method
+
+.method public getExtras()Ljava/util/Map;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "()" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;" }
+.end annotation
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 97
+	iget-object	v0,v1,com/google/ads/mediation/admob/AdMobAdapterExtras.c Ljava/util/Map;
+; v0 : Ljava/util/Map; , v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	return-object	v0
+; v0 : Ljava/util/Map;
+.end method
+
+.method public getPlusOneOptOut()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 58
+	iget-boolean	v0,v1,com/google/ads/mediation/admob/AdMobAdapterExtras.a Z
+; v0 : single-length , v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public getUseExactAdSize()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+.line 85
+	iget-boolean	v0,v1,com/google/ads/mediation/admob/AdMobAdapterExtras.b Z
+; v0 : single-length , v1 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+	return	v0
+; v0 : single-length
+.end method
+
+.method public setExtras(Ljava/util/Map;)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Ljava/util/Map" , "<" , "Ljava/lang/String;" , "Ljava/lang/Object;" , ">;)" , "Lcom/google/ads/mediation/admob/AdMobAdapterExtras;" }
+.end annotation
+.limit registers 4
+; this: v2 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+; parameter[0] : v3 (Ljava/util/Map;)
+.line 108
+	if-nez	v3,l2575c
+; v3 : Ljava/util/Map;
+.line 109
+	new-instance	v0,java/lang/IllegalArgumentException
+; v0 : Ljava/lang/IllegalArgumentException;
+	const-string	v1,"Argument 'extras' may not be null"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},java/lang/IllegalArgumentException/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/lang/IllegalArgumentException; , v1 : Ljava/lang/String;
+	throw	v0
+; v0 : Ljava/lang/IllegalArgumentException;
+l2575c:
+.line 111
+	iput-object	v3,v2,com/google/ads/mediation/admob/AdMobAdapterExtras.c Ljava/util/Map;
+; v3 : Ljava/util/Map; , v2 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 112
+	return-object	v2
+; v2 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.end method
+
+.method public setPlusOneOptOut(Z)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 2
+; this: v0 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+; parameter[0] : v1 (Z)
+.line 49
+	iput-boolean	v1,v0,com/google/ads/mediation/admob/AdMobAdapterExtras.a Z
+; v1 : single-length , v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 50
+	return-object	v0
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.end method
+
+.method public setUseExactAdSize(Z)Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.limit registers 2
+; this: v0 (Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+; parameter[0] : v1 (Z)
+.line 75
+	iput-boolean	v1,v0,com/google/ads/mediation/admob/AdMobAdapterExtras.b Z
+; v1 : single-length , v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.line 76
+	return-object	v0
+; v0 : Lcom/google/ads/mediation/admob/AdMobAdapterExtras;
+.end method
+
+

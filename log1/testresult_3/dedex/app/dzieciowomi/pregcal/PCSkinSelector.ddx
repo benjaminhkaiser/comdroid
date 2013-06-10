@@ -1,0 +1,190 @@
+.class public app/dzieciowomi/pregcal/PCSkinSelector
+.super android/app/AlertDialog$Builder
+.source PCSkinSelector.java
+
+.field public static final SKIN_BLACK I = 0	; 0x0
+.field public static final SKIN_BLUE I = 3	; 0x3
+.field public static final SKIN_GRAY I = 1	; 0x1
+.field public static final SKIN_KEY Ljava/lang/String; = "Skin"
+.field public static final SKIN_PINK I = 2	; 0x2
+.field public static final SKIN_PINKLIGHT I = 4	; 0x4
+.field public static final SKIN_PREFS Ljava/lang/String; = "SkinPrefs"
+.field private mContext Landroid/content/Context;
+.field mOnClickListener Landroid/content/DialogInterface$OnClickListener;
+.field private mPCSkinSelector I
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 6
+; this: v4 (Lapp/dzieciowomi/pregcal/PCSkinSelector;)
+; parameter[0] : v5 (Landroid/content/Context;)
+	const/4	v0,1
+; v0 : single-length
+	const/4	v3,0
+; v3 : single-length
+.line 25
+	invoke-direct	{v4,v5},android/app/AlertDialog$Builder/<init>	; <init>(Landroid/content/Context;)V
+; v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector; , v5 : Landroid/content/Context;
+.line 37
+	new-instance	v1,app/dzieciowomi/pregcal/PCSkinSelector$1
+; v1 : Lapp/dzieciowomi/pregcal/PCSkinSelector$1;
+	invoke-direct	{v1,v4},app/dzieciowomi/pregcal/PCSkinSelector$1/<init>	; <init>(Lapp/dzieciowomi/pregcal/PCSkinSelector;)V
+; v1 : Lapp/dzieciowomi/pregcal/PCSkinSelector$1; , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	iput-object	v1,v4,app/dzieciowomi/pregcal/PCSkinSelector.mOnClickListener Landroid/content/DialogInterface$OnClickListener;
+; v1 : Lapp/dzieciowomi/pregcal/PCSkinSelector$1; , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+.line 27
+	iput-object	v5,v4,app/dzieciowomi/pregcal/PCSkinSelector.mContext Landroid/content/Context;
+; v5 : Landroid/content/Context; , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+.line 28
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCSkinSelector.mContext Landroid/content/Context;
+; v1 : Landroid/content/Context; , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	const-string	v2,"SkinPrefs"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2,v3},android/content/Context/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v1 : Landroid/content/Context; , v2 : Ljava/lang/String; , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/content/SharedPreferences;
+	const-string	v2,"Skin"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v1,v2},android/content/SharedPreferences/contains	; contains(Ljava/lang/String;)Z
+; v1 : Landroid/content/SharedPreferences; , v2 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l172f4
+; v1 : single-length
+.line 29
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCSkinSelector.mContext Landroid/content/Context;
+; v1 : Landroid/content/Context; , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	const-string	v2,"SkinPrefs"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2,v3},android/content/Context/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v1 : Landroid/content/Context; , v2 : Ljava/lang/String; , v3 : single-length
+	move-result-object	v1
+; v1 : Landroid/content/SharedPreferences;
+	const-string	v2,"Skin"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v1,v2,v0},android/content/SharedPreferences/getInt	; getInt(Ljava/lang/String;I)I
+; v1 : Landroid/content/SharedPreferences; , v2 : Ljava/lang/String; , v0 : single-length
+	move-result	v0
+; v0 : single-length
+l172f4:
+.line 28
+	iput	v0,v4,app/dzieciowomi/pregcal/PCSkinSelector.mPCSkinSelector I
+; v0 : single-length , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+.line 31
+	const	v0,2131034146	; 0x7f050022
+; v0 : single-length
+	invoke-virtual	{v4,v0},app/dzieciowomi/pregcal/PCSkinSelector/setTitle	; setTitle(I)Landroid/app/AlertDialog$Builder;
+; v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector; , v0 : single-length
+.line 32
+	const	v0,2131099692	; 0x7f06002c
+; v0 : single-length
+	iget	v1,v4,app/dzieciowomi/pregcal/PCSkinSelector.mPCSkinSelector I
+; v1 : single-length , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	iget-object	v2,v4,app/dzieciowomi/pregcal/PCSkinSelector.mOnClickListener Landroid/content/DialogInterface$OnClickListener;
+; v2 : Landroid/content/DialogInterface$OnClickListener; , v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	invoke-virtual	{v4,v0,v1,v2},app/dzieciowomi/pregcal/PCSkinSelector/setSingleChoiceItems	; setSingleChoiceItems(IILandroid/content/DialogInterface$OnClickListener;)Landroid/app/AlertDialog$Builder;
+; v4 : Lapp/dzieciowomi/pregcal/PCSkinSelector; , v0 : single-length , v1 : single-length , v2 : Landroid/content/DialogInterface$OnClickListener;
+.line 33
+	return-void	
+.end method
+
+.method static access$0(Lapp/dzieciowomi/pregcal/PCSkinSelector;I)V
+.limit registers 2
+; parameter[0] : v0 (Lapp/dzieciowomi/pregcal/PCSkinSelector;)
+; parameter[1] : v1 (I)
+.line 21
+	iput	v1,v0,app/dzieciowomi/pregcal/PCSkinSelector.mPCSkinSelector I
+; v1 : single-length , v0 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	return-void	
+.end method
+
+.method static access$1(Lapp/dzieciowomi/pregcal/PCSkinSelector;)V
+.limit registers 1
+; parameter[0] : v0 (Lapp/dzieciowomi/pregcal/PCSkinSelector;)
+.line 47
+	invoke-direct	{v0},app/dzieciowomi/pregcal/PCSkinSelector/setUnit	; setUnit()V
+; v0 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	return-void	
+.end method
+
+.method private setUnit()V
+.limit registers 7
+; this: v6 (Lapp/dzieciowomi/pregcal/PCSkinSelector;)
+.line 48
+	iget-object	v2,v6,app/dzieciowomi/pregcal/PCSkinSelector.mContext Landroid/content/Context;
+; v2 : Landroid/content/Context; , v6 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	const-string	v3,"SkinPrefs"
+; v3 : Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v2,v3,v4},android/content/Context/getSharedPreferences	; getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;
+; v2 : Landroid/content/Context; , v3 : Ljava/lang/String; , v4 : single-length
+	move-result-object	v1
+; v1 : Landroid/content/SharedPreferences;
+.line 49
+	invoke-interface	{v1},android/content/SharedPreferences/edit	; edit()Landroid/content/SharedPreferences$Editor;
+; v1 : Landroid/content/SharedPreferences;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences$Editor;
+.line 50
+	const-string	v2,"Skin"
+; v2 : Ljava/lang/String;
+	iget	v3,v6,app/dzieciowomi/pregcal/PCSkinSelector.mPCSkinSelector I
+; v3 : single-length , v6 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	invoke-interface	{v0,v2,v3},android/content/SharedPreferences$Editor/putInt	; putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
+; v0 : Landroid/content/SharedPreferences$Editor; , v2 : Ljava/lang/String; , v3 : single-length
+.line 51
+	invoke-interface	{v0},android/content/SharedPreferences$Editor/commit	; commit()Z
+; v0 : Landroid/content/SharedPreferences$Editor;
+.line 52
+	iget-object	v2,v6,app/dzieciowomi/pregcal/PCSkinSelector.mContext Landroid/content/Context;
+; v2 : Landroid/content/Context; , v6 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"Colors changed to: "
+; v4 : Ljava/lang/String;
+	invoke-direct	{v3,v4},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	iget-object	v4,v6,app/dzieciowomi/pregcal/PCSkinSelector.mContext Landroid/content/Context;
+; v4 : Landroid/content/Context; , v6 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	invoke-virtual	{v4},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v4 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099692	; 0x7f06002c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	iget	v5,v6,app/dzieciowomi/pregcal/PCSkinSelector.mPCSkinSelector I
+; v5 : single-length , v6 : Lapp/dzieciowomi/pregcal/PCSkinSelector;
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,". Must switch tabs or restart app to take effect."
+; v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v4},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	const/4	v4,1
+; v4 : single-length
+	invoke-static	{v2,v3,v4},android/widget/Toast/makeText	; makeText(Landroid/content/Context;Ljava/lang/CharSequence;I)Landroid/widget/Toast;
+; v2 : Landroid/content/Context; , v3 : Ljava/lang/String; , v4 : single-length
+	move-result-object	v2
+; v2 : Landroid/widget/Toast;
+	invoke-virtual	{v2},android/widget/Toast/show	; show()V
+; v2 : Landroid/widget/Toast;
+.line 53
+	return-void	
+.end method
+
+

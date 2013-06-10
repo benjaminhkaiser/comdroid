@@ -1,0 +1,68 @@
+.class public com/google/ads/ag
+.super java/lang/Object
+.source SourceFile
+
+
+.method public static a(Landroid/content/Context;)Z
+.limit registers 5
+; parameter[0] : v4 (Landroid/content/Context;)
+.line 24
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	invoke-direct	{v0},android/content/Intent/<init>	; <init>()V
+; v0 : Landroid/content/Intent;
+.line 25
+	new-instance	v1,android/content/ComponentName
+; v1 : Landroid/content/ComponentName;
+	const-string	v2,"com.google.android.apps.plus"
+; v2 : Ljava/lang/String;
+	const-string	v3,"com.google.android.apps.circles.platform.PlusOneActivity"
+; v3 : Ljava/lang/String;
+	invoke-direct	{v1,v2,v3},android/content/ComponentName/<init>	; <init>(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Landroid/content/ComponentName; , v2 : Ljava/lang/String; , v3 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/Intent/setComponent	; setComponent(Landroid/content/ComponentName;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Landroid/content/ComponentName;
+.line 27
+	invoke-static	{v0,v4},com/google/ads/ag/a	; a(Landroid/content/Intent;Landroid/content/Context;)Z
+; v0 : Landroid/content/Intent; , v4 : Landroid/content/Context;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public static a(Landroid/content/Intent;Landroid/content/Context;)Z
+.limit registers 4
+; parameter[0] : v2 (Landroid/content/Intent;)
+; parameter[1] : v3 (Landroid/content/Context;)
+.line 37
+	invoke-virtual	{v3},android/content/Context/getPackageManager	; getPackageManager()Landroid/content/pm/PackageManager;
+; v3 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/pm/PackageManager;
+.line 38
+	const/high16	v1,1
+; v1 : single-length
+	invoke-virtual	{v0,v2,v1},android/content/pm/PackageManager/queryIntentActivities	; queryIntentActivities(Landroid/content/Intent;I)Ljava/util/List;
+; v0 : Landroid/content/pm/PackageManager; , v2 : Landroid/content/Intent; , v1 : single-length
+	move-result-object	v0
+; v0 : Ljava/util/List;
+.line 40
+	invoke-interface	{v0},java/util/List/size	; size()I
+; v0 : Ljava/util/List;
+	move-result	v0
+; v0 : single-length
+	if-lez	v0,l24b64
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l24b62:
+	return	v0
+; v0 : single-length
+l24b64:
+	const/4	v0,0
+; v0 : single-length
+	goto	l24b62
+.end method
+
+

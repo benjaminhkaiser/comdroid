@@ -1,0 +1,61 @@
+.class public final app/dzieciowomi/pregcal/R$array
+.super java/lang/Object
+.source R.java
+
+.inner class array inner app/dzieciowomi/pregcal/R$array outer app/dzieciowomi/pregcal/R
+.field public static final di_week_no_0 I = 2131099650	; 0x7f060002
+.field public static final di_week_no_1 I = 2131099651	; 0x7f060003
+.field public static final di_week_no_10 I = 2131099660	; 0x7f06000c
+.field public static final di_week_no_11 I = 2131099661	; 0x7f06000d
+.field public static final di_week_no_12 I = 2131099662	; 0x7f06000e
+.field public static final di_week_no_13 I = 2131099663	; 0x7f06000f
+.field public static final di_week_no_14 I = 2131099664	; 0x7f060010
+.field public static final di_week_no_15 I = 2131099665	; 0x7f060011
+.field public static final di_week_no_16 I = 2131099666	; 0x7f060012
+.field public static final di_week_no_17 I = 2131099667	; 0x7f060013
+.field public static final di_week_no_18 I = 2131099668	; 0x7f060014
+.field public static final di_week_no_19 I = 2131099669	; 0x7f060015
+.field public static final di_week_no_2 I = 2131099652	; 0x7f060004
+.field public static final di_week_no_20 I = 2131099670	; 0x7f060016
+.field public static final di_week_no_21 I = 2131099671	; 0x7f060017
+.field public static final di_week_no_22 I = 2131099672	; 0x7f060018
+.field public static final di_week_no_23 I = 2131099673	; 0x7f060019
+.field public static final di_week_no_24 I = 2131099674	; 0x7f06001a
+.field public static final di_week_no_25 I = 2131099675	; 0x7f06001b
+.field public static final di_week_no_26 I = 2131099676	; 0x7f06001c
+.field public static final di_week_no_27 I = 2131099677	; 0x7f06001d
+.field public static final di_week_no_28 I = 2131099678	; 0x7f06001e
+.field public static final di_week_no_29 I = 2131099679	; 0x7f06001f
+.field public static final di_week_no_3 I = 2131099653	; 0x7f060005
+.field public static final di_week_no_30 I = 2131099680	; 0x7f060020
+.field public static final di_week_no_31 I = 2131099681	; 0x7f060021
+.field public static final di_week_no_32 I = 2131099682	; 0x7f060022
+.field public static final di_week_no_33 I = 2131099683	; 0x7f060023
+.field public static final di_week_no_34 I = 2131099684	; 0x7f060024
+.field public static final di_week_no_35 I = 2131099685	; 0x7f060025
+.field public static final di_week_no_36 I = 2131099686	; 0x7f060026
+.field public static final di_week_no_37 I = 2131099687	; 0x7f060027
+.field public static final di_week_no_38 I = 2131099688	; 0x7f060028
+.field public static final di_week_no_39 I = 2131099689	; 0x7f060029
+.field public static final di_week_no_4 I = 2131099654	; 0x7f060006
+.field public static final di_week_no_40 I = 2131099690	; 0x7f06002a
+.field public static final di_week_no_41 I = 2131099691	; 0x7f06002b
+.field public static final di_week_no_5 I = 2131099655	; 0x7f060007
+.field public static final di_week_no_6 I = 2131099656	; 0x7f060008
+.field public static final di_week_no_7 I = 2131099657	; 0x7f060009
+.field public static final di_week_no_8 I = 2131099658	; 0x7f06000a
+.field public static final di_week_no_9 I = 2131099659	; 0x7f06000b
+.field public static final gi_text_arr I = 2131099649	; 0x7f060001
+.field public static final skins I = 2131099692	; 0x7f06002c
+.field public static final week_label_arr I = 2131099648	; 0x7f060000
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/R$array;)
+.line 11
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/R$array;
+	return-void	
+.end method
+
+

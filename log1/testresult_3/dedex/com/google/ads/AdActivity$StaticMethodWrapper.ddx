@@ -1,0 +1,190 @@
+.class public com/google/ads/AdActivity$StaticMethodWrapper
+.super java/lang/Object
+.source SourceFile
+
+.inner class StaticMethodWrapper inner com/google/ads/AdActivity$StaticMethodWrapper outer com/google/ads/AdActivity
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/google/ads/AdActivity$StaticMethodWrapper;)
+.line 113
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/AdActivity$StaticMethodWrapper;
+	return-void	
+.end method
+
+.method public isShowing()Z
+.limit registers 3
+; this: v2 (Lcom/google/ads/AdActivity$StaticMethodWrapper;)
+.catch java/lang/Exception from l215b6 to l215d0 using l215cc
+.line 119
+	invoke-static	{},com/google/ads/AdActivity/a	; a()Ljava/lang/Object;
+; 
+	nop	
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+l215b6:
+.line 120
+	invoke-static	{},com/google/ads/AdActivity/b	; b()Lcom/google/ads/AdActivity;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Lcom/google/ads/AdActivity;
+	if-eqz	v0,l215c8
+; v0 : Lcom/google/ads/AdActivity;
+	const/4	v0,1
+; v0 : single-length
+l215c4:
+.line 121
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+.line 123
+	return	v0
+; v0 : single-length
+l215c8:
+.line 120
+	const/4	v0,0
+; v0 : single-length
+	goto	l215c4
+l215cc:
+.line 121
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+l215d0:
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public launchAdActivity(Lcom/google/ads/internal/d;Lcom/google/ads/internal/e;)V
+.limit registers 7
+; this: v4 (Lcom/google/ads/AdActivity$StaticMethodWrapper;)
+; parameter[0] : v5 (Lcom/google/ads/internal/d;)
+; parameter[1] : v6 (Lcom/google/ads/internal/e;)
+.catch android/content/ActivityNotFoundException from l2167e to l2168e using l21690
+.catch java/lang/Exception from l21636 to l21654 using l21650
+.catch java/lang/Exception from l215fa to l2160e using l21650
+.line 134
+	invoke-static	{},com/google/ads/AdActivity/a	; a()Ljava/lang/Object;
+; 
+	nop	
+	move-result-object	v1
+; v1 : Ljava/lang/Object;
+	monitor-enter	v1
+; v1 : Ljava/lang/Object;
+l215fa:
+.line 135
+	invoke-static	{},com/google/ads/AdActivity/c	; c()Lcom/google/ads/internal/d;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Lcom/google/ads/internal/d;
+	if-nez	v0,l21636
+; v0 : Lcom/google/ads/internal/d;
+.line 136
+	invoke-static	{v5},com/google/ads/AdActivity/b	; b(Lcom/google/ads/internal/d;)Lcom/google/ads/internal/d;
+; v5 : Lcom/google/ads/internal/d;
+l2160c:
+.line 141
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+l2160e:
+.line 144
+	invoke-virtual	{v5},com/google/ads/internal/d/h	; h()Lcom/google/ads/m;
+; v5 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.c Lcom/google/ads/util/i$d;
+; v0 : Lcom/google/ads/util/i$d; , v0 : Lcom/google/ads/util/i$d;
+	invoke-virtual	{v0},com/google/ads/util/i$d/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$d;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/app/Activity
+; v0 : Landroid/app/Activity;
+.line 145
+	if-nez	v0,l21656
+; v0 : Landroid/app/Activity;
+.line 146
+	const-string	v0,"activity was null while launching an AdActivity."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l21634:
+.line 161
+	return-void	
+l21636:
+.line 137
+	invoke-static	{},com/google/ads/AdActivity/c	; c()Lcom/google/ads/internal/d;
+; 
+	nop	
+	move-result-object	v0
+; v0 : Lcom/google/ads/internal/d;
+	if-eq	v0,v5,l2160c
+; v0 : Lcom/google/ads/internal/d; , v5 : Lcom/google/ads/internal/d;
+.line 138
+	const-string	v0,"Tried to launch a new AdActivity with a different AdManager."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/b	; b(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 139
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+	goto	l21634
+l21650:
+.line 141
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Ljava/lang/Object;
+l21654:
+	throw	v0
+; v0 : java/lang/Exception
+l21656:
+.line 149
+	new-instance	v1,android/content/Intent
+; v1 : Landroid/content/Intent;
+	invoke-virtual	{v0},android/app/Activity/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v0 : Landroid/app/Activity;
+	move-result-object	v2
+; v2 : Landroid/content/Context;
+	const-class	v3,com/google/ads/AdActivity
+; v3 : Ljava/lang/Class;
+	invoke-direct	{v1,v2,v3},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v1 : Landroid/content/Intent; , v2 : Landroid/content/Context; , v3 : Ljava/lang/Class;
+.line 151
+	const-string	v2,"com.google.ads.AdOpener"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v6},com/google/ads/internal/e/a	; a()Landroid/os/Bundle;
+; v6 : Lcom/google/ads/internal/e;
+	move-result-object	v3
+; v3 : Landroid/os/Bundle;
+	invoke-virtual	{v1,v2,v3},android/content/Intent/putExtra	; putExtra(Ljava/lang/String;Landroid/os/Bundle;)Landroid/content/Intent;
+; v1 : Landroid/content/Intent; , v2 : Ljava/lang/String; , v3 : Landroid/os/Bundle;
+l2167e:
+.line 155
+	const-string	v2,"Launching AdActivity."
+; v2 : Ljava/lang/String;
+	invoke-static	{v2},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v2 : Ljava/lang/String;
+.line 156
+	invoke-virtual	{v0,v1},android/app/Activity/startActivity	; startActivity(Landroid/content/Intent;)V
+; v0 : Landroid/app/Activity; , v1 : Landroid/content/Intent;
+l2168e:
+	goto	l21634
+l21690:
+.line 157
+	move-exception	v0
+; v0 : android/content/ActivityNotFoundException
+.line 158
+	const-string	v1,"Activity not found."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : android/content/ActivityNotFoundException
+	goto	l21634
+.end method
+
+

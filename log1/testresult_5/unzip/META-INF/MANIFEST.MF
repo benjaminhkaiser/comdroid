@@ -1,0 +1,495 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: res/drawable-hdpi/magnetismus0011.png
+SHA1-Digest: kT28XHBHlkrVXC+eUNCWvQouzHw=
+
+Name: res/drawable-hdpi/magnetismus0010.png
+SHA1-Digest: xsQY7l7WBUxayDekr/cE1cU6bHc=
+
+Name: res/drawable-hdpi/klmech26.png
+SHA1-Digest: D6PIoyHtfLvQB425/72EN8HNvls=
+
+Name: res/drawable-hdpi/klmech22.png
+SHA1-Digest: KHXxrVeEhpsznwQ7SGCejral0lM=
+
+Name: res/drawable-hdpi/geooptikmas0010.png
+SHA1-Digest: qorY/eG/E9xZyA0vkwhFPt9rDb8=
+
+Name: res/drawable-hdpi/elektrostatik0012.png
+SHA1-Digest: Mhi2VGvMfjf1qTwc9UO3e31n9CM=
+
+Name: res/drawable-hdpi/klmech09.png
+SHA1-Digest: sp4OvqMUVQSOCiJi0/hq9j0BEmY=
+
+Name: res/drawable-hdpi/geooptikmas0001.png
+SHA1-Digest: MBRBHA3UFC5Slg1d4gZb07MkGG4=
+
+Name: res/drawable-hdpi/klmech21.png
+SHA1-Digest: oDQsLGIGIpkWMTxCi9rAXAjxVDk=
+
+Name: res/drawable-hdpi/waermelehre0018.png
+SHA1-Digest: A4irS4gDzAYFJhXpqdTC+HTEe5Q=
+
+Name: res/drawable-hdpi/klmech13.png
+SHA1-Digest: CN6okbQBgML/cKki7A9i9g2ktIY=
+
+Name: res/drawable-hdpi/klmech04.png
+SHA1-Digest: 9ky2nqE7R1yUNOoJyJXfhvHMs1A=
+
+Name: res/drawable-hdpi/quantenmas0003.png
+SHA1-Digest: j5Y9S35fYVY+VbdgdMxr7MPGCwI=
+
+Name: res/drawable-hdpi/magnetismus0002.png
+SHA1-Digest: O10dMaPSQ8MzfTlxGWJ6YrmXDZI=
+
+Name: res/drawable-hdpi/wellenlehre0012.png
+SHA1-Digest: 4H+E8yQeliuJSJD896I1ZUTxRXU=
+
+Name: res/drawable-hdpi/magnetismus0001.png
+SHA1-Digest: 4XpXJshYCKd2pLOfTlMz7Cy0wds=
+
+Name: res/drawable-hdpi/waermelehre0001.png
+SHA1-Digest: 8I+BtqHCScje89TU9OEkFjTQhwA=
+
+Name: res/drawable-hdpi/wellenlehre0009.png
+SHA1-Digest: bvwL8Zs5PNOb2ki27E45A2or8w8=
+
+Name: res/drawable-hdpi/geooptikmas0006.png
+SHA1-Digest: MnCL/0KTc7yWDZm2tt8A9W4qcLU=
+
+Name: res/drawable-hdpi/waermelehre0010.png
+SHA1-Digest: PZzP2hMc4eam9PDoQCjBI0vRWdM=
+
+Name: res/drawable-hdpi/quantenmas0002.png
+SHA1-Digest: LYqgOkws/Hgi7NdEjgH9bHd16mo=
+
+Name: res/drawable-hdpi/wellenoptikmas0001.png
+SHA1-Digest: Fgmr6Uzcn7Sn9DDi/b65C0wvLD4=
+
+Name: res/drawable-hdpi/waermelehre0004.png
+SHA1-Digest: AQ7gJMaTtbwv4wTtyXwfzS4LFwg=
+
+Name: res/drawable-hdpi/elektrostatik0001.png
+SHA1-Digest: MIRRbOP7CgFSM/ipQYtBSuoBzIk=
+
+Name: res/drawable-hdpi/wellenlehre0013.png
+SHA1-Digest: t3Gpu7+TFq4lb6cN9iDNPLtu1ew=
+
+Name: res/drawable-hdpi/geooptikmas0004.png
+SHA1-Digest: O2PG0+rEkXUlujalx/0eCM63N7Y=
+
+Name: res/drawable-hdpi/geooptikmas0005.png
+SHA1-Digest: 7xsPuNtG1GLl/+ta3FnE0A4SNBI=
+
+Name: res/drawable-hdpi/elektrostatik0011.png
+SHA1-Digest: +hcnM5J+rzD8YPt7Ct1lT0a6pL4=
+
+Name: res/drawable-hdpi/klmech10.png
+SHA1-Digest: 2le8ffZar1DWy/91IpIvLlKL+I4=
+
+Name: res/drawable-hdpi/geooptikmas0014.png
+SHA1-Digest: khMKgyePfA0ym0pbnyABgEqwQZw=
+
+Name: res/drawable-hdpi/klmech31.png
+SHA1-Digest: NmHDxJrSX3asu+qZGgxgzTd2bjg=
+
+Name: res/drawable-hdpi/klmech12.png
+SHA1-Digest: qCFROhFSkeKfEdipz4achVuspIA=
+
+Name: res/drawable-hdpi/wellenlehre0019.png
+SHA1-Digest: oZeVAcSdsGicoCrP7KLY0tmNAdA=
+
+Name: res/drawable-hdpi/waermelehre0014.png
+SHA1-Digest: Ob2X/CBO6ErQNyDovHgkr7wuZhE=
+
+Name: res/drawable-hdpi/elektrostatik0020.png
+SHA1-Digest: ++MNOyUsfg/+A8siD2pibpYsJE4=
+
+Name: res/drawable-hdpi/geooptikmas0012.png
+SHA1-Digest: QeQcu9PjtKNNBoubIFFfwRSkfwk=
+
+Name: resources.arsc
+SHA1-Digest: RCosV1WIe4P6xJfYUOW9Pjfyb/8=
+
+Name: res/drawable-hdpi/klmech17.png
+SHA1-Digest: eybuzlpqyg1UX0j6lgS9d3D/tzI=
+
+Name: res/drawable-hdpi/elektrostatik0018.png
+SHA1-Digest: C1BMs/0P8AiogKJmirDW2a/Meso=
+
+Name: res/drawable-hdpi/klmech33.png
+SHA1-Digest: HgMV8t2P4Vj+mwYzFb8MziJTB4w=
+
+Name: res/drawable-hdpi/waermelehre0003.png
+SHA1-Digest: fz/DuWGqgXIxxAEJEOYKTRDIw5g=
+
+Name: res/drawable-hdpi/waermelehre0020.png
+SHA1-Digest: xWzqHB0SXyc+sOJAZaeCj6AIj7M=
+
+Name: res/drawable-hdpi/klmech34.png
+SHA1-Digest: R0u8UsENRD7XtEShzHk6hBP91DQ=
+
+Name: res/drawable-hdpi/waermelehre0005.png
+SHA1-Digest: 6YBGQr7X/KcBZ3t7SIvU8M3Govs=
+
+Name: res/drawable-hdpi/quantenmas0000.png
+SHA1-Digest: 1ZG4eLXZgJd5qBdDqVMdSJX6wts=
+
+Name: AndroidManifest.xml
+SHA1-Digest: GJpnhl+jMLUtZJU1KqsrhbaLQgM=
+
+Name: res/drawable-hdpi/waermelehre0011.png
+SHA1-Digest: MwCdOKeRO+4VWPuNkJJjWYK8Jvk=
+
+Name: res/drawable-hdpi/geooptikmas0015.png
+SHA1-Digest: WXj3mr+mD2xZhscwl+NAimm18Xs=
+
+Name: res/drawable-hdpi/quantenmas0005.png
+SHA1-Digest: yEaJlXWlvwFSMsqecYnGfpt0umU=
+
+Name: res/drawable-hdpi/elektrostatik0014.png
+SHA1-Digest: WalqxRbzSwcxZzRUJh+09yKN3qI=
+
+Name: res/drawable-hdpi/klmech28.png
+SHA1-Digest: MRTUB9H0EHILO1QBwzxFNNnUxpg=
+
+Name: res/drawable-hdpi/klmech06.png
+SHA1-Digest: MawArC/2rpP05raFto1ad9ma2Ec=
+
+Name: res/drawable-hdpi/klmech03.png
+SHA1-Digest: uTqeVKd6hT3ahECkfAz47wxBd24=
+
+Name: res/drawable-hdpi/klmech08.png
+SHA1-Digest: koZpP7mFKHjUBmniGHYSNk7Hp4I=
+
+Name: res/drawable-hdpi/wellenlehre0008.png
+SHA1-Digest: r8yVTBJvyK5Chq96f9wVb3m/5io=
+
+Name: res/drawable-hdpi/elektrostatik0006.png
+SHA1-Digest: Q6JRIOpDsexIrwE6G065WBIlXD0=
+
+Name: res/drawable-hdpi/klmech02.png
+SHA1-Digest: FolJEAbsKyYDpnmyVI5xyIK6Dzk=
+
+Name: res/drawable-hdpi/klmech24.png
+SHA1-Digest: pBmH8S88MUZuwwgt58XUewY+b2g=
+
+Name: res/drawable-hdpi/wellenoptikmas0003.png
+SHA1-Digest: Lb++lVlCPgV8bXWCF9CY+fUq/dI=
+
+Name: res/drawable-hdpi/wellenlehre0011.png
+SHA1-Digest: AgGpGgUug2xwoj0OO+JowKQAspw=
+
+Name: res/drawable-hdpi/quantenmas0006.png
+SHA1-Digest: xz0hEhqZlEskWjbvOg0+Qg8pBVs=
+
+Name: res/drawable-hdpi/klmech16.png
+SHA1-Digest: OpnD8wwUrnuohZXvM/0x3BhZNYI=
+
+Name: classes.dex
+SHA1-Digest: Gpm1szKOzQCS2wg0CdPl4rRacDk=
+
+Name: res/drawable-hdpi/wellenoptikmas0009.png
+SHA1-Digest: rm+1aeSWxFWtQfSOdilyeCuXfJc=
+
+Name: res/drawable-hdpi/elektrostatik0015.png
+SHA1-Digest: yAtbNaLxU2aAR8TAxPZbr1Xkc5A=
+
+Name: res/drawable-hdpi/wellenlehre0003.png
+SHA1-Digest: hzuRfjvRPIplq6mtjLNPN+4elLA=
+
+Name: res/drawable-hdpi/elektrostatik0010.png
+SHA1-Digest: csOetd6eq3hgkIP90ungna3crLA=
+
+Name: res/drawable-hdpi/klmech27.png
+SHA1-Digest: Tk6xNDNVVBHvCiDGk9C6N2uvg3U=
+
+Name: res/drawable-hdpi/waermelehre0009.png
+SHA1-Digest: gmVWnKYTub0Pk4hZGMpr5QG4mT0=
+
+Name: res/drawable-hdpi/waermelehre0006.png
+SHA1-Digest: Pml1hUaTZgZXwu4sDSafg8NQf2Y=
+
+Name: res/drawable-hdpi/geooptikmas0013.png
+SHA1-Digest: 8KRqv7s+l2dEg5pb1U5eripSfQc=
+
+Name: res/drawable-hdpi/klmech20.png
+SHA1-Digest: CMTHmM+QVd+Hnuxa1qzlhaRIQ3Y=
+
+Name: res/drawable-hdpi/wellenlehre0001.png
+SHA1-Digest: zR3Vr88aEXp6DaKp3WwTP+Fq07M=
+
+Name: res/drawable-hdpi/geooptikmas0011.png
+SHA1-Digest: I5EpaZHBynk6na6VoO7LDSRrD3E=
+
+Name: res/drawable-hdpi/wellenlehre0014.png
+SHA1-Digest: eMwQHBOn058jnCH1vMYaHx6pt54=
+
+Name: res/layout/einstellungen.xml
+SHA1-Digest: tD38+BIjw3amKPJ9FRCj8XlLCac=
+
+Name: res/drawable-hdpi/waermelehre0015.png
+SHA1-Digest: e3TVvaWYdACdrQ7zhzv4QGLU3FA=
+
+Name: res/drawable-hdpi/elektrostatik0009.png
+SHA1-Digest: oUsN8nU5GATLfad06Tqt5njatmI=
+
+Name: res/drawable-hdpi/quantenmas0001.png
+SHA1-Digest: CijV0x2D7aqs1TJGxgdWmJShLbE=
+
+Name: res/drawable-hdpi/klmech15.png
+SHA1-Digest: xvvnHOqmP7kj+iaxjuEYePPCFQ0=
+
+Name: res/drawable-hdpi/wellenoptikmas0007.png
+SHA1-Digest: gTELLIsppfh81RL1LadJg8lc6Wk=
+
+Name: res/drawable-hdpi/magnetismus0000.png
+SHA1-Digest: rHYZqopaODh9P/mesaprSfEzcGg=
+
+Name: res/drawable-hdpi/magnetismus0009.png
+SHA1-Digest: CcQK6j6uXJQxLFZOqCBXnYd7SIM=
+
+Name: res/drawable-hdpi/klmech35.png
+SHA1-Digest: SWtUJaG4oVZpZX3gyBxBfMXW1lM=
+
+Name: res/drawable-ldpi/icon.png
+SHA1-Digest: jf4VPBLT6x/jA+SkVGAIAx5xKhg=
+
+Name: res/drawable-hdpi/waermelehre0019.png
+SHA1-Digest: IPYqR/Lk4m4fr0mJIy+dsS2Rd38=
+
+Name: res/drawable-hdpi/geooptikmas0007.png
+SHA1-Digest: he5zxK/yuuXMtAjHlrgcMn9Sfwg=
+
+Name: res/drawable-mdpi/icon.png
+SHA1-Digest: jf4VPBLT6x/jA+SkVGAIAx5xKhg=
+
+Name: res/drawable-hdpi/wellenlehre0004.png
+SHA1-Digest: IWIbGKW83hOJOEgMchVQ1kwcrq4=
+
+Name: res/drawable-hdpi/elektrostatik0008.png
+SHA1-Digest: FeRMbuG34cAcNoj6a2uPmsntVPw=
+
+Name: res/drawable-hdpi/magnetismus0008.png
+SHA1-Digest: PFQEmWnYoF3SR9H4vZsViLfXL08=
+
+Name: res/drawable-hdpi/klmech00.png
+SHA1-Digest: /Tsrhuujn7+EAZVoQ7T2IRup7RA=
+
+Name: res/drawable-hdpi/klmech11.png
+SHA1-Digest: YOT4GYyKoQVBEKWMeb/GV0oBDI4=
+
+Name: res/drawable-hdpi/wellenlehre0002.png
+SHA1-Digest: iyxb7/OBUqyUfNTTwolbqiKtZBA=
+
+Name: res/drawable-hdpi/elektrostatik0016.png
+SHA1-Digest: YYJxo5Cq3HZbNNg7HFmv8wWhtzw=
+
+Name: res/drawable-hdpi/wellenoptikmas0002.png
+SHA1-Digest: g44lpeRaBVXwYi8Ay9FOQN1Jx2c=
+
+Name: res/drawable-hdpi/wellenlehre0017.png
+SHA1-Digest: eQW1bEAT22QSLaglkFR3Nyn4B2g=
+
+Name: res/drawable-hdpi/magnetismus0006.png
+SHA1-Digest: 4lONAi3x6z0NNdTt1hv8UL4X/jw=
+
+Name: res/drawable-hdpi/elektrostatik0005.png
+SHA1-Digest: Z/cZKPzs0Sq3+2bpO/Hq8ll7rKM=
+
+Name: res/drawable-hdpi/elektrostatik0017.png
+SHA1-Digest: OsDQ/JHHC4L9/cadZqwKcSmTW7M=
+
+Name: res/drawable-hdpi/wellenlehre0006.png
+SHA1-Digest: TRumPsy/gIEYaDlsUcEyIHh9lFU=
+
+Name: res/drawable-hdpi/geooptikmas0000.png
+SHA1-Digest: tv5XLHtMlwXJTbbkpmtg+wH+zD0=
+
+Name: res/drawable-hdpi/elektrostatik0003.png
+SHA1-Digest: /15Alg7QpXtwkLWIYPUpaa+5Nwg=
+
+Name: res/drawable-hdpi/klmech18.png
+SHA1-Digest: Pr85GkCn1aq/KESPNUewma/H+SE=
+
+Name: res/drawable-hdpi/klmech25.png
+SHA1-Digest: +FQVQuEJf4YBYMfQf+AVRon5xpQ=
+
+Name: res/drawable-hdpi/wellenlehre0010.png
+SHA1-Digest: C0as5QG2uxQJsFzRFcpujUAEV8o=
+
+Name: res/drawable-hdpi/elektrostatik0019.png
+SHA1-Digest: KBqcOVzB9vJxO/uVAvlBuOAFTx4=
+
+Name: res/drawable-hdpi/elektrostatik0002.png
+SHA1-Digest: GTnDqKHv04GmupNYfZExEPD8wnw=
+
+Name: res/drawable-hdpi/elektrostatik0007.png
+SHA1-Digest: 3RpHBYUo+2bwrunT2hQKMY+Rr6E=
+
+Name: res/drawable-hdpi/fail.png
+SHA1-Digest: 3jedWr/jTnE/3lRDew7aHyp6KQs=
+
+Name: res/layout/main.xml
+SHA1-Digest: /JXTx6ftGTm6mqq69rBPmWsVvgI=
+
+Name: res/drawable-hdpi/elektrostatik0004.png
+SHA1-Digest: WrUbA4474nhWnC5c4CgVdnN1+Vc=
+
+Name: res/drawable-hdpi/klmech01.png
+SHA1-Digest: /62HKWgJsNhhX6L920E5bLia3cE=
+
+Name: res/drawable-hdpi/waermelehre0008.png
+SHA1-Digest: pf64VpjEPt6UeyuhVFBAGU6OuVU=
+
+Name: res/drawable-hdpi/klmech05.png
+SHA1-Digest: S2k9Egzj1Faoc14yasmomygTdXQ=
+
+Name: res/drawable-hdpi/wellenlehre0018.png
+SHA1-Digest: wmRcSoNw70qv2M+Sf/lua9QnBso=
+
+Name: res/drawable-hdpi/waermelehre0002.png
+SHA1-Digest: CCfeSBMBU4LS8M4RqUcCrul5oEA=
+
+Name: res/drawable-hdpi/wellenlehre0020.png
+SHA1-Digest: bOLTzbHQ1zM09qjoGNGhDAUnhd8=
+
+Name: res/drawable-hdpi/wellenlehre0007.png
+SHA1-Digest: YNXQIO4RwW9bRV6VSzbPsDq30pk=
+
+Name: res/drawable-hdpi/klmech30.png
+SHA1-Digest: hFmPVdmWQ98fAdcv+FjV0NR2Kh4=
+
+Name: res/drawable-hdpi/klmech19.png
+SHA1-Digest: M7fwXe+6EmemleepXokQJS9NCRg=
+
+Name: res/drawable-hdpi/wellenoptikmas0005.png
+SHA1-Digest: H1KLSsaD1HyLLhNAA0cXGaDTck0=
+
+Name: res/drawable-hdpi/wellenlehre0016.png
+SHA1-Digest: scV53GzllW/C8Ne9fjHOZ7e62v0=
+
+Name: res/drawable-hdpi/geooptikmas0009.png
+SHA1-Digest: Gw1FdIi78LidnwDJkXzAjsiyWxw=
+
+Name: res/drawable-hdpi/magnetismus0005.png
+SHA1-Digest: QQjglC64Ffjvo5DN6hiWQVShWe0=
+
+Name: res/drawable-hdpi/wellenoptikmas0008.png
+SHA1-Digest: dbo8ePpHt/vb5Q1uqi8m53DELB0=
+
+Name: res/drawable-hdpi/waermelehre0000.png
+SHA1-Digest: AILD8M/5k9fj9SXN2Xgpym8zsWQ=
+
+Name: res/drawable-hdpi/klmech39.png
+SHA1-Digest: /vNE2ymsxWQ2IOYPfkjcmR2T8ck=
+
+Name: res/drawable-hdpi/geooptikmas0016.png
+SHA1-Digest: /bak9T4WXgvPBVMUg1OI9KivvOs=
+
+Name: res/drawable-hdpi/klmech32.png
+SHA1-Digest: jQOUC8TuGHl2FMXpnLNAr5FzvgI=
+
+Name: res/drawable-hdpi/magnetismus0004.png
+SHA1-Digest: Q9dXD5DMIXzkkiKG460EB//8AC8=
+
+Name: res/drawable-hdpi/magnetismus0003.png
+SHA1-Digest: YwM8zCmecqzHFkgarYO4kPlskOM=
+
+Name: res/drawable-hdpi/wellenlehre0021.png
+SHA1-Digest: vbuLN0kKSXQ9ZdR8IjUcu8Lof9U=
+
+Name: res/drawable-hdpi/elektrostatik0013.png
+SHA1-Digest: FbxgUyvFHIbkw+MgJAoC+wC1o2E=
+
+Name: res/drawable-hdpi/wellenoptikmas0004.png
+SHA1-Digest: RVK7AbmRz6xrVD3/Jdg6h0eeqlc=
+
+Name: res/drawable-hdpi/wellenoptikmas0006.png
+SHA1-Digest: MoHfrkISK1jhshGzpm5TM2RLKGA=
+
+Name: res/drawable-hdpi/klmech37.png
+SHA1-Digest: Hj/o+ZfaLQ7FSR30eA3duI6dpvw=
+
+Name: res/drawable-hdpi/magnetismus0012.png
+SHA1-Digest: HbYouJzkXN4+8o8y4jv/RSoNuTk=
+
+Name: res/drawable-hdpi/klmech29.png
+SHA1-Digest: 0CqnjHPR0lkscabdOTKCuHFpXtc=
+
+Name: res/drawable-hdpi/geooptikmas0003.png
+SHA1-Digest: flwWghXKq3tzKPFZmuxJk72BBD4=
+
+Name: res/drawable-hdpi/klmech23.png
+SHA1-Digest: 32xPWVU4MQ/lS78jrBWYWQuJk/4=
+
+Name: res/drawable-hdpi/quantenmas0004.png
+SHA1-Digest: 7B1Ykb6cYezgHr152dXNGURwCSI=
+
+Name: res/drawable-hdpi/waermelehre0021.png
+SHA1-Digest: EqWct7SFfEZUQMWi8e2rpzoS0hM=
+
+Name: res/layout/antwortseite.xml
+SHA1-Digest: a4ipAgmJaSdgVdmbHm55KzYIgd0=
+
+Name: res/drawable-hdpi/klmech38.png
+SHA1-Digest: klv5SDD5AHXE/pbEvLWL2XgKydM=
+
+Name: res/drawable-hdpi/wellenlehre0015.png
+SHA1-Digest: Uvo1f4jt2sjpaW7uTAC/yB2k7Ik=
+
+Name: res/drawable-hdpi/geooptikmas0002.png
+SHA1-Digest: pHnUqs1//pKcJ0av6bYw4/Ut97c=
+
+Name: res/drawable-hdpi/wellenlehre0000.png
+SHA1-Digest: tEbvEXHrZmIvzKSYlJPC0ErzFe4=
+
+Name: res/drawable-hdpi/klmech07.png
+SHA1-Digest: /ZMxpi5gEuZbJrQjKeC7cxv3/qI=
+
+Name: res/drawable-hdpi/wellenoptikmas0000.png
+SHA1-Digest: EzhZTNbVoqaM7jf4+P5tgEvwd8w=
+
+Name: res/drawable-hdpi/magnetismus0007.png
+SHA1-Digest: anQaCwCj1Img0fTrfxUkMcisyrw=
+
+Name: res/drawable-hdpi/waermelehre0013.png
+SHA1-Digest: cTgMfrZ5Ce7jbtqfP0JJ6arM4l4=
+
+Name: res/drawable-hdpi/waermelehre0022.png
+SHA1-Digest: QdaE+IyLcZ7VmlyMTRfCeNst5hg=
+
+Name: res/drawable-hdpi/waermelehre0016.png
+SHA1-Digest: mwQWJPOBDbpeB2LHx2y8KOUS3W8=
+
+Name: res/drawable-hdpi/waermelehre0007.png
+SHA1-Digest: zEEwXHEMBJcB1zz/2XlaljdHLWQ=
+
+Name: res/layout/frageseite.xml
+SHA1-Digest: /x+gZsfoHmtcvnxvkleMY8BtN60=
+
+Name: res/drawable-hdpi/klmech36.png
+SHA1-Digest: D329+zqv6CYZ/QCAxZKnzD6RS+g=
+
+Name: res/drawable-hdpi/elektrostatik0000.png
+SHA1-Digest: dfz8TzsrwhmeW7Iv9l/ApUhaUMA=
+
+Name: res/drawable-hdpi/geooptikmas0008.png
+SHA1-Digest: RBt/PFDxD/oRn+uFBTsBbi+5JK4=
+
+Name: res/drawable-hdpi/wellenlehre0005.png
+SHA1-Digest: /nZh193UqpyxD0FnUagOfGbjFBA=
+
+Name: res/drawable-hdpi/waermelehre0017.png
+SHA1-Digest: V1yLi3TgRnXLwdt++IjwP/xEhdA=
+
+Name: res/drawable-hdpi/waermelehre0012.png
+SHA1-Digest: oYmhdTR54AG+RwJzLjyBvHBni8A=
+
+Name: res/drawable-hdpi/icon.png
+SHA1-Digest: jf4VPBLT6x/jA+SkVGAIAx5xKhg=
+
+Name: res/drawable-hdpi/klmech14.png
+SHA1-Digest: dl1hRrAmbADmRJns1rQMaexDucw=
+

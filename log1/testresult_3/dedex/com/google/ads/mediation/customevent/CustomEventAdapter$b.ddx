@@ -1,0 +1,277 @@
+.class com/google/ads/mediation/customevent/CustomEventAdapter$b
+.super java/lang/Object
+.source SourceFile
+.implements com/google/ads/mediation/customevent/CustomEventInterstitialListener
+
+.inner class b inner com/google/ads/mediation/customevent/CustomEventAdapter$b outer com/google/ads/mediation/customevent/CustomEventAdapter
+.field final a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+.field private final b Lcom/google/ads/mediation/MediationInterstitialListener;
+
+.method public <init>(Lcom/google/ads/mediation/customevent/CustomEventAdapter;Lcom/google/ads/mediation/MediationInterstitialListener;)V
+.limit registers 3
+; this: v0 (Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;)
+; parameter[0] : v1 (Lcom/google/ads/mediation/customevent/CustomEventAdapter;)
+; parameter[1] : v2 (Lcom/google/ads/mediation/MediationInterstitialListener;)
+.line 157
+	iput-object	v1,v0,com/google/ads/mediation/customevent/CustomEventAdapter$b.a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v0 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+.line 158
+	iput-object	v2,v0,com/google/ads/mediation/customevent/CustomEventAdapter$b.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v2 : Lcom/google/ads/mediation/MediationInterstitialListener; , v0 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+.line 159
+	return-void	
+.end method
+
+.method private a()Ljava/lang/String;
+.limit registers 3
+; this: v2 (Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;)
+.line 195
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Interstitial custom event labeled '"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	iget-object	v1,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	invoke-static	{v1},com/google/ads/mediation/customevent/CustomEventAdapter/a	; a(Lcom/google/ads/mediation/customevent/CustomEventAdapter;)Ljava/lang/String;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"'"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	return-object	v0
+; v0 : Ljava/lang/String;
+.end method
+
+.method public onDismissScreen()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;)
+.line 184
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},com/google/ads/mediation/customevent/CustomEventAdapter$b/a	; a()Ljava/lang/String;
+; v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," called onDismissScreen()."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 185
+	iget-object	v0,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	iget-object	v1,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	invoke-interface	{v0,v1},com/google/ads/mediation/MediationInterstitialListener/onDismissScreen	; onDismissScreen(Lcom/google/ads/mediation/MediationInterstitialAdapter;)V
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+.line 186
+	return-void	
+.end method
+
+.method public onFailedToReceiveAd()V
+.limit registers 4
+; this: v3 (Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;)
+.line 169
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v3},com/google/ads/mediation/customevent/CustomEventAdapter$b/a	; a()Ljava/lang/String;
+; v3 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," called onFailedToReceiveAd()."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 172
+	iget-object	v0,v3,com/google/ads/mediation/customevent/CustomEventAdapter$b.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v3 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	iget-object	v1,v3,com/google/ads/mediation/customevent/CustomEventAdapter$b.a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v3 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	sget-object	v2,com/google/ads/AdRequest$ErrorCode.NO_FILL Lcom/google/ads/AdRequest$ErrorCode;
+; v2 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-interface	{v0,v1,v2},com/google/ads/mediation/MediationInterstitialListener/onFailedToReceiveAd	; onFailedToReceiveAd(Lcom/google/ads/mediation/MediationInterstitialAdapter;Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v2 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 174
+	return-void	
+.end method
+
+.method public synchronized onLeaveApplication()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;)
+.catch java/lang/Exception from l2e372 to l2e3b4 using l2e3b8
+.line 190
+	monitor-enter	v2
+; v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+l2e372:
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},com/google/ads/mediation/customevent/CustomEventAdapter$b/a	; a()Ljava/lang/String;
+; v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," called onLeaveApplication()."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 191
+	iget-object	v0,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	iget-object	v1,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	invoke-interface	{v0,v1},com/google/ads/mediation/MediationInterstitialListener/onLeaveApplication	; onLeaveApplication(Lcom/google/ads/mediation/MediationInterstitialAdapter;)V
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+l2e3b4:
+.line 192
+	monitor-exit	v2
+; v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	return-void	
+l2e3b8:
+.line 190
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v2
+; v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public onPresentScreen()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;)
+.line 178
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},com/google/ads/mediation/customevent/CustomEventAdapter$b/a	; a()Ljava/lang/String;
+; v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," called onPresentScreen()."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 179
+	iget-object	v0,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	iget-object	v1,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	invoke-interface	{v0,v1},com/google/ads/mediation/MediationInterstitialListener/onPresentScreen	; onPresentScreen(Lcom/google/ads/mediation/MediationInterstitialAdapter;)V
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+.line 180
+	return-void	
+.end method
+
+.method public onReceivedAd()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;)
+.line 163
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},com/google/ads/mediation/customevent/CustomEventAdapter$b/a	; a()Ljava/lang/String;
+; v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," called onReceivedAd."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 164
+	iget-object	v0,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.b Lcom/google/ads/mediation/MediationInterstitialListener;
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	iget-object	v1,v2,com/google/ads/mediation/customevent/CustomEventAdapter$b.a Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+; v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter; , v2 : Lcom/google/ads/mediation/customevent/CustomEventAdapter$b;
+	invoke-interface	{v0,v1},com/google/ads/mediation/MediationInterstitialListener/onReceivedAd	; onReceivedAd(Lcom/google/ads/mediation/MediationInterstitialAdapter;)V
+; v0 : Lcom/google/ads/mediation/MediationInterstitialListener; , v1 : Lcom/google/ads/mediation/customevent/CustomEventAdapter;
+.line 165
+	return-void	
+.end method
+
+

@@ -1,0 +1,852 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: res/drawable/gradient_bg_black.xml
+SHA1-Digest: RtWpNgPU17KNra0nuZ8aMDQECNE=
+
+Name: res/drawable/week_no_042_large.jpg
+SHA1-Digest: 3Ntkl72JMfMbV5PlATj9OcZ+HQA=
+
+Name: res/drawable/week_no_022_large.jpg
+SHA1-Digest: 0lxrYSvvcQO08cwl48QsBk4yRvo=
+
+Name: res/drawable/week_no_242.jpg
+SHA1-Digest: ngg2ypxYLVcCbNTq8qakaPY5ifU=
+
+Name: res/drawable/blue_sheet_no_029.png
+SHA1-Digest: +ar3+QCb62aFidkMfs0Ylvk4pxw=
+
+Name: res/drawable/week_no_062.jpg
+SHA1-Digest: BLZYm3jwqd6GhjcDCI5kXYgFfIM=
+
+Name: res/drawable/week_no_102_large.jpg
+SHA1-Digest: UpKcUfSjhe2qvwEcMSxFHmpCoWI=
+
+Name: res/drawable/week_no_212_large.jpg
+SHA1-Digest: gbdLcpPlrBmD0m2t+jhttcuzICo=
+
+Name: res/drawable/week_no_052.jpg
+SHA1-Digest: o3xDgBYhOPXfq37KtRu042MWMAg=
+
+Name: res/drawable/sheet_no_033.png
+SHA1-Digest: FXoGiwWX2l7teyfA4EdCQDdgIHo=
+
+Name: res/drawable/week_no_072_large.jpg
+SHA1-Digest: xzTuMWJKt89ohWZzeBIIzBe5DVg=
+
+Name: res/drawable/blue_sheet_no_027.png
+SHA1-Digest: a6WyaDrs0wLnH6W79Yl9MZTePI8=
+
+Name: res/drawable/gradient_box.xml
+SHA1-Digest: idAM/rT/6oqebIWxws4FW8cYWBo=
+
+Name: res/drawable/blue_sheet_no_026.png
+SHA1-Digest: qD3DtoAmzrLF3FBzPZHVCnpToyo=
+
+Name: res/drawable/week_no_091.jpg
+SHA1-Digest: IS/WfhNgm4kSg9dfCV0wAZF6LpA=
+
+Name: res/drawable/blue_sheet_no_005.png
+SHA1-Digest: nzqHn+phLBYbPdskjn6ppPDzFR4=
+
+Name: res/drawable/sheet_no_029.png
+SHA1-Digest: jZL44CpcvU8hMJE+GaA0GKNB2Cs=
+
+Name: res/drawable/blue_sheet_no_009.png
+SHA1-Digest: FYpxDCuxFOWj+QE0IoQX6bqGlxU=
+
+Name: res/drawable/week_no_322_large.jpg
+SHA1-Digest: hPrlPgJy2gW6QuD5MeW/3H4ZnKY=
+
+Name: res/drawable/week_no_312.jpg
+SHA1-Digest: cbwHUTTRWoC3cXoVeUpYuxQmOBY=
+
+Name: res/drawable/blue_sheet_no_019.png
+SHA1-Digest: 8N2qUF+8vDcRW1Tzwv0w5D9fZXk=
+
+Name: res/drawable/week_no_122.jpg
+SHA1-Digest: 67g5ri1eI44X/KNFDzZR9j35I1w=
+
+Name: res/layout/general.xml
+SHA1-Digest: lTVEApZG9ujWMV9YTiLbZIA6/bc=
+
+Name: res/drawable/week_no_291_large.jpg
+SHA1-Digest: Q7+lgzd131fl7EMvjwGmAmet9GQ=
+
+Name: res/drawable/week_no_182.jpg
+SHA1-Digest: EQfhh2/ebEJrJBgBvk5ZqmuSI48=
+
+Name: res/drawable/blue_sheet_no_007.png
+SHA1-Digest: vy2PTlnBomI6kbSF/eH55nj4U7s=
+
+Name: res/drawable/week_no_222_large.jpg
+SHA1-Digest: gr+T6K6m/Bl60ZEVTS6YamTUjbI=
+
+Name: res/drawable/week_no_061.jpg
+SHA1-Digest: VnPmADc+P3u2EKGVDq8sYEQZG00=
+
+Name: res/drawable/week_no_191.jpg
+SHA1-Digest: t/OhLGorzsYrShVpYDSZsmeWvL0=
+
+Name: res/drawable/blue_sheet_no_025.png
+SHA1-Digest: STQ022ix+a7XHQyJz0IitX4vx5Q=
+
+Name: res/drawable/blue_sheet_no_006.png
+SHA1-Digest: KfNLbM8DS9VkAz/Ok41BvLeaYis=
+
+Name: res/drawable/week_no_391_large.jpg
+SHA1-Digest: g8VcmXsO4looorPjfjECijCM4tA=
+
+Name: res/drawable/week_no_362_large.jpg
+SHA1-Digest: v4O8Ze7uWRwp0rw6HPGnMdhDhCE=
+
+Name: res/drawable/blue_sheet_no_010.png
+SHA1-Digest: xPrmdQHlpQc59gVYtgTQ56uhdhk=
+
+Name: res/drawable/week_no_192.jpg
+SHA1-Digest: eniiMwA1IR3NMATwsuGIryCW82Y=
+
+Name: res/drawable/week_no_191_large.jpg
+SHA1-Digest: oBQweVsqVzu4kD+5xMj0rdVx2ho=
+
+Name: res/drawable/blue_sheet_no_039.png
+SHA1-Digest: 9UNIOh2omaGnrxtIBL5UkD7qEwY=
+
+Name: res/drawable/week_no_141_large.jpg
+SHA1-Digest: TZMDzFn/3Lsh0Pazu8ns94bT6dg=
+
+Name: res/drawable/week_no_351.jpg
+SHA1-Digest: t4ig3YUpm1r2MsVLPpDf7RYG2HA=
+
+Name: res/drawable/week_no_281.jpg
+SHA1-Digest: Z6h+iEQKBqxh2UVRf2XgsWh1pw4=
+
+Name: res/drawable/week_no_202_large.jpg
+SHA1-Digest: mM9qj4FQLM11WHQh57pGU73xEXc=
+
+Name: res/drawable/week_no_092_large.jpg
+SHA1-Digest: 59A7+S2m+bL4G0bWYI5ICHDSUY0=
+
+Name: res/drawable/week_no_152.jpg
+SHA1-Digest: /RB3XPiC/u9wp/Zad2fYG3oan2I=
+
+Name: res/drawable/week_no_392_large.jpg
+SHA1-Digest: AwalT1YGsCB/wFE2bAkG42JlCwU=
+
+Name: res/drawable/sheet_no_012.png
+SHA1-Digest: Nf/MzQquRQJoKKTvEfm3CMiHeCM=
+
+Name: res/drawable/blue_sheet_no_023.png
+SHA1-Digest: +JHVxATFEzeftNHVnk44KNWRC90=
+
+Name: res/drawable/week_no_081.jpg
+SHA1-Digest: vN8zhDIAAkW1a7STPdq2sSj2Ld8=
+
+Name: res/menu/mainmenu.xml
+SHA1-Digest: Pw7UXnAIsf6D0jeHfF/2Jl8/vGM=
+
+Name: res/drawable/blue_sheet_no_002.png
+SHA1-Digest: n/tHCJ/Kbu8hQaoJXd/+OUGwg80=
+
+Name: res/drawable/ic_tab_diview.xml
+SHA1-Digest: xGLQc72GKq82hvm37MFkchAW7UI=
+
+Name: res/drawable/week_no_112_large.jpg
+SHA1-Digest: TFiWGvYFD2G4o9jJL3JUQxVOlyk=
+
+Name: res/drawable/week_no_152_large.jpg
+SHA1-Digest: 6xxisBXZg6mtfkGjJZlBFqRz/74=
+
+Name: res/drawable/gradient_box_pinklight.xml
+SHA1-Digest: 1fEaUkntdF5eOaRTLEQ5lmfdXio=
+
+Name: res/layout/widget_pc.xml
+SHA1-Digest: 9nUb0gyizgIVv3p2WT8ZPF7SYyQ=
+
+Name: res/drawable/ic_tab_giview.xml
+SHA1-Digest: i30Py964wM7/Bra1ekERLWoE0ik=
+
+Name: res/drawable/blue_sheet_no_013.png
+SHA1-Digest: pedVjrY34SuIUSAXsq7soTMjZJM=
+
+Name: res/drawable/week_no_331.jpg
+SHA1-Digest: 1bZXPRbtcWBpefJ5HErUiomrxik=
+
+Name: res/drawable/sheet_no_040.png
+SHA1-Digest: cMjiOFH3a1uZBnnnE/vbBIZYXg0=
+
+Name: res/drawable/week_no_061_large.jpg
+SHA1-Digest: SecTNcyfrmascwdyr2hIo5QRoxU=
+
+Name: res/drawable/week_no_012.jpg
+SHA1-Digest: ts/dFgNsBZ/+LDUfK0sVIy2Azks=
+
+Name: res/drawable/week_no_101.jpg
+SHA1-Digest: SSwFt72vBc8Rp/YfYb61RqStyEY=
+
+Name: res/drawable/week_no_131.jpg
+SHA1-Digest: 9acUfu2BnbJwW1bI5jiqXwl58k0=
+
+Name: res/drawable/week_no_082_large.jpg
+SHA1-Digest: Kw1ZYAxhTihnGwoBc43xWfYs4l0=
+
+Name: res/drawable/sheet_no_025.png
+SHA1-Digest: N7leSUgMLfRT/W8x1hMijkP6Wrw=
+
+Name: res/drawable/week_no_011.jpg
+SHA1-Digest: sWnwTPyHkgxHG1IKglzX9E65LzI=
+
+Name: res/xml/widget_pc.xml
+SHA1-Digest: rB88tT2xqbOu54LnZ1/nI4oQGjs=
+
+Name: res/drawable/sheet_no_004.png
+SHA1-Digest: 7JyHHA1z6Qjnyo8rGYE3WU8H5pw=
+
+Name: res/drawable/week_no_261.jpg
+SHA1-Digest: vufYE4MZ8HLt1jTX1grlvOQ9Fwk=
+
+Name: res/drawable/week_no_402.jpg
+SHA1-Digest: PA9j6gy6BNxoJSjg2x8dKe17OBY=
+
+Name: res/drawable/week_no_192_large.jpg
+SHA1-Digest: 3XCUp44Ve1ffXG5xeS/GOIoqXnE=
+
+Name: res/drawable/week_no_021.jpg
+SHA1-Digest: ts/dFgNsBZ/+LDUfK0sVIy2Azks=
+
+Name: res/drawable/week_no_161.jpg
+SHA1-Digest: CrwFMsV4Dc0rgYg3n+9q7xD9V40=
+
+Name: res/drawable/sheet_no_011.png
+SHA1-Digest: jzNhs9SB5QEHzHPtLfeercUeHqk=
+
+Name: res/drawable/week_no_022.jpg
+SHA1-Digest: P/6amdBpoDSW+1Nks8JKBmm+UIo=
+
+Name: res/drawable/blue_sheet_no_014.png
+SHA1-Digest: Pg9I4+RbWHZZllNUoysAPYBR1ME=
+
+Name: res/drawable/week_no_262.jpg
+SHA1-Digest: ivkS9mpi3Emub/tK0Aj+unsOPig=
+
+Name: res/drawable/blue_sheet_no_033.png
+SHA1-Digest: ZKHEmeUgLCPubetPuzDErJr0YaI=
+
+Name: res/drawable/sheet_no_002.png
+SHA1-Digest: 9mqdEzevfIRls/Ys4jbfIbThv2k=
+
+Name: res/drawable/week_no_041.jpg
+SHA1-Digest: UzoHA/E/bPajFJi3o3tgiLqZ9nM=
+
+Name: res/drawable/sheet_no_001.png
+SHA1-Digest: CvViFLzX2LIc17pbwLHGRGI2u44=
+
+Name: res/drawable/week_no_051_large.jpg
+SHA1-Digest: 3Ntkl72JMfMbV5PlATj9OcZ+HQA=
+
+Name: res/drawable/week_no_242_large.jpg
+SHA1-Digest: sGiWyd5yXbHuCto6Ha9dVya6bio=
+
+Name: res/drawable/sheet_no_037.png
+SHA1-Digest: OW3p8Dxss6tRumese9wNsCQjIng=
+
+Name: res/drawable/week_no_072.jpg
+SHA1-Digest: CkYB1fl1NMn2rkkOVdcxO8IiwlE=
+
+Name: res/drawable/sheet_no_021.png
+SHA1-Digest: BuP3sc/rlSbLLSF9VrweRqHlqqs=
+
+Name: res/drawable/sheet_no_031.png
+SHA1-Digest: mfJJBV52QINOwy0SqRSygGFjGO4=
+
+Name: res/drawable/sheet_no_041.png
+SHA1-Digest: Q0x27YMmMZk/KcYXvAhMnXTaqAM=
+
+Name: res/drawable/gradient_box_blue.xml
+SHA1-Digest: Fy8/1z4se7GSULjkuXLXC4SOUKY=
+
+Name: res/drawable/week_no_292_large.jpg
+SHA1-Digest: JLGtMSap6607nsSD6IlVwOCYkFk=
+
+Name: res/drawable/week_no_361_large.jpg
+SHA1-Digest: AVfHNU14vqyN+mirAR+Un4RjiOc=
+
+Name: res/drawable/sheet_no_014.png
+SHA1-Digest: YGKb3+69p9N+REjDMxIhGjnz8kg=
+
+Name: res/drawable/week_no_231_large.jpg
+SHA1-Digest: wYN+6dCctJieqVO+B31qrYAK7h8=
+
+Name: res/drawable/blue_sheet_no_034.png
+SHA1-Digest: S6RB9ZvkkceF8LHWvAfCDIwb09g=
+
+Name: res/drawable/week_no_101_large.jpg
+SHA1-Digest: Jt9f/NYbLe4VjWpr9pyk9juBJag=
+
+Name: res/drawable/blue_sheet_no_035.png
+SHA1-Digest: GnSGN35osXuu8bE00Ux/W7mlkK0=
+
+Name: res/drawable/ic_tab_notesview.xml
+SHA1-Digest: 0gNGpfUOmiOXnw4Rwk1oKvDa588=
+
+Name: res/drawable/sheet_no_034.png
+SHA1-Digest: wn+J/NxAjL24jLrzR6Zcz4sEyRg=
+
+Name: res/drawable/blue_sheet_no_012.png
+SHA1-Digest: /k2vD39Jk1b18AoyzcwnM1HzLQY=
+
+Name: res/drawable/week_no_142_large.jpg
+SHA1-Digest: mlgkxPmemy+Wb6668FHXdisChek=
+
+Name: res/drawable/week_no_161_large.jpg
+SHA1-Digest: i9CJAZNu375UJ6uTSb2H8Tr245k=
+
+Name: res/drawable/week_no_181.jpg
+SHA1-Digest: QPFCyCeGa+JvtOdfdcjjQv8JoHI=
+
+Name: res/drawable/week_no_071.jpg
+SHA1-Digest: ciG1i8VlL8OdPwRnWBUvWx6tM+Q=
+
+Name: res/drawable/week_no_362.jpg
+SHA1-Digest: ch+8txqRsYUpLEJ60iIIDb69g6Y=
+
+Name: res/drawable/widget_bg.png
+SHA1-Digest: 3eFHLk5ScyBkW+WGvWK9aUL4FAM=
+
+Name: res/drawable/week_no_272_large.jpg
+SHA1-Digest: R7BoVunAUsDqj/BSaI9x5fISHzE=
+
+Name: res/layout/image_layout.xml
+SHA1-Digest: EqR6znSlVuc5CgLQb07Fe/bRhHo=
+
+Name: res/drawable/week_no_202.jpg
+SHA1-Digest: rkpsDp/K20m46GRi6daIw3I8Mi8=
+
+Name: res/menu/notesmenu.xml
+SHA1-Digest: /zzCkA6G/SLZNHHVJzBQ/orh9D4=
+
+Name: res/layout/blue_widget_pc.xml
+SHA1-Digest: DJJgl9e1QBNspiSWZ1PAm2bTHNI=
+
+Name: res/drawable/week_no_302.jpg
+SHA1-Digest: 8ThwH3WqxUzJK6LgTTuxPOn9oHg=
+
+Name: res/drawable/blue_sheet_no_032.png
+SHA1-Digest: DAx8r15MsgYsIzr22+kQwDwIbQs=
+
+Name: res/drawable/week_no_321.jpg
+SHA1-Digest: i4FKp+zNGZ6vHf29bibUTsGi7w4=
+
+Name: res/drawable/week_no_292.jpg
+SHA1-Digest: fNfLBw7DfKc7pb2IWCwTxpgND0I=
+
+Name: res/drawable/sheet_no_003.png
+SHA1-Digest: Hp/FEp/wn7Fc3FU9j+CKtEre7qQ=
+
+Name: res/drawable/week_no_142.jpg
+SHA1-Digest: J4TstkM+b16C2PSas2T5cB4xFaM=
+
+Name: res/drawable/blue_sheet_no_028.png
+SHA1-Digest: RP6yAeOcIk8PMUIJdkkTsGxJdyw=
+
+Name: res/drawable/sheet_no_023.png
+SHA1-Digest: eMEjZnbUKaN+RW4DIREQ3b1KTBE=
+
+Name: res/drawable/week_no_351_large.jpg
+SHA1-Digest: 5I4NUaz6yg7pmDIEIW4U+gmVSm4=
+
+Name: res/drawable/week_no_132.jpg
+SHA1-Digest: UJk2ajld8Pjub7e37O0vgNZq4Fk=
+
+Name: res/drawable/sheet_no_008.png
+SHA1-Digest: RPj9vN/OeK5rfav3qmQNInwhJzE=
+
+Name: res/drawable/sheet_no_017.png
+SHA1-Digest: x9dXyFktXphcRmYSA/SEuKAFnkY=
+
+Name: res/drawable/week_no_332.jpg
+SHA1-Digest: FON5o54nO5HN1O/aKvpGdZIE3J0=
+
+Name: res/drawable/week_no_382_large.jpg
+SHA1-Digest: g8VcmXsO4looorPjfjECijCM4tA=
+
+Name: res/drawable/week_no_311.jpg
+SHA1-Digest: wXNWxrF3A0o2uYCZ3iZiacOTd64=
+
+Name: res/drawable/week_no_341.jpg
+SHA1-Digest: +QtfLb4ImlYGGJU05llNNy6vESI=
+
+Name: res/drawable/week_no_262_large.jpg
+SHA1-Digest: xf/aaXc2I6EQEi2/g1LIzpUZccA=
+
+Name: res/drawable/sheet_no_039.png
+SHA1-Digest: diz+F4Okbb80WSovvL4ol1Dzj8c=
+
+Name: res/drawable/blue_sheet_no_001.png
+SHA1-Digest: Tg4hSyIW6Wb6ZC+HbDhFejq3K8w=
+
+Name: res/drawable/blue_sheet_no_004.png
+SHA1-Digest: oNBY85rnpxh0KOICj48pT00tN/s=
+
+Name: res/drawable/week_no_251.jpg
+SHA1-Digest: gQ21iV36yoRrl96upNNhXepom4w=
+
+Name: res/drawable/week_no_251_large.jpg
+SHA1-Digest: hUd+6O0XG73n3SonTxw2F/md35A=
+
+Name: res/drawable/sheet_no_000.png
+SHA1-Digest: fGCheP9RBCUKM8JYWozBCrKi/34=
+
+Name: res/drawable/week_no_171_large.jpg
+SHA1-Digest: occOlZ2aCIO58U/fLlB5BE9FYe8=
+
+Name: res/drawable/blue_sheet_no_021.png
+SHA1-Digest: nBJhpuEC45S5sTn/W+HBx7T9X2Q=
+
+Name: res/drawable/week_no_052_large.jpg
+SHA1-Digest: Cy0Q+XgHHm5fU8mHvNQdA+/GVdI=
+
+Name: res/drawable/gradient_box_pink.xml
+SHA1-Digest: WR+eqP+8/UVg7dBMJFhocCd82yg=
+
+Name: res/menu/weeksmenu.xml
+SHA1-Digest: ECn3tJbCbjnLg++1pWIpNVd1GjA=
+
+Name: res/drawable/week_no_182_large.jpg
+SHA1-Digest: Q5Xpzvla4CJpKBHhJySWgGfkRig=
+
+Name: res/drawable/sheet_no_007.png
+SHA1-Digest: 3FoL/XYa+VrD77X1PzpxB7IYWnk=
+
+Name: res/drawable/week_no_232_large.jpg
+SHA1-Digest: z92T2dbOjMCnV1B0G//PzB03zyI=
+
+Name: res/drawable/blue_sheet_no_036.png
+SHA1-Digest: ptZLiit/ICymgESZ7hM3mm38kgY=
+
+Name: res/drawable/blue_sheet_no_024.png
+SHA1-Digest: GsXSyR4JzeY4nMx+357iYXTGbPU=
+
+Name: res/drawable/week_no_301_large.jpg
+SHA1-Digest: FdvIyg4qDJtZLHXSsEfZGKULPqA=
+
+Name: res/drawable/blue_sheet_no_015.png
+SHA1-Digest: yqioi+7fePA+zoiIiJmM8mHtsGk=
+
+Name: res/drawable/week_no_031_large.jpg
+SHA1-Digest: uKNHXk8aMl9st7HRjMhZxdaNIfI=
+
+Name: res/drawable/week_no_382.jpg
+SHA1-Digest: cRZfjqTyk/WI/Wxz+Vdy+M/e2qo=
+
+Name: res/drawable/week_no_341_large.jpg
+SHA1-Digest: rSCMrvzwlctIZ7//bZ9N86Xpvog=
+
+Name: res/drawable/week_no_331_large.jpg
+SHA1-Digest: mmb4PmkZwquxLUnd/vOcMs3u+Uw=
+
+Name: res/drawable/week_no_301.jpg
+SHA1-Digest: 0s5lwRteBcYeMHOUWfB9Q1wurC0=
+
+Name: res/drawable/week_no_271.jpg
+SHA1-Digest: vIprfFFTlocWqLxXzAZCJ7QTiyc=
+
+Name: res/drawable/blue_sheet_no_038.png
+SHA1-Digest: sfC9a19Q/6xGN74x6SopRFm655U=
+
+Name: res/drawable/week_no_012_large.jpg
+SHA1-Digest: Ke0HOYvpOKVYRUZXZoxisFvRZIY=
+
+Name: res/drawable/week_no_282_large.jpg
+SHA1-Digest: MWf+Y2phfr32CAzPy035hxn/qXg=
+
+Name: res/drawable/blue_sheet_no_016.png
+SHA1-Digest: 0WKLhZG6taZiuicHvO79ZTrTG60=
+
+Name: res/drawable/week_no_131_large.jpg
+SHA1-Digest: gO/KPtfnAgU5S4s6u0ieR3N9VJs=
+
+Name: res/drawable/gradient_bg_pink.xml
+SHA1-Digest: ZPQaD32iKBzDLrLOf+r/ldZ/ybM=
+
+Name: res/drawable/week_no_041_large.jpg
+SHA1-Digest: Zyx/3bU5kgj4RbXruPfMagGL2Rk=
+
+Name: res/drawable/ic_tab_notes.png
+SHA1-Digest: 3UfuxC5B+W9pvNa9yFtnJ3MVf+s=
+
+Name: res/drawable/week_no_051.jpg
+SHA1-Digest: 68RtLhrQkUM5uuYg2WaG+gKb8t8=
+
+Name: res/layout/note_edit.xml
+SHA1-Digest: vY8PJnPjCEq2c7k3Gkf5DIdEHBs=
+
+Name: res/drawable/week_no_111_large.jpg
+SHA1-Digest: j324HEiWmIt2YYXGVEOtlDDLEsI=
+
+Name: res/drawable/blue_sheet_no_017.png
+SHA1-Digest: nCWCcBt0avOOVj00hMs/UPkNpe8=
+
+Name: res/drawable/blue_sheet_no_041.png
+SHA1-Digest: bqq+38GsbD07M0Ow3tmOcHOXrN8=
+
+Name: res/drawable/week_no_071_large.jpg
+SHA1-Digest: EzOGmvXuf8qbVLekrywFzbrI7rM=
+
+Name: res/drawable/week_no_252.jpg
+SHA1-Digest: YCh7VT99ltJIj+grHNgaN5nFVJE=
+
+Name: res/drawable/week_no_371.jpg
+SHA1-Digest: WEWr/oS46enHn6RPS5E2YO/Fdqk=
+
+Name: res/drawable/week_no_221.jpg
+SHA1-Digest: 3xLysmBSQ3fj6wEh7/VPRvsSuZU=
+
+Name: res/drawable/week_no_122_large.jpg
+SHA1-Digest: E9eQeUPlFYsmWqLG98ktSwjk5tI=
+
+Name: res/drawable/week_no_372.jpg
+SHA1-Digest: UNYGTSVx/2+G+RY2afqrpjBvG5Y=
+
+Name: res/drawable/week_no_311_large.jpg
+SHA1-Digest: 8f/AZJQBJhvX7rNqQ+cHRnK4aEk=
+
+Name: res/drawable/blue_sheet_no_003.png
+SHA1-Digest: PwUnDJniOdyWP+U4j3z60UJtEp4=
+
+Name: res/drawable/sheet_no_015.png
+SHA1-Digest: aFOrGKwoxwybVOCUvOb8g8y/ilY=
+
+Name: res/drawable/ic_tab_di.png
+SHA1-Digest: SCd5ql7F0sZf9x5sFANjUh05zt4=
+
+Name: res/drawable/week_no_322.jpg
+SHA1-Digest: L4/IIHcpQZl3jNY7Ku2hQmOK8fg=
+
+Name: res/drawable/blue_sheet_no_020.png
+SHA1-Digest: NaMcKqt5G4+ahVA/n6nMB2MwiNc=
+
+Name: res/drawable/week_no_092.jpg
+SHA1-Digest: 8sF1ngrNjQQwiEcZzzREJ1Xt1lc=
+
+Name: res/drawable/sheet_no_009.png
+SHA1-Digest: 82iGDWQtZVaN47D7xzHzusoAUEw=
+
+Name: res/drawable/blue_sheet_no_037.png
+SHA1-Digest: s1sgj3Rv+rSiW5J+hEvYmAsLaZc=
+
+Name: resources.arsc
+SHA1-Digest: kQlEHE4ZRkOBosDmF7/jnTL87r8=
+
+Name: res/drawable/sheet_no_036.png
+SHA1-Digest: kuJlDtzWqr0pGpqz6/ZPrVG7KN8=
+
+Name: res/drawable/week_no_172.jpg
+SHA1-Digest: o69Ho8tnbCltDXwhTp5ClGnKFEo=
+
+Name: res/drawable/week_no_222.jpg
+SHA1-Digest: qYFbU7svafDnS+k06mf9FhW24+Q=
+
+Name: res/menu/widgetmenu.xml
+SHA1-Digest: naRag4TmqNveyWxC+pPjjBaDyCA=
+
+Name: res/layout/weeks.xml
+SHA1-Digest: rKbgbI3Mg3+adsvaqyJ+In9L1Io=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 5OFHDkA8Wjf0pcg8/mXLVScq3xY=
+
+Name: res/drawable/blue_sheet_no_018.png
+SHA1-Digest: MWY4SZj2rLQ4pMBBr7vpu19+iAU=
+
+Name: res/drawable/week_no_111.jpg
+SHA1-Digest: XTOwSpmLDjOa3LDr9LndoLWMyi0=
+
+Name: res/drawable/week_no_272.jpg
+SHA1-Digest: LTBlqDr1bS4enAPtFQW38FdkaVU=
+
+Name: res/drawable/week_no_312_large.jpg
+SHA1-Digest: 95/EooXDsrmrlCVtR+SEHIZyzzA=
+
+Name: res/drawable/week_no_091_large.jpg
+SHA1-Digest: XNrVengjt7frYz3abhGRpQ9AbXQ=
+
+Name: res/drawable/week_no_151_large.jpg
+SHA1-Digest: QeeVkRUCzDm0/QKAtMfqmSJznA8=
+
+Name: res/layout/notes_row.xml
+SHA1-Digest: kTsVTbIC4/3kd7IQ5DXXxUhEkGI=
+
+Name: res/drawable/week_no_392.jpg
+SHA1-Digest: fe4d/wLS8Cyov3fesoe8QJxQm5U=
+
+Name: res/drawable/week_no_332_large.jpg
+SHA1-Digest: OoJl42/McHrwcCdCEqC0RoEGKu4=
+
+Name: res/drawable/week_no_121_large.jpg
+SHA1-Digest: EZGXxLivhT8YED5sIPBySuIGBC4=
+
+Name: res/drawable/sheet_no_028.png
+SHA1-Digest: +dxNOp2z+VTAQEkOyonUMQVYsP4=
+
+Name: res/drawable/week_no_291.jpg
+SHA1-Digest: sNpuDeYHwbwcGIg4nlkftXiAUic=
+
+Name: res/drawable/week_no_391.jpg
+SHA1-Digest: cRZfjqTyk/WI/Wxz+Vdy+M/e2qo=
+
+Name: res/drawable/sheet_no_013.png
+SHA1-Digest: +NPtC7X+7DJ/2CkClzX06ifEVLE=
+
+Name: res/drawable/week_no_201.jpg
+SHA1-Digest: +86i5SLyJN3/XScau9H9+E5LFaM=
+
+Name: classes.dex
+SHA1-Digest: COMR5NtgiERGes7PEXFMNyxoHSc=
+
+Name: res/drawable/week_no_342_large.jpg
+SHA1-Digest: LCMcXtk09msmw+kynGvc0vmIq+0=
+
+Name: res/drawable/sheet_no_026.png
+SHA1-Digest: BsmHrN7/NTPCjUs1iAMVNo+cUtY=
+
+Name: res/drawable/week_no_321_large.jpg
+SHA1-Digest: o2ltfgGovSHJ6+BHvyVweHLK2do=
+
+Name: res/drawable/week_no_352.jpg
+SHA1-Digest: 1j/XndR+WF+BYPIyoXsL4dFAfVw=
+
+Name: res/drawable/icon.png
+SHA1-Digest: Asi/wU/SLR+nI621z9QUlqe1AwU=
+
+Name: res/drawable/week_no_232.jpg
+SHA1-Digest: 80FiD5Om15UzrCUgJsty37WV3Bs=
+
+Name: res/drawable/gradient_box_black.xml
+SHA1-Digest: zh84jUP4jADS9WWz8NN0Kl/MCtU=
+
+Name: res/drawable/week_no_221_large.jpg
+SHA1-Digest: dKXAZEyCWrRc9xsiYSs7sgV9608=
+
+Name: res/drawable/week_no_252_large.jpg
+SHA1-Digest: kFZEMp74Eu9cLBmCQw+LATEwkiw=
+
+Name: res/drawable/week_no_032_large.jpg
+SHA1-Digest: Zyx/3bU5kgj4RbXruPfMagGL2Rk=
+
+Name: res/drawable/week_no_181_large.jpg
+SHA1-Digest: 4lel+7cSKAeR5CTRXROZ/Ti59/8=
+
+Name: res/drawable/blue_sheet_no_000.png
+SHA1-Digest: 6uKd+UkKAqBKzRu5YTEwl33l4/E=
+
+Name: res/drawable/week_no_361.jpg
+SHA1-Digest: 4ZXX4NIDkRIfYjl68dtfiYNpzZ4=
+
+Name: res/drawable/sheet_no_030.png
+SHA1-Digest: hEZyh7bChBwEzxmMShbpRqPWF7k=
+
+Name: res/layout/notes_view.xml
+SHA1-Digest: KeTynHSoH9N/Cz5D0/vYAb7x/DY=
+
+Name: res/drawable/sheet_no_010.png
+SHA1-Digest: v5anSW5F/5wydF0iZXstiqD5UsQ=
+
+Name: res/layout/notes_list.xml
+SHA1-Digest: 77m7QWVB/VphNDeVU5RciLjqjic=
+
+Name: res/drawable/week_no_342.jpg
+SHA1-Digest: Sozc8jafjGrCsYzIkINk8T9H4LU=
+
+Name: res/drawable/week_no_062_large.jpg
+SHA1-Digest: y5Q2ZLEshbYz6naIRcUwbVv4Wis=
+
+Name: res/drawable/blue_sheet_no_040.png
+SHA1-Digest: pHXWidHfCO4CcOoM4WFn/08kGcM=
+
+Name: res/drawable/gradient_bg_blue.xml
+SHA1-Digest: VxbvZtPaK/bkUjhJrJIZQtCdAFs=
+
+Name: res/drawable/week_no_381.jpg
+SHA1-Digest: 1y22BN6mf/OtPXutKF2Xp7QD9nw=
+
+Name: res/drawable/sheet_no_005.png
+SHA1-Digest: VBrfF6F+l27PH5Xk7MFcnvCoZFI=
+
+Name: res/drawable/week_no_381_large.jpg
+SHA1-Digest: 8zD1/AgjXCdPkNVLEOxEkVSRdCo=
+
+Name: res/drawable/sheet_no_019.png
+SHA1-Digest: +4fvzTDdg1sMYOGsH36yJl8CX5c=
+
+Name: res/drawable/sheet_no_018.png
+SHA1-Digest: uDCFGDr+neMz+Be+H5on5s/OyJ4=
+
+Name: res/drawable/week_no_031.jpg
+SHA1-Digest: F+Zv3yLfb8hx9Rdhui0bGtjYvws=
+
+Name: res/drawable/week_no_371_large.jpg
+SHA1-Digest: ni+7nJ8GMi+ATI3zhF0fj0OWUfk=
+
+Name: res/drawable/week_no_282.jpg
+SHA1-Digest: pSAq7+3K5zlAe9KmoCIXWFw16T4=
+
+Name: res/drawable/week_no_401.jpg
+SHA1-Digest: fe4d/wLS8Cyov3fesoe8QJxQm5U=
+
+Name: res/drawable/week_no_082.jpg
+SHA1-Digest: pocjZUrRuFxwZnwWGMqlI+Mi1B8=
+
+Name: res/drawable/gradient_bg_pinklight.xml
+SHA1-Digest: lCDVzIXyLFD3JUoD1+Qljn7PobE=
+
+Name: res/drawable/week_no_241.jpg
+SHA1-Digest: A1Dn49XtHoGUdXpZJV7xn1iv3Qk=
+
+Name: res/drawable/ic_tab_gi.png
+SHA1-Digest: /7HSTqo0oGaKNECHIrokRUjhv7Q=
+
+Name: res/drawable/week_no_201_large.jpg
+SHA1-Digest: 9+djBkdM0Tj2GOW1QxfK9IlUmWE=
+
+Name: res/xml/blue_widget_pc.xml
+SHA1-Digest: usGmVsKbTlFoMGoWYk+bRzuj4ac=
+
+Name: res/drawable/week_no_102.jpg
+SHA1-Digest: OomGlS5Cg0hF30LRW7KKFKGpb1I=
+
+Name: res/drawable/week_no_281_large.jpg
+SHA1-Digest: j5fsPfEQuoemu8gp9SX6vRcHbO8=
+
+Name: res/drawable/sheet_no_027.png
+SHA1-Digest: o+mhRpfGsYbN+lK5YPiCu/QjSzU=
+
+Name: res/drawable/sheet_no_016.png
+SHA1-Digest: mvaSkntykrv9RWb+EejHAnP9ug4=
+
+Name: res/layout/main.xml
+SHA1-Digest: OOh0P6aAtO/vOaXEtJ811wcQGYg=
+
+Name: res/drawable/week_no_151.jpg
+SHA1-Digest: q/o42eXzeCKH9YNLYS5RSvML0gM=
+
+Name: res/drawable/blue_sheet_no_008.png
+SHA1-Digest: K/xf/yDnTuWaYSJesA35eXlNOhs=
+
+Name: res/drawable/week_no_171.jpg
+SHA1-Digest: /oRDw8OmXWVNVfDxzuAvpbuqZSI=
+
+Name: res/drawable/sheet_no_020.png
+SHA1-Digest: zbIMmz9Htw5PDJKcn/ZTzsubL4Y=
+
+Name: res/drawable/sheet_no_032.png
+SHA1-Digest: 2RlTZgLBNRw0SvcLH2pazCnq418=
+
+Name: res/drawable/gradient_bg.xml
+SHA1-Digest: l4K68wCFwunpOB+dMiHc9Wpfb2U=
+
+Name: res/drawable/week_no_231.jpg
+SHA1-Digest: RkTTuPVGxMPQ9eQdTpEP1c4yD/E=
+
+Name: res/layout/about.xml
+SHA1-Digest: NHrvDDqasTzyTLW0Icf7rNu4hos=
+
+Name: res/drawable/week_no_021_large.jpg
+SHA1-Digest: Ke0HOYvpOKVYRUZXZoxisFvRZIY=
+
+Name: res/drawable/week_no_081_large.jpg
+SHA1-Digest: PoqGVvVaEnZnpT2cBSi4Anw4LdA=
+
+Name: res/drawable/blue_sheet_no_030.png
+SHA1-Digest: Kd6AQXc1e9/+eSwIx1AnnDpRy2E=
+
+Name: res/drawable/week_no_212.jpg
+SHA1-Digest: 3fSfxLNWIAgU1WLZDwikKJNxUkc=
+
+Name: res/drawable/week_no_211.jpg
+SHA1-Digest: 3Wx5V1vD/mniWZOpJahROUHRnsg=
+
+Name: res/drawable/week_no_302_large.jpg
+SHA1-Digest: 9uUYwI7wnEe7IJ8xP4MEHXLJLD8=
+
+Name: res/drawable/week_no_241_large.jpg
+SHA1-Digest: Whw7h6lZ3O7NyQFFj5HLA0JdvPA=
+
+Name: res/drawable/week_no_401_large.jpg
+SHA1-Digest: AwalT1YGsCB/wFE2bAkG42JlCwU=
+
+Name: res/drawable/week_no_352_large.jpg
+SHA1-Digest: q5teCzAA3G3ouSsksJbq0XvMnUI=
+
+Name: res/drawable/week_no_042.jpg
+SHA1-Digest: 68RtLhrQkUM5uuYg2WaG+gKb8t8=
+
+Name: res/drawable/sheet_no_038.png
+SHA1-Digest: oFbKQamhXnKCVoNvoRyyOLG2E7I=
+
+Name: res/drawable/week_no_132_large.jpg
+SHA1-Digest: GOCUXHgiwMY75bAXqQkD3Tf5Ork=
+
+Name: res/drawable/week_no_162.jpg
+SHA1-Digest: WZsLwcLa4CuUtZjTv055cMuuNfQ=
+
+Name: res/drawable/blue_sheet_no_022.png
+SHA1-Digest: ZR6X+4VKvSaBGLt779AKnowuLPg=
+
+Name: res/layout/detailed.xml
+SHA1-Digest: iYocJrGAbn/QCDOFIIVjY5oX+8s=
+
+Name: res/drawable/week_no_011_large.jpg
+SHA1-Digest: 28vWJWwD708wT01cQ/zmqoGEy3c=
+
+Name: res/drawable/week_no_032.jpg
+SHA1-Digest: UzoHA/E/bPajFJi3o3tgiLqZ9nM=
+
+Name: res/drawable/sheet_no_006.png
+SHA1-Digest: 9EiDTIqNh0Ltx1mnwyVA2hZnwIo=
+
+Name: res/drawable/week_no_141.jpg
+SHA1-Digest: cZRJR6fPI5JtZpMlNPsOpSIOftY=
+
+Name: res/drawable/week_no_172_large.jpg
+SHA1-Digest: whse1P1iV9iQ7yMpZ0TiLFQu3uk=
+
+Name: res/drawable/blue_sheet_no_011.png
+SHA1-Digest: Z7BfPUSgw6f+3lt9iw/loItNAZo=
+
+Name: res/drawable/week_no_261_large.jpg
+SHA1-Digest: oREVpKwpx14Bj26aBYS8YaOJY74=
+
+Name: res/drawable/week_no_112.jpg
+SHA1-Digest: TKa1ZteqkkQbC2RSvZXs3ba4OqA=
+
+Name: res/drawable/sheet_no_022.png
+SHA1-Digest: uocb79JPKELzxxyKhzJdhik/DBU=
+
+Name: res/drawable/week_no_162_large.jpg
+SHA1-Digest: d8k4DnndkMxzMzkGAVnKZWTSalA=
+
+Name: res/drawable/blue_sheet_no_031.png
+SHA1-Digest: fgozrlpWqDcEn7DMCObl9X+d+AM=
+
+Name: res/drawable/week_no_372_large.jpg
+SHA1-Digest: tY3Sz/YuASB9Udhj8YgyMHjIBNg=
+
+Name: res/drawable/week_no_211_large.jpg
+SHA1-Digest: yELn2y4g78OEgbth4UiaasP3goo=
+
+Name: res/drawable/week_no_271_large.jpg
+SHA1-Digest: 6RxQJGXDekmO4aHBVI3e/qcsd8k=
+
+Name: res/drawable/sheet_no_024.png
+SHA1-Digest: szgdTL1HGF+I3gltPJx/S08U4Lg=
+
+Name: res/drawable/week_no_402_large.jpg
+SHA1-Digest: NdeXDVNWTqVmhLuhQkNlp/czOpA=
+
+Name: res/drawable/week_no_121.jpg
+SHA1-Digest: I693yxZ8eEQlmadZZcyhv6V9DfY=
+
+Name: res/drawable/sheet_no_035.png
+SHA1-Digest: 0IJd1kmSCt3ps0UlLUlgLRarNyo=
+

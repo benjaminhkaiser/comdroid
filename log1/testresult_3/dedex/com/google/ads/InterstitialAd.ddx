@@ -1,0 +1,135 @@
+.class public com/google/ads/InterstitialAd
+.super java/lang/Object
+.source SourceFile
+.implements com/google/ads/Ad
+
+.field private a Lcom/google/ads/internal/d;
+.field private b Lcom/google/ads/m;
+
+.method public <init>(Landroid/app/Activity;Ljava/lang/String;)V
+.limit registers 4
+; this: v1 (Lcom/google/ads/InterstitialAd;)
+; parameter[0] : v2 (Landroid/app/Activity;)
+; parameter[1] : v3 (Ljava/lang/String;)
+.line 86
+	const/4	v0,0
+; v0 : single-length
+	invoke-direct	{v1,v2,v3,v0},com/google/ads/InterstitialAd/<init>	; <init>(Landroid/app/Activity;Ljava/lang/String;Z)V
+; v1 : Lcom/google/ads/InterstitialAd; , v2 : Landroid/app/Activity; , v3 : Ljava/lang/String; , v0 : single-length
+.line 87
+	return-void	
+.end method
+
+.method public <init>(Landroid/app/Activity;Ljava/lang/String;Z)V
+.limit registers 6
+; this: v2 (Lcom/google/ads/InterstitialAd;)
+; parameter[0] : v3 (Landroid/app/Activity;)
+; parameter[1] : v4 (Ljava/lang/String;)
+; parameter[2] : v5 (Z)
+	const/4	v0,0
+; v0 : single-length
+.line 101
+	invoke-direct	{v2},java/lang/Object/<init>	; <init>()V
+; v2 : Lcom/google/ads/InterstitialAd;
+.line 102
+	invoke-static	{v2,v4,v3,v0,v0},com/google/ads/m/a	; a(Lcom/google/ads/Ad;Ljava/lang/String;Landroid/app/Activity;Landroid/view/ViewGroup;Lcom/google/ads/AdSize;)Lcom/google/ads/m;
+; v2 : Lcom/google/ads/InterstitialAd; , v4 : Ljava/lang/String; , v3 : Landroid/app/Activity; , v0 : single-length , v0 : single-length
+	move-result-object	v0
+; v0 : Lcom/google/ads/m;
+	iput-object	v0,v2,com/google/ads/InterstitialAd.b Lcom/google/ads/m;
+; v0 : Lcom/google/ads/m; , v2 : Lcom/google/ads/InterstitialAd;
+.line 103
+	new-instance	v0,com/google/ads/internal/d
+; v0 : Lcom/google/ads/internal/d;
+	iget-object	v1,v2,com/google/ads/InterstitialAd.b Lcom/google/ads/m;
+; v1 : Lcom/google/ads/m; , v2 : Lcom/google/ads/InterstitialAd;
+	invoke-direct	{v0,v1,v5},com/google/ads/internal/d/<init>	; <init>(Lcom/google/ads/m;Z)V
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/m; , v5 : single-length
+	iput-object	v0,v2,com/google/ads/InterstitialAd.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v2 : Lcom/google/ads/InterstitialAd;
+.line 105
+	return-void	
+.end method
+
+.method public isReady()Z
+.limit registers 2
+; this: v1 (Lcom/google/ads/InterstitialAd;)
+.line 114
+	iget-object	v0,v1,com/google/ads/InterstitialAd.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/InterstitialAd;
+	invoke-virtual	{v0},com/google/ads/internal/d/r	; r()Z
+; v0 : Lcom/google/ads/internal/d;
+	move-result	v0
+; v0 : single-length
+	return	v0
+; v0 : single-length
+.end method
+
+.method public loadAd(Lcom/google/ads/AdRequest;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/InterstitialAd;)
+; parameter[0] : v2 (Lcom/google/ads/AdRequest;)
+.line 126
+	iget-object	v0,v1,com/google/ads/InterstitialAd.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/InterstitialAd;
+	invoke-virtual	{v0,v2},com/google/ads/internal/d/a	; a(Lcom/google/ads/AdRequest;)V
+; v0 : Lcom/google/ads/internal/d; , v2 : Lcom/google/ads/AdRequest;
+.line 127
+	return-void	
+.end method
+
+.method public setAdListener(Lcom/google/ads/AdListener;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/InterstitialAd;)
+; parameter[0] : v2 (Lcom/google/ads/AdListener;)
+.line 148
+	iget-object	v0,v1,com/google/ads/InterstitialAd.b Lcom/google/ads/m;
+; v0 : Lcom/google/ads/m; , v1 : Lcom/google/ads/InterstitialAd;
+	iget-object	v0,v0,com/google/ads/m.k Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0,v2},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v2 : Lcom/google/ads/AdListener;
+.line 149
+	return-void	
+.end method
+
+.method protected setAppEventListener(Lcom/google/ads/AppEventListener;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/InterstitialAd;)
+; parameter[0] : v2 (Lcom/google/ads/AppEventListener;)
+.line 157
+	iget-object	v0,v1,com/google/ads/InterstitialAd.b Lcom/google/ads/m;
+; v0 : Lcom/google/ads/m; , v1 : Lcom/google/ads/InterstitialAd;
+	iget-object	v0,v0,com/google/ads/m.l Lcom/google/ads/util/i$c;
+; v0 : Lcom/google/ads/util/i$c; , v0 : Lcom/google/ads/util/i$c;
+	invoke-virtual	{v0,v2},com/google/ads/util/i$c/a	; a(Ljava/lang/Object;)V
+; v0 : Lcom/google/ads/util/i$c; , v2 : Lcom/google/ads/AppEventListener;
+.line 158
+	return-void	
+.end method
+
+.method public show()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/InterstitialAd;)
+.line 136
+	iget-object	v0,v1,com/google/ads/InterstitialAd.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/InterstitialAd;
+	invoke-virtual	{v0},com/google/ads/internal/d/z	; z()V
+; v0 : Lcom/google/ads/internal/d;
+.line 137
+	return-void	
+.end method
+
+.method public stopLoading()V
+.limit registers 2
+; this: v1 (Lcom/google/ads/InterstitialAd;)
+.line 167
+	iget-object	v0,v1,com/google/ads/InterstitialAd.a Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/InterstitialAd;
+	invoke-virtual	{v0},com/google/ads/internal/d/A	; A()V
+; v0 : Lcom/google/ads/internal/d;
+.line 168
+	return-void	
+.end method
+
+

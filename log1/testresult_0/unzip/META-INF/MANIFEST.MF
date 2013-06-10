@@ -1,0 +1,63 @@
+Manifest-Version: 1.0
+Created-By: 1.0 (Android)
+
+Name: assets/META-INF/AIR/application.xml
+SHA1-Digest: H+RLsywDub8f8Eu7ENF1Fsvyqps=
+
+Name: assets/icons/72x72.png
+SHA1-Digest: 5rlucvD+yNF/AWXKbQ46CMF4T8Q=
+
+Name: assets/icons/16x16.png
+SHA1-Digest: k5ItgQO5tW7LJeilQOOgzPFrqvo=
+
+Name: assets/icons/57x57.png
+SHA1-Digest: 2Pbyv6dSrTJ0aV/gQIPNM4F9ock=
+
+Name: resources.arsc
+SHA1-Digest: OcemjuXJW2YjcUaJjqXJzVAk844=
+
+Name: assets/icons/48x48.png
+SHA1-Digest: P1htuJ4ejqviAf0DiRCSPmqGBwo=
+
+Name: classes.dex
+SHA1-Digest: euKgzU8RLM26cxgJOgaX8YZxDAU=
+
+Name: res/raw/rgba8888
+SHA1-Digest: 2jmj7l5rSw0yVb/vlWAYkK/YBwk=
+
+Name: assets/icons/32x32.png
+SHA1-Digest: ekj66Sr6f+0nvm5VVeeX4d3sVt8=
+
+Name: res/raw/debuginfo
+SHA1-Digest: 7L/scY3nxFgbOcUfsZnlVxjtl6w=
+
+Name: res/drawable-ldpi/icon.png
+SHA1-Digest: kcDu1Cu2/7s+cg9DCdBu2qWrgbE=
+
+Name: AndroidManifest.xml
+SHA1-Digest: YwW9DyEsBEmerE8U/BgChzpAzwQ=
+
+Name: assets/Board.swf
+SHA1-Digest: 4X4W/QWj+Q4Sr78RnkC21L798/o=
+
+Name: lib/armeabi-v7a/libNativeABI.so
+SHA1-Digest: 0AJBzFQr/W3tEOPuSpDhMgNqd8U=
+
+Name: res/drawable-mdpi/icon.png
+SHA1-Digest: kcDu1Cu2/7s+cg9DCdBu2qWrgbE=
+
+Name: assets/London2012MedalBoard.swf
+SHA1-Digest: uUm4z/H0b0P111X20tPY+lQWjSk=
+
+Name: assets/icons/36x36.png
+SHA1-Digest: TGxtQPErAXXrVhn2jf/Nq+Tucjk=
+
+Name: res/drawable/mp_warning_32x32_n.png
+SHA1-Digest: eCFwTk+zmvIeM+w4WQEnsknkfNI=
+
+Name: assets/Board.fla
+SHA1-Digest: 4HdFdBwmzAfGgnNkff2vyoZkZ7g=
+
+Name: res/drawable-hdpi/icon.png
+SHA1-Digest: kcDu1Cu2/7s+cg9DCdBu2qWrgbE=
+

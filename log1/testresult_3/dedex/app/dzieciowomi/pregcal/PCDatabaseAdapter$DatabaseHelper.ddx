@@ -1,0 +1,92 @@
+.class app/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper
+.super android/database/sqlite/SQLiteOpenHelper
+.source PCDatabaseAdapter.java
+
+.inner class DatabaseHelper inner app/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper outer app/dzieciowomi/pregcal/PCDatabaseAdapter
+
+.method <init>(Landroid/content/Context;)V
+.limit registers 5
+; this: v3 (Lapp/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper;)
+; parameter[0] : v4 (Landroid/content/Context;)
+.line 38
+	const-string	v0,"profile.db"
+; v0 : Ljava/lang/String;
+	const/4	v1,0
+; v1 : single-length
+	const/4	v2,2
+; v2 : single-length
+	invoke-direct	{v3,v4,v0,v1,v2},android/database/sqlite/SQLiteOpenHelper/<init>	; <init>(Landroid/content/Context;Ljava/lang/String;Landroid/database/sqlite/SQLiteDatabase$CursorFactory;I)V
+; v3 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper; , v4 : Landroid/content/Context; , v0 : Ljava/lang/String; , v1 : single-length , v2 : single-length
+.line 39
+	return-void	
+.end method
+
+.method public onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+.limit registers 3
+; this: v1 (Lapp/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper;)
+; parameter[0] : v2 (Landroid/database/sqlite/SQLiteDatabase;)
+.line 44
+	const-string	v0,"create table profiles (_id integer primary key autoincrement, initdate integer not null, unit integer not null);"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v2,v0},android/database/sqlite/SQLiteDatabase/execSQL	; execSQL(Ljava/lang/String;)V
+; v2 : Landroid/database/sqlite/SQLiteDatabase; , v0 : Ljava/lang/String;
+.line 45
+	return-void	
+.end method
+
+.method public onUpgrade(Landroid/database/sqlite/SQLiteDatabase;II)V
+.limit registers 7
+; this: v3 (Lapp/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper;)
+; parameter[0] : v4 (Landroid/database/sqlite/SQLiteDatabase;)
+; parameter[1] : v5 (I)
+; parameter[2] : v6 (I)
+.line 49
+	const-string	v0,"ProfileDbAdapter"
+; v0 : Ljava/lang/String;
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Upgrading database from version "
+; v2 : Ljava/lang/String;
+	invoke-direct	{v1,v2},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v5},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v5 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2," to "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+.line 50
+	invoke-virtual	{v1,v6},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v6 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,", which will destroy all old data"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 49
+	invoke-static	{v0,v1},android/util/Log/w	; w(Ljava/lang/String;Ljava/lang/String;)I
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+.line 51
+	const-string	v0,"DROP TABLE IF EXISTS profiles"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},android/database/sqlite/SQLiteDatabase/execSQL	; execSQL(Ljava/lang/String;)V
+; v4 : Landroid/database/sqlite/SQLiteDatabase; , v0 : Ljava/lang/String;
+.line 52
+	invoke-virtual	{v3,v4},app/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper/onCreate	; onCreate(Landroid/database/sqlite/SQLiteDatabase;)V
+; v3 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper; , v4 : Landroid/database/sqlite/SQLiteDatabase;
+.line 53
+	return-void	
+.end method
+
+

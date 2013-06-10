@@ -1,0 +1,41 @@
+.class app/dzieciowomi/pregcal/PCWidgetBlueConfigure$1
+.super java/lang/Object
+.source PCWidgetBlueConfigure.java
+.implements android/preference/Preference$OnPreferenceClickListener
+
+.enclosing method app/createPreferenceHierarchy()Landroid/preference/PreferenceScreen;
+.field final this$0 Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;
+
+.method <init>(Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;)V
+.limit registers 2
+; this: v0 (Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure$1;)
+; parameter[0] : v1 (Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;)
+.line 1
+	iput-object	v1,v0,app/dzieciowomi/pregcal/PCWidgetBlueConfigure$1.this$0 Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;
+; v1 : Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure; , v0 : Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure$1;
+.line 101
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure$1;
+	return-void	
+.end method
+
+.method public onPreferenceClick(Landroid/preference/Preference;)Z
+.limit registers 4
+; this: v2 (Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure$1;)
+; parameter[0] : v3 (Landroid/preference/Preference;)
+.line 105
+	iget-object	v0,v2,app/dzieciowomi/pregcal/PCWidgetBlueConfigure$1.this$0 Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;
+; v0 : Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure; , v2 : Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure$1;
+	check-cast	v3,android/preference/CheckBoxPreference
+; v3 : Landroid/preference/CheckBoxPreference;
+	invoke-virtual	{v3},android/preference/CheckBoxPreference/isChecked	; isChecked()Z
+; v3 : Landroid/preference/CheckBoxPreference;
+	move-result	v1
+; v1 : single-length
+	invoke-static	{v0,v1},app/dzieciowomi/pregcal/PCWidgetBlueConfigure/access$0	; access$0(Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;Z)V
+; v0 : Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure; , v1 : single-length
+	return	v1
+; v1 : single-length
+.end method
+
+

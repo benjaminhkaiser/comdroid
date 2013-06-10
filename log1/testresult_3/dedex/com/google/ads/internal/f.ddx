@@ -1,0 +1,1268 @@
+.class public final com/google/ads/internal/f
+.super java/lang/Object
+.source SourceFile
+.implements java/lang/Runnable
+
+.inner class a inner com/google/ads/internal/f$a outer com/google/ads/internal/f
+.field private final a Lcom/google/ads/internal/c;
+.field private final b Lcom/google/ads/internal/d;
+.field private final c Lcom/google/ads/internal/f$a;
+.field private volatile d Z
+.field private e Z
+.field private f Ljava/lang/String;
+.field private g Ljava/lang/Thread;
+
+.method <init>(Lcom/google/ads/internal/c;Lcom/google/ads/internal/d;)V
+.limit registers 4
+; this: v1 (Lcom/google/ads/internal/f;)
+; parameter[0] : v2 (Lcom/google/ads/internal/c;)
+; parameter[1] : v3 (Lcom/google/ads/internal/d;)
+.line 126
+	new-instance	v0,com/google/ads/internal/f$1
+; v0 : Lcom/google/ads/internal/f$1;
+	invoke-direct	{v0},com/google/ads/internal/f$1/<init>	; <init>()V
+; v0 : Lcom/google/ads/internal/f$1;
+	invoke-direct	{v1,v2,v3,v0},com/google/ads/internal/f/<init>	; <init>(Lcom/google/ads/internal/c;Lcom/google/ads/internal/d;Lcom/google/ads/internal/f$a;)V
+; v1 : Lcom/google/ads/internal/f; , v2 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/internal/d; , v0 : Lcom/google/ads/internal/f$1;
+.line 132
+	return-void	
+.end method
+
+.method <init>(Lcom/google/ads/internal/c;Lcom/google/ads/internal/d;Lcom/google/ads/internal/f$a;)V
+.limit registers 5
+; this: v1 (Lcom/google/ads/internal/f;)
+; parameter[0] : v2 (Lcom/google/ads/internal/c;)
+; parameter[1] : v3 (Lcom/google/ads/internal/d;)
+; parameter[2] : v4 (Lcom/google/ads/internal/f$a;)
+.line 145
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/google/ads/internal/f;
+.line 117
+	const/4	v0,0
+; v0 : single-length
+	iput-object	v0,v1,com/google/ads/internal/f.g Ljava/lang/Thread;
+; v0 : single-length , v1 : Lcom/google/ads/internal/f;
+.line 146
+	iput-object	v2,v1,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v2 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/internal/f;
+.line 147
+	iput-object	v3,v1,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v3 : Lcom/google/ads/internal/d; , v1 : Lcom/google/ads/internal/f;
+.line 148
+	iput-object	v4,v1,com/google/ads/internal/f.c Lcom/google/ads/internal/f$a;
+; v4 : Lcom/google/ads/internal/f$a; , v1 : Lcom/google/ads/internal/f;
+.line 149
+	return-void	
+.end method
+
+.method private a(Landroid/content/Context;Ljava/net/HttpURLConnection;)V
+.throws Ljava/io/IOException;
+.limit registers 6
+; this: v3 (Lcom/google/ads/internal/f;)
+; parameter[0] : v4 (Landroid/content/Context;)
+; parameter[1] : v5 (Ljava/net/HttpURLConnection;)
+.line 474
+	invoke-static	{v4},android/preference/PreferenceManager/getDefaultSharedPreferences	; getDefaultSharedPreferences(Landroid/content/Context;)Landroid/content/SharedPreferences;
+; v4 : Landroid/content/Context;
+	move-result-object	v0
+; v0 : Landroid/content/SharedPreferences;
+.line 475
+	const-string	v1,"drt"
+; v1 : Ljava/lang/String;
+	const-string	v2,""
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v1,v2},android/content/SharedPreferences/getString	; getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+; v0 : Landroid/content/SharedPreferences; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 476
+	iget-boolean	v1,v3,com/google/ads/internal/f.e Z
+; v1 : single-length , v3 : Lcom/google/ads/internal/f;
+	if-eqz	v1,l2b2be
+; v1 : single-length
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b2be
+; v1 : single-length
+.line 477
+	sget	v1,com/google/ads/util/AdUtil.a I
+; v1 : single-length
+	const/16	v2,8
+; v2 : single-length
+	if-ne	v1,v2,l2b2c0
+; v1 : single-length , v2 : single-length
+.line 481
+	const-string	v1,"X-Afma-drt-Cookie"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v5,v1,v0},java/net/HttpURLConnection/addRequestProperty	; addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+; v5 : Ljava/net/HttpURLConnection; , v1 : Ljava/lang/String; , v0 : Ljava/lang/String;
+l2b2be:
+.line 486
+	return-void	
+l2b2c0:
+.line 483
+	const-string	v1,"Cookie"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v5,v1,v0},java/net/HttpURLConnection/addRequestProperty	; addRequestProperty(Ljava/lang/String;Ljava/lang/String;)V
+; v5 : Ljava/net/HttpURLConnection; , v1 : Ljava/lang/String; , v0 : Ljava/lang/String;
+	goto	l2b2be
+.end method
+
+.method private a(Ljava/net/HttpURLConnection;)V
+.throws Ljava/io/IOException;
+.limit registers 2
+; this: v0 (Lcom/google/ads/internal/f;)
+; parameter[0] : v1 (Ljava/net/HttpURLConnection;)
+.line 165
+	invoke-direct	{v0,v1},com/google/ads/internal/f/b	; b(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 166
+	invoke-direct	{v0,v1},com/google/ads/internal/f/f	; f(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 167
+	invoke-direct	{v0,v1},com/google/ads/internal/f/g	; g(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 168
+	invoke-direct	{v0,v1},com/google/ads/internal/f/h	; h(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 169
+	invoke-direct	{v0,v1},com/google/ads/internal/f/e	; e(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 170
+	invoke-direct	{v0,v1},com/google/ads/internal/f/i	; i(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 171
+	invoke-direct	{v0,v1},com/google/ads/internal/f/j	; j(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 172
+	invoke-direct	{v0,v1},com/google/ads/internal/f/k	; k(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 173
+	invoke-direct	{v0,v1},com/google/ads/internal/f/d	; d(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 174
+	invoke-direct	{v0,v1},com/google/ads/internal/f/c	; c(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 175
+	invoke-direct	{v0,v1},com/google/ads/internal/f/l	; l(Ljava/net/HttpURLConnection;)V
+; v0 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection;
+.line 176
+	return-void	
+.end method
+
+.method private a(Ljava/net/HttpURLConnection;I)V
+.throws Ljava/io/IOException;
+.limit registers 6
+; this: v3 (Lcom/google/ads/internal/f;)
+; parameter[0] : v4 (Ljava/net/HttpURLConnection;)
+; parameter[1] : v5 (I)
+	const/16	v1,400
+; v1 : single-length
+.line 383
+	const/16	v0,300
+; v0 : single-length
+	if-gt	v0,v5,l2b3aa
+; v0 : single-length , v5 : single-length
+	if-ge	v5,v1,l2b3aa
+; v5 : single-length , v1 : single-length
+.line 385
+	const-string	v0,"Location"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v4 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 386
+	if-nez	v0,l2b39e
+; v0 : Ljava/lang/String;
+.line 387
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Could not get redirect location from a "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v5},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v5 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1," redirect."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 388
+	iget-object	v0,v3,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/internal/f;
+	sget-object	v1,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 389
+	invoke-virtual	{v3},com/google/ads/internal/f/a	; a()V
+; v3 : Lcom/google/ads/internal/f;
+l2b39c:
+.line 424
+	return-void	
+l2b39e:
+.line 393
+	invoke-direct	{v3,v4},com/google/ads/internal/f/a	; a(Ljava/net/HttpURLConnection;)V
+; v3 : Lcom/google/ads/internal/f; , v4 : Ljava/net/HttpURLConnection;
+.line 396
+	iput-object	v0,v3,com/google/ads/internal/f.f Ljava/lang/String;
+; v0 : Ljava/lang/String; , v3 : Lcom/google/ads/internal/f;
+	goto	l2b39c
+l2b3aa:
+.line 397
+	const/16	v0,200
+; v0 : single-length
+	if-ne	v5,v0,l2b46a
+; v5 : single-length , v0 : single-length
+.line 399
+	invoke-direct	{v3,v4},com/google/ads/internal/f/a	; a(Ljava/net/HttpURLConnection;)V
+; v3 : Lcom/google/ads/internal/f; , v4 : Ljava/net/HttpURLConnection;
+.line 400
+	new-instance	v0,java/io/InputStreamReader
+; v0 : Ljava/io/InputStreamReader;
+	invoke-virtual	{v4},java/net/HttpURLConnection/getInputStream	; getInputStream()Ljava/io/InputStream;
+; v4 : Ljava/net/HttpURLConnection;
+	move-result-object	v1
+; v1 : Ljava/io/InputStream;
+	invoke-direct	{v0,v1},java/io/InputStreamReader/<init>	; <init>(Ljava/io/InputStream;)V
+; v0 : Ljava/io/InputStreamReader; , v1 : Ljava/io/InputStream;
+	invoke-static	{v0},com/google/ads/util/AdUtil/a	; a(Ljava/lang/Readable;)Ljava/lang/String;
+; v0 : Ljava/io/InputStreamReader;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v0},java/lang/String/trim	; trim()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 404
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Response content is: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+.line 405
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l2b454
+; v1 : single-length
+.line 406
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Response message is null or zero length: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 407
+	iget-object	v0,v3,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/internal/f;
+	sget-object	v1,com/google/ads/AdRequest$ErrorCode.NO_FILL Lcom/google/ads/AdRequest$ErrorCode;
+; v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 408
+	invoke-virtual	{v3},com/google/ads/internal/f/a	; a()V
+; v3 : Lcom/google/ads/internal/f;
+	goto	l2b39c
+l2b454:
+.line 413
+	iget-object	v1,v3,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v1 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/internal/f;
+	iget-object	v2,v3,com/google/ads/internal/f.f Ljava/lang/String;
+; v2 : Ljava/lang/String; , v3 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v1,v0,v2},com/google/ads/internal/c/a	; a(Ljava/lang/String;Ljava/lang/String;)V
+; v1 : Lcom/google/ads/internal/c; , v0 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 414
+	invoke-virtual	{v3},com/google/ads/internal/f/a	; a()V
+; v3 : Lcom/google/ads/internal/f;
+	goto	l2b39c
+l2b46a:
+.line 415
+	if-ne	v5,v1,l2b48e
+; v5 : single-length , v1 : single-length
+.line 416
+	const-string	v0,"Bad request"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 417
+	iget-object	v0,v3,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/internal/f;
+	sget-object	v1,com/google/ads/AdRequest$ErrorCode.INVALID_REQUEST Lcom/google/ads/AdRequest$ErrorCode;
+; v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 418
+	invoke-virtual	{v3},com/google/ads/internal/f/a	; a()V
+; v3 : Lcom/google/ads/internal/f;
+	goto	l2b39c
+l2b48e:
+.line 420
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Invalid response code: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0,v5},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v5 : single-length
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/c	; c(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+.line 421
+	iget-object	v0,v3,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/internal/f;
+	sget-object	v1,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/AdRequest$ErrorCode;
+.line 422
+	invoke-virtual	{v3},com/google/ads/internal/f/a	; a()V
+; v3 : Lcom/google/ads/internal/f;
+	goto/16	l2b39c
+.end method
+
+.method private b()V
+.throws Ljava/net/MalformedURLException;
+.throws Ljava/io/IOException;
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/f;)
+.catch java/lang/Exception from l2b506 to l2b566 using l2b56e
+l2b4e4:
+.line 451
+	iget-boolean	v0,v2,com/google/ads/internal/f.d Z
+; v0 : single-length , v2 : Lcom/google/ads/internal/f;
+	if-nez	v0,l2b578
+; v0 : single-length
+.line 452
+	new-instance	v0,java/net/URL
+; v0 : Ljava/net/URL;
+	iget-object	v1,v2,com/google/ads/internal/f.f Ljava/lang/String;
+; v1 : Ljava/lang/String; , v2 : Lcom/google/ads/internal/f;
+	invoke-direct	{v0,v1},java/net/URL/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Ljava/net/URL; , v1 : Ljava/lang/String;
+.line 453
+	iget-object	v1,v2,com/google/ads/internal/f.c Lcom/google/ads/internal/f$a;
+; v1 : Lcom/google/ads/internal/f$a; , v2 : Lcom/google/ads/internal/f;
+	invoke-interface	{v1,v0},com/google/ads/internal/f$a/a	; a(Ljava/net/URL;)Ljava/net/HttpURLConnection;
+; v1 : Lcom/google/ads/internal/f$a; , v0 : Ljava/net/URL;
+	move-result-object	v1
+; v1 : Ljava/net/HttpURLConnection;
+l2b506:
+.line 456
+	iget-object	v0,v2,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v2 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v0},com/google/ads/internal/d/h	; h()Lcom/google/ads/m;
+; v0 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.d Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+	invoke-direct	{v2,v0,v1},com/google/ads/internal/f/a	; a(Landroid/content/Context;Ljava/net/HttpURLConnection;)V
+; v2 : Lcom/google/ads/internal/f; , v0 : Landroid/content/Context; , v1 : Ljava/net/HttpURLConnection;
+.line 457
+	iget-object	v0,v2,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v2 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v0},com/google/ads/internal/d/h	; h()Lcom/google/ads/m;
+; v0 : Lcom/google/ads/internal/d;
+	move-result-object	v0
+; v0 : Lcom/google/ads/m;
+	iget-object	v0,v0,com/google/ads/m.d Lcom/google/ads/util/i$b;
+; v0 : Lcom/google/ads/util/i$b; , v0 : Lcom/google/ads/util/i$b;
+	invoke-virtual	{v0},com/google/ads/util/i$b/a	; a()Ljava/lang/Object;
+; v0 : Lcom/google/ads/util/i$b;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/content/Context
+; v0 : Landroid/content/Context;
+	invoke-static	{v1,v0},com/google/ads/util/AdUtil/a	; a(Ljava/net/HttpURLConnection;Landroid/content/Context;)V
+; v1 : Ljava/net/HttpURLConnection; , v0 : Landroid/content/Context;
+.line 458
+	const/4	v0,0
+; v0 : single-length
+	invoke-virtual	{v1,v0},java/net/HttpURLConnection/setInstanceFollowRedirects	; setInstanceFollowRedirects(Z)V
+; v1 : Ljava/net/HttpURLConnection; , v0 : single-length
+.line 459
+	invoke-virtual	{v1},java/net/HttpURLConnection/connect	; connect()V
+; v1 : Ljava/net/HttpURLConnection;
+.line 460
+	invoke-virtual	{v1},java/net/HttpURLConnection/getResponseCode	; getResponseCode()I
+; v1 : Ljava/net/HttpURLConnection;
+	move-result	v0
+; v0 : single-length
+.line 461
+	invoke-direct	{v2,v1,v0},com/google/ads/internal/f/a	; a(Ljava/net/HttpURLConnection;I)V
+; v2 : Lcom/google/ads/internal/f; , v1 : Ljava/net/HttpURLConnection; , v0 : single-length
+l2b566:
+.line 463
+	invoke-virtual	{v1},java/net/HttpURLConnection/disconnect	; disconnect()V
+; v1 : Ljava/net/HttpURLConnection;
+	goto	l2b4e4
+l2b56e:
+	move-exception	v0
+; v0 : java/lang/Exception
+	invoke-virtual	{v1},java/net/HttpURLConnection/disconnect	; disconnect()V
+; v1 : Ljava/net/HttpURLConnection;
+	throw	v0
+; v0 : java/lang/Exception
+l2b578:
+.line 466
+	return-void	
+.end method
+
+.method private b(Ljava/net/HttpURLConnection;)V
+.throws Ljava/net/MalformedURLException;
+.throws Ljava/io/IOException;
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/f;)
+; parameter[0] : v3 (Ljava/net/HttpURLConnection;)
+.line 182
+	const-string	v0,"X-Afma-Debug-Dialog"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 183
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b5ba
+; v1 : single-length
+.line 184
+	iget-object	v1,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v1 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v1,v0},com/google/ads/internal/c/e	; e(Ljava/lang/String;)V
+; v1 : Lcom/google/ads/internal/c; , v0 : Ljava/lang/String;
+l2b5ba:
+.line 186
+	return-void	
+.end method
+
+.method private c(Ljava/net/HttpURLConnection;)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/f;)
+; parameter[0] : v3 (Ljava/net/HttpURLConnection;)
+.line 193
+	const-string	v0,"Content-Type"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 194
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b5ee
+; v1 : single-length
+.line 195
+	iget-object	v1,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v1 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v1,v0},com/google/ads/internal/c/b	; b(Ljava/lang/String;)V
+; v1 : Lcom/google/ads/internal/c; , v0 : Ljava/lang/String;
+l2b5ee:
+.line 197
+	return-void	
+.end method
+
+.method private d(Ljava/net/HttpURLConnection;)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/f;)
+; parameter[0] : v3 (Ljava/net/HttpURLConnection;)
+.line 205
+	const-string	v0,"X-Afma-Mediation"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 206
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b632
+; v1 : single-length
+.line 207
+	iget-object	v1,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v1 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	invoke-static	{v0},java/lang/Boolean/valueOf	; valueOf(Ljava/lang/String;)Ljava/lang/Boolean;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Boolean;
+	invoke-virtual	{v0},java/lang/Boolean/booleanValue	; booleanValue()Z
+; v0 : Ljava/lang/Boolean;
+	move-result	v0
+; v0 : single-length
+	invoke-virtual	{v1,v0},com/google/ads/internal/c/a	; a(Z)V
+; v1 : Lcom/google/ads/internal/c; , v0 : single-length
+l2b632:
+.line 209
+	return-void	
+.end method
+
+.method private e(Ljava/net/HttpURLConnection;)V
+.limit registers 7
+; this: v5 (Lcom/google/ads/internal/f;)
+; parameter[0] : v6 (Ljava/net/HttpURLConnection;)
+.catch java/lang/NumberFormatException from l2b65c to l2b676 using l2b678
+.line 215
+	const-string	v0,"X-Afma-Interstitial-Timeout"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v6,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v6 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+.line 216
+	invoke-static	{v1},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l2b676
+; v0 : single-length
+l2b65c:
+.line 218
+	invoke-static	{v1},java/lang/Float/parseFloat	; parseFloat(Ljava/lang/String;)F
+; v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+.line 219
+	iget-object	v2,v5,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v2 : Lcom/google/ads/internal/d; , v5 : Lcom/google/ads/internal/f;
+	const/high16	v3,17530
+; v3 : single-length
+	mul-float/2addr	v0,v3
+; v0 : single-length , v3 : single-length
+	float-to-long	v3,v0
+; v3 : double-length , v0 : single-length
+	invoke-virtual	{v2,v3,v4},com/google/ads/internal/d/a	; a(J)V
+; v2 : Lcom/google/ads/internal/d; , v3 : double-length
+l2b676:
+.line 225
+	return-void	
+l2b678:
+.line 221
+	move-exception	v0
+; v0 : java/lang/NumberFormatException
+.line 222
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Could not get timeout value: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/d	; d(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/NumberFormatException
+	goto	l2b676
+.end method
+
+.method private f(Ljava/net/HttpURLConnection;)V
+.limit registers 7
+; this: v5 (Lcom/google/ads/internal/f;)
+; parameter[0] : v6 (Ljava/net/HttpURLConnection;)
+.line 232
+	const-string	v0,"X-Afma-Tracking-Urls"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v6,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v6 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 233
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b710
+; v1 : single-length
+.line 234
+	invoke-virtual	{v0},java/lang/String/trim	; trim()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"\s+"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/split	; split(Ljava/lang/String;)[Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : [Ljava/lang/String;
+.line 235
+	array-length	v2,v1
+; v2 : single-length , v1 : [Ljava/lang/String;
+	const/4	v0,0
+; v0 : single-length
+l2b6f8:
+	if-ge	v0,v2,l2b710
+; v0 : single-length , v2 : single-length
+	aget-object	v3,v1,v0
+; v3 : Ljava/lang/String; , v1 : [Ljava/lang/String; , v0 : single-length
+.line 236
+	iget-object	v4,v5,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v4 : Lcom/google/ads/internal/d; , v5 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v4,v3},com/google/ads/internal/d/b	; b(Ljava/lang/String;)V
+; v4 : Lcom/google/ads/internal/d; , v3 : Ljava/lang/String;
+.line 235
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l2b6f8
+l2b710:
+.line 239
+	return-void	
+.end method
+
+.method private g(Ljava/net/HttpURLConnection;)V
+.limit registers 7
+; this: v5 (Lcom/google/ads/internal/f;)
+; parameter[0] : v6 (Ljava/net/HttpURLConnection;)
+.line 245
+	const-string	v0,"X-Afma-Click-Tracking-Urls"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v6,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v6 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 246
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b76c
+; v1 : single-length
+.line 247
+	invoke-virtual	{v0},java/lang/String/trim	; trim()Ljava/lang/String;
+; v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	const-string	v1,"\s+"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/split	; split(Ljava/lang/String;)[Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : [Ljava/lang/String;
+.line 248
+	array-length	v2,v1
+; v2 : single-length , v1 : [Ljava/lang/String;
+	const/4	v0,0
+; v0 : single-length
+l2b754:
+	if-ge	v0,v2,l2b76c
+; v0 : single-length , v2 : single-length
+	aget-object	v3,v1,v0
+; v3 : Ljava/lang/String; , v1 : [Ljava/lang/String; , v0 : single-length
+.line 249
+	iget-object	v4,v5,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v4 : Lcom/google/ads/internal/c; , v5 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v4,v3},com/google/ads/internal/c/a	; a(Ljava/lang/String;)V
+; v4 : Lcom/google/ads/internal/c; , v3 : Ljava/lang/String;
+.line 248
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l2b754
+l2b76c:
+.line 252
+	return-void	
+.end method
+
+.method private h(Ljava/net/HttpURLConnection;)V
+.limit registers 6
+; this: v4 (Lcom/google/ads/internal/f;)
+; parameter[0] : v5 (Ljava/net/HttpURLConnection;)
+.catch java/lang/NumberFormatException from l2b798 to l2b79e using l2b7d0
+.line 260
+	const-string	v0,"X-Afma-Refresh-Rate"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v5,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v5 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 261
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b7ce
+; v1 : single-length
+l2b798:
+.line 264
+	invoke-static	{v0},java/lang/Float/parseFloat	; parseFloat(Ljava/lang/String;)F
+; v0 : Ljava/lang/String;
+l2b79e:
+	move-result	v0
+; v0 : single-length
+.line 269
+	const/4	v1,0
+; v1 : single-length
+	cmpl-float	v1,v0,v1
+; v1 : single-length , v0 : single-length , v1 : single-length
+	if-lez	v1,l2b800
+; v1 : single-length
+.line 271
+	iget-object	v1,v4,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v1 : Lcom/google/ads/internal/d; , v4 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v1,v0},com/google/ads/internal/d/a	; a(F)V
+; v1 : Lcom/google/ads/internal/d; , v0 : single-length
+.line 272
+	iget-object	v0,v4,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v4 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v0},com/google/ads/internal/d/s	; s()Z
+; v0 : Lcom/google/ads/internal/d;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l2b7ce
+; v0 : single-length
+.line 273
+	iget-object	v0,v4,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v4 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v0},com/google/ads/internal/d/f	; f()V
+; v0 : Lcom/google/ads/internal/d;
+l2b7ce:
+.line 279
+	return-void	
+l2b7d0:
+.line 265
+	move-exception	v1
+; v1 : java/lang/NumberFormatException
+.line 266
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	invoke-direct	{v2},java/lang/StringBuilder/<init>	; <init>()V
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"Could not get refresh value: "
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0,v1},com/google/ads/util/b/d	; d(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v0 : Ljava/lang/String; , v1 : java/lang/NumberFormatException
+	goto	l2b7ce
+l2b800:
+.line 275
+	iget-object	v0,v4,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v4 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v0},com/google/ads/internal/d/s	; s()Z
+; v0 : Lcom/google/ads/internal/d;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l2b7ce
+; v0 : single-length
+.line 276
+	iget-object	v0,v4,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v0 : Lcom/google/ads/internal/d; , v4 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v0},com/google/ads/internal/d/e	; e()V
+; v0 : Lcom/google/ads/internal/d;
+	goto	l2b7ce
+.end method
+
+.method private i(Ljava/net/HttpURLConnection;)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/f;)
+; parameter[0] : v3 (Ljava/net/HttpURLConnection;)
+.line 286
+	const-string	v0,"X-Afma-Orientation"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 287
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b876
+; v1 : single-length
+.line 288
+	const-string	v1,"portrait"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l2b878
+; v1 : single-length
+.line 289
+	iget-object	v0,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	invoke-static	{},com/google/ads/util/AdUtil/b	; b()I
+; 
+	nop	
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(I)V
+; v0 : Lcom/google/ads/internal/c; , v1 : single-length
+l2b876:
+.line 294
+	return-void	
+l2b878:
+.line 290
+	const-string	v1,"landscape"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/String/equals	; equals(Ljava/lang/Object;)Z
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-eqz	v0,l2b876
+; v0 : single-length
+.line 291
+	iget-object	v0,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	invoke-static	{},com/google/ads/util/AdUtil/a	; a()I
+; 
+	nop	
+	move-result	v1
+; v1 : single-length
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(I)V
+; v0 : Lcom/google/ads/internal/c; , v1 : single-length
+	goto	l2b876
+.end method
+
+.method private j(Ljava/net/HttpURLConnection;)V
+.limit registers 5
+; this: v3 (Lcom/google/ads/internal/f;)
+; parameter[0] : v4 (Ljava/net/HttpURLConnection;)
+.catch java/lang/NumberFormatException from l2b8c4 to l2b8e2 using l2b8e4
+.line 301
+	const-string	v0,"X-Afma-Doritos-Cache-Life"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v4 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+	if-nez	v0,l2b8e2
+; v0 : single-length
+l2b8c4:
+.line 303
+	const-string	v0,"X-Afma-Doritos-Cache-Life"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v4 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},java/lang/Long/parseLong	; parseLong(Ljava/lang/String;)J
+; v0 : Ljava/lang/String;
+	move-result-wide	v0
+; v0 : double-length
+.line 305
+	iget-object	v2,v3,com/google/ads/internal/f.b Lcom/google/ads/internal/d;
+; v2 : Lcom/google/ads/internal/d; , v3 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v2,v0,v1},com/google/ads/internal/d/b	; b(J)V
+; v2 : Lcom/google/ads/internal/d; , v0 : double-length
+l2b8e2:
+.line 312
+	return-void	
+l2b8e4:
+.line 306
+	move-exception	v0
+; v0 : java/lang/NumberFormatException
+.line 307
+	new-instance	v0,java/lang/StringBuilder
+; v0 : Ljava/lang/StringBuilder;
+	invoke-direct	{v0},java/lang/StringBuilder/<init>	; <init>()V
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"Got bad value of Doritos cookie cache life from header: "
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,"X-Afma-Doritos-Cache-Life"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v4,v1},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v4 : Ljava/net/HttpURLConnection; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	const-string	v1,". Using default value instead."
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v0 : Ljava/lang/StringBuilder; , v1 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	l2b8e2
+.end method
+
+.method private k(Ljava/net/HttpURLConnection;)V
+.limit registers 4
+; this: v2 (Lcom/google/ads/internal/f;)
+; parameter[0] : v3 (Ljava/net/HttpURLConnection;)
+.line 329
+	const-string	v0,"Cache-Control"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v3,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v3 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 330
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b96e
+; v1 : single-length
+.line 333
+	iget-object	v1,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v1 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v1,v0},com/google/ads/internal/c/c	; c(Ljava/lang/String;)V
+; v1 : Lcom/google/ads/internal/c; , v0 : Ljava/lang/String;
+l2b96e:
+.line 335
+	return-void	
+.end method
+
+.method private l(Ljava/net/HttpURLConnection;)V
+.limit registers 6
+; this: v4 (Lcom/google/ads/internal/f;)
+; parameter[0] : v5 (Ljava/net/HttpURLConnection;)
+.catch java/lang/NumberFormatException from l2b99a to l2b9f6 using l2ba0e
+	const/4	v3,2
+; v3 : single-length
+.line 341
+	const-string	v0,"X-Afma-Ad-Size"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v5,v0},java/net/HttpURLConnection/getHeaderField	; getHeaderField(Ljava/lang/String;)Ljava/lang/String;
+; v5 : Ljava/net/HttpURLConnection; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 342
+	invoke-static	{v0},android/text/TextUtils/isEmpty	; isEmpty(Ljava/lang/CharSequence;)Z
+; v0 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	if-nez	v1,l2b9da
+; v1 : single-length
+l2b99a:
+.line 346
+	const-string	v1,"x"
+; v1 : Ljava/lang/String;
+	const/4	v2,2
+; v2 : single-length
+	invoke-virtual	{v0,v1,v2},java/lang/String/split	; split(Ljava/lang/String;I)[Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Ljava/lang/String; , v2 : single-length
+	move-result-object	v1
+; v1 : [Ljava/lang/String;
+.line 347
+	array-length	v2,v1
+; v2 : single-length , v1 : [Ljava/lang/String;
+	if-eq	v2,v3,l2b9dc
+; v2 : single-length , v3 : single-length
+.line 348
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Could not parse size header: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v1 : Ljava/lang/StringBuilder;
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+	invoke-static	{v1},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v1 : Ljava/lang/String;
+l2b9da:
+.line 359
+	return-void	
+l2b9dc:
+.line 351
+	const/4	v2,0
+; v2 : single-length
+	aget-object	v2,v1,v2
+; v2 : Ljava/lang/String; , v1 : [Ljava/lang/String; , v2 : Ljava/lang/String;
+	invoke-static	{v2},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v2 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+.line 352
+	const/4	v3,1
+; v3 : single-length
+	aget-object	v1,v1,v3
+; v1 : Ljava/lang/String; , v1 : Ljava/lang/String; , v3 : single-length
+	invoke-static	{v1},java/lang/Integer/parseInt	; parseInt(Ljava/lang/String;)I
+; v1 : Ljava/lang/String;
+l2b9f6:
+	move-result	v0
+; v0 : single-length
+.line 357
+	iget-object	v1,v4,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v1 : Lcom/google/ads/internal/c; , v4 : Lcom/google/ads/internal/f;
+	new-instance	v3,com/google/ads/AdSize
+; v3 : Lcom/google/ads/AdSize;
+	invoke-direct	{v3,v2,v0},com/google/ads/AdSize/<init>	; <init>(II)V
+; v3 : Lcom/google/ads/AdSize; , v2 : single-length , v0 : single-length
+	invoke-virtual	{v1,v3},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdSize;)V
+; v1 : Lcom/google/ads/internal/c; , v3 : Lcom/google/ads/AdSize;
+	goto	l2b9da
+l2ba0e:
+.line 353
+	move-exception	v1
+; v1 : java/lang/NumberFormatException
+.line 354
+	new-instance	v1,java/lang/StringBuilder
+; v1 : Ljava/lang/StringBuilder;
+	invoke-direct	{v1},java/lang/StringBuilder/<init>	; <init>()V
+; v1 : Ljava/lang/StringBuilder;
+	const-string	v2,"Could not parse size header: "
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v2 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v1,v0},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v1 : Ljava/lang/StringBuilder; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v0},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v0 : Ljava/lang/StringBuilder;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+	goto	l2b9da
+.end method
+
+.method a()V
+.throws Ljava/io/IOException;
+.limit registers 2
+; this: v1 (Lcom/google/ads/internal/f;)
+.line 157
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,com/google/ads/internal/f.d Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/f;
+.line 158
+	return-void	
+.end method
+
+.method synchronized a(Ljava/lang/String;)V
+.throws Ljava/io/IOException;
+.limit registers 3
+; this: v1 (Lcom/google/ads/internal/f;)
+; parameter[0] : v2 (Ljava/lang/String;)
+.catch java/lang/Exception from l2ba7a to l2baa4 using l2baa8
+.line 366
+	monitor-enter	v1
+; v1 : Lcom/google/ads/internal/f;
+l2ba7a:
+	iget-object	v0,v1,com/google/ads/internal/f.g Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lcom/google/ads/internal/f;
+	if-nez	v0,l2baa4
+; v0 : Ljava/lang/Thread;
+.line 367
+	iput-object	v2,v1,com/google/ads/internal/f.f Ljava/lang/String;
+; v2 : Ljava/lang/String; , v1 : Lcom/google/ads/internal/f;
+.line 368
+	const/4	v0,0
+; v0 : single-length
+	iput-boolean	v0,v1,com/google/ads/internal/f.d Z
+; v0 : single-length , v1 : Lcom/google/ads/internal/f;
+.line 369
+	new-instance	v0,java/lang/Thread
+; v0 : Ljava/lang/Thread;
+	invoke-direct	{v0,v1},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v0 : Ljava/lang/Thread; , v1 : Lcom/google/ads/internal/f;
+	iput-object	v0,v1,com/google/ads/internal/f.g Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lcom/google/ads/internal/f;
+.line 370
+	iget-object	v0,v1,com/google/ads/internal/f.g Ljava/lang/Thread;
+; v0 : Ljava/lang/Thread; , v1 : Lcom/google/ads/internal/f;
+	invoke-virtual	{v0},java/lang/Thread/start	; start()V
+; v0 : Ljava/lang/Thread;
+l2baa4:
+.line 372
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/f;
+	return-void	
+l2baa8:
+.line 366
+	move-exception	v0
+; v0 : java/lang/Exception
+	monitor-exit	v1
+; v1 : Lcom/google/ads/internal/f;
+	throw	v0
+; v0 : java/lang/Exception
+.end method
+
+.method public a(Z)V
+.throws Ljava/io/IOException;
+.limit registers 2
+; this: v0 (Lcom/google/ads/internal/f;)
+; parameter[0] : v1 (Z)
+.line 321
+	iput-boolean	v1,v0,com/google/ads/internal/f.e Z
+; v1 : single-length , v0 : Lcom/google/ads/internal/f;
+.line 322
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 3
+; this: v2 (Lcom/google/ads/internal/f;)
+.catch java/net/MalformedURLException from l2bae4 to l2baea using l2baec
+.catch java/io/IOException from l2bae4 to l2baea using l2bb08
+.catch java/lang/Throwable from l2bae4 to l2baea using l2bb24
+l2bae4:
+.line 430
+	invoke-direct	{v2},com/google/ads/internal/f/b	; b()V
+; v2 : Lcom/google/ads/internal/f;
+l2baea:
+.line 444
+	return-void	
+l2baec:
+.line 431
+	move-exception	v0
+; v0 : java/net/MalformedURLException
+.line 433
+	const-string	v1,"Received malformed ad url from javascript."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/net/MalformedURLException
+.line 434
+	iget-object	v0,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	sget-object	v1,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	goto	l2baea
+l2bb08:
+.line 435
+	move-exception	v0
+; v0 : java/io/IOException
+.line 437
+	const-string	v1,"IOException connecting to ad url."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/d	; d(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/io/IOException
+.line 438
+	iget-object	v0,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	sget-object	v1,com/google/ads/AdRequest$ErrorCode.NETWORK_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	goto	l2baea
+l2bb24:
+.line 439
+	move-exception	v0
+; v0 : java/lang/Throwable
+.line 441
+	const-string	v1,"An unknown error occurred in AdResponseLoader."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/Throwable
+.line 442
+	iget-object	v0,v2,com/google/ads/internal/f.a Lcom/google/ads/internal/c;
+; v0 : Lcom/google/ads/internal/c; , v2 : Lcom/google/ads/internal/f;
+	sget-object	v1,com/google/ads/AdRequest$ErrorCode.INTERNAL_ERROR Lcom/google/ads/AdRequest$ErrorCode;
+; v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	invoke-virtual	{v0,v1},com/google/ads/internal/c/a	; a(Lcom/google/ads/AdRequest$ErrorCode;)V
+; v0 : Lcom/google/ads/internal/c; , v1 : Lcom/google/ads/AdRequest$ErrorCode;
+	goto	l2baea
+.end method
+
+

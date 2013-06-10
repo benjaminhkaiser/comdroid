@@ -1,0 +1,86 @@
+.class public com/google/ads/t
+.super java/lang/Object
+.source SourceFile
+.implements com/google/ads/n
+
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/google/ads/t;)
+.line 18
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lcom/google/ads/t;
+	return-void	
+.end method
+
+.method protected a(Ljava/lang/String;Landroid/webkit/WebView;)Ljava/lang/Runnable;
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Lcom/google/ads/internal/d;" , "Ljava/util/HashMap" , "<" , "Ljava/lang/String;" , "Ljava/lang/String;" , ">;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 5
+; this: v2 (Lcom/google/ads/t;)
+; parameter[0] : v3 (Ljava/lang/String;)
+; parameter[1] : v4 (Landroid/webkit/WebView;)
+.line 39
+	new-instance	v0,com/google/ads/ab
+; v0 : Lcom/google/ads/ab;
+	invoke-virtual	{v4},android/webkit/WebView/getContext	; getContext()Landroid/content/Context;
+; v4 : Landroid/webkit/WebView;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-virtual	{v1},android/content/Context/getApplicationContext	; getApplicationContext()Landroid/content/Context;
+; v1 : Landroid/content/Context;
+	move-result-object	v1
+; v1 : Landroid/content/Context;
+	invoke-direct	{v0,v3,v1},com/google/ads/ab/<init>	; <init>(Ljava/lang/String;Landroid/content/Context;)V
+; v0 : Lcom/google/ads/ab; , v3 : Ljava/lang/String; , v1 : Landroid/content/Context;
+	return-object	v0
+; v0 : Lcom/google/ads/ab;
+.end method
+
+.method public a(Lcom/google/ads/internal/d;Ljava/util/HashMap;Landroid/webkit/WebView;)V
+.annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "(" , "Lcom/google/ads/internal/d;" , "Ljava/util/HashMap" , "<" , "Ljava/lang/String;" , "Ljava/lang/String;" , ">;" , "Landroid/webkit/WebView;" , ")V" }
+.end annotation
+.limit registers 6
+; this: v2 (Lcom/google/ads/t;)
+; parameter[0] : v3 (Lcom/google/ads/internal/d;)
+; parameter[1] : v4 (Ljava/util/HashMap;)
+; parameter[2] : v5 (Landroid/webkit/WebView;)
+.line 27
+	const-string	v0,"u"
+; v0 : Ljava/lang/String;
+	invoke-virtual	{v4,v0},java/util/HashMap/get	; get(Ljava/lang/Object;)Ljava/lang/Object;
+; v4 : Ljava/util/HashMap; , v0 : Ljava/lang/String;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,java/lang/String
+; v0 : Ljava/lang/String;
+.line 28
+	if-nez	v0,l2ead0
+; v0 : Ljava/lang/String;
+.line 29
+	const-string	v0,"Could not get URL from click gmsg."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/e	; e(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l2eace:
+.line 36
+	return-void	
+l2ead0:
+.line 34
+	new-instance	v1,java/lang/Thread
+; v1 : Ljava/lang/Thread;
+	invoke-virtual	{v2,v0,v5},com/google/ads/t/a	; a(Ljava/lang/String;Landroid/webkit/WebView;)Ljava/lang/Runnable;
+; v2 : Lcom/google/ads/t; , v0 : Ljava/lang/String; , v5 : Landroid/webkit/WebView;
+	move-result-object	v0
+; v0 : Ljava/lang/Runnable;
+	invoke-direct	{v1,v0},java/lang/Thread/<init>	; <init>(Ljava/lang/Runnable;)V
+; v1 : Ljava/lang/Thread; , v0 : Ljava/lang/Runnable;
+.line 35
+	invoke-virtual	{v1},java/lang/Thread/start	; start()V
+; v1 : Ljava/lang/Thread;
+	goto	l2eace
+.end method
+
+

@@ -1,0 +1,245 @@
+.class public app/dzieciowomi/pregcal/PCPassedWeeksList
+.super android/app/ListActivity
+.source PCPassedWeeksList.java
+
+.field private static PCPASSEDWEEKSVIEW I
+.field private mPassedWeeks I
+
+.method static <clinit>()V
+.limit registers 1
+.line 16
+	const/16	v0,100
+; v0 : single-length
+	sput	v0,app/dzieciowomi/pregcal/PCPassedWeeksList.PCPASSEDWEEKSVIEW I
+; v0 : I
+.line 12
+	return-void	
+.end method
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Lapp/dzieciowomi/pregcal/PCPassedWeeksList;)
+.line 12
+	invoke-direct	{v1},android/app/ListActivity/<init>	; <init>()V
+; v1 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+.line 15
+	const/4	v0,0
+; v0 : single-length
+	iput	v0,v1,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v0 : single-length , v1 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+.line 12
+	return-void	
+.end method
+
+.method private fillList()V
+.limit registers 7
+; this: v6 (Lapp/dzieciowomi/pregcal/PCPassedWeeksList;)
+.var 0 is i I from l1314a to l1317a
+.var 1 is nWeeks I from l13144 to l1317a
+.var 3 is weeks [Ljava/lang/String; from l13148 to l1317a
+	const/16	v1,40
+; v1 : single-length
+.line 35
+	iget	v4,v6,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v4 : single-length , v6 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	if-le	v4,v1,l1317a
+; v4 : single-length , v1 : single-length
+l13144:
+.line 36
+	new-array	v3,v1,[Ljava/lang/String;
+; v3 : [Ljava/lang/String; , v1 : single-length
+.line 37
+	const/4	v0,0
+; v0 : single-length
+l1314a:
+	iget	v4,v6,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v4 : single-length , v6 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	if-lt	v0,v4,l13180
+; v0 : single-length , v4 : single-length
+.line 42
+	new-instance	v4,android/widget/ArrayAdapter
+; v4 : Landroid/widget/ArrayAdapter;
+.line 43
+	const	v5,17367043	; 0x1090003
+; v5 : single-length
+	invoke-direct	{v4,v6,v5,v3},android/widget/ArrayAdapter/<init>	; <init>(Landroid/content/Context;I[Ljava/lang/Object;)V
+; v4 : Landroid/widget/ArrayAdapter; , v6 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v5 : single-length , v3 : [Ljava/lang/String;
+.line 42
+	invoke-virtual	{v6,v4},app/dzieciowomi/pregcal/PCPassedWeeksList/setListAdapter	; setListAdapter(Landroid/widget/ListAdapter;)V
+; v6 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v4 : Landroid/widget/ArrayAdapter;
+.line 44
+	invoke-virtual	{v6},app/dzieciowomi/pregcal/PCPassedWeeksList/getListView	; getListView()Landroid/widget/ListView;
+; v6 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	move-result-object	v4
+; v4 : Landroid/widget/ListView;
+	const/4	v5,1
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/widget/ListView/setTextFilterEnabled	; setTextFilterEnabled(Z)V
+; v4 : Landroid/widget/ListView; , v5 : single-length
+.line 45
+	return-void	
+l1317a:
+.line 35
+	iget	v1,v6,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v1 : single-length , v6 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	goto	l13144
+l13180:
+.line 38
+	invoke-virtual	{v6},app/dzieciowomi/pregcal/PCPassedWeeksList/getResources	; getResources()Landroid/content/res/Resources;
+; v6 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const/high16	v5,32518
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v2,v4,v1
+; v2 : Ljava/lang/String; , v4 : [Ljava/lang/String; , v1 : single-length
+.line 39
+	const/4	v4,0
+; v4 : single-length
+	const-string	v5,"week"
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v2,v5},java/lang/String/lastIndexOf	; lastIndexOf(Ljava/lang/String;)I
+; v2 : Ljava/lang/String; , v5 : Ljava/lang/String;
+	move-result	v5
+; v5 : single-length
+	invoke-virtual	{v2,v4,v5},java/lang/String/substring	; substring(II)Ljava/lang/String;
+; v2 : Ljava/lang/String; , v4 : single-length , v5 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	aput-object	v4,v3,v0
+; v4 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v0 : single-length
+.line 40
+	add-int/lit8	v1,v1,255
+; v1 : single-length , v1 : single-length
+.line 37
+	add-int/lit8	v0,v0,1
+; v0 : single-length , v0 : single-length
+	goto	l1314a
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 5
+; this: v3 (Lapp/dzieciowomi/pregcal/PCPassedWeeksList;)
+; parameter[0] : v4 (Landroid/os/Bundle;)
+.var 0 is extras Landroid/os/Bundle; from l13200 to l13214
+	const/4	v2,0
+; v2 : single-length
+.line 20
+	invoke-super	{v3,v4},android/app/ListActivity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v4 : Landroid/os/Bundle;
+.line 23
+	if-eqz	v4,l1322a
+; v4 : Landroid/os/Bundle;
+	const-string	v1,"weeks"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v4,v1},android/os/Bundle/getInt	; getInt(Ljava/lang/String;)I
+; v4 : Landroid/os/Bundle; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+l131e4:
+	iput	v1,v3,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v1 : single-length , v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+.line 25
+	iget	v1,v3,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v1 : single-length , v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	if-nez	v1,l13214
+; v1 : single-length
+.line 26
+	invoke-virtual	{v3},app/dzieciowomi/pregcal/PCPassedWeeksList/getIntent	; getIntent()Landroid/content/Intent;
+; v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	move-result-object	v1
+; v1 : Landroid/content/Intent;
+	invoke-virtual	{v1},android/content/Intent/getExtras	; getExtras()Landroid/os/Bundle;
+; v1 : Landroid/content/Intent;
+	move-result-object	v0
+; v0 : Landroid/os/Bundle;
+.line 27
+	if-eqz	v0,l13210
+; v0 : Landroid/os/Bundle;
+	const-string	v1,"weeks"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/os/Bundle/getInt	; getInt(Ljava/lang/String;)I
+; v0 : Landroid/os/Bundle; , v1 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+l13210:
+	iput	v2,v3,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v2 : single-length , v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+l13214:
+.line 30
+	invoke-direct	{v3},app/dzieciowomi/pregcal/PCPassedWeeksList/fillList	; fillList()V
+; v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+.line 31
+	invoke-virtual	{v3},app/dzieciowomi/pregcal/PCPassedWeeksList/getListView	; getListView()Landroid/widget/ListView;
+; v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	move-result-object	v1
+; v1 : Landroid/widget/ListView;
+	invoke-virtual	{v3,v1},app/dzieciowomi/pregcal/PCPassedWeeksList/registerForContextMenu	; registerForContextMenu(Landroid/view/View;)V
+; v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v1 : Landroid/widget/ListView;
+.line 32
+	return-void	
+l1322a:
+	move	v1,v2
+; v1 : single-length , v2 : single-length
+.line 24
+	goto	l131e4
+.end method
+
+.method protected onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
+.limit registers 9
+; this: v3 (Lapp/dzieciowomi/pregcal/PCPassedWeeksList;)
+; parameter[0] : v4 (Landroid/widget/ListView;)
+; parameter[1] : v5 (Landroid/view/View;)
+; parameter[2] : v6 (I)
+; parameter[3] : v7 (J)
+.line 57
+	invoke-super/range	{v3..v8},android/app/ListActivity/onListItemClick;	onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)V
+; v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v4 : Landroid/widget/ListView; , v5 : Landroid/view/View; , v6 : single-length , v7 : double-length
+.line 58
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	const-class	v1,app/dzieciowomi/pregcal/PCPassedWeeksView
+; v1 : Ljava/lang/Class;
+	invoke-direct	{v0,v3,v1},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v0 : Landroid/content/Intent; , v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v1 : Ljava/lang/Class;
+.line 59
+	const-string	v1,"week"
+; v1 : Ljava/lang/String;
+	iget	v2,v3,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v2 : single-length , v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	sub-int/2addr	v2,v6
+; v2 : single-length , v6 : single-length
+	invoke-virtual	{v0,v1,v2},android/content/Intent/putExtra	; putExtra(Ljava/lang/String;I)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String; , v2 : single-length
+.line 60
+	sget	v1,app/dzieciowomi/pregcal/PCPassedWeeksList.PCPASSEDWEEKSVIEW I
+; v1 : single-length
+	invoke-virtual	{v3,v0,v1},app/dzieciowomi/pregcal/PCPassedWeeksList/startActivityForResult	; startActivityForResult(Landroid/content/Intent;I)V
+; v3 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v0 : Landroid/content/Intent; , v1 : single-length
+.line 61
+	return-void	
+.end method
+
+.method protected onSaveInstanceState(Landroid/os/Bundle;)V
+.limit registers 4
+; this: v2 (Lapp/dzieciowomi/pregcal/PCPassedWeeksList;)
+; parameter[0] : v3 (Landroid/os/Bundle;)
+.line 49
+	invoke-super	{v2,v3},android/app/ListActivity/onSaveInstanceState	; onSaveInstanceState(Landroid/os/Bundle;)V
+; v2 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList; , v3 : Landroid/os/Bundle;
+.line 51
+	const-string	v0,"weeks"
+; v0 : Ljava/lang/String;
+	iget	v1,v2,app/dzieciowomi/pregcal/PCPassedWeeksList.mPassedWeeks I
+; v1 : single-length , v2 : Lapp/dzieciowomi/pregcal/PCPassedWeeksList;
+	invoke-virtual	{v3,v0,v1},android/os/Bundle/putInt	; putInt(Ljava/lang/String;I)V
+; v3 : Landroid/os/Bundle; , v0 : Ljava/lang/String; , v1 : single-length
+.line 53
+	return-void	
+.end method
+
+

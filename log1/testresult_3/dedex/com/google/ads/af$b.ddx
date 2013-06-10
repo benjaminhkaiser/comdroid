@@ -1,0 +1,165 @@
+.class com/google/ads/af$b
+.super java/lang/Object
+.source SourceFile
+.implements java/lang/Runnable
+
+.inner class b inner com/google/ads/af$b outer com/google/ads/af
+.field private final a Ljava/lang/ref/WeakReference;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/lang/ref/WeakReference" , "<" , "Landroid/app/Activity;" , ">;" }
+  .end annotation
+.end field
+.field private final b Landroid/webkit/WebView;
+.field private final c Ljava/lang/String;
+
+.method public <init>(Landroid/app/Activity;Landroid/webkit/WebView;Ljava/lang/String;)V
+.limit registers 5
+; this: v1 (Lcom/google/ads/af$b;)
+; parameter[0] : v2 (Landroid/app/Activity;)
+; parameter[1] : v3 (Landroid/webkit/WebView;)
+; parameter[2] : v4 (Ljava/lang/String;)
+.line 132
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/google/ads/af$b;
+.line 133
+	new-instance	v0,java/lang/ref/WeakReference
+; v0 : Ljava/lang/ref/WeakReference;
+	invoke-direct	{v0,v2},java/lang/ref/WeakReference/<init>	; <init>(Ljava/lang/Object;)V
+; v0 : Ljava/lang/ref/WeakReference; , v2 : Landroid/app/Activity;
+	iput-object	v0,v1,com/google/ads/af$b.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v1 : Lcom/google/ads/af$b;
+.line 134
+	iput-object	v4,v1,com/google/ads/af$b.c Ljava/lang/String;
+; v4 : Ljava/lang/String; , v1 : Lcom/google/ads/af$b;
+.line 135
+	iput-object	v3,v1,com/google/ads/af$b.b Landroid/webkit/WebView;
+; v3 : Landroid/webkit/WebView; , v1 : Lcom/google/ads/af$b;
+.line 136
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 9
+; this: v8 (Lcom/google/ads/af$b;)
+.catch java/lang/Throwable from l248f8 to l24902 using l248e6
+.catch java/lang/Throwable from l24858 to l248e4 using l248e6
+	const/4	v6,1
+; v6 : single-length
+	const/4	v7,0
+; v7 : single-length
+l24858:
+.line 141
+.line 142
+	sget-object	v0,com/google/ads/ae.a Landroid/net/Uri;
+; v0 : Landroid/net/Uri;
+	iget-object	v1,v8,com/google/ads/af$b.c Ljava/lang/String;
+; v1 : Ljava/lang/String; , v8 : Lcom/google/ads/af$b;
+	invoke-static	{v0,v1},android/net/Uri/withAppendedPath	; withAppendedPath(Landroid/net/Uri;Ljava/lang/String;)Landroid/net/Uri;
+; v0 : Landroid/net/Uri; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Landroid/net/Uri;
+.line 144
+	iget-object	v0,v8,com/google/ads/af$b.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v8 : Lcom/google/ads/af$b;
+	invoke-virtual	{v0},java/lang/ref/WeakReference/get	; get()Ljava/lang/Object;
+; v0 : Ljava/lang/ref/WeakReference;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,android/app/Activity
+; v0 : Landroid/app/Activity;
+.line 145
+	if-nez	v0,l24888
+; v0 : Landroid/app/Activity;
+.line 146
+	const-string	v0,"Activity was null while getting the +1 button state."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l24886:
+.line 163
+	return-void	
+l24888:
+.line 149
+	invoke-virtual	{v0},android/app/Activity/getContentResolver	; getContentResolver()Landroid/content/ContentResolver;
+; v0 : Landroid/app/Activity;
+	move-result-object	v0
+; v0 : Landroid/content/ContentResolver;
+.line 150
+	sget-object	v2,com/google/ads/ae.c [Ljava/lang/String;
+; v2 : [Ljava/lang/String;
+	const/4	v3,0
+; v3 : single-length
+	const/4	v4,0
+; v4 : single-length
+	const/4	v5,0
+; v5 : single-length
+	invoke-virtual/range	{v0..v5},android/content/ContentResolver/query;	query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/content/ContentResolver; , v1 : Landroid/net/Uri; , v2 : [Ljava/lang/String; , v3 : single-length , v4 : single-length , v5 : single-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+.line 153
+	if-eqz	v0,l248f8
+; v0 : Landroid/database/Cursor;
+	invoke-interface	{v0},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v0 : Landroid/database/Cursor;
+	move-result	v1
+; v1 : single-length
+	if-eqz	v1,l248f8
+; v1 : single-length
+.line 154
+	const-string	v1,"has_plus1"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v0,v1},android/database/Cursor/getColumnIndex	; getColumnIndex(Ljava/lang/String;)I
+; v0 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result	v0
+; v0 : single-length
+	if-ne	v0,v6,l248f4
+; v0 : single-length , v6 : single-length
+	move	v0,v6
+; v0 : single-length , v6 : single-length
+l248cc:
+.line 159
+	iget-object	v1,v8,com/google/ads/af$b.b Landroid/webkit/WebView;
+; v1 : Landroid/webkit/WebView; , v8 : Lcom/google/ads/af$b;
+	new-instance	v2,com/google/ads/af$c
+; v2 : Lcom/google/ads/af$c;
+	iget-object	v3,v8,com/google/ads/af$b.b Landroid/webkit/WebView;
+; v3 : Landroid/webkit/WebView; , v8 : Lcom/google/ads/af$b;
+	invoke-direct	{v2,v3,v0},com/google/ads/af$c/<init>	; <init>(Landroid/webkit/WebView;Z)V
+; v2 : Lcom/google/ads/af$c; , v3 : Landroid/webkit/WebView; , v0 : single-length
+	invoke-virtual	{v1,v2},android/webkit/WebView/post	; post(Ljava/lang/Runnable;)Z
+; v1 : Landroid/webkit/WebView; , v2 : Lcom/google/ads/af$c;
+l248e4:
+	goto	l24886
+l248e6:
+.line 160
+	move-exception	v0
+; v0 : java/lang/Throwable
+.line 161
+	const-string	v1,"An unknown error occurred while updating the +1 state."
+; v1 : Ljava/lang/String;
+	invoke-static	{v1,v0},com/google/ads/util/b/b	; b(Ljava/lang/String;Ljava/lang/Throwable;)V
+; v1 : Ljava/lang/String; , v0 : java/lang/Throwable
+	goto	l24886
+l248f4:
+	move	v0,v7
+; v0 : single-length , v7 : single-length
+.line 154
+	goto	l248cc
+l248f8:
+.line 157
+	const-string	v0,"Google+ app not installed, showing ad as not +1'd"
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/a	; a(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l24902:
+	move	v0,v7
+; v0 : single-length , v7 : single-length
+	goto	l248cc
+.end method
+
+

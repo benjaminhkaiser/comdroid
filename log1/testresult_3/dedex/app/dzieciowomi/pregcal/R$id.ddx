@@ -1,0 +1,87 @@
+.class public final app/dzieciowomi/pregcal/R$id
+.super java/lang/Object
+.source R.java
+
+.inner class id inner app/dzieciowomi/pregcal/R$id outer app/dzieciowomi/pregcal/R
+.field public static final DIBirthdayLabel I = 2131296286	; 0x7f09001e
+.field public static final DIBirthdayText I = 2131296287	; 0x7f09001f
+.field public static final DIFeaturesLabel I = 2131296280	; 0x7f090018
+.field public static final DIFeaturesText I = 2131296281	; 0x7f090019
+.field public static final DILeftTimeLabel I = 2131296283	; 0x7f09001b
+.field public static final DILeftTimeText I = 2131296284	; 0x7f09001c
+.field public static final DILenghtLabel I = 2131296274	; 0x7f090012
+.field public static final DILenghtText I = 2131296275	; 0x7f090013
+.field public static final DITableBirthdayRow I = 2131296285	; 0x7f09001d
+.field public static final DITableFeaturesRow I = 2131296279	; 0x7f090017
+.field public static final DITableLayout I = 2131296265	; 0x7f090009
+.field public static final DITableLeftTimeRow I = 2131296282	; 0x7f09001a
+.field public static final DITableLenghtRow I = 2131296273	; 0x7f090011
+.field public static final DITableWeek I = 2131296266	; 0x7f09000a
+.field public static final DITableWeekPassed I = 2131296269	; 0x7f09000d
+.field public static final DITableWeight I = 2131296276	; 0x7f090014
+.field public static final DIView I = 2131296264	; 0x7f090008
+.field public static final DIWeekLabel I = 2131296267	; 0x7f09000b
+.field public static final DIWeekPassedLabel I = 2131296270	; 0x7f09000e
+.field public static final DIWeekPassedText I = 2131296271	; 0x7f09000f
+.field public static final DIWeekText I = 2131296268	; 0x7f09000c
+.field public static final DIWeightLabel I = 2131296277	; 0x7f090015
+.field public static final DIWeightText I = 2131296278	; 0x7f090016
+.field public static final NotesView I = 2131296297	; 0x7f090029
+.field public static final WeeksDescriptionText I = 2131296313	; 0x7f090039
+.field public static final WeeksFeaturesLabel I = 2131296311	; 0x7f090037
+.field public static final WeeksFeaturesText I = 2131296312	; 0x7f090038
+.field public static final WeeksLenghtLabel I = 2131296305	; 0x7f090031
+.field public static final WeeksLenghtText I = 2131296306	; 0x7f090032
+.field public static final WeeksNotesText I = 2131296314	; 0x7f09003a
+.field public static final WeeksTableFeaturesRow I = 2131296310	; 0x7f090036
+.field public static final WeeksTableLayout I = 2131296299	; 0x7f09002b
+.field public static final WeeksTableLenghtRow I = 2131296304	; 0x7f090030
+.field public static final WeeksTableWeek I = 2131296300	; 0x7f09002c
+.field public static final WeeksTableWeight I = 2131296307	; 0x7f090033
+.field public static final WeeksView I = 2131296298	; 0x7f09002a
+.field public static final WeeksWeekLabel I = 2131296301	; 0x7f09002d
+.field public static final WeeksWeekText I = 2131296302	; 0x7f09002e
+.field public static final WeeksWeightLabel I = 2131296308	; 0x7f090034
+.field public static final WeeksWeightText I = 2131296309	; 0x7f090035
+.field public static final about I = 2131296322	; 0x7f090042
+.field public static final about_credits I = 2131296256	; 0x7f090000
+.field public static final adView I = 2131296293	; 0x7f090025
+.field public static final adView_weeks I = 2131296315	; 0x7f09003b
+.field public static final child_info_length_value I = 2131296258	; 0x7f090002
+.field public static final child_info_weight_value I = 2131296259	; 0x7f090003
+.field public static final confirm I = 2131296295	; 0x7f090027
+.field public static final gallery I = 2131296272	; 0x7f090010
+.field public static final giLabelDisplay I = 2131296289	; 0x7f090021
+.field public static final giTextDisplay I = 2131296290	; 0x7f090022
+.field public static final giView I = 2131296288	; 0x7f090020
+.field public static final history I = 2131296320	; 0x7f090040
+.field public static final image I = 2131296292	; 0x7f090024
+.field public static final layout_root I = 2131296291	; 0x7f090023
+.field public static final manage_notes I = 2131296318	; 0x7f09003e
+.field public static final new_note I = 2131296323	; 0x7f090043
+.field public static final note_text I = 2131296294	; 0x7f090026
+.field public static final notes_share_all I = 2131296324	; 0x7f090044
+.field public static final prefs I = 2131296317	; 0x7f09003d
+.field public static final share I = 2131296319	; 0x7f09003f
+.field public static final skin I = 2131296321	; 0x7f090041
+.field public static final text1 I = 2131296296	; 0x7f090028
+.field public static final time_left_label I = 2131296263	; 0x7f090007
+.field public static final time_left_value I = 2131296262	; 0x7f090006
+.field public static final week_blue_sheet I = 2131296260	; 0x7f090004
+.field public static final week_picture I = 2131296261	; 0x7f090005
+.field public static final week_sheet I = 2131296316	; 0x7f09003c
+.field public static final weeks_gallery I = 2131296303	; 0x7f09002f
+.field public static final weeks_share I = 2131296325	; 0x7f090045
+.field public static final widget I = 2131296257	; 0x7f090001
+.field public static final widgetmenu_save I = 2131296326	; 0x7f090046
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/R$id;)
+.line 394
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/R$id;
+	return-void	
+.end method
+
+

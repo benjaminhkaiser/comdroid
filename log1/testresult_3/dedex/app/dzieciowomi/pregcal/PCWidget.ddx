@@ -1,0 +1,3793 @@
+.class public app/dzieciowomi/pregcal/PCWidget
+.super android/appwidget/AppWidgetProvider
+.source PCWidget.java
+
+.field private static final WEEK_NO_1 I = 1	; 0x1
+.field private static final WEEK_NO_10 I = 10	; 0xa
+.field private static final WEEK_NO_11 I = 11	; 0xb
+.field private static final WEEK_NO_12 I = 12	; 0xc
+.field private static final WEEK_NO_13 I = 13	; 0xd
+.field private static final WEEK_NO_14 I = 14	; 0xe
+.field private static final WEEK_NO_15 I = 15	; 0xf
+.field private static final WEEK_NO_16 I = 16	; 0x10
+.field private static final WEEK_NO_17 I = 17	; 0x11
+.field private static final WEEK_NO_18 I = 18	; 0x12
+.field private static final WEEK_NO_19 I = 19	; 0x13
+.field private static final WEEK_NO_2 I = 2	; 0x2
+.field private static final WEEK_NO_20 I = 20	; 0x14
+.field private static final WEEK_NO_21 I = 21	; 0x15
+.field private static final WEEK_NO_22 I = 22	; 0x16
+.field private static final WEEK_NO_23 I = 23	; 0x17
+.field private static final WEEK_NO_24 I = 24	; 0x18
+.field private static final WEEK_NO_25 I = 25	; 0x19
+.field private static final WEEK_NO_26 I = 26	; 0x1a
+.field private static final WEEK_NO_27 I = 27	; 0x1b
+.field private static final WEEK_NO_28 I = 28	; 0x1c
+.field private static final WEEK_NO_29 I = 29	; 0x1d
+.field private static final WEEK_NO_3 I = 3	; 0x3
+.field private static final WEEK_NO_30 I = 30	; 0x1e
+.field private static final WEEK_NO_31 I = 31	; 0x1f
+.field private static final WEEK_NO_32 I = 32	; 0x20
+.field private static final WEEK_NO_33 I = 33	; 0x21
+.field private static final WEEK_NO_34 I = 34	; 0x22
+.field private static final WEEK_NO_35 I = 35	; 0x23
+.field private static final WEEK_NO_36 I = 36	; 0x24
+.field private static final WEEK_NO_37 I = 37	; 0x25
+.field private static final WEEK_NO_38 I = 38	; 0x26
+.field private static final WEEK_NO_39 I = 39	; 0x27
+.field private static final WEEK_NO_4 I = 4	; 0x4
+.field private static final WEEK_NO_40 I = 40	; 0x28
+.field private static final WEEK_NO_5 I = 5	; 0x5
+.field private static final WEEK_NO_6 I = 6	; 0x6
+.field private static final WEEK_NO_7 I = 7	; 0x7
+.field private static final WEEK_NO_8 I = 8	; 0x8
+.field private static final WEEK_NO_9 I = 9	; 0x9
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/PCWidget;)
+.line 15
+	invoke-direct	{v0},android/appwidget/AppWidgetProvider/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/PCWidget;
+	return-void	
+.end method
+
+.method private static getCurrentWeekOfPregnancy(Ljava/lang/String;)I
+.limit registers 12
+; parameter[0] : v11 (Ljava/lang/String;)
+	const-wide	v9,4725570615333879808	; 0x4194997000000000
+; v9 : double-length
+.line 641
+	new-instance	v4,java/util/Date
+; v4 : Ljava/util/Date;
+	invoke-direct	{v4},java/util/Date/<init>	; <init>()V
+; v4 : Ljava/util/Date;
+.line 642
+	const/4	v5,2
+; v5 : single-length
+	invoke-static	{},java/util/Locale/getDefault	; getDefault()Ljava/util/Locale;
+; 
+	nop	
+	move-result-object	v6
+; v6 : Ljava/util/Locale;
+	invoke-static	{v5,v6},java/text/DateFormat/getDateInstance	; getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+; v5 : single-length , v6 : Ljava/util/Locale;
+	move-result-object	v0
+; v0 : Ljava/text/DateFormat;
+.line 643
+	new-instance	v3,java/text/ParsePosition
+; v3 : Ljava/text/ParsePosition;
+	const/4	v5,0
+; v5 : single-length
+	invoke-direct	{v3,v5},java/text/ParsePosition/<init>	; <init>(I)V
+; v3 : Ljava/text/ParsePosition; , v5 : single-length
+.line 644
+	invoke-virtual	{v0,v11,v3},java/text/DateFormat/parse	; parse(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
+; v0 : Ljava/text/DateFormat; , v11 : Ljava/lang/String; , v3 : Ljava/text/ParsePosition;
+	move-result-object	v2
+; v2 : Ljava/util/Date;
+.line 645
+	invoke-virtual	{v4},java/util/Date/getTime	; getTime()J
+; v4 : Ljava/util/Date;
+	move-result-wide	v5
+; v5 : double-length
+	long-to-double	v5,v5
+; v5 : double-length , v5 : double-length
+	div-double/2addr	v5,v9
+; v5 : double-length , v9 : double-length
+	invoke-virtual	{v2},java/util/Date/getTime	; getTime()J
+; v2 : Ljava/util/Date;
+	move-result-wide	v7
+; v7 : double-length
+	long-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+	div-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	sub-double/2addr	v5,v7
+; v5 : double-length , v7 : double-length
+	const-wide/high16	v7,16412
+; v7 : double-length
+	div-double/2addr	v5,v7
+; v5 : double-length , v7 : double-length
+	invoke-static	{v5,v6},java/lang/Math/ceil	; ceil(D)D
+; v5 : double-length
+	move-result-wide	v5
+; v5 : double-length
+	double-to-int	v1,v5
+; v1 : single-length , v5 : double-length
+.line 647
+	return	v1
+; v1 : single-length
+.end method
+
+.method protected static getDaysToBirth(Ljava/lang/String;)I
+.limit registers 12
+; parameter[0] : v11 (Ljava/lang/String;)
+	const-wide	v9,4725570615333879808	; 0x4194997000000000
+; v9 : double-length
+.line 652
+	new-instance	v4,java/util/Date
+; v4 : Ljava/util/Date;
+	invoke-direct	{v4},java/util/Date/<init>	; <init>()V
+; v4 : Ljava/util/Date;
+.line 653
+	const/4	v5,2
+; v5 : single-length
+	invoke-static	{},java/util/Locale/getDefault	; getDefault()Ljava/util/Locale;
+; 
+	nop	
+	move-result-object	v6
+; v6 : Ljava/util/Locale;
+	invoke-static	{v5,v6},java/text/DateFormat/getDateInstance	; getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+; v5 : single-length , v6 : Ljava/util/Locale;
+	move-result-object	v1
+; v1 : Ljava/text/DateFormat;
+.line 654
+	new-instance	v3,java/text/ParsePosition
+; v3 : Ljava/text/ParsePosition;
+	const/4	v5,0
+; v5 : single-length
+	invoke-direct	{v3,v5},java/text/ParsePosition/<init>	; <init>(I)V
+; v3 : Ljava/text/ParsePosition; , v5 : single-length
+.line 655
+	invoke-virtual	{v1,v11,v3},java/text/DateFormat/parse	; parse(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
+; v1 : Ljava/text/DateFormat; , v11 : Ljava/lang/String; , v3 : Ljava/text/ParsePosition;
+	move-result-object	v2
+; v2 : Ljava/util/Date;
+.line 656
+	invoke-virtual	{v2},java/util/Date/getTime	; getTime()J
+; v2 : Ljava/util/Date;
+	move-result-wide	v5
+; v5 : double-length
+	long-to-double	v5,v5
+; v5 : double-length , v5 : double-length
+	div-double/2addr	v5,v9
+; v5 : double-length , v9 : double-length
+	const-wide	v7,4643633428284047360	; 0x4071800000000000
+; v7 : double-length
+	add-double/2addr	v5,v7
+; v5 : double-length , v7 : double-length
+	invoke-virtual	{v4},java/util/Date/getTime	; getTime()J
+; v4 : Ljava/util/Date;
+	move-result-wide	v7
+; v7 : double-length
+	long-to-double	v7,v7
+; v7 : double-length , v7 : double-length
+	div-double/2addr	v7,v9
+; v7 : double-length , v9 : double-length
+	sub-double/2addr	v5,v7
+; v5 : double-length , v7 : double-length
+	invoke-static	{v5,v6},java/lang/Math/ceil	; ceil(D)D
+; v5 : double-length
+	move-result-wide	v5
+; v5 : double-length
+	double-to-int	v0,v5
+; v0 : single-length , v5 : double-length
+.line 657
+	return	v0
+; v0 : single-length
+.end method
+
+.method static updateAppWidget(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;ILjava/lang/String;Z)V
+.limit registers 16
+; parameter[0] : v11 (Landroid/content/Context;)
+; parameter[1] : v12 (Landroid/appwidget/AppWidgetManager;)
+; parameter[2] : v13 (I)
+; parameter[3] : v14 (Ljava/lang/String;)
+; parameter[4] : v15 (Z)
+	const/4	v10,3
+; v10 : single-length
+	const/4	v9,1
+; v9 : single-length
+	const/4	v8,0
+; v8 : single-length
+	const	v7,2131296259	; 0x7f090003
+; v7 : single-length
+	const	v6,2131296258	; 0x7f090002
+; v6 : single-length
+.line 92
+	new-instance	v1,android/content/Intent
+; v1 : Landroid/content/Intent;
+	const-class	v4,app/dzieciowomi/pregcal/PregnancyCalendar
+; v4 : Ljava/lang/Class;
+	invoke-direct	{v1,v11,v4},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v1 : Landroid/content/Intent; , v11 : Landroid/content/Context; , v4 : Ljava/lang/Class;
+.line 93
+	invoke-static	{v11,v8,v1,v8},android/app/PendingIntent/getActivity	; getActivity(Landroid/content/Context;ILandroid/content/Intent;I)Landroid/app/PendingIntent;
+; v11 : Landroid/content/Context; , v8 : single-length , v1 : Landroid/content/Intent; , v8 : single-length
+	move-result-object	v2
+; v2 : Landroid/app/PendingIntent;
+.line 94
+	invoke-static	{v14},app/dzieciowomi/pregcal/PCWidget/getCurrentWeekOfPregnancy	; getCurrentWeekOfPregnancy(Ljava/lang/String;)I
+; v14 : Ljava/lang/String;
+	move-result	v0
+; v0 : single-length
+.line 95
+	new-instance	v3,android/widget/RemoteViews
+; v3 : Landroid/widget/RemoteViews;
+	invoke-virtual	{v11},android/content/Context/getPackageName	; getPackageName()Ljava/lang/String;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	const	v5,2130903051	; 0x7f03000b
+; v5 : single-length
+	invoke-direct	{v3,v4,v5},android/widget/RemoteViews/<init>	; <init>(Ljava/lang/String;I)V
+; v3 : Landroid/widget/RemoteViews; , v4 : Ljava/lang/String; , v5 : single-length
+.line 96
+	const	v4,2131296257	; 0x7f090001
+; v4 : single-length
+	invoke-virtual	{v3,v4,v2},android/widget/RemoteViews/setOnClickPendingIntent	; setOnClickPendingIntent(ILandroid/app/PendingIntent;)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v2 : Landroid/app/PendingIntent;
+.line 97
+	const	v4,2131296262	; 0x7f090006
+; v4 : single-length
+	invoke-static	{v14},app/dzieciowomi/pregcal/PCWidget/getDaysToBirth	; getDaysToBirth(Ljava/lang/String;)I
+; v14 : Ljava/lang/String;
+	move-result	v5
+; v5 : single-length
+	invoke-static	{v5},java/lang/Integer/toString	; toString(I)Ljava/lang/String;
+; v5 : single-length
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : Ljava/lang/String;
+.line 98
+	packed-switch	v0,1
+		ps17578_175ee	; case 1
+		ps17578_1769c	; case 2
+		ps17578_1774c	; case 3
+		ps17578_177fc	; case 4
+		ps17578_178ac	; case 5
+		ps17578_1795c	; case 6
+		ps17578_17a0c	; case 7
+		ps17578_17abc	; case 8
+		ps17578_17b6c	; case 9
+		ps17578_17c1c	; case 10
+		ps17578_17ccc	; case 11
+		ps17578_17d7c	; case 12
+		ps17578_17e2c	; case 13
+		ps17578_17edc	; case 14
+		ps17578_17f8c	; case 15
+		ps17578_1803c	; case 16
+		ps17578_180ec	; case 17
+		ps17578_1819c	; case 18
+		ps17578_1824c	; case 19
+		ps17578_182fc	; case 20
+		ps17578_183ac	; case 21
+		ps17578_1845c	; case 22
+		ps17578_1850c	; case 23
+		ps17578_185bc	; case 24
+		ps17578_1866c	; case 25
+		ps17578_1871c	; case 26
+		ps17578_187cc	; case 27
+		ps17578_1887c	; case 28
+		ps17578_1892c	; case 29
+		ps17578_189dc	; case 30
+		ps17578_18a8c	; case 31
+		ps17578_18b3c	; case 32
+		ps17578_18bec	; case 33
+		ps17578_18c9c	; case 34
+		ps17578_18d4c	; case 35
+		ps17578_18dfc	; case 36
+		ps17578_18eac	; case 37
+		ps17578_18f5c	; case 38
+		ps17578_1900c	; case 39
+		ps17578_190bc	; case 40
+		default: ps17578_default
+; v0 : single-length
+ps17578_default:
+.line 621
+	if-nez	v15,l1916c
+; v15 : single-length
+.line 622
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099691	; 0x7f06002b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 623
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099691	; 0x7f06002b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l175c2:
+.line 630
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837604	; 0x7f020064
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 631
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837761	; 0x7f020101
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+l175e6:
+.line 636
+	invoke-virtual	{v12,v13,v3},android/appwidget/AppWidgetManager/updateAppWidget	; updateAppWidget(ILandroid/widget/RemoteViews;)V
+; v12 : Landroid/appwidget/AppWidgetManager; , v13 : single-length , v3 : Landroid/widget/RemoteViews;
+.line 637
+	return-void	
+ps17578_175ee:
+.line 101
+	if-nez	v15,l17658
+; v15 : single-length
+.line 102
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099651	; 0x7f060003
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 103
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099651	; 0x7f060003
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17632:
+.line 110
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837564	; 0x7f02003c
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 111
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837605	; 0x7f020065
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto	l175e6
+l17658:
+.line 106
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099651	; 0x7f060003
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 107
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099651	; 0x7f060003
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17632
+ps17578_1769c:
+.line 114
+	if-nez	v15,l17708
+; v15 : single-length
+.line 115
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099652	; 0x7f060004
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 116
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099652	; 0x7f060004
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l176e0:
+.line 123
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837565	; 0x7f02003d
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 124
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837609	; 0x7f020069
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17708:
+.line 119
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099652	; 0x7f060004
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 120
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099652	; 0x7f060004
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l176e0
+ps17578_1774c:
+.line 127
+	if-nez	v15,l177b8
+; v15 : single-length
+.line 128
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099653	; 0x7f060005
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 129
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099653	; 0x7f060005
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17790:
+.line 136
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837566	; 0x7f02003e
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 137
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837613	; 0x7f02006d
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l177b8:
+.line 132
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099653	; 0x7f060005
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 133
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099653	; 0x7f060005
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17790
+ps17578_177fc:
+.line 140
+	if-nez	v15,l17868
+; v15 : single-length
+.line 141
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099654	; 0x7f060006
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 142
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099654	; 0x7f060006
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17840:
+.line 149
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837567	; 0x7f02003f
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 150
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837617	; 0x7f020071
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17868:
+.line 145
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099654	; 0x7f060006
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 146
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099654	; 0x7f060006
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17840
+ps17578_178ac:
+.line 153
+	if-nez	v15,l17918
+; v15 : single-length
+.line 154
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099655	; 0x7f060007
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 155
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099655	; 0x7f060007
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l178f0:
+.line 162
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837568	; 0x7f020040
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 163
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837621	; 0x7f020075
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17918:
+.line 158
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099655	; 0x7f060007
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 159
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099655	; 0x7f060007
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l178f0
+ps17578_1795c:
+.line 166
+	if-nez	v15,l179c8
+; v15 : single-length
+.line 167
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099656	; 0x7f060008
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 168
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099656	; 0x7f060008
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l179a0:
+.line 175
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837569	; 0x7f020041
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 176
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837625	; 0x7f020079
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l179c8:
+.line 171
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099656	; 0x7f060008
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 172
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099656	; 0x7f060008
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l179a0
+ps17578_17a0c:
+.line 179
+	if-nez	v15,l17a78
+; v15 : single-length
+.line 180
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099657	; 0x7f060009
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 181
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099657	; 0x7f060009
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17a50:
+.line 188
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837570	; 0x7f020042
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 189
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837629	; 0x7f02007d
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17a78:
+.line 184
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099657	; 0x7f060009
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 185
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099657	; 0x7f060009
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17a50
+ps17578_17abc:
+.line 192
+	if-nez	v15,l17b28
+; v15 : single-length
+.line 193
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099658	; 0x7f06000a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 194
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099658	; 0x7f06000a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17b00:
+.line 201
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837571	; 0x7f020043
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 202
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837633	; 0x7f020081
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17b28:
+.line 197
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099658	; 0x7f06000a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 198
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099658	; 0x7f06000a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17b00
+ps17578_17b6c:
+.line 205
+	if-nez	v15,l17bd8
+; v15 : single-length
+.line 206
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099659	; 0x7f06000b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 207
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099659	; 0x7f06000b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17bb0:
+.line 214
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837572	; 0x7f020044
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 215
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837637	; 0x7f020085
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17bd8:
+.line 210
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099659	; 0x7f06000b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 211
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099659	; 0x7f06000b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17bb0
+ps17578_17c1c:
+.line 218
+	if-nez	v15,l17c88
+; v15 : single-length
+.line 219
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099660	; 0x7f06000c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 220
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099660	; 0x7f06000c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17c60:
+.line 227
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837573	; 0x7f020045
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 228
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837641	; 0x7f020089
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17c88:
+.line 223
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099660	; 0x7f06000c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 224
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099660	; 0x7f06000c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17c60
+ps17578_17ccc:
+.line 231
+	if-nez	v15,l17d38
+; v15 : single-length
+.line 232
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099661	; 0x7f06000d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 233
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099661	; 0x7f06000d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17d10:
+.line 240
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837574	; 0x7f020046
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 241
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837645	; 0x7f02008d
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17d38:
+.line 236
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099661	; 0x7f06000d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 237
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099661	; 0x7f06000d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17d10
+ps17578_17d7c:
+.line 244
+	if-nez	v15,l17de8
+; v15 : single-length
+.line 245
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099662	; 0x7f06000e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 246
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099662	; 0x7f06000e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17dc0:
+.line 253
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837575	; 0x7f020047
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 254
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837649	; 0x7f020091
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17de8:
+.line 249
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099662	; 0x7f06000e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 250
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099662	; 0x7f06000e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17dc0
+ps17578_17e2c:
+.line 257
+	if-nez	v15,l17e98
+; v15 : single-length
+.line 258
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099663	; 0x7f06000f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 259
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099663	; 0x7f06000f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17e70:
+.line 266
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837576	; 0x7f020048
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 267
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837653	; 0x7f020095
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17e98:
+.line 262
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099663	; 0x7f06000f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 263
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099663	; 0x7f06000f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17e70
+ps17578_17edc:
+.line 270
+	if-nez	v15,l17f48
+; v15 : single-length
+.line 271
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099664	; 0x7f060010
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 272
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099664	; 0x7f060010
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17f20:
+.line 279
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837577	; 0x7f020049
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 280
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837657	; 0x7f020099
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17f48:
+.line 275
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099664	; 0x7f060010
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 276
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099664	; 0x7f060010
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17f20
+ps17578_17f8c:
+.line 283
+	if-nez	v15,l17ff8
+; v15 : single-length
+.line 284
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099665	; 0x7f060011
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 285
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099665	; 0x7f060011
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l17fd0:
+.line 292
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837578	; 0x7f02004a
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 293
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837661	; 0x7f02009d
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l17ff8:
+.line 288
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099665	; 0x7f060011
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 289
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099665	; 0x7f060011
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l17fd0
+ps17578_1803c:
+.line 296
+	if-nez	v15,l180a8
+; v15 : single-length
+.line 297
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099666	; 0x7f060012
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 298
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099666	; 0x7f060012
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18080:
+.line 305
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837579	; 0x7f02004b
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 306
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837665	; 0x7f0200a1
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l180a8:
+.line 301
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099666	; 0x7f060012
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 302
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099666	; 0x7f060012
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18080
+ps17578_180ec:
+.line 309
+	if-nez	v15,l18158
+; v15 : single-length
+.line 310
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099667	; 0x7f060013
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 311
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099667	; 0x7f060013
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18130:
+.line 318
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837580	; 0x7f02004c
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 319
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837669	; 0x7f0200a5
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18158:
+.line 314
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099667	; 0x7f060013
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 315
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099667	; 0x7f060013
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18130
+ps17578_1819c:
+.line 322
+	if-nez	v15,l18208
+; v15 : single-length
+.line 323
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099668	; 0x7f060014
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 324
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099668	; 0x7f060014
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l181e0:
+.line 331
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837581	; 0x7f02004d
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 332
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837673	; 0x7f0200a9
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18208:
+.line 327
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099668	; 0x7f060014
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 328
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099668	; 0x7f060014
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l181e0
+ps17578_1824c:
+.line 335
+	if-nez	v15,l182b8
+; v15 : single-length
+.line 336
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099669	; 0x7f060015
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 337
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099669	; 0x7f060015
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18290:
+.line 344
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837582	; 0x7f02004e
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 345
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837677	; 0x7f0200ad
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l182b8:
+.line 340
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099669	; 0x7f060015
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 341
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099669	; 0x7f060015
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18290
+ps17578_182fc:
+.line 348
+	if-nez	v15,l18368
+; v15 : single-length
+.line 349
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099670	; 0x7f060016
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 350
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099670	; 0x7f060016
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18340:
+.line 357
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837583	; 0x7f02004f
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 358
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837681	; 0x7f0200b1
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18368:
+.line 353
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099670	; 0x7f060016
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 354
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099670	; 0x7f060016
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18340
+ps17578_183ac:
+.line 361
+	if-nez	v15,l18418
+; v15 : single-length
+.line 362
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099671	; 0x7f060017
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 363
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099671	; 0x7f060017
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l183f0:
+.line 370
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837584	; 0x7f020050
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 371
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837685	; 0x7f0200b5
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18418:
+.line 366
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099671	; 0x7f060017
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 367
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099671	; 0x7f060017
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l183f0
+ps17578_1845c:
+.line 374
+	if-nez	v15,l184c8
+; v15 : single-length
+.line 375
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099672	; 0x7f060018
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 376
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099672	; 0x7f060018
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l184a0:
+.line 383
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837585	; 0x7f020051
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 384
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837689	; 0x7f0200b9
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l184c8:
+.line 379
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099672	; 0x7f060018
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 380
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099672	; 0x7f060018
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l184a0
+ps17578_1850c:
+.line 387
+	if-nez	v15,l18578
+; v15 : single-length
+.line 388
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099673	; 0x7f060019
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 389
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099673	; 0x7f060019
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18550:
+.line 396
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837586	; 0x7f020052
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 397
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837693	; 0x7f0200bd
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18578:
+.line 392
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099673	; 0x7f060019
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 393
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099673	; 0x7f060019
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18550
+ps17578_185bc:
+.line 400
+	if-nez	v15,l18628
+; v15 : single-length
+.line 401
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099674	; 0x7f06001a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 402
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099674	; 0x7f06001a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18600:
+.line 409
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837587	; 0x7f020053
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 410
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837697	; 0x7f0200c1
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18628:
+.line 405
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099674	; 0x7f06001a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 406
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099674	; 0x7f06001a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18600
+ps17578_1866c:
+.line 413
+	if-nez	v15,l186d8
+; v15 : single-length
+.line 414
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099675	; 0x7f06001b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 415
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099675	; 0x7f06001b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l186b0:
+.line 422
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837588	; 0x7f020054
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 423
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837701	; 0x7f0200c5
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l186d8:
+.line 418
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099675	; 0x7f06001b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 419
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099675	; 0x7f06001b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l186b0
+ps17578_1871c:
+.line 426
+	if-nez	v15,l18788
+; v15 : single-length
+.line 427
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099676	; 0x7f06001c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 428
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099676	; 0x7f06001c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18760:
+.line 435
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837589	; 0x7f020055
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 436
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837705	; 0x7f0200c9
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18788:
+.line 431
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099676	; 0x7f06001c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 432
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099676	; 0x7f06001c
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18760
+ps17578_187cc:
+.line 439
+	if-nez	v15,l18838
+; v15 : single-length
+.line 440
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099677	; 0x7f06001d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 441
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099677	; 0x7f06001d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18810:
+.line 448
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837590	; 0x7f020056
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 449
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837709	; 0x7f0200cd
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18838:
+.line 444
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099677	; 0x7f06001d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 445
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099677	; 0x7f06001d
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18810
+ps17578_1887c:
+.line 452
+	if-nez	v15,l188e8
+; v15 : single-length
+.line 453
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099678	; 0x7f06001e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 454
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099678	; 0x7f06001e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l188c0:
+.line 461
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837591	; 0x7f020057
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 462
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837713	; 0x7f0200d1
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l188e8:
+.line 457
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099678	; 0x7f06001e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 458
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099678	; 0x7f06001e
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l188c0
+ps17578_1892c:
+.line 465
+	if-nez	v15,l18998
+; v15 : single-length
+.line 466
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099679	; 0x7f06001f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 467
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099679	; 0x7f06001f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18970:
+.line 474
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837592	; 0x7f020058
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 475
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837717	; 0x7f0200d5
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18998:
+.line 470
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099679	; 0x7f06001f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 471
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099679	; 0x7f06001f
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18970
+ps17578_189dc:
+.line 478
+	if-nez	v15,l18a48
+; v15 : single-length
+.line 479
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099680	; 0x7f060020
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 480
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099680	; 0x7f060020
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18a20:
+.line 487
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837593	; 0x7f020059
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 488
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837721	; 0x7f0200d9
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18a48:
+.line 483
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099680	; 0x7f060020
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 484
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099680	; 0x7f060020
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18a20
+ps17578_18a8c:
+.line 491
+	if-nez	v15,l18af8
+; v15 : single-length
+.line 492
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099681	; 0x7f060021
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 493
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099681	; 0x7f060021
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18ad0:
+.line 500
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837594	; 0x7f02005a
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 501
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837725	; 0x7f0200dd
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18af8:
+.line 496
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099681	; 0x7f060021
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 497
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099681	; 0x7f060021
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18ad0
+ps17578_18b3c:
+.line 504
+	if-nez	v15,l18ba8
+; v15 : single-length
+.line 505
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099682	; 0x7f060022
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 506
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099682	; 0x7f060022
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18b80:
+.line 513
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837595	; 0x7f02005b
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 514
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837729	; 0x7f0200e1
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18ba8:
+.line 509
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099682	; 0x7f060022
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 510
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099682	; 0x7f060022
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18b80
+ps17578_18bec:
+.line 517
+	if-nez	v15,l18c58
+; v15 : single-length
+.line 518
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099683	; 0x7f060023
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 519
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099683	; 0x7f060023
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18c30:
+.line 526
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837596	; 0x7f02005c
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 527
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837733	; 0x7f0200e5
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18c58:
+.line 522
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099683	; 0x7f060023
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 523
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099683	; 0x7f060023
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18c30
+ps17578_18c9c:
+.line 530
+	if-nez	v15,l18d08
+; v15 : single-length
+.line 531
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099684	; 0x7f060024
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 532
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099684	; 0x7f060024
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18ce0:
+.line 539
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837597	; 0x7f02005d
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 540
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837737	; 0x7f0200e9
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18d08:
+.line 535
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099684	; 0x7f060024
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 536
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099684	; 0x7f060024
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18ce0
+ps17578_18d4c:
+.line 543
+	if-nez	v15,l18db8
+; v15 : single-length
+.line 544
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099685	; 0x7f060025
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 545
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099685	; 0x7f060025
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18d90:
+.line 552
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837598	; 0x7f02005e
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 553
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837741	; 0x7f0200ed
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18db8:
+.line 548
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099685	; 0x7f060025
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 549
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099685	; 0x7f060025
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18d90
+ps17578_18dfc:
+.line 556
+	if-nez	v15,l18e68
+; v15 : single-length
+.line 557
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099686	; 0x7f060026
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 558
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099686	; 0x7f060026
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18e40:
+.line 565
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837599	; 0x7f02005f
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 566
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837745	; 0x7f0200f1
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18e68:
+.line 561
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099686	; 0x7f060026
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 562
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099686	; 0x7f060026
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18e40
+ps17578_18eac:
+.line 569
+	if-nez	v15,l18f18
+; v15 : single-length
+.line 570
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099687	; 0x7f060027
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 571
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099687	; 0x7f060027
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18ef0:
+.line 578
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837600	; 0x7f020060
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 579
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837749	; 0x7f0200f5
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18f18:
+.line 574
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099687	; 0x7f060027
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 575
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099687	; 0x7f060027
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18ef0
+ps17578_18f5c:
+.line 582
+	if-nez	v15,l18fc8
+; v15 : single-length
+.line 583
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099688	; 0x7f060028
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 584
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099688	; 0x7f060028
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l18fa0:
+.line 591
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837601	; 0x7f020061
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 592
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837753	; 0x7f0200f9
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l18fc8:
+.line 587
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099688	; 0x7f060028
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 588
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099688	; 0x7f060028
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l18fa0
+ps17578_1900c:
+.line 595
+	if-nez	v15,l19078
+; v15 : single-length
+.line 596
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099689	; 0x7f060029
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 597
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099689	; 0x7f060029
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l19050:
+.line 604
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837602	; 0x7f020062
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 605
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837757	; 0x7f0200fd
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l19078:
+.line 600
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099689	; 0x7f060029
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 601
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099689	; 0x7f060029
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l19050
+ps17578_190bc:
+.line 608
+	if-nez	v15,l19128
+; v15 : single-length
+.line 609
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099690	; 0x7f06002a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v8
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v8 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 610
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099690	; 0x7f06002a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v9
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v9 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+l19100:
+.line 617
+	const	v4,2131296316	; 0x7f09003c
+; v4 : single-length
+	const	v5,2130837603	; 0x7f020063
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+.line 618
+	const	v4,2131296261	; 0x7f090005
+; v4 : single-length
+	const	v5,2130837761	; 0x7f020101
+; v5 : single-length
+	invoke-virtual	{v3,v4,v5},android/widget/RemoteViews/setImageViewResource	; setImageViewResource(II)V
+; v3 : Landroid/widget/RemoteViews; , v4 : single-length , v5 : single-length
+	goto/16	l175e6
+l19128:
+.line 613
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099690	; 0x7f06002a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 614
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099690	; 0x7f06002a
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto	l19100
+l1916c:
+.line 626
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099691	; 0x7f06002b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	aget-object	v4,v4,v10
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v10 : single-length
+	invoke-virtual	{v3,v6,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v6 : single-length , v4 : Ljava/lang/String;
+.line 627
+	invoke-virtual	{v11},android/content/Context/getResources	; getResources()Landroid/content/res/Resources;
+; v11 : Landroid/content/Context;
+	move-result-object	v4
+; v4 : Landroid/content/res/Resources;
+	const	v5,2131099691	; 0x7f06002b
+; v5 : single-length
+	invoke-virtual	{v4,v5},android/content/res/Resources/getStringArray	; getStringArray(I)[Ljava/lang/String;
+; v4 : Landroid/content/res/Resources; , v5 : single-length
+	move-result-object	v4
+; v4 : [Ljava/lang/String;
+	const/4	v5,4
+; v5 : single-length
+	aget-object	v4,v4,v5
+; v4 : Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length
+	invoke-virtual	{v3,v7,v4},android/widget/RemoteViews/setTextViewText	; setTextViewText(ILjava/lang/CharSequence;)V
+; v3 : Landroid/widget/RemoteViews; , v7 : single-length , v4 : Ljava/lang/String;
+	goto/16	l175c2
+.line 98
+l191b2:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method public onUpdate(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;[I)V
+.limit registers 9
+; this: v5 (Lapp/dzieciowomi/pregcal/PCWidget;)
+; parameter[0] : v6 (Landroid/content/Context;)
+; parameter[1] : v7 (Landroid/appwidget/AppWidgetManager;)
+; parameter[2] : v8 ([I)
+.line 63
+	array-length	v0,v8
+; v0 : single-length , v8 : [I
+.line 64
+	const/4	v2,0
+; v2 : single-length
+l19270:
+	if-lt	v2,v0,l19276
+; v2 : single-length , v0 : single-length
+.line 70
+	return-void	
+l19276:
+.line 65
+	aget	v1,v8,v2
+; v1 : single-length , v8 : [I , v2 : single-length
+.line 66
+	invoke-static	{v6},app/dzieciowomi/pregcal/PCWidgetConfigure/getDate	; getDate(Landroid/content/Context;)Ljava/lang/String;
+; v6 : Landroid/content/Context;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+.line 67
+	invoke-static	{v6},app/dzieciowomi/pregcal/PCWidgetConfigure/useImperialUnit	; useImperialUnit(Landroid/content/Context;)Z
+; v6 : Landroid/content/Context;
+	move-result	v4
+; v4 : single-length
+.line 68
+	invoke-static	{v6,v7,v1,v3,v4},app/dzieciowomi/pregcal/PCWidget/updateAppWidget	; updateAppWidget(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;ILjava/lang/String;Z)V
+; v6 : Landroid/content/Context; , v7 : Landroid/appwidget/AppWidgetManager; , v1 : single-length , v3 : Ljava/lang/String; , v4 : single-length
+.line 64
+	add-int/lit8	v2,v2,1
+; v2 : single-length , v2 : single-length
+	goto	l19270
+.end method
+
+

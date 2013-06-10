@@ -1,0 +1,438 @@
+.class public app/dzieciowomi/pregcal/PCSettingsView
+.super android/preference/PreferenceActivity
+.source PCSettingsView.java
+
+.field public static final IMPERIAL_UNIT I = 1	; 0x1
+.field public static final MAX_DATE_DIFFERENCE I = 281	; 0x119
+.field public static final METRIC_UNIT I
+.field public static final MIN_DATE_DIFFERENCE I
+.field private mDueDate Ljava/lang/String;
+.field private mDueDateDlg Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+.field private mInitialDate Ljava/lang/String;
+.field private mInitialDateDlg Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+.field private mUseImperial Z
+
+.method public <init>()V
+.limit registers 2
+; this: v1 (Lapp/dzieciowomi/pregcal/PCSettingsView;)
+.line 26
+	invoke-direct	{v1},android/preference/PreferenceActivity/<init>	; <init>()V
+; v1 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 35
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,app/dzieciowomi/pregcal/PCSettingsView.mInitialDate Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 36
+	const-string	v0,""
+; v0 : Ljava/lang/String;
+	iput-object	v0,v1,app/dzieciowomi/pregcal/PCSettingsView.mDueDate Ljava/lang/String;
+; v0 : Ljava/lang/String; , v1 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 37
+	const/4	v0,1
+; v0 : single-length
+	iput-boolean	v0,v1,app/dzieciowomi/pregcal/PCSettingsView.mUseImperial Z
+; v0 : single-length , v1 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 26
+	return-void	
+.end method
+
+.method static access$0(Lapp/dzieciowomi/pregcal/PCSettingsView;Z)V
+.limit registers 2
+; parameter[0] : v0 (Lapp/dzieciowomi/pregcal/PCSettingsView;)
+; parameter[1] : v1 (Z)
+.line 37
+	iput-boolean	v1,v0,app/dzieciowomi/pregcal/PCSettingsView.mUseImperial Z
+; v1 : single-length , v0 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	return-void	
+.end method
+
+.method static access$1(Lapp/dzieciowomi/pregcal/PCSettingsView;)Z
+.limit registers 2
+; parameter[0] : v1 (Lapp/dzieciowomi/pregcal/PCSettingsView;)
+.line 37
+	iget-boolean	v0,v1,app/dzieciowomi/pregcal/PCSettingsView.mUseImperial Z
+; v0 : single-length , v1 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	return	v0
+; v0 : single-length
+.end method
+
+.method private createPreferenceHierarchy()Landroid/preference/PreferenceScreen;
+.limit registers 11
+; this: v10 (Lapp/dzieciowomi/pregcal/PCSettingsView;)
+	const/4	v9,0
+; v9 : single-length
+	const	v8,2131034124	; 0x7f05000c
+; v8 : single-length
+	const	v7,2131034120	; 0x7f050008
+; v7 : single-length
+	const	v5,2131034116	; 0x7f050004
+; v5 : single-length
+.line 63
+	invoke-virtual	{v10},app/dzieciowomi/pregcal/PCSettingsView/getPreferenceManager	; getPreferenceManager()Landroid/preference/PreferenceManager;
+; v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	move-result-object	v4
+; v4 : Landroid/preference/PreferenceManager;
+	invoke-virtual	{v4,v10},android/preference/PreferenceManager/createPreferenceScreen	; createPreferenceScreen(Landroid/content/Context;)Landroid/preference/PreferenceScreen;
+; v4 : Landroid/preference/PreferenceManager; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	move-result-object	v2
+; v2 : Landroid/preference/PreferenceScreen;
+.line 65
+	new-instance	v0,android/preference/PreferenceCategory
+; v0 : Landroid/preference/PreferenceCategory;
+	invoke-direct	{v0,v10},android/preference/PreferenceCategory/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Landroid/preference/PreferenceCategory; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 66
+	const	v4,2131034130	; 0x7f050012
+; v4 : single-length
+	invoke-virtual	{v0,v4},android/preference/PreferenceCategory/setTitle	; setTitle(I)V
+; v0 : Landroid/preference/PreferenceCategory; , v4 : single-length
+.line 67
+	invoke-virtual	{v2,v0},android/preference/PreferenceScreen/addPreference	; addPreference(Landroid/preference/Preference;)Z
+; v2 : Landroid/preference/PreferenceScreen; , v0 : Landroid/preference/PreferenceCategory;
+.line 68
+	new-instance	v4,app/dzieciowomi/pregcal/DatePickerDialogPreference
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+	invoke-direct	{v4,v10,v9},app/dzieciowomi/pregcal/DatePickerDialogPreference/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v9 : single-length
+	iput-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mInitialDateDlg Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 69
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mInitialDateDlg Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v4,v5},app/dzieciowomi/pregcal/DatePickerDialogPreference/setDialogTitle	; setDialogTitle(I)V
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v5 : single-length
+.line 70
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mInitialDateDlg Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v4,v5},app/dzieciowomi/pregcal/DatePickerDialogPreference/setTitle	; setTitle(I)V
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v5 : single-length
+.line 71
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mInitialDateDlg Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	new-instance	v5,java/lang/StringBuilder
+; v5 : Ljava/lang/StringBuilder;
+	const	v6,2131034117	; 0x7f050005
+; v6 : single-length
+	invoke-virtual	{v10,v6},app/dzieciowomi/pregcal/PCSettingsView/getString	; getString(I)Ljava/lang/String;
+; v10 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v6 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-static	{v6},java/lang/String/valueOf	; valueOf(Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-direct	{v5,v6},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	const-string	v6," "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	iget-object	v6,v10,app/dzieciowomi/pregcal/PCSettingsView.mInitialDate Ljava/lang/String;
+; v6 : Ljava/lang/String; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6," "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v10,v8},app/dzieciowomi/pregcal/PCSettingsView/getString	; getString(I)Ljava/lang/String;
+; v10 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v8 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v5 : Ljava/lang/StringBuilder;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},app/dzieciowomi/pregcal/DatePickerDialogPreference/setSummary	; setSummary(Ljava/lang/CharSequence;)V
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v5 : Ljava/lang/String;
+.line 72
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mInitialDateDlg Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v0,v4},android/preference/PreferenceCategory/addPreference	; addPreference(Landroid/preference/Preference;)Z
+; v0 : Landroid/preference/PreferenceCategory; , v4 : Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;
+.line 74
+	new-instance	v4,app/dzieciowomi/pregcal/DueDatePickerDialogPreference
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+	invoke-direct	{v4,v10,v9},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/<init>	; <init>(Landroid/content/Context;Landroid/util/AttributeSet;)V
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v9 : single-length
+	iput-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mDueDateDlg Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 75
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mDueDateDlg Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v4,v7},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/setDialogTitle	; setDialogTitle(I)V
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v7 : single-length
+.line 76
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mDueDateDlg Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v4,v7},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/setTitle	; setTitle(I)V
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v7 : single-length
+.line 77
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mDueDateDlg Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	new-instance	v5,java/lang/StringBuilder
+; v5 : Ljava/lang/StringBuilder;
+	const	v6,2131034121	; 0x7f050009
+; v6 : single-length
+	invoke-virtual	{v10,v6},app/dzieciowomi/pregcal/PCSettingsView/getString	; getString(I)Ljava/lang/String;
+; v10 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v6 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-static	{v6},java/lang/String/valueOf	; valueOf(Ljava/lang/Object;)Ljava/lang/String;
+; v6 : Ljava/lang/String;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-direct	{v5,v6},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	const-string	v6," "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	iget-object	v6,v10,app/dzieciowomi/pregcal/PCSettingsView.mDueDate Ljava/lang/String;
+; v6 : Ljava/lang/String; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	const-string	v6," "
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v10,v8},app/dzieciowomi/pregcal/PCSettingsView/getString	; getString(I)Ljava/lang/String;
+; v10 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v8 : single-length
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	invoke-virtual	{v5,v6},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v5 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	move-result-object	v5
+; v5 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v5},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v5 : Ljava/lang/StringBuilder;
+	move-result-object	v5
+; v5 : Ljava/lang/String;
+	invoke-virtual	{v4,v5},app/dzieciowomi/pregcal/DueDatePickerDialogPreference/setSummary	; setSummary(Ljava/lang/CharSequence;)V
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v5 : Ljava/lang/String;
+.line 78
+	iget-object	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mDueDateDlg Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+; v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v0,v4},android/preference/PreferenceCategory/addPreference	; addPreference(Landroid/preference/Preference;)Z
+; v0 : Landroid/preference/PreferenceCategory; , v4 : Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;
+.line 80
+	new-instance	v1,android/preference/PreferenceCategory
+; v1 : Landroid/preference/PreferenceCategory;
+	invoke-direct	{v1,v10},android/preference/PreferenceCategory/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Landroid/preference/PreferenceCategory; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 81
+	const	v4,2131034143	; 0x7f05001f
+; v4 : single-length
+	invoke-virtual	{v1,v4},android/preference/PreferenceCategory/setTitle	; setTitle(I)V
+; v1 : Landroid/preference/PreferenceCategory; , v4 : single-length
+.line 82
+	invoke-virtual	{v2,v1},android/preference/PreferenceScreen/addPreference	; addPreference(Landroid/preference/Preference;)Z
+; v2 : Landroid/preference/PreferenceScreen; , v1 : Landroid/preference/PreferenceCategory;
+.line 84
+	new-instance	v3,android/preference/CheckBoxPreference
+; v3 : Landroid/preference/CheckBoxPreference;
+	invoke-direct	{v3,v10},android/preference/CheckBoxPreference/<init>	; <init>(Landroid/content/Context;)V
+; v3 : Landroid/preference/CheckBoxPreference; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 85
+	const	v4,2131034141	; 0x7f05001d
+; v4 : single-length
+	invoke-virtual	{v3,v4},android/preference/CheckBoxPreference/setTitle	; setTitle(I)V
+; v3 : Landroid/preference/CheckBoxPreference; , v4 : single-length
+.line 86
+	const	v4,2131034142	; 0x7f05001e
+; v4 : single-length
+	invoke-virtual	{v3,v4},android/preference/CheckBoxPreference/setSummary	; setSummary(I)V
+; v3 : Landroid/preference/CheckBoxPreference; , v4 : single-length
+.line 87
+	iget-boolean	v4,v10,app/dzieciowomi/pregcal/PCSettingsView.mUseImperial Z
+; v4 : single-length , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v3,v4},android/preference/CheckBoxPreference/setChecked	; setChecked(Z)V
+; v3 : Landroid/preference/CheckBoxPreference; , v4 : single-length
+.line 88
+	new-instance	v4,app/dzieciowomi/pregcal/PCSettingsView$1
+; v4 : Lapp/dzieciowomi/pregcal/PCSettingsView$1;
+	invoke-direct	{v4,v10},app/dzieciowomi/pregcal/PCSettingsView$1/<init>	; <init>(Lapp/dzieciowomi/pregcal/PCSettingsView;)V
+; v4 : Lapp/dzieciowomi/pregcal/PCSettingsView$1; , v10 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	invoke-virtual	{v3,v4},android/preference/CheckBoxPreference/setOnPreferenceClickListener	; setOnPreferenceClickListener(Landroid/preference/Preference$OnPreferenceClickListener;)V
+; v3 : Landroid/preference/CheckBoxPreference; , v4 : Lapp/dzieciowomi/pregcal/PCSettingsView$1;
+.line 105
+	invoke-virtual	{v1,v3},android/preference/PreferenceCategory/addPreference	; addPreference(Landroid/preference/Preference;)Z
+; v1 : Landroid/preference/PreferenceCategory; , v3 : Landroid/preference/CheckBoxPreference;
+.line 119
+	return-object	v2
+; v2 : Landroid/preference/PreferenceScreen;
+.end method
+
+.method protected onCreate(Landroid/os/Bundle;)V
+.limit registers 10
+; this: v8 (Lapp/dzieciowomi/pregcal/PCSettingsView;)
+; parameter[0] : v9 (Landroid/os/Bundle;)
+.var 1 is cal Ljava/util/Calendar; from l171b4 to l171fe
+.var 3 is df Ljava/text/DateFormat; from l17184 to l171fe
+.var 4 is initDate Ljava/lang/Long; from l171a0 to l171fe
+	const/4	v5,1
+; v5 : single-length
+.line 41
+	invoke-super	{v8,v9},android/preference/PreferenceActivity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v8 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v9 : Landroid/os/Bundle;
+.line 43
+	new-instance	v2,app/dzieciowomi/pregcal/PCDatabaseAdapter
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+	invoke-direct	{v2,v8},app/dzieciowomi/pregcal/PCDatabaseAdapter/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; , v8 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 44
+	invoke-virtual	{v2},app/dzieciowomi/pregcal/PCDatabaseAdapter/open	; open()Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+.line 45
+	const-wide/16	v6,1
+; v6 : double-length
+	invoke-virtual	{v2,v6,v7},app/dzieciowomi/pregcal/PCDatabaseAdapter/fetchProfile	; fetchProfile(J)Landroid/database/Cursor;
+; v2 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; , v6 : double-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+.line 46
+	invoke-virtual	{v8,v0},app/dzieciowomi/pregcal/PCSettingsView/startManagingCursor	; startManagingCursor(Landroid/database/Cursor;)V
+; v8 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v0 : Landroid/database/Cursor;
+.line 47
+	invoke-interface	{v0},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v0 : Landroid/database/Cursor;
+	move-result	v6
+; v6 : single-length
+	if-eqz	v6,l171fe
+; v6 : single-length
+.line 48
+	const/4	v6,2
+; v6 : single-length
+	invoke-static	{},java/util/Locale/getDefault	; getDefault()Ljava/util/Locale;
+; 
+	nop	
+	move-result-object	v7
+; v7 : Ljava/util/Locale;
+	invoke-static	{v6,v7},java/text/DateFormat/getDateInstance	; getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+; v6 : single-length , v7 : Ljava/util/Locale;
+	move-result-object	v3
+; v3 : Ljava/text/DateFormat;
+.line 49
+	const-string	v6,"initdate"
+; v6 : Ljava/lang/String;
+	invoke-interface	{v0,v6},android/database/Cursor/getColumnIndexOrThrow	; getColumnIndexOrThrow(Ljava/lang/String;)I
+; v0 : Landroid/database/Cursor; , v6 : Ljava/lang/String;
+	move-result	v6
+; v6 : single-length
+	invoke-interface	{v0,v6},android/database/Cursor/getLong	; getLong(I)J
+; v0 : Landroid/database/Cursor; , v6 : single-length
+	move-result-wide	v6
+; v6 : double-length
+	invoke-static	{v6,v7},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v6 : double-length
+	move-result-object	v4
+; v4 : Ljava/lang/Long;
+.line 50
+	invoke-virtual	{v3,v4},java/text/DateFormat/format	; format(Ljava/lang/Object;)Ljava/lang/String;
+; v3 : Ljava/text/DateFormat; , v4 : Ljava/lang/Long;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	iput-object	v6,v8,app/dzieciowomi/pregcal/PCSettingsView.mInitialDate Ljava/lang/String;
+; v6 : Ljava/lang/String; , v8 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 51
+	invoke-static	{},java/util/Calendar/getInstance	; getInstance()Ljava/util/Calendar;
+; 
+	nop	
+	move-result-object	v1
+; v1 : Ljava/util/Calendar;
+.line 52
+	invoke-virtual	{v4},java/lang/Long/longValue	; longValue()J
+; v4 : Ljava/lang/Long;
+	move-result-wide	v6
+; v6 : double-length
+	invoke-virtual	{v1,v6,v7},java/util/Calendar/setTimeInMillis	; setTimeInMillis(J)V
+; v1 : Ljava/util/Calendar; , v6 : double-length
+.line 53
+	const/4	v6,5
+; v6 : single-length
+	const/16	v7,280
+; v7 : single-length
+	invoke-virtual	{v1,v6,v7},java/util/Calendar/add	; add(II)V
+; v1 : Ljava/util/Calendar; , v6 : single-length , v7 : single-length
+.line 54
+	invoke-virtual	{v1},java/util/Calendar/getTime	; getTime()Ljava/util/Date;
+; v1 : Ljava/util/Calendar;
+	move-result-object	v6
+; v6 : Ljava/util/Date;
+	invoke-virtual	{v3,v6},java/text/DateFormat/format	; format(Ljava/util/Date;)Ljava/lang/String;
+; v3 : Ljava/text/DateFormat; , v6 : Ljava/util/Date;
+	move-result-object	v6
+; v6 : Ljava/lang/String;
+	iput-object	v6,v8,app/dzieciowomi/pregcal/PCSettingsView.mDueDate Ljava/lang/String;
+; v6 : Ljava/lang/String; , v8 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 55
+	const-string	v6,"unit"
+; v6 : Ljava/lang/String;
+	invoke-interface	{v0,v6},android/database/Cursor/getColumnIndexOrThrow	; getColumnIndexOrThrow(Ljava/lang/String;)I
+; v0 : Landroid/database/Cursor; , v6 : Ljava/lang/String;
+	move-result	v6
+; v6 : single-length
+	invoke-interface	{v0,v6},android/database/Cursor/getInt	; getInt(I)I
+; v0 : Landroid/database/Cursor; , v6 : single-length
+	move-result	v6
+; v6 : single-length
+	if-ne	v6,v5,l1720e
+; v6 : single-length , v5 : single-length
+l171fa:
+	iput-boolean	v5,v8,app/dzieciowomi/pregcal/PCSettingsView.mUseImperial Z
+; v5 : single-length , v8 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+l171fe:
+.line 58
+	invoke-direct	{v8},app/dzieciowomi/pregcal/PCSettingsView/createPreferenceHierarchy	; createPreferenceHierarchy()Landroid/preference/PreferenceScreen;
+; v8 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+	move-result-object	v5
+; v5 : Landroid/preference/PreferenceScreen;
+	invoke-virtual	{v8,v5},app/dzieciowomi/pregcal/PCSettingsView/setPreferenceScreen	; setPreferenceScreen(Landroid/preference/PreferenceScreen;)V
+; v8 : Lapp/dzieciowomi/pregcal/PCSettingsView; , v5 : Landroid/preference/PreferenceScreen;
+.line 59
+	return-void	
+l1720e:
+.line 55
+	const/4	v5,0
+; v5 : single-length
+	goto	l171fa
+.end method
+
+.method protected onResume()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/PCSettingsView;)
+.line 124
+	invoke-super	{v0},android/preference/PreferenceActivity/onResume	; onResume()V
+; v0 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 127
+	return-void	
+.end method
+
+.method protected onStop()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/PCSettingsView;)
+.line 132
+	invoke-super	{v0},android/preference/PreferenceActivity/onStop	; onStop()V
+; v0 : Lapp/dzieciowomi/pregcal/PCSettingsView;
+.line 133
+	return-void	
+.end method
+
+

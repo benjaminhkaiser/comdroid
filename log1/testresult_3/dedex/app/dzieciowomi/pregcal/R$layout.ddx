@@ -1,0 +1,28 @@
+.class public final app/dzieciowomi/pregcal/R$layout
+.super java/lang/Object
+.source R.java
+
+.inner class layout inner app/dzieciowomi/pregcal/R$layout outer app/dzieciowomi/pregcal/R
+.field public static final about I = 2130903040	; 0x7f030000
+.field public static final blue_widget_pc I = 2130903041	; 0x7f030001
+.field public static final detailed I = 2130903042	; 0x7f030002
+.field public static final general I = 2130903043	; 0x7f030003
+.field public static final image_layout I = 2130903044	; 0x7f030004
+.field public static final main I = 2130903045	; 0x7f030005
+.field public static final note_edit I = 2130903046	; 0x7f030006
+.field public static final notes_list I = 2130903047	; 0x7f030007
+.field public static final notes_row I = 2130903048	; 0x7f030008
+.field public static final notes_view I = 2130903049	; 0x7f030009
+.field public static final weeks I = 2130903050	; 0x7f03000a
+.field public static final widget_pc I = 2130903051	; 0x7f03000b
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/R$layout;)
+.line 467
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/R$layout;
+	return-void	
+.end method
+
+

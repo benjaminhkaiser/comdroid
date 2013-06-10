@@ -127,6 +127,7 @@ if options.l:
    if logdir[-1] != '/': logdir += '/'
 os.system("mkdir %s" %logdir)
 
+listing = []
 if options.f:
    file = open(options.f, 'r')
    listing = file.readlines()
@@ -134,25 +135,18 @@ if options.f:
    file.close()
    print listing
 
-#targets = sys.argv[2:]
-#if targets:
-#    listing = []
-#    for ele in targets:
-#        if os.path.isfile(ele):
-#            listing.append(ele)
-#        else:
-#            if os.path.isdir(ele):
-#                if ele[-1] != '/': ele += '/'
-#                entries = os.listdir(ele)
-#                entries2 = map(lambda x: ele+x, entries)
-#                for v in entries2:
-#                    listing.append(v)
-#    #find_threats(listing)
-#else:
-#    listing = os.listdir(directory)
-#    #listing2 = map(lambda x: directory+x, listing)
-#    #find_threats(listing2)
-#    listing = map(lambda x: directory+x, listing)
+targets = args[1:]
+if targets:
+    for ele in targets:
+        if os.path.isfile(ele):
+            listing.append(ele)
+        else:
+            if os.path.isdir(ele):
+                if ele[-1] != '/': ele += '/'
+                entries = os.listdir(ele)
+                entries2 = map(lambda x: ele+x, entries)
+                for v in entries2:
+                    listing.append(v)
 
 listing_len = len(listing)
 slice_size = listing_len/THREAD_NUM

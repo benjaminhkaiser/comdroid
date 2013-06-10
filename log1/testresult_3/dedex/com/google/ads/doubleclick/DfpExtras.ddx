@@ -1,0 +1,15 @@
+.class public com/google/ads/doubleclick/DfpExtras
+.super com/google/ads/mediation/admob/AdMobAdapterExtras
+.source SourceFile
+
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lcom/google/ads/doubleclick/DfpExtras;)
+.line 10
+	invoke-direct	{v0},com/google/ads/mediation/admob/AdMobAdapterExtras/<init>	; <init>()V
+; v0 : Lcom/google/ads/doubleclick/DfpExtras;
+	return-void	
+.end method
+
+

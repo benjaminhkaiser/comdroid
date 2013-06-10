@@ -1,0 +1,403 @@
+.class public app/dzieciowomi/pregcal/PCNotesDbAdapter
+.super java/lang/Object
+.source PCNotesDbAdapter.java
+
+.inner class DatabaseHelper inner app/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper outer app/dzieciowomi/pregcal/PCNotesDbAdapter
+.field private static final DATABASE_CREATE Ljava/lang/String; = "create table notes (_id integer primary key autoincrement, note_text text not null, note_week integer not null);"
+.field private static final DATABASE_NAME Ljava/lang/String; = "notes_database"
+.field private static final DATABASE_TABLE Ljava/lang/String; = "notes"
+.field private static final DATABASE_VERSION I = 2	; 0x2
+.field public static final KEY_NOTE_TEXT Ljava/lang/String; = "note_text"
+.field public static final KEY_NOTE_WEEK Ljava/lang/String; = "note_week"
+.field public static final KEY_ROWID Ljava/lang/String; = "_id"
+.field private static final TAG Ljava/lang/String; = "PCNotesDbAdapter"
+.field private final mCtx Landroid/content/Context;
+.field private mDb Landroid/database/sqlite/SQLiteDatabase;
+.field private mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper;
+
+.method public <init>(Landroid/content/Context;)V
+.limit registers 2
+; this: v0 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+; parameter[0] : v1 (Landroid/content/Context;)
+.line 87
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.line 88
+	iput-object	v1,v0,app/dzieciowomi/pregcal/PCNotesDbAdapter.mCtx Landroid/content/Context;
+; v1 : Landroid/content/Context; , v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.line 89
+	return-void	
+.end method
+
+.method public close()V
+.limit registers 2
+; this: v1 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+.line 107
+	iget-object	v0,v1,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper;
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper; , v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	invoke-virtual	{v0},app/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper/close	; close()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper;
+.line 108
+	return-void	
+.end method
+
+.method public createNote(Ljava/lang/String;I)J
+.limit registers 7
+; this: v4 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+; parameter[0] : v5 (Ljava/lang/String;)
+; parameter[1] : v6 (I)
+.line 121
+	new-instance	v0,android/content/ContentValues
+; v0 : Landroid/content/ContentValues;
+	invoke-direct	{v0},android/content/ContentValues/<init>	; <init>()V
+; v0 : Landroid/content/ContentValues;
+.line 122
+	const-string	v1,"note_text"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v5},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Landroid/content/ContentValues; , v1 : Ljava/lang/String; , v5 : Ljava/lang/String;
+.line 123
+	const-string	v1,"note_week"
+; v1 : Ljava/lang/String;
+	invoke-static	{v6},java/lang/Integer/valueOf	; valueOf(I)Ljava/lang/Integer;
+; v6 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/Integer;
+	invoke-virtual	{v0,v1,v2},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/Integer;)V
+; v0 : Landroid/content/ContentValues; , v1 : Ljava/lang/String; , v2 : Ljava/lang/Integer;
+.line 125
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDb Landroid/database/sqlite/SQLiteDatabase;
+; v1 : Landroid/database/sqlite/SQLiteDatabase; , v4 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	const-string	v2,"notes"
+; v2 : Ljava/lang/String;
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v1,v2,v3,v0},android/database/sqlite/SQLiteDatabase/insert	; insert(Ljava/lang/String;Ljava/lang/String;Landroid/content/ContentValues;)J
+; v1 : Landroid/database/sqlite/SQLiteDatabase; , v2 : Ljava/lang/String; , v3 : single-length , v0 : Landroid/content/ContentValues;
+	move-result-wide	v1
+; v1 : double-length
+	return-wide	v1
+; v1 : double-length
+.end method
+
+.method public deleteNote(J)Z
+.limit registers 7
+; this: v4 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+; parameter[0] : v5 (J)
+.line 136
+	iget-object	v0,v4,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDb Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v4 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	const-string	v1,"notes"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"_id="
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v5,v6},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v5 : double-length
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	const/4	v3,0
+; v3 : single-length
+	invoke-virtual	{v0,v1,v2,v3},android/database/sqlite/SQLiteDatabase/delete	; delete(Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;)I
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String; , v3 : single-length
+	move-result	v0
+; v0 : single-length
+	if-lez	v0,l129c0
+; v0 : single-length
+	const/4	v0,1
+; v0 : single-length
+l129be:
+	return	v0
+; v0 : single-length
+l129c0:
+	const/4	v0,0
+; v0 : single-length
+	goto	l129be
+.end method
+
+.method public fetchAllNotes()Landroid/database/Cursor;
+.limit registers 9
+; this: v8 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+	const/4	v3,0
+; v3 : single-length
+.line 146
+	iget-object	v0,v8,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDb Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v8 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	const-string	v1,"notes"
+; v1 : Ljava/lang/String;
+	const/4	v2,3
+; v2 : single-length
+	new-array	v2,v2,[Ljava/lang/String;
+; v2 : [Ljava/lang/String; , v2 : [Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	const-string	v5,"_id"
+; v5 : Ljava/lang/String;
+	aput-object	v5,v2,v4
+; v5 : Ljava/lang/String; , v2 : [Ljava/lang/String; , v4 : single-length
+	const/4	v4,1
+; v4 : single-length
+	const-string	v5,"note_text"
+; v5 : Ljava/lang/String;
+	aput-object	v5,v2,v4
+; v5 : Ljava/lang/String; , v2 : [Ljava/lang/String; , v4 : single-length
+	const/4	v4,2
+; v4 : single-length
+.line 147
+	const-string	v5,"note_week"
+; v5 : Ljava/lang/String;
+	aput-object	v5,v2,v4
+; v5 : Ljava/lang/String; , v2 : [Ljava/lang/String; , v4 : single-length
+	move-object	v4,v3
+; v4 : single-length , v3 : single-length
+	move-object	v5,v3
+; v5 : single-length , v3 : single-length
+	move-object	v6,v3
+; v6 : single-length , v3 : single-length
+	move-object	v7,v3
+; v7 : single-length , v3 : single-length
+.line 146
+	invoke-virtual/range	{v0..v7},android/database/sqlite/SQLiteDatabase/query;	query(Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : Ljava/lang/String; , v2 : [Ljava/lang/String; , v3 : single-length , v4 : single-length , v5 : single-length , v6 : single-length , v7 : single-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+	return-object	v0
+; v0 : Landroid/database/Cursor;
+.end method
+
+.method public fetchNote(J)Landroid/database/Cursor;
+.throws Landroid/database/SQLException;
+.limit registers 14
+; this: v11 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+; parameter[0] : v12 (J)
+	const/4	v1,1
+; v1 : single-length
+	const/4	v5,0
+; v5 : single-length
+.line 161
+	iget-object	v0,v11,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDb Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v11 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	const-string	v2,"notes"
+; v2 : Ljava/lang/String;
+	const/4	v3,3
+; v3 : single-length
+	new-array	v3,v3,[Ljava/lang/String;
+; v3 : [Ljava/lang/String; , v3 : [Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	const-string	v6,"_id"
+; v6 : Ljava/lang/String;
+	aput-object	v6,v3,v4
+; v6 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v4 : single-length
+.line 162
+	const-string	v4,"note_text"
+; v4 : Ljava/lang/String;
+	aput-object	v4,v3,v1
+; v4 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v1 : single-length
+	const/4	v4,2
+; v4 : single-length
+	const-string	v6,"note_week"
+; v6 : Ljava/lang/String;
+	aput-object	v6,v3,v4
+; v6 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v4 : single-length
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	const-string	v6,"_id="
+; v6 : Ljava/lang/String;
+	invoke-direct	{v4,v6},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	invoke-virtual	{v4,v12,v13},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v12 : double-length
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v4 : Ljava/lang/StringBuilder;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	move-object	v6,v5
+; v6 : single-length , v5 : single-length
+	move-object	v7,v5
+; v7 : single-length , v5 : single-length
+	move-object	v8,v5
+; v8 : single-length , v5 : single-length
+	move-object	v9,v5
+; v9 : single-length , v5 : single-length
+.line 161
+	invoke-virtual/range	{v0..v9},android/database/sqlite/SQLiteDatabase/query;	query(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : single-length , v2 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length , v9 : single-length
+	move-result-object	v10
+; v10 : Landroid/database/Cursor;
+.line 164
+	if-eqz	v10,l12a8a
+; v10 : Landroid/database/Cursor;
+.line 165
+	invoke-interface	{v10},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v10 : Landroid/database/Cursor;
+l12a8a:
+.line 167
+	return-object	v10
+; v10 : Landroid/database/Cursor;
+.end method
+
+.method public fetchWeekNotes(I)Landroid/database/Cursor;
+.throws Landroid/database/SQLException;
+.limit registers 13
+; this: v11 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+; parameter[0] : v12 (I)
+	const/4	v1,1
+; v1 : single-length
+	const/4	v5,0
+; v5 : single-length
+.line 182
+	iget-object	v0,v11,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDb Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v11 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	const-string	v2,"notes"
+; v2 : Ljava/lang/String;
+	const/4	v3,3
+; v3 : single-length
+	new-array	v3,v3,[Ljava/lang/String;
+; v3 : [Ljava/lang/String; , v3 : [Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	const-string	v6,"_id"
+; v6 : Ljava/lang/String;
+	aput-object	v6,v3,v4
+; v6 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v4 : single-length
+.line 183
+	const-string	v4,"note_text"
+; v4 : Ljava/lang/String;
+	aput-object	v4,v3,v1
+; v4 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v1 : single-length
+	const/4	v4,2
+; v4 : single-length
+	const-string	v6,"note_week"
+; v6 : Ljava/lang/String;
+	aput-object	v6,v3,v4
+; v6 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v4 : single-length
+	new-instance	v4,java/lang/StringBuilder
+; v4 : Ljava/lang/StringBuilder;
+	const-string	v6,"note_week="
+; v6 : Ljava/lang/String;
+	invoke-direct	{v4,v6},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v4 : Ljava/lang/StringBuilder; , v6 : Ljava/lang/String;
+	invoke-virtual	{v4,v12},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v4 : Ljava/lang/StringBuilder; , v12 : single-length
+	move-result-object	v4
+; v4 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v4},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v4 : Ljava/lang/StringBuilder;
+	move-result-object	v4
+; v4 : Ljava/lang/String;
+	move-object	v6,v5
+; v6 : single-length , v5 : single-length
+	move-object	v7,v5
+; v7 : single-length , v5 : single-length
+	move-object	v8,v5
+; v8 : single-length , v5 : single-length
+	move-object	v9,v5
+; v9 : single-length , v5 : single-length
+.line 182
+	invoke-virtual/range	{v0..v9},android/database/sqlite/SQLiteDatabase/query;	query(ZLjava/lang/String;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v1 : single-length , v2 : Ljava/lang/String; , v3 : [Ljava/lang/String; , v4 : Ljava/lang/String; , v5 : single-length , v6 : single-length , v7 : single-length , v8 : single-length , v9 : single-length
+	move-result-object	v10
+; v10 : Landroid/database/Cursor;
+.line 185
+	if-eqz	v10,l12b02
+; v10 : Landroid/database/Cursor;
+.line 186
+	invoke-interface	{v10},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v10 : Landroid/database/Cursor;
+l12b02:
+.line 188
+	return-object	v10
+; v10 : Landroid/database/Cursor;
+.end method
+
+.method public open()Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.throws Landroid/database/SQLException;
+.limit registers 3
+; this: v2 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+.line 101
+	new-instance	v0,app/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper;
+	iget-object	v1,v2,app/dzieciowomi/pregcal/PCNotesDbAdapter.mCtx Landroid/content/Context;
+; v1 : Landroid/content/Context; , v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	invoke-direct	{v0,v1},app/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper; , v1 : Landroid/content/Context;
+	iput-object	v0,v2,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper;
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper; , v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.line 102
+	iget-object	v0,v2,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper;
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper; , v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	invoke-virtual	{v0},app/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper/getWritableDatabase	; getWritableDatabase()Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper;
+	move-result-object	v0
+; v0 : Landroid/database/sqlite/SQLiteDatabase;
+	iput-object	v0,v2,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDb Landroid/database/sqlite/SQLiteDatabase;
+; v0 : Landroid/database/sqlite/SQLiteDatabase; , v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.line 103
+	return-object	v2
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.end method
+
+.method public updateNote(JLjava/lang/String;)Z
+.limit registers 9
+; this: v5 (Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;)
+; parameter[0] : v6 (J)
+; parameter[1] : v8 (Ljava/lang/String;)
+.line 202
+	new-instance	v0,android/content/ContentValues
+; v0 : Landroid/content/ContentValues;
+	invoke-direct	{v0},android/content/ContentValues/<init>	; <init>()V
+; v0 : Landroid/content/ContentValues;
+.line 203
+	const-string	v1,"note_text"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v8},android/content/ContentValues/put	; put(Ljava/lang/String;Ljava/lang/String;)V
+; v0 : Landroid/content/ContentValues; , v1 : Ljava/lang/String; , v8 : Ljava/lang/String;
+.line 205
+	iget-object	v1,v5,app/dzieciowomi/pregcal/PCNotesDbAdapter.mDb Landroid/database/sqlite/SQLiteDatabase;
+; v1 : Landroid/database/sqlite/SQLiteDatabase; , v5 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	const-string	v2,"notes"
+; v2 : Ljava/lang/String;
+	new-instance	v3,java/lang/StringBuilder
+; v3 : Ljava/lang/StringBuilder;
+	const-string	v4,"_id="
+; v4 : Ljava/lang/String;
+	invoke-direct	{v3,v4},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v3 : Ljava/lang/StringBuilder; , v4 : Ljava/lang/String;
+	invoke-virtual	{v3,v6,v7},java/lang/StringBuilder/append	; append(J)Ljava/lang/StringBuilder;
+; v3 : Ljava/lang/StringBuilder; , v6 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v3},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v3 : Ljava/lang/StringBuilder;
+	move-result-object	v3
+; v3 : Ljava/lang/String;
+	const/4	v4,0
+; v4 : single-length
+	invoke-virtual	{v1,v2,v0,v3,v4},android/database/sqlite/SQLiteDatabase/update	; update(Ljava/lang/String;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
+; v1 : Landroid/database/sqlite/SQLiteDatabase; , v2 : Ljava/lang/String; , v0 : Landroid/content/ContentValues; , v3 : Ljava/lang/String; , v4 : single-length
+	move-result	v1
+; v1 : single-length
+	if-lez	v1,l12b94
+; v1 : single-length
+	const/4	v1,1
+; v1 : single-length
+l12b92:
+	return	v1
+; v1 : single-length
+l12b94:
+	const/4	v1,0
+; v1 : single-length
+	goto	l12b92
+.end method
+
+

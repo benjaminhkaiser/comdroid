@@ -1,0 +1,1344 @@
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+app
+
+Examining app manifest...
+******************************************************************************************
+Uses permission android.permission.INTERNET
+Uses permission android.permission.ACCESS_NETWORK_STATE
+Component: app.dzieciowomi.pregcal.PregnancyCalendar activity
+Component: app.dzieciowomi.pregcal.PCGeneralView activity
+Component: app.dzieciowomi.pregcal.PCDetailedView activity
+Component: app.dzieciowomi.pregcal.PCSettingsView activity
+Component: app.dzieciowomi.pregcal.PCPassedWeeksView activity
+Component: app.dzieciowomi.pregcal.PCPassedWeeksList activity
+Component: app.dzieciowomi.pregcal.PCNotes activity
+Component: app.dzieciowomi.pregcal.PCNoteEdit activity
+Component: app.dzieciowomi.pregcal.PCNoteAdd activity
+Component: app.dzieciowomi.pregcal.PCNotesWeeksList activity
+Component: app.dzieciowomi.pregcal.PCNotesView activity
+Component: app.dzieciowomi.pregcal.PCWidgetConfigure activity
+Component: app.dzieciowomi.pregcal.PCWidgetBlueConfigure activity
+Component: com.google.ads.AdActivity activity
+Component: app.dzieciowomi.pregcal.PCWidget receiver
+Component: app.dzieciowomi.pregcal.PCWidgetBlue receiver
+
+Examining app DDX ...
+******************************************************************************************
+Intent: app/dzieciowomi/pregcal/PCPassedWeeksList/onCreate(Landroid/os/Bundle;)@28
+Intent: app/dzieciowomi/pregcal/PCPassedWeeksList/onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)@15
+Sink: app/dzieciowomi/pregcal/PCPassedWeeksList/onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)@29
+Found method that returns string: app/dzieciowomi/pregcal/DatePickerDialogPreference/getDateStr()
+Intent: app/dzieciowomi/pregcal/PCWidgetBlue/updateAppWidget(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;ILjava/lang/String;Z)@22
+Intent: app/dzieciowomi/pregcal/PCNoteAdd/onCreate(Landroid/os/Bundle;)@66
+Found method that returns string: app/dzieciowomi/pregcal/PCWidgetBlueConfigure/getDate(Landroid/content/Context;)
+Intent: app/dzieciowomi/pregcal/PCWidgetBlueConfigure/onCreate(Landroid/os/Bundle;)@137
+Intent: app/dzieciowomi/pregcal/PCWidgetBlueConfigure/onOptionsItemSelected(Landroid/view/MenuItem;)@115
+Found method that returns string: app/dzieciowomi/pregcal/PCPassedWeeksView/getInfoToShare()
+Found method that returns string: app/dzieciowomi/pregcal/PCPassedWeeksView/getNotesText(I)
+Intent: app/dzieciowomi/pregcal/PCPassedWeeksView/onCreate(Landroid/os/Bundle;)@33
+Intent: app/dzieciowomi/pregcal/PCPassedWeeksView/onOptionsItemSelected(Landroid/view/MenuItem;)@26
+Intent: app/dzieciowomi/pregcal/PCPassedWeeksView/onOptionsItemSelected(Landroid/view/MenuItem;)@70
+Sink: app/dzieciowomi/pregcal/PCPassedWeeksView/onOptionsItemSelected(Landroid/view/MenuItem;)@74
+Intent: app/dzieciowomi/pregcal/PCNotesView/editNote(J)@9
+Sink: app/dzieciowomi/pregcal/PCNotesView/editNote(J)@19
+Found method that returns string: app/dzieciowomi/pregcal/PCNotesView/getNote(J)
+Intent: app/dzieciowomi/pregcal/PCNotesView/shareNote(J)@9
+Intent: app/dzieciowomi/pregcal/PCNotesView/shareNote(J)@57
+Sink: app/dzieciowomi/pregcal/PCNotesView/shareNote(J)@61
+Found method that returns string: app/dzieciowomi/pregcal/PCView/getBirthday()
+Found method that returns string: app/dzieciowomi/pregcal/PCView/getPassedWeeksOfPregnancy()
+Found method that returns string: app/dzieciowomi/pregcal/PCWidgetConfigure/getDate(Landroid/content/Context;)
+Intent: app/dzieciowomi/pregcal/PCWidgetConfigure/onCreate(Landroid/os/Bundle;)@137
+Intent: app/dzieciowomi/pregcal/PCWidgetConfigure/onOptionsItemSelected(Landroid/view/MenuItem;)@115
+Found method that returns string: app/dzieciowomi/pregcal/PregnancyCalendar/getDetailedText(I)
+Found method that returns string: app/dzieciowomi/pregcal/PregnancyCalendar/getGeneralText(I)
+Found method that returns string: app/dzieciowomi/pregcal/PregnancyCalendar/getLabelText(I)
+Found method that returns string: app/dzieciowomi/pregcal/PregnancyCalendar/getNotesText(I)
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onCreate(Landroid/os/Bundle;)@61
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onCreate(Landroid/os/Bundle;)@103
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onCreate(Landroid/os/Bundle;)@145
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@37
+Sink: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@42
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@56
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@138
+Sink: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@142
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@151
+Sink: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@167
+Intent: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@181
+Sink: app/dzieciowomi/pregcal/PregnancyCalendar/onOptionsItemSelected(Landroid/view/MenuItem;)@186
+Intent: app/dzieciowomi/pregcal/PCNoteEdit/onCreate(Landroid/os/Bundle;)@66
+Intent: app/dzieciowomi/pregcal/PCNotesWeeksList/onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)@15
+Sink: app/dzieciowomi/pregcal/PCNotesWeeksList/onListItemClick(Landroid/widget/ListView;Landroid/view/View;IJ)@25
+Found method that returns string: app/dzieciowomi/pregcal/DueDatePickerDialogPreference/getDateStr()
+Intent: app/dzieciowomi/pregcal/PCWidget/updateAppWidget(Landroid/content/Context;Landroid/appwidget/AppWidgetManager;ILjava/lang/String;Z)@22
+Intent: app/dzieciowomi/pregcal/PCNotes/createNote()@8
+Sink: app/dzieciowomi/pregcal/PCNotes/createNote()@20
+Intent: app/dzieciowomi/pregcal/PCNotes/editNote(J)@9
+Sink: app/dzieciowomi/pregcal/PCNotes/editNote(J)@19
+Found method that returns string: app/dzieciowomi/pregcal/PCNotes/getAllNotes()
+Found method that returns string: app/dzieciowomi/pregcal/PCNotes/getNote(J)
+Intent: app/dzieciowomi/pregcal/PCNotes/shareAllNotes()@8
+Intent: app/dzieciowomi/pregcal/PCNotes/shareAllNotes()@54
+Sink: app/dzieciowomi/pregcal/PCNotes/shareAllNotes()@58
+Intent: app/dzieciowomi/pregcal/PCNotes/shareNote(J)@9
+Intent: app/dzieciowomi/pregcal/PCNotes/shareNote(J)@55
+Sink: app/dzieciowomi/pregcal/PCNotes/shareNote(J)@59
+Method: app/dzieciowomi/pregcal/PCNotes/onActivityResult(IILandroid/content/Intent;)@0
+Intent: app/dzieciowomi/pregcal/PCNotes/onCreate(Landroid/os/Bundle;)@41
+Found method that returns string: com/google/ads/h/h()
+Intent: com/google/ads/AdActivity/a(Ljava/util/HashMap;Lcom/google/ads/internal/d;)@12
+Intent: com/google/ads/AdActivity/a(Ljava/util/HashMap;Lcom/google/ads/internal/d;)@31
+Sink: com/google/ads/AdActivity/a(Ljava/util/HashMap;Lcom/google/ads/internal/d;)@88
+Intent: com/google/ads/AdActivity/b(Ljava/util/HashMap;Lcom/google/ads/internal/d;)@70
+Sink: com/google/ads/AdActivity/b(Ljava/util/HashMap;Lcom/google/ads/internal/d;)@120
+Intent: com/google/ads/AdActivity/b(Ljava/util/HashMap;Lcom/google/ads/internal/d;)@140
+Method: com/google/ads/AdActivity/onActivityResult(IILandroid/content/Intent;)@0
+Intent: com/google/ads/AdActivity/onCreate(Landroid/os/Bundle;)@186
+Intent: com/google/ads/p/a(Lcom/google/ads/internal/d;Ljava/util/HashMap;Landroid/webkit/WebView;)@93
+Intent: com/google/ads/AdActivity$StaticMethodWrapper/launchAdActivity(Lcom/google/ads/internal/d;Lcom/google/ads/internal/e;)@94
+Sink: com/google/ads/AdActivity$StaticMethodWrapper/launchAdActivity(Lcom/google/ads/internal/d;Lcom/google/ads/internal/e;)@112
+Found method that returns string: com/google/ads/AdSize/toString()
+Found method that returns string: com/google/ads/util/i$d/toString()
+Found method that returns string: com/google/ads/util/i/toString()
+Found method that returns string: com/google/ads/util/i$a/toString()
+Found method that returns string: com/google/ads/util/c/b([BI)
+Found method that returns string: com/google/ads/util/i$c/toString()
+Found method that returns string: com/google/ads/util/i$b/toString()
+Method: com/google/ads/util/AdUtil$UserActivityReceiver/onReceive(Landroid/content/Context;Landroid/content/Intent;)@0
+Found method that returns string: com/google/ads/util/AdUtil/a(Landroid/content/Context;)
+Found method that returns string: com/google/ads/util/AdUtil/a(Landroid/location/Location;)
+Found method that returns string: com/google/ads/util/AdUtil/a(Ljava/lang/Readable;)
+Found method that returns string: com/google/ads/util/AdUtil/a(Ljava/util/Map;)
+Method: com/google/ads/util/AdUtil/a(Landroid/content/Intent;Landroid/content/Context;)@0
+Found method that returns string: com/google/ads/util/AdUtil/b(Landroid/location/Location;)
+Found method that returns string: com/google/ads/util/AdUtil/b(Ljava/lang/String;)
+!!!Found checkPermission
+	invoke-virtual	{v1,v3,v2},android/content/pm/PackageManager/checkPermission	; checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+!!!Found checkPermission
+	invoke-virtual	{v1,v3,v2},android/content/pm/PackageManager/checkPermission	; checkPermission(Ljava/lang/String;Ljava/lang/String;)I
+Found method that returns string: com/google/ads/util/AdUtil/c(Ljava/lang/String;)
+Intent: com/google/ads/util/AdUtil/c(Landroid/content/Context;)@32
+Found method that returns string: com/google/ads/util/AdUtil/d(Landroid/content/Context;)
+Found method that returns string: com/google/ads/util/AdUtil/e(Landroid/content/Context;)
+Intent: com/google/ads/util/AdUtil/e(Landroid/content/Context;)@31
+Intent: com/google/ads/util/AdUtil/e(Landroid/content/Context;)@64
+Intent: com/google/ads/util/AdUtil/e(Landroid/content/Context;)@110
+Found method that returns string: com/google/ads/util/AdUtil/f(Landroid/content/Context;)
+Intent: com/google/ads/util/AdUtil/f(Landroid/content/Context;)@35
+Register receiver: com.google.ads.util.AdUtil*com/google/ads/util/AdUtil/h(Landroid/content/Context;)@32
+Found method that returns string: com/google/ads/util/AdUtil/i(Landroid/content/Context;)
+Found method that returns string: com/google/ads/c/c()
+Intent: com/google/ads/ah/a(Lcom/google/ads/internal/d;Ljava/util/HashMap;Landroid/webkit/WebView;)@95
+Intent: com/google/ads/ah/a(Lcom/google/ads/internal/d;Ljava/util/HashMap;Landroid/webkit/WebView;)@126
+Found method that returns string: com/google/ads/f/a()
+Found method that returns string: com/google/ads/f/b()
+Found method that returns string: com/google/ads/f/c()
+Found method that returns string: com/google/ads/AdView/a(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;ZZ)
+Found method that returns string: com/google/ads/AdRequest$ErrorCode/toString()
+Found method that returns string: com/google/ads/g/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)
+Found method that returns string: com/google/ads/searchads/SearchAdRequest$BorderType/toString()
+Found method that returns string: com/google/ads/searchads/SearchAdRequest/a(I)
+Intent: com/google/ads/internal/j$a$2/onClick(Landroid/content/DialogInterface;I)@16
+Intent: com/google/ads/internal/j$a$2/onClick(Landroid/content/DialogInterface;I)@34
+Sink: com/google/ads/internal/j$a$2/onClick(Landroid/content/DialogInterface;I)@38
+Found method that returns string: com/google/ads/internal/b/c(Ljava/lang/String;)
+Found method that returns string: com/google/ads/internal/c/b(Lcom/google/ads/internal/c;)
+Found method that returns string: com/google/ads/internal/c/d()
+Found method that returns string: com/google/ads/internal/c/a(Ljava/util/Map;Landroid/app/Activity;)
+Intent: com/google/ads/internal/AdWebView$1/onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)@16
+Sink: com/google/ads/internal/AdWebView$1/onDownloadStart(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;J)@42
+Found method that returns string: com/google/ads/internal/d/c()
+Found method that returns string: com/google/ads/internal/g/d()
+Found method that returns string: com/google/ads/internal/g/e()
+Found method that returns string: com/google/ads/internal/g/k()
+Found method that returns string: com/google/ads/internal/g/l()
+Found method that returns string: com/google/ads/internal/g/r()
+Found method that returns string: com/google/ads/internal/g/x()
+Found method that returns string: com/google/ads/internal/a/a(Landroid/net/Uri;Ljava/util/HashMap;)
+Found method that returns string: com/google/ads/internal/e/b()
+Intent: com/google/ads/ag/a(Landroid/content/Context;)@6
+Method: com/google/ads/ag/a(Landroid/content/Intent;Landroid/content/Context;)@0
+Found method that returns string: com/google/ads/a/a()
+Found method that returns string: com/google/ads/a/b()
+Found method that returns string: com/google/ads/mediation/customevent/CustomEventAdapter/a(Lcom/google/ads/mediation/customevent/CustomEventAdapter;)
+Found method that returns string: com/google/ads/mediation/customevent/CustomEventAdapter$a/b()
+Found method that returns string: com/google/ads/mediation/customevent/CustomEventAdapter$b/a()
+Found method that returns string: com/google/ads/mediation/MediationServerParameters$Parameter/name()
+
+Details...
+******************************************************************************************
+
+Processing app/dzieciowomi/pregcal/R$drawable/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$drawable/<init>()
+
+Processing app/dzieciowomi/pregcal/R$style/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$style/<init>()
+
+Processing app/dzieciowomi/pregcal/R$styleable/<clinit>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$styleable/<clinit>()
+
+Processing app/dzieciowomi/pregcal/R$styleable/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$styleable/<init>()
+
+Processing app/dzieciowomi/pregcal/PCNoteAdd$1/<init>(Lapp/dzieciowomi/pregcal/PCNoteAdd;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNoteAdd$1/<init>(Lapp/dzieciowomi/pregcal/PCNoteAdd;)
+
+Processing app/dzieciowomi/pregcal/PCNotesDbAdapter/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNotesDbAdapter/<init>(Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksList/<clinit>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksList/<clinit>()
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksList/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksList/<init>()
+
+Processing app/dzieciowomi/pregcal/R/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R/<init>()
+
+Processing app/dzieciowomi/pregcal/DatePickerDialogPreference/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/DatePickerDialogPreference/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)
+
+Processing app/dzieciowomi/pregcal/DueDatePickerDialogPreference$1/<init>(Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/DueDatePickerDialogPreference$1/<init>(Lapp/dzieciowomi/pregcal/DueDatePickerDialogPreference;)
+
+Processing app/dzieciowomi/pregcal/R$xml/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$xml/<init>()
+
+Processing app/dzieciowomi/pregcal/PCWidgetBlue/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidgetBlue/<init>()
+
+Processing app/dzieciowomi/pregcal/R$array/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$array/<init>()
+
+Processing app/dzieciowomi/pregcal/PCDetailedView$2/<init>(Lapp/dzieciowomi/pregcal/PCDetailedView;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCDetailedView$2/<init>(Lapp/dzieciowomi/pregcal/PCDetailedView;)
+
+Processing app/dzieciowomi/pregcal/PCNoteAdd/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNoteAdd/<init>()
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksView$2/<init>(Lapp/dzieciowomi/pregcal/PCPassedWeeksView;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksView$2/<init>(Lapp/dzieciowomi/pregcal/PCPassedWeeksView;)
+
+Processing app/dzieciowomi/pregcal/BuildConfig/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/BuildConfig/<init>()
+
+Processing app/dzieciowomi/pregcal/PCWidgetBlueConfigure/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidgetBlueConfigure/<init>()
+
+Processing app/dzieciowomi/pregcal/PCGeneralView/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCGeneralView/<init>()
+
+Processing app/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNotesDbAdapter$DatabaseHelper/<init>(Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PCSettingsView$1/<init>(Lapp/dzieciowomi/pregcal/PCSettingsView;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCSettingsView$1/<init>(Lapp/dzieciowomi/pregcal/PCSettingsView;)
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksView/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksView/<init>()
+
+Processing app/dzieciowomi/pregcal/R$string/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$string/<init>()
+
+Processing app/dzieciowomi/pregcal/R$menu/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$menu/<init>()
+
+Processing app/dzieciowomi/pregcal/PCNotesView/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNotesView/<init>()
+
+Processing app/dzieciowomi/pregcal/PCDetailedView$1/<init>(Lapp/dzieciowomi/pregcal/PCDetailedView;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCDetailedView$1/<init>(Lapp/dzieciowomi/pregcal/PCDetailedView;)
+
+Processing app/dzieciowomi/pregcal/PCView/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCView/<init>()
+
+Processing app/dzieciowomi/pregcal/PCNoteEdit$1/<init>(Lapp/dzieciowomi/pregcal/PCNoteEdit;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNoteEdit$1/<init>(Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+
+Processing app/dzieciowomi/pregcal/R$layout/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$layout/<init>()
+
+Processing app/dzieciowomi/pregcal/R$id/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$id/<init>()
+
+Processing app/dzieciowomi/pregcal/PCWidgetConfigure/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidgetConfigure/<init>()
+
+Processing app/dzieciowomi/pregcal/PCSettingsView/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCSettingsView/<init>()
+
+Processing app/dzieciowomi/pregcal/PCDetailedView$ImageAdapter/<init>(Lapp/dzieciowomi/pregcal/PCDetailedView;Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCDetailedView$ImageAdapter/<init>(Lapp/dzieciowomi/pregcal/PCDetailedView;Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PregnancyCalendar/<clinit>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PregnancyCalendar/<clinit>()
+
+Processing app/dzieciowomi/pregcal/PregnancyCalendar/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PregnancyCalendar/<init>()
+
+Processing app/dzieciowomi/pregcal/PCNoteEdit/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNoteEdit/<init>()
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksView$1/<init>(Lapp/dzieciowomi/pregcal/PCPassedWeeksView;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksView$1/<init>(Lapp/dzieciowomi/pregcal/PCPassedWeeksView;)
+
+Processing app/dzieciowomi/pregcal/PCSkinSelector$1/<init>(Lapp/dzieciowomi/pregcal/PCSkinSelector;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCSkinSelector$1/<init>(Lapp/dzieciowomi/pregcal/PCSkinSelector;)
+
+Processing app/dzieciowomi/pregcal/PCDetailedView/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCDetailedView/<init>()
+
+Processing app/dzieciowomi/pregcal/DatePickerDialogPreference$1/<init>(Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/DatePickerDialogPreference$1/<init>(Lapp/dzieciowomi/pregcal/DatePickerDialogPreference;)
+
+Processing app/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCDatabaseAdapter$DatabaseHelper/<init>(Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PCNotesWeeksList/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNotesWeeksList/<init>()
+
+Processing app/dzieciowomi/pregcal/PCDatabaseAdapter/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCDatabaseAdapter/<init>(Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PregnancyCalendar$1/<init>(Lapp/dzieciowomi/pregcal/PregnancyCalendar;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PregnancyCalendar$1/<init>(Lapp/dzieciowomi/pregcal/PregnancyCalendar;)
+
+Processing app/dzieciowomi/pregcal/DueDatePickerDialogPreference/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/DueDatePickerDialogPreference/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksView$ImageAdapter/<init>(Lapp/dzieciowomi/pregcal/PCPassedWeeksView;Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksView$ImageAdapter/<init>(Lapp/dzieciowomi/pregcal/PCPassedWeeksView;Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PCWidgetConfigure$1/<init>(Lapp/dzieciowomi/pregcal/PCWidgetConfigure;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidgetConfigure$1/<init>(Lapp/dzieciowomi/pregcal/PCWidgetConfigure;)
+
+Processing app/dzieciowomi/pregcal/PCWidgetBlueConfigure$1/<init>(Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidgetBlueConfigure$1/<init>(Lapp/dzieciowomi/pregcal/PCWidgetBlueConfigure;)
+
+Processing app/dzieciowomi/pregcal/R$attr/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/R$attr/<init>()
+
+Processing app/dzieciowomi/pregcal/PCWidget/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidget/<init>()
+
+Processing app/dzieciowomi/pregcal/PCSkinSelector/<init>(Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCSkinSelector/<init>(Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PCNotes/<init>()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNotes/<init>()
+
+Processing com/google/ads/e$8/<init>(Lcom/google/ads/e;Lcom/google/ads/h;Landroid/view/View;Lcom/google/ads/f;)...
+******************************************************************************************
+***End processing com/google/ads/e$8/<init>(Lcom/google/ads/e;Lcom/google/ads/h;Landroid/view/View;Lcom/google/ads/f;)
+
+Processing com/google/ads/y/<init>()...
+******************************************************************************************
+***End processing com/google/ads/y/<init>()
+
+Processing com/google/ads/y/<init>(Lcom/google/ads/AdActivity$StaticMethodWrapper;)...
+******************************************************************************************
+***End processing com/google/ads/y/<init>(Lcom/google/ads/AdActivity$StaticMethodWrapper;)
+
+Processing com/google/ads/u/<init>()...
+******************************************************************************************
+***End processing com/google/ads/u/<init>()
+
+Processing com/google/ads/l$a/<init>()...
+******************************************************************************************
+***End processing com/google/ads/l$a/<init>()
+
+Processing com/google/ads/h/<init>(Lcom/google/ads/e;Lcom/google/ads/internal/h;Lcom/google/ads/f;Ljava/lang/String;Lcom/google/ads/AdRequest;Ljava/util/HashMap;)...
+******************************************************************************************
+***End processing com/google/ads/h/<init>(Lcom/google/ads/e;Lcom/google/ads/internal/h;Lcom/google/ads/f;Ljava/lang/String;Lcom/google/ads/AdRequest;Ljava/util/HashMap;)
+
+Processing com/google/ads/e$7/<init>(Lcom/google/ads/e;Lcom/google/ads/c;)...
+******************************************************************************************
+***End processing com/google/ads/e$7/<init>(Lcom/google/ads/e;Lcom/google/ads/c;)
+
+Processing com/google/ads/AdActivity/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/AdActivity/<clinit>()
+
+Processing com/google/ads/AdActivity/<init>()...
+******************************************************************************************
+***End processing com/google/ads/AdActivity/<init>()
+
+Processing com/google/ads/v/<init>()...
+******************************************************************************************
+***End processing com/google/ads/v/<init>()
+
+Processing com/google/ads/AdRequest$Gender/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/AdRequest$Gender/<clinit>()
+
+Processing com/google/ads/AdRequest$Gender/<init>(Ljava/lang/String;I)...
+******************************************************************************************
+***End processing com/google/ads/AdRequest$Gender/<init>(Ljava/lang/String;I)
+
+Processing com/google/ads/e$5/<init>(Lcom/google/ads/e;)...
+******************************************************************************************
+***End processing com/google/ads/e$5/<init>(Lcom/google/ads/e;)
+
+Processing com/google/ads/ah$b/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/ah$b/<clinit>()
+
+Processing com/google/ads/ah$b/<init>(Ljava/lang/String;ILjava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/ah$b/<init>(Ljava/lang/String;ILjava/lang/String;)
+
+Processing com/google/ads/z/<init>()...
+******************************************************************************************
+***End processing com/google/ads/z/<init>()
+
+Processing com/google/ads/p/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/p/<clinit>()
+
+Processing com/google/ads/p/<init>()...
+******************************************************************************************
+***End processing com/google/ads/p/<init>()
+
+Processing com/google/ads/i/<init>(Lcom/google/ads/h;Landroid/app/Activity;Ljava/lang/String;Lcom/google/ads/AdRequest;Ljava/util/HashMap;)...
+******************************************************************************************
+***End processing com/google/ads/i/<init>(Lcom/google/ads/h;Landroid/app/Activity;Ljava/lang/String;Lcom/google/ads/AdRequest;Ljava/util/HashMap;)
+
+Processing com/google/ads/AdActivity$StaticMethodWrapper/<init>()...
+******************************************************************************************
+***End processing com/google/ads/AdActivity$StaticMethodWrapper/<init>()
+
+Processing com/google/ads/AdSize/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/AdSize/<clinit>()
+
+Processing com/google/ads/AdSize/<init>(II)...
+******************************************************************************************
+***End processing com/google/ads/AdSize/<init>(II)
+
+Processing com/google/ads/AdSize/<init>(IILjava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/AdSize/<init>(IILjava/lang/String;)
+
+Processing com/google/ads/ab/<init>(Ljava/lang/String;Landroid/content/Context;)...
+******************************************************************************************
+***End processing com/google/ads/ab/<init>(Ljava/lang/String;Landroid/content/Context;)
+
+Processing com/google/ads/i$a/<init>(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/i$a/<init>(Ljava/lang/String;)
+
+Processing com/google/ads/b/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/b/<clinit>()
+
+Processing com/google/ads/b/<init>()...
+******************************************************************************************
+***End processing com/google/ads/b/<init>()
+
+Processing com/google/ads/s/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/s/<clinit>()
+
+Processing com/google/ads/s/<init>()...
+******************************************************************************************
+***End processing com/google/ads/s/<init>()
+
+Processing com/google/ads/ah$c/<init>(Lcom/google/ads/internal/d;)...
+******************************************************************************************
+***End processing com/google/ads/ah$c/<init>(Lcom/google/ads/internal/d;)
+
+Processing com/google/ads/t/<init>()...
+******************************************************************************************
+***End processing com/google/ads/t/<init>()
+
+Processing com/google/ads/util/AdUtil$a/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil$a/<clinit>()
+
+Processing com/google/ads/util/AdUtil$a/<init>(Ljava/lang/String;I)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil$a/<init>(Ljava/lang/String;I)
+
+Processing com/google/ads/util/i$d/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$d/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)
+
+Processing com/google/ads/util/g$a$3/<init>(Landroid/webkit/JsResult;)...
+******************************************************************************************
+***End processing com/google/ads/util/g$a$3/<init>(Landroid/webkit/JsResult;)
+
+Processing com/google/ads/util/c$b/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/c$b/<clinit>()
+
+Processing com/google/ads/util/c$b/<init>(I[B)...
+******************************************************************************************
+***End processing com/google/ads/util/c$b/<init>(I[B)
+
+Processing com/google/ads/util/i/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/i/<clinit>()
+
+Processing com/google/ads/util/i/<init>()...
+******************************************************************************************
+***End processing com/google/ads/util/i/<init>()
+
+Processing com/google/ads/util/h$a/<init>(Lcom/google/ads/m;)...
+******************************************************************************************
+***End processing com/google/ads/util/h$a/<init>(Lcom/google/ads/m;)
+
+Processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;)
+
+Processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Lcom/google/ads/util/i$1;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Lcom/google/ads/util/i$1;)
+
+Processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)
+
+Processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;Lcom/google/ads/util/i$1;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$a/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;Lcom/google/ads/util/i$1;)
+
+Processing com/google/ads/util/b/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/b/<clinit>()
+
+Processing com/google/ads/util/g$a$1/<init>(Landroid/webkit/JsResult;)...
+******************************************************************************************
+***End processing com/google/ads/util/g$a$1/<init>(Landroid/webkit/JsResult;)
+
+Processing com/google/ads/util/a$a/<init>(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/util/a$a/<init>(Ljava/lang/String;)
+
+Processing com/google/ads/util/c$a/<init>()...
+******************************************************************************************
+***End processing com/google/ads/util/c$a/<init>()
+
+Processing com/google/ads/util/c/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/c/<clinit>()
+
+Processing com/google/ads/util/c/<init>()...
+******************************************************************************************
+***End processing com/google/ads/util/c/<init>()
+
+Processing com/google/ads/util/g$1/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/g$1/<clinit>()
+
+Processing com/google/ads/util/d/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/d/<clinit>()
+
+Processing com/google/ads/util/d/<init>()...
+******************************************************************************************
+***End processing com/google/ads/util/d/<init>()
+
+Processing com/google/ads/util/d/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/util/d/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)
+
+Processing com/google/ads/util/g$a/<init>(Lcom/google/ads/m;)...
+******************************************************************************************
+***End processing com/google/ads/util/g$a/<init>(Lcom/google/ads/m;)
+
+Processing com/google/ads/util/g$a$5/<init>(Landroid/webkit/JsPromptResult;)...
+******************************************************************************************
+***End processing com/google/ads/util/g$a$5/<init>(Landroid/webkit/JsPromptResult;)
+
+Processing com/google/ads/util/i$c/<init>(Lcom/google/ads/util/i;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$c/<init>(Lcom/google/ads/util/i;Ljava/lang/String;)
+
+Processing com/google/ads/util/i$c/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$c/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)
+
+Processing com/google/ads/util/i$b/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)...
+******************************************************************************************
+***End processing com/google/ads/util/i$b/<init>(Lcom/google/ads/util/i;Ljava/lang/String;Ljava/lang/Object;)
+
+Processing com/google/ads/util/c$c/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/c$c/<clinit>()
+
+Processing com/google/ads/util/c$c/<init>(I[B)...
+******************************************************************************************
+***End processing com/google/ads/util/c$c/<init>(I[B)
+
+Processing com/google/ads/util/g$a$6/<init>(Landroid/webkit/JsPromptResult;Landroid/widget/EditText;)...
+******************************************************************************************
+***End processing com/google/ads/util/g$a$6/<init>(Landroid/webkit/JsPromptResult;Landroid/widget/EditText;)
+
+Processing com/google/ads/util/a/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/a/<clinit>()
+
+Processing com/google/ads/util/g$a$4/<init>(Landroid/webkit/JsPromptResult;)...
+******************************************************************************************
+***End processing com/google/ads/util/g$a$4/<init>(Landroid/webkit/JsPromptResult;)
+
+Processing com/google/ads/util/g$b/<init>(Lcom/google/ads/internal/d;Ljava/util/Map;ZZ)...
+******************************************************************************************
+***End processing com/google/ads/util/g$b/<init>(Lcom/google/ads/internal/d;Ljava/util/Map;ZZ)
+
+Processing com/google/ads/util/AdUtil$UserActivityReceiver/<init>()...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil$UserActivityReceiver/<init>()
+
+Processing com/google/ads/util/b$a/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/b$a/<clinit>()
+
+Processing com/google/ads/util/b$a/<init>(Ljava/lang/String;II)...
+******************************************************************************************
+***End processing com/google/ads/util/b$a/<init>(Ljava/lang/String;II)
+
+Processing com/google/ads/util/g$a$2/<init>(Landroid/webkit/JsResult;)...
+******************************************************************************************
+***End processing com/google/ads/util/g$a$2/<init>(Landroid/webkit/JsResult;)
+
+Processing com/google/ads/util/AdUtil/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/<clinit>()
+
+Processing com/google/ads/c/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/c/<clinit>()
+
+Processing com/google/ads/c/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/List;Ljava/util/List;Ljava/util/List;)...
+******************************************************************************************
+***End processing com/google/ads/c/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/util/List;Ljava/util/List;Ljava/util/List;)
+
+Processing com/google/ads/e$2/<init>(Lcom/google/ads/e;Lcom/google/ads/f;Z)...
+******************************************************************************************
+***End processing com/google/ads/e$2/<init>(Lcom/google/ads/e;Lcom/google/ads/f;Z)
+
+Processing com/google/ads/ah/<init>()...
+******************************************************************************************
+***End processing com/google/ads/ah/<init>()
+
+Processing com/google/ads/f/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)...
+******************************************************************************************
+***End processing com/google/ads/f/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/List;Ljava/util/List;)
+
+Processing com/google/ads/d/<init>()...
+******************************************************************************************
+***End processing com/google/ads/d/<init>()
+
+Processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)
+
+Processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/app/Activity;[Lcom/google/ads/AdSize;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/app/Activity;[Lcom/google/ads/AdSize;Ljava/lang/String;)
+
+Processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)...
+******************************************************************************************
+***End processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)
+
+Processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;I)...
+******************************************************************************************
+***End processing com/google/ads/doubleclick/DfpAdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;I)
+
+Processing com/google/ads/doubleclick/DfpInterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/doubleclick/DfpInterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;)
+
+Processing com/google/ads/doubleclick/DfpInterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;Z)...
+******************************************************************************************
+***End processing com/google/ads/doubleclick/DfpInterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;Z)
+
+Processing com/google/ads/doubleclick/DfpExtras/<init>()...
+******************************************************************************************
+***End processing com/google/ads/doubleclick/DfpExtras/<init>()
+
+Processing com/google/ads/j/<init>(Lcom/google/ads/h;)...
+******************************************************************************************
+***End processing com/google/ads/j/<init>(Lcom/google/ads/h;)
+
+Processing com/google/ads/l/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/l/<clinit>()
+
+Processing com/google/ads/l/<init>()...
+******************************************************************************************
+***End processing com/google/ads/l/<init>()
+
+Processing com/google/ads/e$4/<init>(Lcom/google/ads/e;)...
+******************************************************************************************
+***End processing com/google/ads/e$4/<init>(Lcom/google/ads/e;)
+
+Processing com/google/ads/AdView/<init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)...
+******************************************************************************************
+Returning Could not initialize AdView: :  com/google/ads/internal/b/c(Ljava/lang/String;)
+***End processing com/google/ads/AdView/<init>(Landroid/app/Activity;Lcom/google/ads/AdSize;Ljava/lang/String;)
+
+Processing com/google/ads/AdView/<init>(Landroid/app/Activity;[Lcom/google/ads/AdSize;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/AdView/<init>(Landroid/app/Activity;[Lcom/google/ads/AdSize;Ljava/lang/String;)
+
+Processing com/google/ads/AdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)...
+******************************************************************************************
+***End processing com/google/ads/AdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;)
+
+Processing com/google/ads/AdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;I)...
+******************************************************************************************
+***End processing com/google/ads/AdView/<init>(Landroid/content/Context;Landroid/util/AttributeSet;I)
+
+Processing com/google/ads/m/<init>(Lcom/google/ads/l;Lcom/google/ads/Ad;Lcom/google/ads/AdView;Lcom/google/ads/InterstitialAd;Ljava/lang/String;Landroid/app/Activity;Landroid/content/Context;Landroid/view/ViewGroup;Lcom/google/ads/internal/h;)...
+******************************************************************************************
+***End processing com/google/ads/m/<init>(Lcom/google/ads/l;Lcom/google/ads/Ad;Lcom/google/ads/AdView;Lcom/google/ads/InterstitialAd;Ljava/lang/String;Landroid/app/Activity;Landroid/content/Context;Landroid/view/ViewGroup;Lcom/google/ads/internal/h;)
+
+Processing com/google/ads/AdRequest$ErrorCode/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/AdRequest$ErrorCode/<clinit>()
+
+Processing com/google/ads/AdRequest$ErrorCode/<init>(Ljava/lang/String;ILjava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/AdRequest$ErrorCode/<init>(Ljava/lang/String;ILjava/lang/String;)
+
+Processing com/google/ads/g$a/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/g$a/<clinit>()
+
+Processing com/google/ads/g$a/<init>(Ljava/lang/String;I)...
+******************************************************************************************
+***End processing com/google/ads/g$a/<init>(Ljava/lang/String;I)
+
+Processing com/google/ads/h$2/<init>(Lcom/google/ads/h;Lcom/google/ads/mediation/MediationInterstitialAdapter;)...
+******************************************************************************************
+***End processing com/google/ads/h$2/<init>(Lcom/google/ads/h;Lcom/google/ads/mediation/MediationInterstitialAdapter;)
+
+Processing com/google/ads/AdRequest/<clinit>()...
+******************************************************************************************
+Returning MD5 com/google/ads/util/AdUtil/b(Ljava/lang/String;)
+***End processing com/google/ads/AdRequest/<clinit>()
+
+Processing com/google/ads/AdRequest/<init>()...
+******************************************************************************************
+***End processing com/google/ads/AdRequest/<init>()
+
+Processing com/google/ads/searchads/SearchAdRequest$BorderType/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/searchads/SearchAdRequest$BorderType/<clinit>()
+
+Processing com/google/ads/searchads/SearchAdRequest$BorderType/<init>(Ljava/lang/String;ILjava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/searchads/SearchAdRequest$BorderType/<init>(Ljava/lang/String;ILjava/lang/String;)
+
+Processing com/google/ads/searchads/SearchAdRequest/<init>()...
+******************************************************************************************
+***End processing com/google/ads/searchads/SearchAdRequest/<init>()
+
+Processing com/google/ads/aa/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/aa/<clinit>()
+
+Processing com/google/ads/aa/<init>()...
+******************************************************************************************
+***End processing com/google/ads/aa/<init>()
+
+Processing com/google/ads/internal/h/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/internal/h/<clinit>()
+
+Processing com/google/ads/internal/h/<init>(Lcom/google/ads/AdSize;Z)...
+******************************************************************************************
+***End processing com/google/ads/internal/h/<init>(Lcom/google/ads/AdSize;Z)
+
+Processing com/google/ads/internal/j$a$2/<init>(Lcom/google/ads/internal/j$a;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/internal/j$a$2/<init>(Lcom/google/ads/internal/j$a;Ljava/lang/String;)
+
+Processing com/google/ads/internal/c$d/<init>(Lcom/google/ads/internal/c;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c$d/<init>(Lcom/google/ads/internal/c;Ljava/lang/String;)
+
+Processing com/google/ads/internal/c$b/<init>(Lcom/google/ads/internal/c;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c$b/<init>(Lcom/google/ads/internal/c;Ljava/lang/String;)
+
+Processing com/google/ads/internal/i/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/internal/i/<clinit>()
+
+Processing com/google/ads/internal/i/<init>(Lcom/google/ads/internal/d;Ljava/util/Map;ZZ)...
+******************************************************************************************
+***End processing com/google/ads/internal/i/<init>(Lcom/google/ads/internal/d;Ljava/util/Map;ZZ)
+
+Processing com/google/ads/internal/b/<init>(Ljava/lang/String;Z)...
+******************************************************************************************
+***End processing com/google/ads/internal/b/<init>(Ljava/lang/String;Z)
+
+Processing com/google/ads/internal/b/<init>(Ljava/lang/String;ZLjava/lang/Throwable;)...
+******************************************************************************************
+***End processing com/google/ads/internal/b/<init>(Ljava/lang/String;ZLjava/lang/Throwable;)
+
+Processing com/google/ads/internal/a$3/<init>()...
+******************************************************************************************
+***End processing com/google/ads/internal/a$3/<init>()
+
+Processing com/google/ads/internal/c$a/<init>(Lcom/google/ads/internal/d;Landroid/webkit/WebView;Lcom/google/ads/internal/f;Lcom/google/ads/AdRequest$ErrorCode;Z)...
+******************************************************************************************
+***End processing com/google/ads/internal/c$a/<init>(Lcom/google/ads/internal/d;Landroid/webkit/WebView;Lcom/google/ads/internal/f;Lcom/google/ads/AdRequest$ErrorCode;Z)
+
+Processing com/google/ads/internal/c/<init>()...
+******************************************************************************************
+***End processing com/google/ads/internal/c/<init>()
+
+Processing com/google/ads/internal/c/<init>(Lcom/google/ads/internal/d;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c/<init>(Lcom/google/ads/internal/d;)
+
+Processing com/google/ads/internal/AdWebView$1/<init>(Lcom/google/ads/internal/AdWebView;)...
+******************************************************************************************
+***End processing com/google/ads/internal/AdWebView$1/<init>(Lcom/google/ads/internal/AdWebView;)
+
+Processing com/google/ads/internal/f/<init>(Lcom/google/ads/internal/c;Lcom/google/ads/internal/d;)...
+******************************************************************************************
+***End processing com/google/ads/internal/f/<init>(Lcom/google/ads/internal/c;Lcom/google/ads/internal/d;)
+
+Processing com/google/ads/internal/f/<init>(Lcom/google/ads/internal/c;Lcom/google/ads/internal/d;Lcom/google/ads/internal/f$a;)...
+******************************************************************************************
+***End processing com/google/ads/internal/f/<init>(Lcom/google/ads/internal/c;Lcom/google/ads/internal/d;Lcom/google/ads/internal/f$a;)
+
+Processing com/google/ads/internal/d/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/internal/d/<clinit>()
+
+Processing com/google/ads/internal/d/<init>(Lcom/google/ads/m;Z)...
+******************************************************************************************
+***End processing com/google/ads/internal/d/<init>(Lcom/google/ads/m;Z)
+
+Processing com/google/ads/internal/j/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/internal/j/<clinit>()
+
+Processing com/google/ads/internal/AdVideoView/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/internal/AdVideoView/<clinit>()
+
+Processing com/google/ads/internal/AdVideoView/<init>(Landroid/app/Activity;Lcom/google/ads/internal/AdWebView;)...
+******************************************************************************************
+***End processing com/google/ads/internal/AdVideoView/<init>(Landroid/app/Activity;Lcom/google/ads/internal/AdWebView;)
+
+Processing com/google/ads/internal/g/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/<clinit>()
+
+Processing com/google/ads/internal/g/<init>()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/<init>()
+
+Processing com/google/ads/internal/a$1/<init>()...
+******************************************************************************************
+***End processing com/google/ads/internal/a$1/<init>()
+
+Processing com/google/ads/internal/j$a/<init>(Landroid/app/Activity;Lcom/google/ads/internal/d;Landroid/gesture/GestureStore;)...
+******************************************************************************************
+***End processing com/google/ads/internal/j$a/<init>(Landroid/app/Activity;Lcom/google/ads/internal/d;Landroid/gesture/GestureStore;)
+
+Processing com/google/ads/internal/c$c/<init>(Lcom/google/ads/internal/c;Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c$c/<init>(Lcom/google/ads/internal/c;Landroid/webkit/WebView;Ljava/lang/String;Ljava/lang/String;)
+
+Processing com/google/ads/internal/c$e/<init>(Lcom/google/ads/internal/d;Landroid/webkit/WebView;Ljava/util/LinkedList;IZLjava/lang/String;Lcom/google/ads/AdSize;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c$e/<init>(Lcom/google/ads/internal/d;Landroid/webkit/WebView;Ljava/util/LinkedList;IZLjava/lang/String;Lcom/google/ads/AdSize;)
+
+Processing com/google/ads/internal/f$1/<init>()...
+******************************************************************************************
+***End processing com/google/ads/internal/f$1/<init>()
+
+Processing com/google/ads/internal/j$a$1/<init>(Lcom/google/ads/internal/j$a;)...
+******************************************************************************************
+***End processing com/google/ads/internal/j$a$1/<init>(Lcom/google/ads/internal/j$a;)
+
+Processing com/google/ads/internal/a/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/internal/a/<clinit>()
+
+Processing com/google/ads/internal/a/<init>()...
+******************************************************************************************
+***End processing com/google/ads/internal/a/<init>()
+
+Processing com/google/ads/internal/AdWebView/<init>(Lcom/google/ads/m;Lcom/google/ads/AdSize;)...
+******************************************************************************************
+***End processing com/google/ads/internal/AdWebView/<init>(Lcom/google/ads/m;Lcom/google/ads/AdSize;)
+
+Processing com/google/ads/internal/e/<init>(Landroid/os/Bundle;)...
+******************************************************************************************
+***End processing com/google/ads/internal/e/<init>(Landroid/os/Bundle;)
+
+Processing com/google/ads/internal/e/<init>(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/internal/e/<init>(Ljava/lang/String;)
+
+Processing com/google/ads/internal/e/<init>(Ljava/lang/String;Ljava/util/HashMap;)...
+******************************************************************************************
+***End processing com/google/ads/internal/e/<init>(Ljava/lang/String;Ljava/util/HashMap;)
+
+Processing com/google/ads/internal/AdVideoView$a/<init>(Lcom/google/ads/internal/AdVideoView;)...
+******************************************************************************************
+***End processing com/google/ads/internal/AdVideoView$a/<init>(Lcom/google/ads/internal/AdVideoView;)
+
+Processing com/google/ads/internal/a$2/<init>()...
+******************************************************************************************
+***End processing com/google/ads/internal/a$2/<init>()
+
+Processing com/google/ads/internal/c$1/<init>(Lcom/google/ads/internal/c;Lcom/google/ads/c;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c$1/<init>(Lcom/google/ads/internal/c;Lcom/google/ads/c;)
+
+Processing com/google/ads/ae/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/ae/<clinit>()
+
+Processing com/google/ads/q/<init>()...
+******************************************************************************************
+***End processing com/google/ads/q/<init>()
+
+Processing com/google/ads/e$1/<init>(Lcom/google/ads/e;Lcom/google/ads/c;Lcom/google/ads/AdRequest;)...
+******************************************************************************************
+***End processing com/google/ads/e$1/<init>(Lcom/google/ads/e;Lcom/google/ads/c;Lcom/google/ads/AdRequest;)
+
+Processing com/google/ads/e$6/<init>(Lcom/google/ads/e;)...
+******************************************************************************************
+***End processing com/google/ads/e$6/<init>(Lcom/google/ads/e;)
+
+Processing com/google/ads/e$3/<init>(Lcom/google/ads/e;Landroid/view/View;Lcom/google/ads/f;)...
+******************************************************************************************
+***End processing com/google/ads/e$3/<init>(Lcom/google/ads/e;Landroid/view/View;Lcom/google/ads/f;)
+
+Processing com/google/ads/h$1/<init>(Lcom/google/ads/h;)...
+******************************************************************************************
+***End processing com/google/ads/h$1/<init>(Lcom/google/ads/h;)
+
+Processing com/google/ads/af$b/<init>(Landroid/app/Activity;Landroid/webkit/WebView;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/af$b/<init>(Landroid/app/Activity;Landroid/webkit/WebView;Ljava/lang/String;)
+
+Processing com/google/ads/af$c/<init>(Landroid/webkit/WebView;Z)...
+******************************************************************************************
+***End processing com/google/ads/af$c/<init>(Landroid/webkit/WebView;Z)
+
+Processing com/google/ads/InterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/InterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;)
+
+Processing com/google/ads/InterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;Z)...
+******************************************************************************************
+***End processing com/google/ads/InterstitialAd/<init>(Landroid/app/Activity;Ljava/lang/String;Z)
+
+Processing com/google/ads/w/<init>()...
+******************************************************************************************
+***End processing com/google/ads/w/<init>()
+
+Processing com/google/ads/a/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/HashMap;)...
+******************************************************************************************
+***End processing com/google/ads/a/<init>(Ljava/lang/String;Ljava/lang/String;Ljava/util/List;Ljava/util/HashMap;)
+
+Processing com/google/ads/r/<init>()...
+******************************************************************************************
+***End processing com/google/ads/r/<init>()
+
+Processing com/google/ads/e/<init>()...
+******************************************************************************************
+***End processing com/google/ads/e/<init>()
+
+Processing com/google/ads/e/<init>(Lcom/google/ads/internal/d;)...
+******************************************************************************************
+***End processing com/google/ads/e/<init>(Lcom/google/ads/internal/d;)
+
+Processing com/google/ads/mediation/MediationServerParameters$MappingException/<init>(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/MediationServerParameters$MappingException/<init>(Ljava/lang/String;)
+
+Processing com/google/ads/mediation/customevent/CustomEventAdapter/<init>()...
+******************************************************************************************
+***End processing com/google/ads/mediation/customevent/CustomEventAdapter/<init>()
+
+Processing com/google/ads/mediation/customevent/CustomEventServerParameters/<init>()...
+******************************************************************************************
+***End processing com/google/ads/mediation/customevent/CustomEventServerParameters/<init>()
+
+Processing com/google/ads/mediation/customevent/CustomEventAdapter$a/<init>(Lcom/google/ads/mediation/customevent/CustomEventAdapter;Lcom/google/ads/mediation/MediationBannerListener;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/customevent/CustomEventAdapter$a/<init>(Lcom/google/ads/mediation/customevent/CustomEventAdapter;Lcom/google/ads/mediation/MediationBannerListener;)
+
+Processing com/google/ads/mediation/customevent/CustomEventAdapter$b/<init>(Lcom/google/ads/mediation/customevent/CustomEventAdapter;Lcom/google/ads/mediation/MediationInterstitialListener;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/customevent/CustomEventAdapter$b/<init>(Lcom/google/ads/mediation/customevent/CustomEventAdapter;Lcom/google/ads/mediation/MediationInterstitialListener;)
+
+Processing com/google/ads/mediation/EmptyNetworkExtras/<init>()...
+******************************************************************************************
+***End processing com/google/ads/mediation/EmptyNetworkExtras/<init>()
+
+Processing com/google/ads/mediation/admob/AdMobAdapterExtras/<init>()...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapterExtras/<init>()
+
+Processing com/google/ads/mediation/admob/AdMobAdapterExtras/<init>(Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapterExtras/<init>(Lcom/google/ads/mediation/admob/AdMobAdapterExtras;)
+
+Processing com/google/ads/mediation/admob/AdMobAdapterServerParameters/<init>()...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapterServerParameters/<init>()
+
+Processing com/google/ads/mediation/admob/AdMobAdapter/<init>()...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapter/<init>()
+
+Processing com/google/ads/mediation/admob/AdMobAdapter$a/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapter$a/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;)
+
+Processing com/google/ads/mediation/admob/AdMobAdapter$a/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;Lcom/google/ads/mediation/admob/AdMobAdapter$1;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapter$a/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;Lcom/google/ads/mediation/admob/AdMobAdapter$1;)
+
+Processing com/google/ads/mediation/admob/AdMobAdapter$b/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapter$b/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;)
+
+Processing com/google/ads/mediation/admob/AdMobAdapter$b/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;Lcom/google/ads/mediation/admob/AdMobAdapter$1;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/admob/AdMobAdapter$b/<init>(Lcom/google/ads/mediation/admob/AdMobAdapter;Lcom/google/ads/mediation/admob/AdMobAdapter$1;)
+
+Processing com/google/ads/mediation/MediationAdRequest/<init>(Lcom/google/ads/AdRequest;Landroid/content/Context;Z)...
+******************************************************************************************
+***End processing com/google/ads/mediation/MediationAdRequest/<init>(Lcom/google/ads/AdRequest;Landroid/content/Context;Z)
+
+Processing com/google/ads/mediation/MediationServerParameters/<init>()...
+******************************************************************************************
+***End processing com/google/ads/mediation/MediationServerParameters/<init>()
+
+Processing com/google/ads/k/<init>(Lcom/google/ads/h;)...
+******************************************************************************************
+***End processing com/google/ads/k/<init>(Lcom/google/ads/h;)
+
+Processing com/google/ads/ah$a/<init>()...
+******************************************************************************************
+***End processing com/google/ads/ah$a/<init>()
+
+Processing com/google/ads/af$a/<init>(Landroid/app/Activity;)...
+******************************************************************************************
+***End processing com/google/ads/af$a/<init>(Landroid/app/Activity;)
+
+Processing com/google/ads/af$a/<init>(Landroid/app/Activity;Landroid/content/SharedPreferences$Editor;)...
+******************************************************************************************
+***End processing com/google/ads/af$a/<init>(Landroid/app/Activity;Landroid/content/SharedPreferences$Editor;)
+
+Processing com/google/ads/x/<init>()...
+******************************************************************************************
+***End processing com/google/ads/x/<init>()
+
+Processing com/google/ads/af/<clinit>()...
+******************************************************************************************
+***End processing com/google/ads/af/<clinit>()
+
+Processing com/google/ads/ac/<init>(Lcom/google/ads/internal/d;)...
+******************************************************************************************
+***End processing com/google/ads/ac/<init>(Lcom/google/ads/internal/d;)
+
+Processing com/google/ads/o/<init>()...
+******************************************************************************************
+***End processing com/google/ads/o/<init>()
+
+Processing com/google/ads/c$1/<init>()...
+******************************************************************************************
+***End processing com/google/ads/c$1/<init>()
+
+Processing com/google/ads/internal/c/d()...
+******************************************************************************************
+***End processing com/google/ads/internal/c/d()
+
+Processing com/google/ads/searchads/SearchAdRequest$BorderType/toString()...
+******************************************************************************************
+***End processing com/google/ads/searchads/SearchAdRequest$BorderType/toString()
+
+Processing com/google/ads/util/i$c/toString()...
+******************************************************************************************
+***End processing com/google/ads/util/i$c/toString()
+
+Processing app/dzieciowomi/pregcal/PregnancyCalendar/getGeneralText(I)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PregnancyCalendar/getGeneralText(I)
+
+Processing com/google/ads/util/AdUtil/c(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/c(Ljava/lang/String;)
+
+Processing app/dzieciowomi/pregcal/PCNotes/getAllNotes()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNotes/getAllNotes()
+
+Processing app/dzieciowomi/pregcal/PCWidgetBlueConfigure/getDate(Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidgetBlueConfigure/getDate(Landroid/content/Context;)
+
+Processing com/google/ads/mediation/customevent/CustomEventAdapter$a/b()...
+******************************************************************************************
+***End processing com/google/ads/mediation/customevent/CustomEventAdapter$a/b()
+
+Processing com/google/ads/internal/g/e()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/e()
+
+Processing com/google/ads/internal/g/d()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/d()
+
+Processing com/google/ads/internal/c/a(Ljava/util/Map;Landroid/app/Activity;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c/a(Ljava/util/Map;Landroid/app/Activity;)
+
+Processing com/google/ads/AdView/a(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;ZZ)...
+******************************************************************************************
+***End processing com/google/ads/AdView/a(Ljava/lang/String;Landroid/content/Context;Landroid/util/AttributeSet;ZZ)
+
+Processing com/google/ads/c/c()...
+******************************************************************************************
+***End processing com/google/ads/c/c()
+
+Processing com/google/ads/util/AdUtil/i(Landroid/content/Context;)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/i(Landroid/content/Context;)
+
+Processing com/google/ads/util/AdUtil/e(Landroid/content/Context;)...
+******************************************************************************************
+Found init, src_line:510, ddx_line:31
+Found init, src_line:517, ddx_line:64
+Found init, src_line:527, ddx_line:110
+***End processing com/google/ads/util/AdUtil/e(Landroid/content/Context;)
+
+Processing com/google/ads/util/i$b/toString()...
+******************************************************************************************
+***End processing com/google/ads/util/i$b/toString()
+
+Processing com/google/ads/AdSize/toString()...
+******************************************************************************************
+***End processing com/google/ads/AdSize/toString()
+
+Processing app/dzieciowomi/pregcal/PCNotes/getNote(J)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCNotes/getNote(J)
+
+Processing app/dzieciowomi/pregcal/DatePickerDialogPreference/getDateStr()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/DatePickerDialogPreference/getDateStr()
+
+Processing com/google/ads/mediation/customevent/CustomEventAdapter/a(Lcom/google/ads/mediation/customevent/CustomEventAdapter;)...
+******************************************************************************************
+***End processing com/google/ads/mediation/customevent/CustomEventAdapter/a(Lcom/google/ads/mediation/customevent/CustomEventAdapter;)
+
+Processing com/google/ads/internal/g/k()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/k()
+
+Processing com/google/ads/g/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/g/a(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Boolean;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)
+
+Processing com/google/ads/util/i$d/toString()...
+******************************************************************************************
+***End processing com/google/ads/util/i$d/toString()
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksView/getInfoToShare()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksView/getInfoToShare()
+
+Processing com/google/ads/mediation/MediationServerParameters$Parameter/name()...
+******************************************************************************************
+***End processing com/google/ads/mediation/MediationServerParameters$Parameter/name()
+
+Processing com/google/ads/internal/e/b()...
+******************************************************************************************
+***End processing com/google/ads/internal/e/b()
+
+Processing com/google/ads/internal/g/l()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/l()
+
+Processing com/google/ads/searchads/SearchAdRequest/a(I)...
+******************************************************************************************
+***End processing com/google/ads/searchads/SearchAdRequest/a(I)
+
+Processing com/google/ads/util/AdUtil/d(Landroid/content/Context;)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/d(Landroid/content/Context;)
+
+Processing com/google/ads/util/AdUtil/a(Ljava/lang/Readable;)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/a(Ljava/lang/Readable;)
+
+Processing com/google/ads/h/h()...
+******************************************************************************************
+***End processing com/google/ads/h/h()
+
+Processing app/dzieciowomi/pregcal/PCWidgetConfigure/getDate(Landroid/content/Context;)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCWidgetConfigure/getDate(Landroid/content/Context;)
+
+Processing app/dzieciowomi/pregcal/PCView/getBirthday()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCView/getBirthday()
+
+Processing com/google/ads/a/b()...
+******************************************************************************************
+***End processing com/google/ads/a/b()
+
+Processing com/google/ads/a/a()...
+******************************************************************************************
+***End processing com/google/ads/a/a()
+
+Processing com/google/ads/internal/g/r()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/r()
+
+Processing com/google/ads/AdRequest$ErrorCode/toString()...
+******************************************************************************************
+***End processing com/google/ads/AdRequest$ErrorCode/toString()
+
+Processing com/google/ads/util/AdUtil/b(Ljava/lang/String;)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/b(Ljava/lang/String;)
+
+Processing app/dzieciowomi/pregcal/PCPassedWeeksView/getNotesText(I)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCPassedWeeksView/getNotesText(I)
+
+Processing com/google/ads/mediation/customevent/CustomEventAdapter$b/a()...
+******************************************************************************************
+***End processing com/google/ads/mediation/customevent/CustomEventAdapter$b/a()
+
+Processing com/google/ads/internal/g/x()...
+******************************************************************************************
+***End processing com/google/ads/internal/g/x()
+
+Processing com/google/ads/util/c/b([BI)...
+******************************************************************************************
+***End processing com/google/ads/util/c/b([BI)
+
+Processing com/google/ads/util/i$a/toString()...
+******************************************************************************************
+***End processing com/google/ads/util/i$a/toString()
+
+Processing com/google/ads/util/i/toString()...
+******************************************************************************************
+***End processing com/google/ads/util/i/toString()
+
+Processing app/dzieciowomi/pregcal/DueDatePickerDialogPreference/getDateStr()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/DueDatePickerDialogPreference/getDateStr()
+
+Processing com/google/ads/internal/d/c()...
+******************************************************************************************
+***End processing com/google/ads/internal/d/c()
+
+Processing com/google/ads/f/a()...
+******************************************************************************************
+***End processing com/google/ads/f/a()
+
+Processing com/google/ads/util/AdUtil/f(Landroid/content/Context;)...
+******************************************************************************************
+Found init, src_line:557, ddx_line:35
+***End processing com/google/ads/util/AdUtil/f(Landroid/content/Context;)
+
+Processing com/google/ads/util/AdUtil/b(Landroid/location/Location;)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/b(Landroid/location/Location;)
+
+Processing com/google/ads/f/c()...
+******************************************************************************************
+***End processing com/google/ads/f/c()
+
+Processing com/google/ads/f/b()...
+******************************************************************************************
+***End processing com/google/ads/f/b()
+
+Processing com/google/ads/util/AdUtil/a(Landroid/location/Location;)...
+******************************************************************************************
+Returning AES/CBC/PKCS5Padding com/google/ads/util/AdUtil/c(Ljava/lang/String;)
+***End processing com/google/ads/util/AdUtil/a(Landroid/location/Location;)
+
+Processing app/dzieciowomi/pregcal/PCView/getPassedWeeksOfPregnancy()...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/PCView/getPassedWeeksOfPregnancy()
+
+Processing com/google/ads/internal/a/a(Landroid/net/Uri;Ljava/util/HashMap;)...
+******************************************************************************************
+***End processing com/google/ads/internal/a/a(Landroid/net/Uri;Ljava/util/HashMap;)
+
+Processing com/google/ads/internal/c/b(Lcom/google/ads/internal/c;)...
+******************************************************************************************
+***End processing com/google/ads/internal/c/b(Lcom/google/ads/internal/c;)
+
+Processing com/google/ads/util/AdUtil/a(Ljava/util/Map;)...
+******************************************************************************************
+***End processing com/google/ads/util/AdUtil/a(Ljava/util/Map;)
+
+Processing app/dzieciowomi/pregcal/PregnancyCalendar/getNotesText(I)...
+******************************************************************************************
+***End processing app/dzieciowomi/pregcal/Pregn

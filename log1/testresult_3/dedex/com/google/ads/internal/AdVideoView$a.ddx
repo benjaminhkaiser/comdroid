@@ -1,0 +1,90 @@
+.class com/google/ads/internal/AdVideoView$a
+.super java/lang/Object
+.source SourceFile
+.implements java/lang/Runnable
+
+.inner class a inner com/google/ads/internal/AdVideoView$a outer com/google/ads/internal/AdVideoView
+.field private a Ljava/lang/ref/WeakReference;
+  .annotation systemVisibility Ldalvik/annotation/Signature;
+    value [Ljava/lang/String; = { "Ljava/lang/ref/WeakReference" , "<" , "Lcom/google/ads/internal/AdVideoView;" , ">;" }
+  .end annotation
+.end field
+.field private b Landroid/os/Handler;
+
+.method public <init>(Lcom/google/ads/internal/AdVideoView;)V
+.limit registers 3
+; this: v1 (Lcom/google/ads/internal/AdVideoView$a;)
+; parameter[0] : v2 (Lcom/google/ads/internal/AdVideoView;)
+.line 51
+	invoke-direct	{v1},java/lang/Object/<init>	; <init>()V
+; v1 : Lcom/google/ads/internal/AdVideoView$a;
+.line 52
+	new-instance	v0,java/lang/ref/WeakReference
+; v0 : Ljava/lang/ref/WeakReference;
+	invoke-direct	{v0,v2},java/lang/ref/WeakReference/<init>	; <init>(Ljava/lang/Object;)V
+; v0 : Ljava/lang/ref/WeakReference; , v2 : Lcom/google/ads/internal/AdVideoView;
+	iput-object	v0,v1,com/google/ads/internal/AdVideoView$a.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v1 : Lcom/google/ads/internal/AdVideoView$a;
+.line 53
+	new-instance	v0,android/os/Handler
+; v0 : Landroid/os/Handler;
+	invoke-direct	{v0},android/os/Handler/<init>	; <init>()V
+; v0 : Landroid/os/Handler;
+	iput-object	v0,v1,com/google/ads/internal/AdVideoView$a.b Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v1 : Lcom/google/ads/internal/AdVideoView$a;
+.line 54
+	return-void	
+.end method
+
+.method public a()V
+.limit registers 4
+; this: v3 (Lcom/google/ads/internal/AdVideoView$a;)
+.line 68
+	iget-object	v0,v3,com/google/ads/internal/AdVideoView$a.b Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v3 : Lcom/google/ads/internal/AdVideoView$a;
+	const-wide/16	v1,250
+; v1 : double-length
+	invoke-virtual	{v0,v3,v1,v2},android/os/Handler/postDelayed	; postDelayed(Ljava/lang/Runnable;J)Z
+; v0 : Landroid/os/Handler; , v3 : Lcom/google/ads/internal/AdVideoView$a; , v1 : double-length
+.line 69
+	return-void	
+.end method
+
+.method public run()V
+.limit registers 4
+; this: v3 (Lcom/google/ads/internal/AdVideoView$a;)
+.line 58
+	iget-object	v0,v3,com/google/ads/internal/AdVideoView$a.a Ljava/lang/ref/WeakReference;
+; v0 : Ljava/lang/ref/WeakReference; , v3 : Lcom/google/ads/internal/AdVideoView$a;
+	invoke-virtual	{v0},java/lang/ref/WeakReference/get	; get()Ljava/lang/Object;
+; v0 : Ljava/lang/ref/WeakReference;
+	move-result-object	v0
+; v0 : Ljava/lang/Object;
+	check-cast	v0,com/google/ads/internal/AdVideoView
+; v0 : Lcom/google/ads/internal/AdVideoView;
+.line 59
+	if-nez	v0,l27150
+; v0 : Lcom/google/ads/internal/AdVideoView;
+.line 60
+	const-string	v0,"The video must be gone, so cancelling the timeupdate task."
+; v0 : Ljava/lang/String;
+	invoke-static	{v0},com/google/ads/util/b/d	; d(Ljava/lang/String;)V
+; v0 : Ljava/lang/String;
+l2714e:
+.line 65
+	return-void	
+l27150:
+.line 63
+	invoke-virtual	{v0},com/google/ads/internal/AdVideoView/f	; f()V
+; v0 : Lcom/google/ads/internal/AdVideoView;
+.line 64
+	iget-object	v0,v3,com/google/ads/internal/AdVideoView$a.b Landroid/os/Handler;
+; v0 : Landroid/os/Handler; , v3 : Lcom/google/ads/internal/AdVideoView$a;
+	const-wide/16	v1,250
+; v1 : double-length
+	invoke-virtual	{v0,v3,v1,v2},android/os/Handler/postDelayed	; postDelayed(Ljava/lang/Runnable;J)Z
+; v0 : Landroid/os/Handler; , v3 : Lcom/google/ads/internal/AdVideoView$a; , v1 : double-length
+	goto	l2714e
+.end method
+
+

@@ -1,0 +1,267 @@
+.class public app/dzieciowomi/pregcal/PCNoteEdit
+.super android/app/Activity
+.source PCNoteEdit.java
+
+.field private mCurrentWeek Ljava/lang/Integer;
+.field private mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.field private mNoteText Landroid/widget/EditText;
+.field private mRowId Ljava/lang/Long;
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+.line 26
+	invoke-direct	{v0},android/app/Activity/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	return-void	
+.end method
+
+.method static access$0(Lapp/dzieciowomi/pregcal/PCNoteEdit;)V
+.limit registers 1
+; parameter[0] : v0 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+.line 93
+	invoke-direct	{v0},app/dzieciowomi/pregcal/PCNoteEdit/saveState	; saveState()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	return-void	
+.end method
+
+.method private populateFields()V
+.limit registers 5
+; this: v4 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+.var 0 is note Landroid/database/Cursor; from l12190 to l121b4
+.line 67
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v1 : Ljava/lang/Long; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	if-eqz	v1,l121b4
+; v1 : Ljava/lang/Long;
+.line 68
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCNoteEdit.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	iget-object	v2,v4,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v2 : Ljava/lang/Long; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	invoke-virtual	{v2},java/lang/Long/longValue	; longValue()J
+; v2 : Ljava/lang/Long;
+	move-result-wide	v2
+; v2 : double-length
+	invoke-virtual	{v1,v2,v3},app/dzieciowomi/pregcal/PCNotesDbAdapter/fetchNote	; fetchNote(J)Landroid/database/Cursor;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v2 : double-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+.line 69
+	invoke-virtual	{v4,v0},app/dzieciowomi/pregcal/PCNoteEdit/startManagingCursor	; startManagingCursor(Landroid/database/Cursor;)V
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit; , v0 : Landroid/database/Cursor;
+.line 70
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCNoteEdit.mNoteText Landroid/widget/EditText;
+; v1 : Landroid/widget/EditText; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 71
+	const-string	v2,"note_text"
+; v2 : Ljava/lang/String;
+	invoke-interface	{v0,v2},android/database/Cursor/getColumnIndexOrThrow	; getColumnIndexOrThrow(Ljava/lang/String;)I
+; v0 : Landroid/database/Cursor; , v2 : Ljava/lang/String;
+	move-result	v2
+; v2 : single-length
+.line 70
+	invoke-interface	{v0,v2},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v0 : Landroid/database/Cursor; , v2 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/widget/EditText/setText	; setText(Ljava/lang/CharSequence;)V
+; v1 : Landroid/widget/EditText; , v2 : Ljava/lang/String;
+l121b4:
+.line 73
+	return-void	
+.end method
+
+.method private saveState()V
+.limit registers 5
+; this: v4 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+.line 94
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCNoteEdit.mNoteText Landroid/widget/EditText;
+; v1 : Landroid/widget/EditText; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	invoke-virtual	{v1},android/widget/EditText/getText	; getText()Landroid/text/Editable;
+; v1 : Landroid/widget/EditText;
+	move-result-object	v1
+; v1 : Landroid/text/Editable;
+	invoke-interface	{v1},android/text/Editable/toString	; toString()Ljava/lang/String;
+; v1 : Landroid/text/Editable;
+	move-result-object	v0
+; v0 : Ljava/lang/String;
+.line 96
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v1 : Ljava/lang/Long; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	if-eqz	v1,l121fa
+; v1 : Ljava/lang/Long;
+.line 97
+	iget-object	v1,v4,app/dzieciowomi/pregcal/PCNoteEdit.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	iget-object	v2,v4,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v2 : Ljava/lang/Long; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	invoke-virtual	{v2},java/lang/Long/longValue	; longValue()J
+; v2 : Ljava/lang/Long;
+	move-result-wide	v2
+; v2 : double-length
+	invoke-virtual	{v1,v2,v3,v0},app/dzieciowomi/pregcal/PCNotesDbAdapter/updateNote	; updateNote(JLjava/lang/String;)Z
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v2 : double-length , v0 : Ljava/lang/String;
+l121fa:
+.line 99
+	return-void	
+.end method
+
+.method protected onCreate(Landroid/os/Bundle;)V
+.limit registers 6
+; this: v4 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+; parameter[0] : v5 (Landroid/os/Bundle;)
+.var 1 is extras Landroid/os/Bundle; from l1228e to l122aa
+	const/4	v3,0
+; v3 : single-length
+.line 35
+	invoke-super	{v4,v5},android/app/Activity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit; , v5 : Landroid/os/Bundle;
+.line 36
+	new-instance	v2,app/dzieciowomi/pregcal/PCNotesDbAdapter
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	invoke-direct	{v2,v4},app/dzieciowomi/pregcal/PCNotesDbAdapter/<init>	; <init>(Landroid/content/Context;)V
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	iput-object	v2,v4,app/dzieciowomi/pregcal/PCNoteEdit.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 37
+	iget-object	v2,v4,app/dzieciowomi/pregcal/PCNoteEdit.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	invoke-virtual	{v2},app/dzieciowomi/pregcal/PCNotesDbAdapter/open	; open()Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.line 39
+	const	v2,2130903046	; 0x7f030006
+; v2 : single-length
+	invoke-virtual	{v4,v2},app/dzieciowomi/pregcal/PCNoteEdit/setContentView	; setContentView(I)V
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit; , v2 : single-length
+.line 40
+	const	v2,2131034151	; 0x7f050027
+; v2 : single-length
+	invoke-virtual	{v4,v2},app/dzieciowomi/pregcal/PCNoteEdit/setTitle	; setTitle(I)V
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit; , v2 : single-length
+.line 42
+	const	v2,2131296294	; 0x7f090026
+; v2 : single-length
+	invoke-virtual	{v4,v2},app/dzieciowomi/pregcal/PCNoteEdit/findViewById	; findViewById(I)Landroid/view/View;
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit; , v2 : single-length
+	move-result-object	v2
+; v2 : Landroid/view/View;
+	check-cast	v2,android/widget/EditText
+; v2 : Landroid/widget/EditText;
+	iput-object	v2,v4,app/dzieciowomi/pregcal/PCNoteEdit.mNoteText Landroid/widget/EditText;
+; v2 : Landroid/widget/EditText; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 44
+	const	v2,2131296295	; 0x7f090027
+; v2 : single-length
+	invoke-virtual	{v4,v2},app/dzieciowomi/pregcal/PCNoteEdit/findViewById	; findViewById(I)Landroid/view/View;
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit; , v2 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/Button
+; v0 : Landroid/widget/Button;
+.line 46
+	if-nez	v5,l122c2
+; v5 : Landroid/os/Bundle;
+	move-object	v2,v3
+; v2 : single-length , v3 : single-length
+l12272:
+	iput-object	v2,v4,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v2 : Ljava/lang/Long; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 48
+	iget-object	v2,v4,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v2 : Ljava/lang/Long; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	if-nez	v2,l122aa
+; v2 : Ljava/lang/Long;
+.line 49
+	invoke-virtual	{v4},app/dzieciowomi/pregcal/PCNoteEdit/getIntent	; getIntent()Landroid/content/Intent;
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	move-result-object	v2
+; v2 : Landroid/content/Intent;
+	invoke-virtual	{v2},android/content/Intent/getExtras	; getExtras()Landroid/os/Bundle;
+; v2 : Landroid/content/Intent;
+	move-result-object	v1
+; v1 : Landroid/os/Bundle;
+.line 50
+	if-eqz	v1,l122a6
+; v1 : Landroid/os/Bundle;
+	const-string	v2,"_id"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v1,v2},android/os/Bundle/getLong	; getLong(Ljava/lang/String;)J
+; v1 : Landroid/os/Bundle; , v2 : Ljava/lang/String;
+	move-result-wide	v2
+; v2 : double-length
+	invoke-static	{v2,v3},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v2 : double-length
+	move-result-object	v3
+; v3 : Ljava/lang/Long;
+l122a6:
+	iput-object	v3,v4,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v3 : single-length , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+l122aa:
+.line 53
+	invoke-direct	{v4},app/dzieciowomi/pregcal/PCNoteEdit/populateFields	; populateFields()V
+; v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 55
+	new-instance	v2,app/dzieciowomi/pregcal/PCNoteEdit$1
+; v2 : Lapp/dzieciowomi/pregcal/PCNoteEdit$1;
+	invoke-direct	{v2,v4},app/dzieciowomi/pregcal/PCNoteEdit$1/<init>	; <init>(Lapp/dzieciowomi/pregcal/PCNoteEdit;)V
+; v2 : Lapp/dzieciowomi/pregcal/PCNoteEdit$1; , v4 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	invoke-virtual	{v0,v2},android/widget/Button/setOnClickListener	; setOnClickListener(Landroid/view/View$OnClickListener;)V
+; v0 : Landroid/widget/Button; , v2 : Lapp/dzieciowomi/pregcal/PCNoteEdit$1;
+.line 64
+	return-void	
+l122c2:
+.line 47
+	const-string	v2,"_id"
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v5,v2},android/os/Bundle/getSerializable	; getSerializable(Ljava/lang/String;)Ljava/io/Serializable;
+; v5 : Landroid/os/Bundle; , v2 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/io/Serializable;
+	check-cast	v2,java/lang/Long
+; v2 : Ljava/lang/Long;
+	goto	l12272
+.end method
+
+.method protected onPause()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+.line 84
+	invoke-super	{v0},android/app/Activity/onPause	; onPause()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 85
+	return-void	
+.end method
+
+.method protected onResume()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+.line 89
+	invoke-super	{v0},android/app/Activity/onResume	; onResume()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 90
+	invoke-direct	{v0},app/dzieciowomi/pregcal/PCNoteEdit/populateFields	; populateFields()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+.line 91
+	return-void	
+.end method
+
+.method protected onSaveInstanceState(Landroid/os/Bundle;)V
+.limit registers 4
+; this: v2 (Lapp/dzieciowomi/pregcal/PCNoteEdit;)
+; parameter[0] : v3 (Landroid/os/Bundle;)
+.line 78
+	invoke-super	{v2,v3},android/app/Activity/onSaveInstanceState	; onSaveInstanceState(Landroid/os/Bundle;)V
+; v2 : Lapp/dzieciowomi/pregcal/PCNoteEdit; , v3 : Landroid/os/Bundle;
+.line 79
+	const-string	v0,"_id"
+; v0 : Ljava/lang/String;
+	iget-object	v1,v2,app/dzieciowomi/pregcal/PCNoteEdit.mRowId Ljava/lang/Long;
+; v1 : Ljava/lang/Long; , v2 : Lapp/dzieciowomi/pregcal/PCNoteEdit;
+	invoke-virtual	{v3,v0,v1},android/os/Bundle/putSerializable	; putSerializable(Ljava/lang/String;Ljava/io/Serializable;)V
+; v3 : Landroid/os/Bundle; , v0 : Ljava/lang/String; , v1 : Ljava/lang/Long;
+.line 80
+	return-void	
+.end method
+
+

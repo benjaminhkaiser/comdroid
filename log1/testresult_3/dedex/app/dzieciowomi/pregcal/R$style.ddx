@@ -1,0 +1,17 @@
+.class public final app/dzieciowomi/pregcal/R$style
+.super java/lang/Object
+.source R.java
+
+.inner class style inner app/dzieciowomi/pregcal/R$style outer app/dzieciowomi/pregcal/R
+.field public static final WidgetBackground I = 2131165184	; 0x7f070000
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/R$style;)
+.line 544
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/R$style;
+	return-void	
+.end method
+
+

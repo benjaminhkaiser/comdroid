@@ -1,0 +1,588 @@
+.class public app/dzieciowomi/pregcal/PCNotesView
+.super android/app/ListActivity
+.source PCNotesView.java
+
+.field private static final ACTIVITY_EDIT I = 1	; 0x1
+.field private static final DELETE_ID I = 3	; 0x3
+.field private static final EDIT_ID I = 1	; 0x1
+.field private static final EXPORT_ID I = 2	; 0x2
+.field private mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.field private mSkin I
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+.line 24
+	invoke-direct	{v0},android/app/ListActivity/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	return-void	
+.end method
+
+.method private editNote(J)V
+.limit registers 5
+; this: v2 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+; parameter[0] : v3 (J)
+.line 154
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	const-class	v1,app/dzieciowomi/pregcal/PCNoteEdit
+; v1 : Ljava/lang/Class;
+	invoke-direct	{v0,v2,v1},android/content/Intent/<init>	; <init>(Landroid/content/Context;Ljava/lang/Class;)V
+; v0 : Landroid/content/Intent; , v2 : Lapp/dzieciowomi/pregcal/PCNotesView; , v1 : Ljava/lang/Class;
+.line 155
+	const-string	v1,"_id"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v3,v4},android/content/Intent/putExtra	; putExtra(Ljava/lang/String;J)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String; , v3 : double-length
+.line 156
+	const/4	v1,1
+; v1 : single-length
+	invoke-virtual	{v2,v0,v1},app/dzieciowomi/pregcal/PCNotesView/startActivityForResult	; startActivityForResult(Landroid/content/Intent;I)V
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView; , v0 : Landroid/content/Intent; , v1 : single-length
+.line 157
+	return-void	
+.end method
+
+.method private fillData()V
+.limit registers 9
+; this: v8 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+	const/4	v7,1
+; v7 : single-length
+	const/4	v6,0
+; v6 : single-length
+.line 74
+	iget-object	v1,v8,app/dzieciowomi/pregcal/PCNotesView.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v8 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	invoke-direct	{v8},app/dzieciowomi/pregcal/PCNotesView/getCurrentWeekOfPregnancy	; getCurrentWeekOfPregnancy()I
+; v8 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	move-result	v2
+; v2 : single-length
+	invoke-virtual	{v1,v2},app/dzieciowomi/pregcal/PCNotesDbAdapter/fetchWeekNotes	; fetchWeekNotes(I)Landroid/database/Cursor;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v2 : single-length
+	move-result-object	v3
+; v3 : Landroid/database/Cursor;
+.line 75
+	invoke-virtual	{v8,v3},app/dzieciowomi/pregcal/PCNotesView/startManagingCursor	; startManagingCursor(Landroid/database/Cursor;)V
+; v8 : Lapp/dzieciowomi/pregcal/PCNotesView; , v3 : Landroid/database/Cursor;
+.line 78
+	new-array	v4,v7,[Ljava/lang/String;
+; v4 : [Ljava/lang/String; , v7 : single-length
+	const-string	v1,"note_text"
+; v1 : Ljava/lang/String;
+	aput-object	v1,v4,v6
+; v1 : Ljava/lang/String; , v4 : [Ljava/lang/String; , v6 : single-length
+.line 81
+	new-array	v5,v7,[I
+; v5 : [I , v7 : single-length
+	const	v1,2131296296	; 0x7f090028
+; v1 : single-length
+	aput	v1,v5,v6
+; v1 : single-length , v5 : [I , v6 : single-length
+.line 85
+	new-instance	v0,android/widget/SimpleCursorAdapter
+; v0 : Landroid/widget/SimpleCursorAdapter;
+	const	v2,2130903048	; 0x7f030008
+; v2 : single-length
+	move-object	v1,v8
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesView; , v8 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	invoke-direct/range	{v0..v5},android/widget/SimpleCursorAdapter/<init>;	<init>(Landroid/content/Context;ILandroid/database/Cursor;[Ljava/lang/String;[I)V
+; v0 : Landroid/widget/SimpleCursorAdapter; , v1 : Lapp/dzieciowomi/pregcal/PCNotesView; , v2 : single-length , v3 : Landroid/database/Cursor; , v4 : [Ljava/lang/String; , v5 : [I
+.line 86
+	invoke-virtual	{v8,v0},app/dzieciowomi/pregcal/PCNotesView/setListAdapter	; setListAdapter(Landroid/widget/ListAdapter;)V
+; v8 : Lapp/dzieciowomi/pregcal/PCNotesView; , v0 : Landroid/widget/SimpleCursorAdapter;
+.line 87
+	return-void	
+.end method
+
+.method private getCurrentWeekOfPregnancy()I
+.limit registers 16
+; this: v15 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+	const-wide	v13,4725570615333879808	; 0x4194997000000000
+; v13 : double-length
+.line 53
+	new-instance	v8,java/util/Date
+; v8 : Ljava/util/Date;
+	invoke-direct	{v8},java/util/Date/<init>	; <init>()V
+; v8 : Ljava/util/Date;
+.line 54
+	new-instance	v1,app/dzieciowomi/pregcal/PCDatabaseAdapter
+; v1 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+	invoke-direct	{v1,v15},app/dzieciowomi/pregcal/PCDatabaseAdapter/<init>	; <init>(Landroid/content/Context;)V
+; v1 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; , v15 : Lapp/dzieciowomi/pregcal/PCNotesView;
+.line 55
+	invoke-virtual	{v1},app/dzieciowomi/pregcal/PCDatabaseAdapter/open	; open()Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+; v1 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter;
+.line 56
+	const-wide/16	v9,1
+; v9 : double-length
+	invoke-virtual	{v1,v9,v10},app/dzieciowomi/pregcal/PCDatabaseAdapter/fetchProfile	; fetchProfile(J)Landroid/database/Cursor;
+; v1 : Lapp/dzieciowomi/pregcal/PCDatabaseAdapter; , v9 : double-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+.line 57
+	invoke-virtual	{v15,v0},app/dzieciowomi/pregcal/PCNotesView/startManagingCursor	; startManagingCursor(Landroid/database/Cursor;)V
+; v15 : Lapp/dzieciowomi/pregcal/PCNotesView; , v0 : Landroid/database/Cursor;
+.line 58
+	invoke-virtual	{v8},java/util/Date/getTime	; getTime()J
+; v8 : Ljava/util/Date;
+	move-result-wide	v4
+; v4 : double-length
+.line 60
+	invoke-interface	{v0},android/database/Cursor/moveToFirst	; moveToFirst()Z
+; v0 : Landroid/database/Cursor;
+	move-result	v9
+; v9 : single-length
+	if-eqz	v9,l12cb6
+; v9 : single-length
+.line 61
+	const-string	v9,"initdate"
+; v9 : Ljava/lang/String;
+	invoke-interface	{v0,v9},android/database/Cursor/getColumnIndexOrThrow	; getColumnIndexOrThrow(Ljava/lang/String;)I
+; v0 : Landroid/database/Cursor; , v9 : Ljava/lang/String;
+	move-result	v9
+; v9 : single-length
+	invoke-interface	{v0,v9},android/database/Cursor/getLong	; getLong(I)J
+; v0 : Landroid/database/Cursor; , v9 : single-length
+	move-result-wide	v4
+; v4 : double-length
+l12cb6:
+.line 64
+	const/4	v9,2
+; v9 : single-length
+	invoke-static	{},java/util/Locale/getDefault	; getDefault()Ljava/util/Locale;
+; 
+	nop	
+	move-result-object	v10
+; v10 : Ljava/util/Locale;
+	invoke-static	{v9,v10},java/text/DateFormat/getDateInstance	; getDateInstance(ILjava/util/Locale;)Ljava/text/DateFormat;
+; v9 : single-length , v10 : Ljava/util/Locale;
+	move-result-object	v2
+; v2 : Ljava/text/DateFormat;
+.line 65
+	new-instance	v7,java/text/ParsePosition
+; v7 : Ljava/text/ParsePosition;
+	const/4	v9,0
+; v9 : single-length
+	invoke-direct	{v7,v9},java/text/ParsePosition/<init>	; <init>(I)V
+; v7 : Ljava/text/ParsePosition; , v9 : single-length
+.line 66
+	invoke-static	{v4,v5},java/lang/Long/valueOf	; valueOf(J)Ljava/lang/Long;
+; v4 : double-length
+	move-result-object	v9
+; v9 : Ljava/lang/Long;
+	invoke-virtual	{v2,v9},java/text/DateFormat/format	; format(Ljava/lang/Object;)Ljava/lang/String;
+; v2 : Ljava/text/DateFormat; , v9 : Ljava/lang/Long;
+	move-result-object	v9
+; v9 : Ljava/lang/String;
+	invoke-virtual	{v2,v9,v7},java/text/DateFormat/parse	; parse(Ljava/lang/String;Ljava/text/ParsePosition;)Ljava/util/Date;
+; v2 : Ljava/text/DateFormat; , v9 : Ljava/lang/String; , v7 : Ljava/text/ParsePosition;
+	move-result-object	v6
+; v6 : Ljava/util/Date;
+.line 68
+	invoke-virtual	{v8},java/util/Date/getTime	; getTime()J
+; v8 : Ljava/util/Date;
+	move-result-wide	v9
+; v9 : double-length
+	long-to-double	v9,v9
+; v9 : double-length , v9 : double-length
+	div-double/2addr	v9,v13
+; v9 : double-length , v13 : double-length
+	invoke-virtual	{v6},java/util/Date/getTime	; getTime()J
+; v6 : Ljava/util/Date;
+	move-result-wide	v11
+; v11 : double-length
+	long-to-double	v11,v11
+; v11 : double-length , v11 : double-length
+	div-double/2addr	v11,v13
+; v11 : double-length , v13 : double-length
+	sub-double/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+	const-wide/high16	v11,16412
+; v11 : double-length
+	div-double/2addr	v9,v11
+; v9 : double-length , v11 : double-length
+	invoke-static	{v9,v10},java/lang/Math/ceil	; ceil(D)D
+; v9 : double-length
+	move-result-wide	v9
+; v9 : double-length
+	double-to-int	v3,v9
+; v3 : single-length , v9 : double-length
+.line 70
+	return	v3
+; v3 : single-length
+.end method
+
+.method private getNote(J)Ljava/lang/String;
+.limit registers 6
+; this: v3 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+; parameter[0] : v4 (J)
+.var 0 is note Landroid/database/Cursor; from l12d40 to l12d5a
+.line 167
+	const-wide/16	v1,0
+; v1 : double-length
+	cmp-long	v1,v4,v1
+; v1 : single-length , v4 : double-length , v1 : single-length
+	if-ltz	v1,l12d5c
+; v1 : single-length
+.line 168
+	iget-object	v1,v3,app/dzieciowomi/pregcal/PCNotesView.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v3 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	invoke-virtual	{v1,v4,v5},app/dzieciowomi/pregcal/PCNotesDbAdapter/fetchNote	; fetchNote(J)Landroid/database/Cursor;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v4 : double-length
+	move-result-object	v0
+; v0 : Landroid/database/Cursor;
+.line 169
+	invoke-virtual	{v3,v0},app/dzieciowomi/pregcal/PCNotesView/startManagingCursor	; startManagingCursor(Landroid/database/Cursor;)V
+; v3 : Lapp/dzieciowomi/pregcal/PCNotesView; , v0 : Landroid/database/Cursor;
+.line 170
+	const-string	v1,"note_text"
+; v1 : Ljava/lang/String;
+	invoke-interface	{v0,v1},android/database/Cursor/getColumnIndexOrThrow	; getColumnIndexOrThrow(Ljava/lang/String;)I
+; v0 : Landroid/database/Cursor; , v1 : Ljava/lang/String;
+	move-result	v1
+; v1 : single-length
+	invoke-interface	{v0,v1},android/database/Cursor/getString	; getString(I)Ljava/lang/String;
+; v0 : Landroid/database/Cursor; , v1 : single-length
+	move-result-object	v1
+; v1 : Ljava/lang/String;
+l12d5a:
+.line 172
+	return-object	v1
+; v1 : single-length
+l12d5c:
+	const/4	v1,0
+; v1 : single-length
+	goto	l12d5a
+.end method
+
+.method private setSkin()V
+.limit registers 3
+; this: v2 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+	const	v1,2131296297	; 0x7f090029
+; v1 : single-length
+.line 101
+	sget	v0,app/dzieciowomi/pregcal/PregnancyCalendar.selectedSkin I
+; v0 : single-length
+	packed-switch	v0,0
+		ps12d7a_12d82	; case 0
+		ps12d7a_12d9c	; case 1
+		ps12d7a_12db6	; case 2
+		ps12d7a_12dd0	; case 3
+		ps12d7a_12dea	; case 4
+		default: ps12d7a_default
+; v0 : single-length
+l12d80:
+.line 121
+	return-void	
+ps12d7a_12d82:
+.line 103
+	invoke-virtual	{v2,v1},app/dzieciowomi/pregcal/PCNotesView/findViewById	; findViewById(I)Landroid/view/View;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/LinearLayout
+; v0 : Landroid/widget/LinearLayout;
+	const	v1,2130837547	; 0x7f02002b
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/LinearLayout/setBackgroundResource	; setBackgroundResource(I)V
+; v0 : Landroid/widget/LinearLayout; , v1 : single-length
+	goto	l12d80
+ps12d7a_12d9c:
+.line 106
+	invoke-virtual	{v2,v1},app/dzieciowomi/pregcal/PCNotesView/findViewById	; findViewById(I)Landroid/view/View;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/LinearLayout
+; v0 : Landroid/widget/LinearLayout;
+	const	v1,2130837546	; 0x7f02002a
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/LinearLayout/setBackgroundResource	; setBackgroundResource(I)V
+; v0 : Landroid/widget/LinearLayout; , v1 : single-length
+	goto	l12d80
+ps12d7a_12db6:
+.line 109
+	invoke-virtual	{v2,v1},app/dzieciowomi/pregcal/PCNotesView/findViewById	; findViewById(I)Landroid/view/View;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/LinearLayout
+; v0 : Landroid/widget/LinearLayout;
+	const	v1,2130837549	; 0x7f02002d
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/LinearLayout/setBackgroundResource	; setBackgroundResource(I)V
+; v0 : Landroid/widget/LinearLayout; , v1 : single-length
+	goto	l12d80
+ps12d7a_12dd0:
+.line 112
+	invoke-virtual	{v2,v1},app/dzieciowomi/pregcal/PCNotesView/findViewById	; findViewById(I)Landroid/view/View;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/LinearLayout
+; v0 : Landroid/widget/LinearLayout;
+	const	v1,2130837548	; 0x7f02002c
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/LinearLayout/setBackgroundResource	; setBackgroundResource(I)V
+; v0 : Landroid/widget/LinearLayout; , v1 : single-length
+	goto	l12d80
+ps12d7a_12dea:
+.line 115
+	invoke-virtual	{v2,v1},app/dzieciowomi/pregcal/PCNotesView/findViewById	; findViewById(I)Landroid/view/View;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView; , v1 : single-length
+	move-result-object	v0
+; v0 : Landroid/view/View;
+	check-cast	v0,android/widget/LinearLayout
+; v0 : Landroid/widget/LinearLayout;
+	const	v1,2130837550	; 0x7f02002e
+; v1 : single-length
+	invoke-virtual	{v0,v1},android/widget/LinearLayout/setBackgroundResource	; setBackgroundResource(I)V
+; v0 : Landroid/widget/LinearLayout; , v1 : single-length
+	goto	l12d80
+.line 101
+.end method
+
+.method private shareNote(J)V
+.limit registers 7
+; this: v4 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+; parameter[0] : v5 (J)
+.line 159
+	new-instance	v0,android/content/Intent
+; v0 : Landroid/content/Intent;
+	const-string	v1,"android.intent.action.SEND"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v0,v1},android/content/Intent/<init>	; <init>(Ljava/lang/String;)V
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String;
+.line 160
+	const-string	v1,"text/plain"
+; v1 : Ljava/lang/String;
+	invoke-virtual	{v0,v1},android/content/Intent/setType	; setType(Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String;
+.line 161
+	const-string	v1,"android.intent.extra.SUBJECT"
+; v1 : Ljava/lang/String;
+	new-instance	v2,java/lang/StringBuilder
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,"My notes - "
+; v3 : Ljava/lang/String;
+	invoke-direct	{v2,v3},java/lang/StringBuilder/<init>	; <init>(Ljava/lang/String;)V
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	invoke-direct	{v4},app/dzieciowomi/pregcal/PCNotesView/getCurrentWeekOfPregnancy	; getCurrentWeekOfPregnancy()I
+; v4 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	move-result	v3
+; v3 : single-length
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(I)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : single-length
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	const-string	v3,". week of pregnancy"
+; v3 : Ljava/lang/String;
+	invoke-virtual	{v2,v3},java/lang/StringBuilder/append	; append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+; v2 : Ljava/lang/StringBuilder; , v3 : Ljava/lang/String;
+	move-result-object	v2
+; v2 : Ljava/lang/StringBuilder;
+	invoke-virtual	{v2},java/lang/StringBuilder/toString	; toString()Ljava/lang/String;
+; v2 : Ljava/lang/StringBuilder;
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},android/content/Intent/putExtra	; putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 162
+	const-string	v1,"android.intent.extra.TEXT"
+; v1 : Ljava/lang/String;
+	invoke-direct	{v4,v5,v6},app/dzieciowomi/pregcal/PCNotesView/getNote	; getNote(J)Ljava/lang/String;
+; v4 : Lapp/dzieciowomi/pregcal/PCNotesView; , v5 : double-length
+	move-result-object	v2
+; v2 : Ljava/lang/String;
+	invoke-virtual	{v0,v1,v2},android/content/Intent/putExtra	; putExtra(Ljava/lang/String;Ljava/lang/String;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String; , v2 : Ljava/lang/String;
+.line 163
+	const-string	v1,"Share your notes"
+; v1 : Ljava/lang/String;
+	invoke-static	{v0,v1},android/content/Intent/createChooser	; createChooser(Landroid/content/Intent;Ljava/lang/CharSequence;)Landroid/content/Intent;
+; v0 : Landroid/content/Intent; , v1 : Ljava/lang/String;
+	move-result-object	v1
+; v1 : Landroid/content/Intent;
+	invoke-virtual	{v4,v1},app/dzieciowomi/pregcal/PCNotesView/startActivity	; startActivity(Landroid/content/Intent;)V
+; v4 : Lapp/dzieciowomi/pregcal/PCNotesView; , v1 : Landroid/content/Intent;
+.line 164
+	return-void	
+.end method
+
+.method public onContextItemSelected(Landroid/view/MenuItem;)Z
+.limit registers 7
+; this: v5 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+; parameter[0] : v6 (Landroid/view/MenuItem;)
+	const/4	v1,1
+; v1 : single-length
+.line 135
+	invoke-interface	{v6},android/view/MenuItem/getMenuInfo	; getMenuInfo()Landroid/view/ContextMenu$ContextMenuInfo;
+; v6 : Landroid/view/MenuItem;
+	move-result-object	v0
+; v0 : Landroid/view/ContextMenu$ContextMenuInfo;
+	check-cast	v0,android/widget/AdapterView$AdapterContextMenuInfo
+; v0 : Landroid/widget/AdapterView$AdapterContextMenuInfo;
+.line 136
+	invoke-interface	{v6},android/view/MenuItem/getItemId	; getItemId()I
+; v6 : Landroid/view/MenuItem;
+	move-result	v2
+; v2 : single-length
+	packed-switch	v2,1
+		ps12ed2_12ef8	; case 1
+		ps12ed2_12f0a	; case 2
+		ps12ed2_12ee2	; case 3
+		default: ps12ed2_default
+; v2 : single-length
+ps12ed2_default:
+.line 150
+	invoke-super	{v5,v6},android/app/ListActivity/onContextItemSelected	; onContextItemSelected(Landroid/view/MenuItem;)Z
+; v5 : Lapp/dzieciowomi/pregcal/PCNotesView; , v6 : Landroid/view/MenuItem;
+	move-result	v1
+; v1 : single-length
+l12ee0:
+	return	v1
+; v1 : single-length
+ps12ed2_12ee2:
+.line 138
+	iget-object	v2,v5,app/dzieciowomi/pregcal/PCNotesView.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v5 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	iget-wide	v3,v0,android/widget/AdapterView$AdapterContextMenuInfo.id J
+; v3 : double-length , v0 : Landroid/widget/AdapterView$AdapterContextMenuInfo;
+	invoke-virtual	{v2,v3,v4},app/dzieciowomi/pregcal/PCNotesDbAdapter/deleteNote	; deleteNote(J)Z
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v3 : double-length
+.line 139
+	invoke-direct	{v5},app/dzieciowomi/pregcal/PCNotesView/fillData	; fillData()V
+; v5 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	goto	l12ee0
+ps12ed2_12ef8:
+.line 142
+	iget-wide	v2,v0,android/widget/AdapterView$AdapterContextMenuInfo.id J
+; v2 : double-length , v0 : Landroid/widget/AdapterView$AdapterContextMenuInfo;
+	invoke-direct	{v5,v2,v3},app/dzieciowomi/pregcal/PCNotesView/editNote	; editNote(J)V
+; v5 : Lapp/dzieciowomi/pregcal/PCNotesView; , v2 : double-length
+.line 143
+	invoke-direct	{v5},app/dzieciowomi/pregcal/PCNotesView/fillData	; fillData()V
+; v5 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	goto	l12ee0
+ps12ed2_12f0a:
+.line 146
+	iget-wide	v2,v0,android/widget/AdapterView$AdapterContextMenuInfo.id J
+; v2 : double-length , v0 : Landroid/widget/AdapterView$AdapterContextMenuInfo;
+	invoke-direct	{v5,v2,v3},app/dzieciowomi/pregcal/PCNotesView/shareNote	; shareNote(J)V
+; v5 : Lapp/dzieciowomi/pregcal/PCNotesView; , v2 : double-length
+	goto	l12ee0
+.line 136
+l12f16:	data-array
+		0x00, 0x00
+	end data-array
+.end method
+
+.method public onCreate(Landroid/os/Bundle;)V
+.limit registers 3
+; this: v1 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+; parameter[0] : v2 (Landroid/os/Bundle;)
+.line 37
+	invoke-super	{v1,v2},android/app/ListActivity/onCreate	; onCreate(Landroid/os/Bundle;)V
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesView; , v2 : Landroid/os/Bundle;
+.line 38
+	const	v0,2130903049	; 0x7f030009
+; v0 : single-length
+	invoke-virtual	{v1,v0},app/dzieciowomi/pregcal/PCNotesView/setContentView	; setContentView(I)V
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesView; , v0 : single-length
+.line 39
+	new-instance	v0,app/dzieciowomi/pregcal/PCNotesDbAdapter
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+	invoke-direct	{v0,v1},app/dzieciowomi/pregcal/PCNotesDbAdapter/<init>	; <init>(Landroid/content/Context;)V
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v1 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	iput-object	v0,v1,app/dzieciowomi/pregcal/PCNotesView.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v1 : Lapp/dzieciowomi/pregcal/PCNotesView;
+.line 40
+	iget-object	v0,v1,app/dzieciowomi/pregcal/PCNotesView.mDbHelper Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter; , v1 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	invoke-virtual	{v0},app/dzieciowomi/pregcal/PCNotesDbAdapter/open	; open()Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+; v0 : Lapp/dzieciowomi/pregcal/PCNotesDbAdapter;
+.line 45
+	sget	v0,app/dzieciowomi/pregcal/PregnancyCalendar.selectedSkin I
+; v0 : single-length
+	iput	v0,v1,app/dzieciowomi/pregcal/PCNotesView.mSkin I
+; v0 : single-length , v1 : Lapp/dzieciowomi/pregcal/PCNotesView;
+.line 46
+	invoke-direct	{v1},app/dzieciowomi/pregcal/PCNotesView/setSkin	; setSkin()V
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesView;
+.line 47
+	invoke-virtual	{v1},app/dzieciowomi/pregcal/PCNotesView/getListView	; getListView()Landroid/widget/ListView;
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	move-result-object	v0
+; v0 : Landroid/widget/ListView;
+	invoke-virtual	{v1,v0},app/dzieciowomi/pregcal/PCNotesView/registerForContextMenu	; registerForContextMenu(Landroid/view/View;)V
+; v1 : Lapp/dzieciowomi/pregcal/PCNotesView; , v0 : Landroid/widget/ListView;
+.line 49
+	return-void	
+.end method
+
+.method public onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
+.limit registers 7
+; this: v3 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+; parameter[0] : v4 (Landroid/view/ContextMenu;)
+; parameter[1] : v5 (Landroid/view/View;)
+; parameter[2] : v6 (Landroid/view/ContextMenu$ContextMenuInfo;)
+	const/4	v2,0
+; v2 : single-length
+.line 126
+	invoke-super	{v3,v4,v5,v6},android/app/ListActivity/onCreateContextMenu	; onCreateContextMenu(Landroid/view/ContextMenu;Landroid/view/View;Landroid/view/ContextMenu$ContextMenuInfo;)V
+; v3 : Lapp/dzieciowomi/pregcal/PCNotesView; , v4 : Landroid/view/ContextMenu; , v5 : Landroid/view/View; , v6 : Landroid/view/ContextMenu$ContextMenuInfo;
+.line 127
+	const/4	v0,1
+; v0 : single-length
+	const	v1,2131034154	; 0x7f05002a
+; v1 : single-length
+	invoke-interface	{v4,v2,v0,v2,v1},android/view/ContextMenu/add	; add(IIII)Landroid/view/MenuItem;
+; v4 : Landroid/view/ContextMenu; , v2 : single-length , v0 : single-length , v2 : single-length , v1 : single-length
+.line 128
+	const/4	v0,2
+; v0 : single-length
+	const	v1,2131034155	; 0x7f05002b
+; v1 : single-length
+	invoke-interface	{v4,v2,v0,v2,v1},android/view/ContextMenu/add	; add(IIII)Landroid/view/MenuItem;
+; v4 : Landroid/view/ContextMenu; , v2 : single-length , v0 : single-length , v2 : single-length , v1 : single-length
+.line 129
+	const/4	v0,3
+; v0 : single-length
+	const	v1,2131034153	; 0x7f050029
+; v1 : single-length
+	invoke-interface	{v4,v2,v0,v2,v1},android/view/ContextMenu/add	; add(IIII)Landroid/view/MenuItem;
+; v4 : Landroid/view/ContextMenu; , v2 : single-length , v0 : single-length , v2 : single-length , v1 : single-length
+.line 131
+	return-void	
+.end method
+
+.method protected onResume()V
+.limit registers 3
+; this: v2 (Lapp/dzieciowomi/pregcal/PCNotesView;)
+.line 91
+	invoke-super	{v2},android/app/ListActivity/onResume	; onResume()V
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView;
+.line 92
+	iget	v0,v2,app/dzieciowomi/pregcal/PCNotesView.mSkin I
+; v0 : single-length , v2 : Lapp/dzieciowomi/pregcal/PCNotesView;
+	sget	v1,app/dzieciowomi/pregcal/PregnancyCalendar.selectedSkin I
+; v1 : single-length
+	if-eq	v0,v1,l12ff8
+; v0 : single-length , v1 : single-length
+.line 93
+	invoke-direct	{v2},app/dzieciowomi/pregcal/PCNotesView/setSkin	; setSkin()V
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView;
+.line 94
+	sget	v0,app/dzieciowomi/pregcal/PregnancyCalendar.selectedSkin I
+; v0 : single-length
+	iput	v0,v2,app/dzieciowomi/pregcal/PCNotesView.mSkin I
+; v0 : single-length , v2 : Lapp/dzieciowomi/pregcal/PCNotesView;
+l12ff8:
+.line 96
+	invoke-direct	{v2},app/dzieciowomi/pregcal/PCNotesView/fillData	; fillData()V
+; v2 : Lapp/dzieciowomi/pregcal/PCNotesView;
+.line 97
+	return-void	
+.end method
+
+

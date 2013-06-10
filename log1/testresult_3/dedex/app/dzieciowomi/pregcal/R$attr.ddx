@@ -1,0 +1,24 @@
+.class public final app/dzieciowomi/pregcal/R$attr
+.super java/lang/Object
+.source R.java
+
+.inner class attr inner app/dzieciowomi/pregcal/R$attr outer app/dzieciowomi/pregcal/R
+.field public static final backgroundColor I = 2130771971	; 0x7f010003
+.field public static final keywords I = 2130771974	; 0x7f010006
+.field public static final primaryTextColor I = 2130771972	; 0x7f010004
+.field public static final refreshInterval I = 2130771975	; 0x7f010007
+.field public static final secondaryTextColor I = 2130771973	; 0x7f010005
+.field public static final text I = 2130771968	; 0x7f010000
+.field public static final textColor I = 2130771969	; 0x7f010001
+.field public static final textSize I = 2130771970	; 0x7f010002
+
+.method public <init>()V
+.limit registers 1
+; this: v0 (Lapp/dzieciowomi/pregcal/R$attr;)
+.line 58
+	invoke-direct	{v0},java/lang/Object/<init>	; <init>()V
+; v0 : Lapp/dzieciowomi/pregcal/R$attr;
+	return-void	
+.end method
+
+
