@@ -10,11 +10,11 @@
 #$:<< '/home/xushunyi/undergradproj/Comdroid/Comdroid-1.04'
 require 'optparse'
 require 'rexml/document'
-require 'IntentObj'
-require 'FieldObj'
-require 'SinkObj'
-require 'ParseManifest'
-require 'Register'
+require './IntentObj'
+require './FieldObj'
+require './SinkObj'
+require './ParseManifest'
+require './Register'
 
 $options = {}
 $vulnerabilityTypes = ['activityhijacking', 'activityhijackingresult', 'servicehijacking',

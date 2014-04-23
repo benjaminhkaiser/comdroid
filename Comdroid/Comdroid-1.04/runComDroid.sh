@@ -46,5 +46,5 @@ then
 	mkdir $LOC/IntentResults/actionStats/
 	mkdir $LOC/log
 fi
- intentanalysis.rb -civ "app" $LOC/dedex $LOC/AndroidManifest.xml $LOC/IntentResults > $LOC/log/details.log
+ ./intentanalysis.rb -civ "app" $LOC/dedex $LOC/AndroidManifest.xml $LOC/IntentResults > $LOC/log/details.log
  # intentanalysis.rb -civ "app" $LOC/dedex $LOC/AndroidManifest.xml $LOC/IntentResults
